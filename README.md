@@ -1,26 +1,16 @@
 # 声笔自然&日语罗马音输入法配置文件
 
-http://code.iamcheyan.com/cheyan/sbxlm
-
 `$HOME/.dotfiles/config/rime`
 
 Windows Mac Linux 三端配置文件通用  
 
 Mac 下存储在`~/.Library/Rime`  
+
 Linux ibus 下存储在`~/.config/ibus/rime/`  
+
 Linux fcitx5 下存储在`~/.local/share/fcitx5/rime/`  
 
-## 配置说明
-只拉取.md和yaml文件，平时也只修改这两个类型的文件
-
-    git fetch
-    git checkout origin/master -- "*.md" "*.yaml"
-
-修改完后，也只应该提交这两个类型的文件
-
-    git add *.md # 将指定的 .md 文件添加到暂存区
-    git commit -m "commit"  # 提交修改到本地仓库
-    git push origin master --force  # 强行推送本地分支到远程分支
+Linux Flatpak  fcitx5 下存储在`$HOME/.dotfiles/config/org.fcitx.Fcitx5/data/fcitx5/rime`
 
 ##　Rime输入法使用MS-IME风格的罗马字输入方案
 
@@ -58,7 +48,7 @@ https://github.com/lazyfoxchan/rime-jaroomaji
 	/private/var/mobile/Library/MobileDocuments/com~apple~CloudDocs/Rime_sync	
 
 ### Linux
-	/home/tetsuya/Dropbox/Rime_Sync
+	$HOME/Dropbox/Rime_Sync
 
 `installation.yaml`文件内容，每个平台具有单独的此文件：
 
@@ -85,7 +75,6 @@ update_time: "Tue Sep 24 19:05:19 2024"
 ## 测试用词
     ceyj 澈言  
     mdwh 美读文化  
-    yqsg 颜庆胜  
     qmuea 钱
 
 只要能打出这些词汇，便说明配置正确
