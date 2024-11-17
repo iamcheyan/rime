@@ -3,16 +3,12 @@
 `$HOME/.dotfiles/config/rime`
 
 Windows Mac Linux 三端配置文件通用  
-
 Mac 下存储在`~/.Library/Rime`  
-
 Linux ibus 下存储在`~/.config/ibus/rime/`  
-
 Linux fcitx5 下存储在`~/.local/share/fcitx5/rime/`  
-
 Linux Flatpak  fcitx5 下存储在`$HOME/.dotfiles/config/org.fcitx.Fcitx5/data/fcitx5/rime`
 
-##　Rime输入法使用MS-IME风格的罗马字输入方案
+## MS-IME风格的罗马字输入方案
 
 https://github.com/lazyfoxchan/rime-jaroomaji
 
