@@ -1,0 +1,17 @@
+# Rime dict
+# encoding: utf-8
+# name: sbzdy
+# version: "10.0"
+# 声笔通用自定义用户词库
+# 编码格式：字词+Tab符+编码，首码必须为声母，后接小写字母
+# 以下是一些示例词条，用户可以任意增删改
+# 使用时输入 u+zdy 
+
+iamcheyan@gmail.com	mail
+tetsuya.ueno@outlook.com	mail
+tetsuya.ueno.jp@gmail.com	mail
+python	y
+穿着西装的老者	z
+笑嘻嘻地说着什么，身旁几个小朋友仔细地听着	x
+把句子的末尾都加上句号，保持换行格式，除非有病句和错别字，才修改我的句子，如果有句子没写完，就模仿我的风格把句子写完。最后再幽默延展续写几个段落。	zz
+

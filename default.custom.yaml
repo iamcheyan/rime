@@ -1,0 +1,18 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.1
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sat Sep 21 00:38:39 2024"
+  rime_version: 1.11.2
+patch:
+  menu:
+    page_size: 10
+  schema_list:
+    - {schema: sbzr}
+    - {schema: jaroomaji}
+  switcher:
+    abbreviate_options: true
+    caption: "〔方案选单〕"
+    fold_options: true
+    hotkeys: ["Control+grave", "Control+Shift+grave", F4]
+    option_list_separator: "／"

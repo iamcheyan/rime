@@ -1,0 +1,55 @@
+__build_info:
+  rime_version: 1.8.5
+  timestamps:
+    default: 1649520780
+    default.custom: 1731743065
+    key_bindings: 1649520780
+    key_bindings.custom: 0
+    punctuation: 1649520780
+    punctuation.custom: 0
+    zhlf.custom: 0
+    zhlf.schema: 1731743065
+engine:
+  filters:
+    - uniquifier
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+menu:
+  page_size: 5
+schema:
+  author:
+    - "字海网 <http://yedict.com>"
+  description: |
+    零声母用 v 代表
+
+  name: "字海两分"
+  schema_id: zhlf
+  version: 10.0
+speller:
+  alphabet: bpmfdtnlgkhjqxzcsrywvaeiou
+  initials: bpmfdtnlgkhjqxzcsrywv
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: ["中文", "西文"]
+  - name: ascii_punct
+    states: ["。，", "．，"]
+translator:
+  dictionary: zhlf
+  enable_user_dict: false

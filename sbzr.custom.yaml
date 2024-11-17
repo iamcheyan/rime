@@ -1,0 +1,49 @@
+#声笔自然按键绑定文件
+#cheyan
+
+patch:
+  "key_binder/bindings":
+    - {accept: "Control+Shift+1", select: .next, when: always}
+    - {accept: "Control+Shift+j", select: jaroomaji, when: always}
+    - {accept: "Control+Shift+J", select: jaroomaji, when: always}
+    - {accept: "Control+Shift+k", select: sbzr, when: always}
+    - {accept: "Control+Shift+K", select: sbzr, when: always}
+    # [] Pagination
+    - {accept: bracketleft, send: Page_Up , when: has_menu}
+    - {accept: bracketright, send: Page_Down , when: has_menu}
+    #- { when: has_menu, accept: Tab, send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}" }
+
+    #- { when: has_menu, accept: Return, send: Page_Down }
+    #[]翻页
+    - { when: paging, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }
+    #加减翻页
+    - { when: has_menu, accept: minus, send: Page_Up }
+    - { when: has_menu, accept: equal, send: Page_Down }
+    #,.翻页
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    #左右键翻页
+    - { when: has_menu, accept: Left, send: Page_Up }
+    - { when: has_menu, accept: Right, send: Page_Down }
+    #;、'键翻页
+    - { when: has_menu, accept: semicolon, send: space }
+    #- { when: has_menu, accept: apo  strophe, send: Page_Down }
+
+    #用1当作空格
+    - { when: has_menu, accept: 1, send: space }
+
+    #Tab上下一个
+    - { when: has_menu, accept: Tab, send_sequence: "{Down}{space}" }
+
+    # 在Mac下使用右方向键选择次选条目
+    - {
+        when: 'platform_is("darwin")',
+        accept: Tab,
+        send_sequence: "{Right}{space}",
+      }
+
+    #上下键翻页
+    #- { when: has_menu, accept: Up, send: Page_Up }
+    #- { when: has_menu, accept: Down, send: Page_Down }
+

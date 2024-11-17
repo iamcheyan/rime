@@ -1,0 +1,17 @@
+__build_info:
+  rime_version: 1.8.5
+  timestamps:
+    default: 1649520780
+    default.custom: 1726301052
+    key_bindings: 1649520780
+    key_bindings.custom: 0
+    punctuation: 1649520780
+    punctuation.custom: 0
+    sbzr2.custom: 0
+    sbzr2.schema: 1726301052
+menu:
+  page_size: 5
+schema:
+  schema_id: sbzr2
+translator:
+  dictionary: sbzr.extended
