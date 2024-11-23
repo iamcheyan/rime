@@ -2,9 +2,9 @@ __build_info:
   rime_version: 1.9.0
   timestamps:
     default: 1731076041
-    default.custom: 1726850319
-    jaroomaji.custom: 1726878120
-    jaroomaji.schema: 1731680334
+    default.custom: 1732374711
+    jaroomaji.custom: 1732371264
+    jaroomaji.schema: 1732367565
     key_bindings: 1731076041
     key_bindings.custom: 0
     punctuation: 1731076041
@@ -33,38 +33,6 @@ engine:
     - script_translator
 key_binder:
   bindings:
-    - {accept: "Control+p", send: Up, when: composing}
-    - {accept: "Control+n", send: Down, when: composing}
-    - {accept: "Control+b", send: Left, when: composing}
-    - {accept: "Control+f", send: Right, when: composing}
-    - {accept: "Control+a", send: Home, when: composing}
-    - {accept: "Control+e", send: End, when: composing}
-    - {accept: "Control+d", send: Delete, when: composing}
-    - {accept: "Control+k", send: "Shift+Delete", when: composing}
-    - {accept: "Control+h", send: BackSpace, when: composing}
-    - {accept: "Control+g", send: Escape, when: composing}
-    - {accept: "Control+bracketleft", send: Escape, when: composing}
-    - {accept: "Control+y", send: Page_Up, when: composing}
-    - {accept: "Alt+v", send: Page_Up, when: composing}
-    - {accept: "Control+v", send: Page_Down, when: composing}
-    - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
-    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
-    - {accept: Tab, send: "Shift+Right", when: composing}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: comma, send: Page_Up, when: paging}
-    - {accept: period, send: Page_Down, when: has_menu}
-    - {accept: "Control+Shift+1", select: .next, when: always}
-    - {accept: "Control+Shift+2", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+3", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+4", toggle: simplification, when: always}
-    - {accept: "Control+Shift+5", toggle: extended_charset, when: always}
-    - {accept: "Control+Shift+exclam", select: .next, when: always}
-    - {accept: "Control+Shift+at", toggle: ascii_mode, when: always}
-    - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
-    - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
-    - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
-    - {accept: minus, send: minus, when: has_menu}
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
     - {accept: "Control+Shift+1", select: .next, when: always}
@@ -72,6 +40,11 @@ key_binder:
     - {accept: "Control+Shift+J", select: jaroomaji, when: always}
     - {accept: "Control+Shift+k", select: sbzr, when: always}
     - {accept: "Control+Shift+K", select: sbzr, when: always}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: minus, send: minus, when: has_menu}
+    - {accept: Return, send: "Shift+Return", when: has_menu}
+    - {accept: "Shift+Return", send: Return, when: has_menu}
   import_preset: default
 menu:
   page_size: 10
