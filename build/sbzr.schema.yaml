@@ -1,18 +1,18 @@
 __build_info:
-  rime_version: 1.9.0
+  rime_version: 1.8.5
   timestamps:
-    default: 1731076041
-    default.custom: 1726850319
-    key_bindings: 1731076041
+    default: 1649520780
+    default.custom: 1731743065
+    key_bindings: 1649520780
     key_bindings.custom: 0
-    punctuation: 1731076041
+    punctuation: 1649520780
     punctuation.custom: 0
-    sbfh: 1724985799
+    sbfh: 1731743065
     sbfh.custom: 0
-    sbxlm: 1726130159
+    sbxlm: 1731743065
     sbxlm.custom: 0
-    sbzr.custom: 1726850541
-    sbzr.schema: 1726127037
+    sbzr.custom: 0
+    sbzr.schema: 1731743065
 bihua:
   dictionary: bihua
   enable_completion: true
@@ -117,34 +117,14 @@ key_binder:
     - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][a-z0-9]", send_sequence: "{Home}{Right}{space}{space}"}
     - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][aeuio]{2}", send_sequence: "{Home}{Right}{space}{space}"}
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{space}{Home}{Right}{space}{space}"}
-    - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}", send_sequence: "{Home}{Right}{Right}{space}{space}"}
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv]{2}", send_sequence: "{Home}{Right}{Right}{space}{Home}{Right}{space}{space}"}
-    - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[a-z0-9]", send_sequence: "{Home}{Right}{Right}{space}{space}"}
+    - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[aeuio]{0,2}", send_sequence: "{Home}{Right}{Right}{space}{space}"}
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{F6}"}
     - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
     - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{Right}{apostrophe}{space}{space}"}
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv]{2}[a-z]", send_sequence: "{Home}{Right}{space}{apostrophe}{space}"}
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{Home}{Right}{Right}{space}{apostrophe}{space}"}
-    - {accept: "Control+Shift+1", select: .next, when: always}
-    - {accept: "Control+Shift+j", select: jaroomaji, when: always}
-    - {accept: "Control+Shift+J", select: jaroomaji, when: always}
-    - {accept: "Control+Shift+k", select: sbzr, when: always}
-    - {accept: "Control+Shift+K", select: sbzr, when: always}
-    - {accept: bracketleft, send: Page_Up, when: has_menu}
-    - {accept: bracketright, send: Page_Down, when: has_menu}
-    - {accept: bracketleft, send: Page_Up, when: paging}
-    - {accept: bracketright, send: Page_Down, when: has_menu}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: comma, send: Page_Up, when: has_menu}
-    - {accept: period, send: Page_Down, when: has_menu}
-    - {accept: Left, send: Page_Up, when: has_menu}
-    - {accept: Right, send: Page_Down, when: has_menu}
-    - {accept: semicolon, send: space, when: has_menu}
-    - {accept: 1, send: space, when: has_menu}
-    - {accept: Tab, send_sequence: "{Down}{space}", when: has_menu}
-    - {accept: Tab, send_sequence: "{Right}{space}", when: "platform_is(\"darwin\")"}
   import_preset: sbxlm
 menu:
   alternative_select_keys: _aeuio
@@ -160,68 +140,71 @@ menu:
     - "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeuio]{2}"
   page_size: 6
   select_comment_pattern: "^[a-z]{4,}|[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeuio]{0,2}$"
-popping:
-  __append:
-    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeiou]*"}
-    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
-    - {accept: "[a-z]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][BPMFDTNLGKHJQXZCSRYWV]", strategy: append, when: pro_char}
 punctuator:
   full_shape:
-    "!": ["！", "`", "``", "```"]
+    "!": {commit: "！"}
     "\"": {pair: ["“", "”"]}
-    "$": ["￥", "$"]
+    "#": ["#", "№", "＃", "⌘"]
+    "$": ["$", "￥", "€", "£", "¥", "¢", "¤", "₩"]
     "%": ["%", "％", "°", "℃", "‰", "‱", "℉"]
-    "&": "&"
+    "&": ["&", "＆"]
     "'": {pair: ["‘", "’"]}
-    "(": ["（", "「", "{", "[", "<", "《"]
-    ")": ["）", "」", "}", "]", ">", "》"]
-    "*": ["*", "＊", "·", "・", "×", "※"]
-    "+": ["+", "-", "*", "/"]
+    "(": ["（", "("]
+    ")": ["）", ")"]
+    "*": ["*", "＊", "·", "×", "※", "❂", "⁂", "☮", "☯", "☣", "・"]
+    "+": ["+", "＋"]
     ",": {commit: "，"}
-    "-": "-"
+    "-": ["——", "－", "---", "--", "- "]
     .: {commit: "。"}
-    "/": ["、", "/", "／"]
+    "/": ["、", "//", "÷", "/*", "*/", "／"]
     ":": {commit: "："}
-    ";": {commit: "；"}
-    "<": ["《", "〈", "«", "‹"]
-    "=": "="
-    ">": ["》", "〉", "»", "›"]
-    "?": "？"
-    "@": "@"
-    "[": ["「", "["]
-    "\\": ["、", "\\", "＼"]
-    "]": ["」", "]"]
-    "^": {commit: "……"}
-    _: _
-    "|": ["·", "・", "|", "｜", "§", "¦", "‖"]
+    ";": ["；"]
+    "<": ["《", "〈", "«", "‹", "↑", "←"]
+    "=": ["="]
+    ">": ["》", "〉", "»", "›", "↓", "→"]
+    "?": {commit: "？"}
+    "@": ["@", "©", "®", "℗", "＠"]
+    "[": ["「", "【", "〔", "[", "［"]
+    "\\": ["\\"]
+    "]": ["」", "】", "〕", "]", "］"]
+    "^": ["……", "…", "≠", "≡", "〃", "々", "＝"]
+    "`": ["`", "′", "″", "‴", "‵", "‶", "‷", "⁗"]
+    "{": ["『", "〖", "{", "｛"]
+    "|": ["｜", "§", "¦", "‖", "||"]
+    "}": ["』", "〗", "}", "｝"]
+    "~": ["~", "～", "˜", "≈", "≋", "≃", "≅", "≇", "∽", "⋍", "≌", "﹏", "﹋", "﹌"]
   half_shape:
-    "!": ["！", "`", "``", "```"]
+    "!": {commit: "！"}
     "\"": {pair: ["“", "”"]}
-    "$": ["￥", "$"]
+    "#": ["#", "№", "＃", "⌘"]
+    "$": ["$", "￥", "€", "£", "¥", "¢", "¤", "₩"]
     "%": ["%", "％", "°", "℃", "‰", "‱", "℉"]
-    "&": "&"
+    "&": ["&", "＆"]
     "'": {pair: ["‘", "’"]}
-    "(": ["（", "「", "{", "[", "<", "《"]
-    ")": ["）", "」", "}", "]", ">", "》"]
-    "*": ["*", "＊", "·", "・", "×", "※"]
-    "+": ["+", "-", "*", "/"]
+    "(": ["（", "("]
+    ")": ["）", ")"]
+    "*": ["*", "＊", "·", "×", "※", "❂", "⁂", "☮", "☯", "☣", "・"]
+    "+": ["+", "＋"]
     ",": {commit: "，"}
-    "-": "-"
+    "-": ["——", "－", "---", "--", "- "]
     .: {commit: "。"}
-    "/": ["、", "/", "／"]
+    "/": ["、", "//", "÷", "/*", "*/", "／"]
     ":": {commit: "："}
-    ";": {commit: "；"}
-    "<": ["《", "〈", "«", "‹"]
-    "=": "="
-    ">": ["》", "〉", "»", "›"]
-    "?": "？"
-    "@": "@"
-    "[": ["「", "["]
-    "\\": ["、", "\\", "＼"]
-    "]": ["」", "]"]
-    "^": {commit: "……"}
-    _: _
-    "|": ["·", "・", "|", "｜", "§", "¦", "‖"]
+    ";": ["；"]
+    "<": ["《", "〈", "«", "‹", "↑", "←"]
+    "=": ["="]
+    ">": ["》", "〉", "»", "›", "↓", "→"]
+    "?": {commit: "？"}
+    "@": ["@", "©", "®", "℗", "＠"]
+    "[": ["「", "【", "〔", "[", "［"]
+    "\\": ["\\"]
+    "]": ["」", "】", "〕", "]", "］"]
+    "^": ["……", "…", "≠", "≡", "〃", "々", "＝"]
+    "`": ["`", "′", "″", "‴", "‵", "‶", "‷", "⁗"]
+    "{": ["『", "〖", "{", "｛"]
+    "|": ["｜", "§", "¦", "‖", "||"]
+    "}": ["』", "〗", "}", "｝"]
+    "~": ["~", "～", "˜", "≈", "≋", "≃", "≅", "≇", "∽", "⋍", "≌", "﹏", "﹋", "﹌"]
   import_preset: sbxlm
   symbols:
     "\\0": ["〇", "零", "₀", "⁰", "⓪", "⓿", "０"]
@@ -613,9 +596,6 @@ speller:
   initials: bpmfdtnlgkhjqxzcsrywv
   max_code_length: 6
   popping:
-    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeiou]*"}
-    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
-    - {accept: "[a-z]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][BPMFDTNLGKHJQXZCSRYWV]", strategy: append, when: pro_char}
     - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][aeiou]+"}
     - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", when: pro_char}
     - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
@@ -628,11 +608,15 @@ speller:
     - {accept: "[A-Z]", match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}", prefix: 2}
     - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: ".*[^a-z0-9]"}
     - {accept: "[^a-z0-9;' ]", match: ".*[a-z0-9;']"}
+    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeiou]*"}
+    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
+    - {accept: "[a-z]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][BPMFDTNLGKHJQXZCSRYWV]", strategy: append, when: pro_char}
 switches:
   - name: ascii_mode
     reset: 0
     states: ["中文", "西文"]
   - name: ascii_punct
+    reset: 0
     states: ["。，", "．，"]
   - name: zh_trad
     reset: 0
@@ -648,7 +632,7 @@ switches:
   - name: is_buffered
     reset: 0
   - name: single_display
-    reset: 1
+    reset: 0
   - name: third_pop
     reset: 0
   - name: fast_pop
