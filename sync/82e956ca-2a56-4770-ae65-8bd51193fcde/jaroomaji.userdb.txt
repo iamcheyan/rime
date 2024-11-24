@@ -1,7 +1,7 @@
 # Rime user dictionary
 #@/db_name	jaroomaji
 #@/db_type	userdb
-#@/rime_version	1.9.0
+#@/rime_version	1.8.5
 #@/tick	95
 #@/user_id	82e956ca-2a56-4770-ae65-8bd51193fcde
 - 	ー	c=1 d=1.05072 t=95
