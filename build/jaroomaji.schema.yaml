@@ -1,13 +1,13 @@
 __build_info:
   rime_version: 1.9.0
   timestamps:
-    default: 1731076041
-    default.custom: 1732374711
-    jaroomaji.custom: 1732371264
-    jaroomaji.schema: 1732367565
-    key_bindings: 1731076041
+    default: 1732432808
+    default.custom: 1732432808
+    jaroomaji.custom: 1732432808
+    jaroomaji.schema: 1732432808
+    key_bindings: 1732432808
     key_bindings.custom: 0
-    punctuation: 1731076041
+    punctuation: 1732432808
     punctuation.custom: 0
 engine:
   filters:
