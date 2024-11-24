@@ -1,0 +1,17 @@
+# # # # # # # # # # # # # # # # # # # #
+# 替换默认设定
+# # # # # # # # # # # # # # # # # # # #
+patch:
+  # "key_binder/bindings":
+  #   - { when: has_menu, accept: minus, send: minus }  # 「ー」入力用
+  #   - { when: has_menu, accept: Return, send: Shift+Return }  # Enterで変換しないで直接確定
+  #   - { when: has_menu, accept: Shift+Return, send: Return }  # Shift + Enterで英字確定
+  #   - {accept: "Control+Shift+1", select: .next, when: always}
+  #   - {accept: "Control+Shift+j", select: jaroomaji, when: always}
+  #   - {accept: "Control+Shift+J", select: jaroomaji, when: always}
+  #   - {accept: "Control+Shift+k", select: sbzr, when: always}
+  #   - {accept: "Control+Shift+K", select: sbzr, when: always}
+  "switches":
+    - { name: ascii_mode, states: [ あ, A ], reset: 0 }  # 默认假名模式
+    
+    

@@ -1,0 +1,95 @@
+# Rime user dictionary
+#@/db_name	jaroomaji
+#@/db_type	userdb
+#@/rime_version	1.9.0
+#@/tick	95
+#@/user_id	82e956ca-2a56-4770-ae65-8bd51193fcde
+- 	ー	c=1 d=1.05072 t=95
+GA MI 	ガミ	c=0 d=0.0955998 t=95
+KA BI 	カビ	c=0 d=0.0955998 t=95
+KA BI GA MI 	カビガミ	c=1 d=0.96079 t=95
+ME NYU 	メニュ	c=1 d=0.980199 t=95
+RA 	ラ	c=1 d=0.980199 t=95
+SU 	ス	c=0 d=0.0965606 t=95
+TA KU 	タク	c=0 d=0.0965606 t=95
+TA KU SU 	タクス	c=1 d=0.970446 t=95
+WA 	ワ	c=0 d=0.0955998 t=95
+WA TA SI 	ワタシ	c=0 d=0.0955998 t=95
+WA TA SI WA 	ワタシワ	c=1 d=0.96079 t=95
+a 	あ	c=1 d=0.975309 t=95
+ba ra ba ra 	バラバラ	c=1 d=0.980199 t=95
+da i su ki 	大好き	c=1 d=0.96079 t=95
+da me 	🙅	c=1 d=0.975309 t=95
+de su 	です	c=3 d=2.82765 t=95
+di 	ぢ	c=0 d=0.0970446 t=95
+ga 	が	c=4 d=3.65253 t=95
+ga xtu ko u 	学校	c=1 d=0.970446 t=95
+ge nn ki nn 	現金	c=1 d=0.980199 t=95
+gu 	グ	c=1 d=1.05208 t=95
+ha 	は	c=2 d=1.85607 t=95
+ha ha 	母	c=1 d=0.965606 t=95
+ha ra 	はら	c=1 d=0.941764 t=95
+ha ti wa re 	ハチワレ	c=1 d=0.980199 t=95
+hi ra ka 	ひらか	c=0 d=0.0946485 t=95
+hi ra ka na 	ひらかな	c=1 d=0.95123 t=95
+i nu 	犬	c=0 d=0.0941764 t=95
+i nu - - - - - - - - - 	犬ーーーーーーーーー	c=1 d=0.946485 t=95
+ka ta 	かた	c=1 d=0.937067 t=95
+ka ta ka na 	カタカナ	c=1 d=0.955998 t=95
+ko nn zi 	今時	c=0 d=0.0975309 t=95
+ko nn zi wa 	今時わ	c=1 d=0.980199 t=95
+ma se nn 	ません	c=1 d=0.923117 t=95
+ma su 	ます	c=2 d=1.9077 t=95
+ma syo 	ましょ	c=0 d=0.0975309 t=95
+mo do ri 	戻り	c=1 d=0.927743 t=95
+mu zu ka si i 	難しい	c=1 d=0.980199 t=95
+na 	な	c=0 d=0.0946485 t=95
+na i 	ない	c=0 d=0.095123 t=95
+ne 	ね	c=2 d=1.9415 t=95
+ni 	に	c=2 d=1.88853 t=95
+ni a 	ニア	c=0 d=0.0970446 t=95
+ni ho nn 	にほん	c=4 d=3.888 t=95
+ni ho nn 	日本	c=1 d=0.965606 t=95
+ni ho nn 	🇯🇵	c=1 d=0.970446 t=95
+ni ho nn go 	日本語	c=6 d=5.16421 t=95
+ni ho nn gu 	にほんグ	c=1 d=0.965606 t=95
+ni xtu ka 	日課	c=0 d=0.0970446 t=95
+ni xtu xtu 	にっっ	c=2 d=1.96561 t=95
+nn 	ん	c=0 d=0.0970446 t=95
+nn xtu 	んッ	c=1 d=0.980199 t=95
+ra ri 	ラリ	c=0 d=0.0975309 t=95
+ra ri ma syo ta 	ラリましょた	c=1 d=0.980199 t=95
+sa nn ko u 	参考	c=1 d=0.95123 t=95
+si go to 	仕事	c=1 d=0.980199 t=95
+si me 	閉め	c=1 d=0.970446 t=95
+si ryo u 	資料	c=1 d=0.955998 t=95
+so no ta 	その他	c=1 d=0.980199 t=95
+su ki 	すき	c=1 d=0.980199 t=95
+ta 	た	c=0 d=0.0975309 t=95
+ta be 	食べ	c=0 d=0.095123 t=95
+ta be na i 	食べない	c=1 d=0.955997 t=95
+ta i 	たい	c=1 d=0.980199 t=95
+ta i he nn 	大変	c=1 d=0.985112 t=95
+ta xtu xtu 	たッッ	c=1 d=0.975309 t=95
+te tu ya 	徹也	c=1 d=1.0516 t=95
+te tu ya 	徹夜	c=0 d=0.0965606 t=95
+to de mo 	とでも	c=3 d=2.73383 t=95
+to u kyo u 	東京	c=1 d=0.937067 t=95
+tu ka i 	使い	c=1 d=0.970446 t=95
+tyu u ko ku 	中国	c=0 d=0.0970446 t=95
+tyu u ko ku zi nn 	中国人	c=2 d=1.95551 t=95
+u e no 	上野	c=0 d=0.19216 t=95
+u e no te tu ya 	上野徹也	c=2 d=1.92639 t=95
+u e no te tu ya 	上野徹夜	c=4 d=3.72502 t=95
+wa 	わ	c=2 d=2.10677 t=95
+wa ta si 	わたし	c=4 d=3.57774 t=95
+wa ta si 	私	c=1 d=0.946485 t=95
+wa ta si wa ni xtu ka xtu di ni a xtu xtu nn 	わたしわ日課っぢニアっっん	c=1 d=0.975309 t=95
+wo 	を	c=1 d=0.965606 t=95
+xtu 	っ	c=0 d=0.0970446 t=95
+xtu 	ッ	c=1 d=1.02431 t=95
+xtu - xtu xtu xtu xtu xtu xtu xtu xtu xtu xtu 	ッーッッッッッッッッッッ	c=1 d=0.970446 t=95
+xtu xtu 	ッッ	c=3 d=3.13001 t=95
+xtu xtu xtu xtu xtu xtu xtu xtu xtu xtu 	ッッッッッッッッッッ	c=1 d=0.980199 t=95
+zi nn 	人	c=1 d=1.08709 t=95
+zyu su 	誦す	c=1 d=0.95123 t=95

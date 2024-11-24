@@ -1,0 +1,66 @@
+# Rime default settings
+# encoding: utf-8
+
+config_version: '0.40'
+
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.16.1
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Sat Sep 21 00:38:39 2024"
+  rime_version: 1.11.2
+
+# patch:
+#   key_binder:
+#     bindings:
+#       - accept: "Control+Shift+1"
+#         select: .next
+#         when: always
+#       - accept: "Control+Shift+j"
+#         select: jaroomaji
+#         when: always
+#       - accept: "Control+Shift+J"
+#         select: jaroomaji
+#         when: always
+#       - accept: "Control+Shift+k"
+#         select: sbzr
+#         when: always
+#       - accept: "Control+Shift+K"
+#         select: sbzr
+#         when: always
+#       - when: has_menu
+#         accept: minus
+#         send: Page_Up
+#       - when: has_menu
+#         accept: equal
+#         send: Page_Down
+#       - when: has_menu
+#         accept: bracketleft
+#         send: Page_Up
+#       - when: has_menu
+#         accept: bracketright
+#         send: Page_Down
+#       - when: has_menu
+#         accept: comma
+#         send: Page_Up
+#       - when: has_menu
+#         accept: period
+#         send: Page_Down
+#       - when: has_menu
+#         accept: Left
+#         send: Page_Up
+#       - when: has_menu
+#         accept: Right
+#         send: Page_Down
+#       - when: has_menu
+#         accept: semicolon
+#         send: space
+#       - when: has_menu
+#         accept: "1"
+#         send: space
+#       - when: has_menu
+#         accept: Tab
+#         send_sequence: "{Down}{space}"
+#       - when: 'platform_is("darwin")'
+#         accept: Tab
+#         send_sequence: "{Right}{space}"

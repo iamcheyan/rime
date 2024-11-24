@@ -1,0 +1,12 @@
+# Rime user dictionary
+#@/db_name	sbpy
+#@/db_type	userdb
+#@/rime_version	1.9.0
+#@/tick	2
+#@/user_id	82e956ca-2a56-4770-ae65-8bd51193fcde
+de32511 	的	c=0 d=0.0990049 t=2
+dui54124 jia14313 shi11215 	对夹式	c=0 d=0.0995012 t=2
+shen44212 zhong31251 kao12131 lv21531 	慎重考虑	c=0 d=0.0995012 t=2
+shen44212 zhong31251 kao12131 lv21531 dui54124 jia14313 shi11215 	慎重考虑对夹式	c=1 d=1 t=2
+su12253 da12112 shui25344 	苏打水	c=0 d=0.0990049 t=2
+su12253 da12112 shui25344 de32511 	苏打水的	c=1 d=0.995012 t=2
