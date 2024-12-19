@@ -9,7 +9,6 @@ patch:
     page_size: 10
   schema_list:
     - {schema: sbzr}
-    - {schema: jaroomaji}
   switcher:
     abbreviate_options: true
     caption: "〔方案选单〕"
@@ -25,13 +24,6 @@ patch:
       send: Return
     - accept: "Control+Shift+1"
       select: .next
-      when: always
-
-    - accept: "Control+Shift+j"
-      select: jaroomaji
-      when: always
-    - accept: "Control+Shift+J"
-      select: jaroomaji
       when: always
 
     - accept: "Control+Shift+k"
