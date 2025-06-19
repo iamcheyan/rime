@@ -1,7 +1,7 @@
 __build_info:
-  rime_version: 1.11.2
+  rime_version: 1.13.0
   timestamps:
-    ibus_rime: 1731076040
+    ibus_rime: 1750342763
     ibus_rime.custom: 0
 config_version: 1.0
 style:
