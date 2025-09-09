@@ -12,7 +12,7 @@ patch:
     - {schema: jaroomaji}
   switcher:
     abbreviate_options: true
-    caption: ""
+    caption: "アイエムイ—"
     fold_options: true
     hotkeys: ["Control+grave", "Control+Shift+grave", F4]
     option_list_separator: ""
