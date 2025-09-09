@@ -16,11 +16,7 @@ patch:
     fold_options: true
     hotkeys: ["Control+grave", 
               "Control+Shift+grave", 
-              F4, 
-              "Control+j", 
-              "Control+k", 
-              "Control+Shift+j", 
-              "Control+Shift+k"]
+              F4]
     option_list_separator: ""
   key_binder/bindings:
     # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）

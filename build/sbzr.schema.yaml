@@ -82,8 +82,8 @@ hypy:
 key_binder:
   bindings:
     - {accept: "Control+z", select: .next, when: always}
-    - {accept: "Control+j", select: sbzr, when: always}
-    - {accept: "Control+k", select: jaroomaji, when: always}
+    - {accept: "Control+j", select: .next, when: always}
+    - {accept: "Control+k", select: .next, when: always}
 
     - {accept: "Control+p", send: Up, when: composing}
     - {accept: "Control+n", send: Down, when: composing}

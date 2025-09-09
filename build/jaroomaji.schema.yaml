@@ -34,8 +34,8 @@ engine:
 key_binder:
   bindings:
     - {accept: "Control+z", select: .next, when: always}
-    - {accept: "Control+j", select: sbzr, when: always}
-    - {accept: "Control+k", select: jaroomaji, when: always}
+    - {accept: "Control+j", select: .next, when: always}
+    - {accept: "Control+k", select: .next, when: always}
 
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
