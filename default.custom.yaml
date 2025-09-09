@@ -23,19 +23,27 @@ patch:
               "Control+Shift+k"]
     option_list_separator: ""
   key_binder/bindings:
+    # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）
     - when: has_menu
       accept: Return
       send: Shift+Return
+
+    # 在候选菜单中，Shift+Return 发送普通回车（反转回车行为）
     - when: has_menu
       accept: Shift+Return
       send: Return
+
+    # 按下 Control+Shift+1 时，选择下一个输入方案
     - accept: "Control+Shift+1"
       select: .next
       when: always
 
+    # 在候选菜单中，减号键（-）翻到上一页
     - when: has_menu
       accept: minus
       send: Page_Up
+      
+    # 在候选菜单中，等号键（=）翻到下一页
     - when: has_menu
       accept: equal
       send: Page_Down
