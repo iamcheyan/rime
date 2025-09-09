@@ -14,7 +14,13 @@ patch:
     abbreviate_options: true
     caption: "アイエムイ—"
     fold_options: true
-    hotkeys: ["Control+grave", "Control+Shift+grave", F4]
+    hotkeys: ["Control+grave", 
+              "Control+Shift+grave", 
+              F4, 
+              "Control+j", 
+              "Control+k", 
+              "Control+Shift+j", 
+              "Control+Shift+k"]
     option_list_separator: ""
   key_binder/bindings:
     - when: has_menu
@@ -25,13 +31,6 @@ patch:
       send: Return
     - accept: "Control+Shift+1"
       select: .next
-      when: always
-
-    - accept: "Control+Shift+k"
-      select: sbzr
-      when: always
-    - accept: "Control+Shift+K"
-      select: sbzr
       when: always
 
     - when: has_menu

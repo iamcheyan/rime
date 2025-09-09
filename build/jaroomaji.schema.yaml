@@ -1,13 +1,13 @@
 __build_info:
-  rime_version: 1.9.0
+  rime_version: 1.12.0
   timestamps:
-    default: 1734582260
-    default.custom: 1734582473
-    jaroomaji.custom: 1734582260
-    jaroomaji.schema: 1734582261
-    key_bindings: 1734582261
+    default: 1757412207
+    default.custom: 1757412207
+    jaroomaji.custom: 0
+    jaroomaji.schema: 1757412207
+    key_bindings: 1750772034
     key_bindings.custom: 0
-    punctuation: 1732775273
+    punctuation: 1750772034
     punctuation.custom: 0
 engine:
   filters:
@@ -36,10 +36,6 @@ key_binder:
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
     - {accept: "Control+Shift+1", select: .next, when: always}
-    - {accept: "Control+Shift+j", select: jaroomaji, when: always}
-    - {accept: "Control+Shift+J", select: jaroomaji, when: always}
-    - {accept: "Control+Shift+k", select: sbzr, when: always}
-    - {accept: "Control+Shift+K", select: sbzr, when: always}
     - {accept: minus, send: Page_Up, when: has_menu}
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: minus, send: minus, when: has_menu}
@@ -257,6 +253,9 @@ switches:
   - name: ascii_mode
     reset: 0
     states: ["あ", A]
+  - name: full_shape
+    reset: 0
+    states: ["半角記号", "全角記号"]
 translator:
   dictionary: jaroomaji
   enable_completion: false
