@@ -36,6 +36,15 @@ key_binder:
     - {accept: "Control+z", select: .next, when: always}
     - {accept: "Control+j", select: .next, when: always}
     - {accept: "Control+k", select: .next, when: always}
+    - {accept: "Shift+BackSpace", send: Escape, when: composing}
+
+    - {accept: "Control+n", send: Left, when: composing}        # 上一个选项
+    - {accept: "Control+m", send: Right, when: composing}       # 下一个选项
+    - {accept: "Tab", send: Right, when: composing}             # 上一个选项
+    - {accept: "Shift+Tab", send: Left, when: composing}        # 下一个选项
+
+    - {accept: "Control+Shift+n", send: Up, when: composing}    # 向上移动
+    - {accept: "Control+Shift+m", send: Down, when: composing}  # 向下移动
 
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}

@@ -84,7 +84,9 @@ key_binder:
     - {accept: "Control+z", select: .next, when: always}
     - {accept: "Control+j", select: .next, when: always}
     - {accept: "Control+k", select: .next, when: always}
-
+    - {accept: "Shift+BackSpace", send: Escape, when: composing}
+    
+    - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Control+p", send: Up, when: composing}
     - {accept: "Control+n", send: Down, when: composing}
     - {accept: "Control+b", send: Left, when: composing}
@@ -100,26 +102,41 @@ key_binder:
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
     
+    - {accept: "Control+n", send: Left, when: composing}        # 上一个选项
+    - {accept: "Control+m", send: Right, when: composing}       # 下一个选项
+    - {accept: "Tab", send: Right, when: composing}             # 上一个选项
+    - {accept: "Shift+Tab", send: Left, when: composing}        # 下一个选项
 
-    - {accept: Tab, send: Page_Down, when: has_menu}
-    - {accept: "Shift+Tab", send: Page_Up, when: paging}
-    - {accept: "Shift+Tab", send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}", when: has_menu}
-    - {accept: "Control+l", send_sequence: "{Home}{Right}{Right}", when: composing}
+    # F6 切换“词组/单字”模式
     - {accept: F6, toggle: pro_char, when: composing}
+    # Shift+ISO_Left_Tab 在分页时向上翻页
     - {accept: "Shift+ISO_Left_Tab", send: Page_Up, when: paging}
+    # Shift+ISO_Left_Tab 在菜单时连续向下翻页（30页）
     - {accept: "Shift+ISO_Left_Tab", send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}", when: has_menu}
-    - {accept: "Shift+BackSpace", send: Escape, when: composing}
+    
+    # 以下为声笔输入法特殊分词与标记快捷键
+    # 两个声母时，分词并插入两个空格
     - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv]{2}", send_sequence: "{Home}{Right}{space}{space}"}
+    # 两个声母+一个字母或数字，分词并插入两个空格
     - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][a-z0-9]", send_sequence: "{Home}{Right}{space}{space}"}
+    # 两个声母+两个元音，分词并插入两个空格
     - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][aeuio]{2}", send_sequence: "{Home}{Right}{space}{space}"}
+    # 三个声母时，分词并插入三个空格
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{space}{Home}{Right}{space}{space}"}
+    # 声母+字母/数字+两个声母，分词并插入三个空格
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv]{2}", send_sequence: "{Home}{Right}{Right}{space}{Home}{Right}{space}{space}"}
+    # 两组声母+字母/数字+可选元音，分词并插入两个空格
     - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[aeuio]{0,2}", send_sequence: "{Home}{Right}{Right}{space}{space}"}
+    # 声母+字母时，Shift+space 触发 F6（切换词组/单字）
     - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{F6}"}
+    # 声母+字母时，Tab 或 ' 插入撇号和空格
     - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
+    # 三个声母时，Tab 插入两个空格和撇号
     - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{Right}{apostrophe}{space}{space}"}
+    # 两个声母+字母时，' 插入空格和撇号
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv]{2}[a-z]", send_sequence: "{Home}{Right}{space}{apostrophe}{space}"}
+    # 声母+字母/数字+声母+字母时，' 插入两个空格和撇号
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{Home}{Right}{Right}{space}{apostrophe}{space}"}
   import_preset: sbxlm
 menu:
