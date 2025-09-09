@@ -21,7 +21,6 @@ key_binder:
   bindings:
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
-    - {accept: "Control+Shift+1", select: .next, when: always}
     - {accept: minus, send: Page_Up, when: has_menu}
     - {accept: equal, send: Page_Down, when: has_menu}
 menu:

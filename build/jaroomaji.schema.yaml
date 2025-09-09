@@ -33,9 +33,12 @@ engine:
     - script_translator
 key_binder:
   bindings:
+    - {accept: "Control+z", select: .next, when: always}
+    - {accept: "Control+j", select: sbzr, when: always}
+    - {accept: "Control+k", select: jaroomaji, when: always}
+
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
-    - {accept: "Control+Shift+1", select: .next, when: always}
     - {accept: minus, send: Page_Up, when: has_menu}
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: minus, send: minus, when: has_menu}

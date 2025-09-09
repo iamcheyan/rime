@@ -33,11 +33,6 @@ patch:
       accept: Shift+Return
       send: Return
 
-    # 按下 Control+Shift+1 时，选择下一个输入方案
-    - accept: "Control+Shift+1"
-      select: .next
-      when: always
-
     # 在候选菜单中，减号键（-）翻到上一页
     - when: has_menu
       accept: minus
