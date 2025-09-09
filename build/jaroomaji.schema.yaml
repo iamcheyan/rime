@@ -33,26 +33,56 @@ engine:
     - script_translator
 key_binder:
   bindings:
-    - {accept: "Control+z", select: .next, when: always}
-    - {accept: "Control+j", select: .next, when: always}
-    - {accept: "Control+k", select: .next, when: always}
-    - {accept: "Shift+BackSpace", send: Escape, when: composing}
+    # 以下为按键绑定，含详细注释，便于维护和理解
 
-    - {accept: "Control+n", send: Left, when: composing}        # 上一个选项
-    - {accept: "Control+m", send: Right, when: composing}       # 下一个选项
-    - {accept: "Tab", send: Right, when: composing}             # 上一个选项
-    - {accept: "Shift+Tab", send: Left, when: composing}        # 下一个选项
+    # Control+z：无论何时，选择下一个候选项
+    - {accept: "Control+z", select: .next, when: always}  # 全局下一个候选
 
-    - {accept: "Control+Shift+n", send: Up, when: composing}    # 向上移动
+    # Control+j：无论何时，选择下一个候选项（与上面类似，兼容不同习惯）
+    - {accept: "Control+j", select: .next, when: always}  # 全局下一个候选
+
+    # Control+k：无论何时，选择下一个候选项（同上，方便多种快捷键习惯）
+    - {accept: "Control+k", select: .next, when: always}  # 全局下一个候选
+
+    # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
+    - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
+
+    # Tab：在 composing 状态下，向右移动光标（下一个选项，Tab 键支持）
+    - {accept: "Tab", send: Right, when: composing}  # 下一个选项
+
+    # Shift+Tab：在 composing 状态下，向左移动光标（上一个选项，Shift+Tab 支持）
+    - {accept: "Shift+Tab", send: Left, when: composing}  # 上一个选项
+
+    # Control+Shift+n：在 composing 状态下，向上移动（通常用于候选菜单上移）
+    - {accept: "Control+Shift+n", send: Up, when: composing}  # 向上移动
+
+    # Control+Shift+m：在 composing 状态下，向下移动（通常用于候选菜单下移）
     - {accept: "Control+Shift+m", send: Down, when: composing}  # 向下移动
 
-    - {accept: Return, send: "Shift+Return", when: has_menu}
-    - {accept: "Shift+Return", send: Return, when: has_menu}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: minus, send: minus, when: has_menu}
-    - {accept: Return, send: "Shift+Return", when: has_menu}
-    - {accept: "Shift+Return", send: Return, when: has_menu}
+    # Return：在 has_menu 状态下，发送 Shift+Return（特殊回车处理，可能用于候选确认）
+    - {accept: Return, send: "Shift+Return", when: has_menu}  # 菜单中回车特殊处理
+
+    # Shift+Return：在 has_menu 状态下，发送 Return（Shift+回车反向处理）
+    - {accept: "Shift+Return", send: Return, when: has_menu}  # 菜单中 Shift+回车特殊处理
+
+    # minus（减号）：在 has_menu 状态下，翻上一页
+    - {accept: minus, send: Page_Up, when: has_menu}  # 候选菜单上一页
+
+    # equal（等号）：在 has_menu 状态下，翻下一页
+    - {accept: equal, send: Page_Down, when: has_menu}  # 候选菜单下一页
+
+    # minus（减号）：在 has_menu 状态下，直接输入减号字符
+    - {accept: minus, send: minus, when: has_menu}  # 候选菜单中直接输入减号
+
+    # Return：在 has_menu 状态下，发送 Shift+Return（与上面重复，可能为兼容性保留）
+    - {accept: Return, send: "Shift+Return", when: has_menu}  # 菜单中回车特殊处理（重复）
+
+    # Shift+Return：在 has_menu 状态下，发送 Return（与上面重复，可能为兼容性保留）
+    - {accept: "Shift+Return", send: Return, when: has_menu}  # 菜单中 Shift+回车特殊处理（重复）
+
+    - {accept: comma, send: Page_Up, when: paging}      # 使用`,　<`进行向上翻页（第一页时候无效）
+    - {accept: period, send: Page_Down, when: has_menu} # 使用`.　>`进行向下翻页
+
   import_preset: default
 menu:
   page_size: 10

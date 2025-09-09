@@ -107,6 +107,9 @@ key_binder:
     - {accept: "Tab", send: Right, when: composing}             # 上一个选项
     - {accept: "Shift+Tab", send: Left, when: composing}        # 下一个选项
 
+    - {accept: comma, send: Page_Up, when: paging}      # 使用`,　<`进行向上翻页（第一页时候无效）
+    - {accept: period, send: Page_Down, when: has_menu} # 使用`.　>`进行向下翻页
+
     # F6 切换“词组/单字”模式
     - {accept: F6, toggle: pro_char, when: composing}
     # Shift+ISO_Left_Tab 在分页时向上翻页
