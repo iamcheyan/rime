@@ -11,6 +11,7 @@ iamcheyan@gmail.com	mail
 tetsuya.ueno@outlook.com	mail
 tetsuya.ueno.jp@gmail.com	mail
 python	y
+OutSystems	s
 穿着西装的老者	z
 笑嘻嘻地说着什么，身旁几个小朋友仔细地听着	x
 把句子的末尾都加上句号，保持换行格式，除非有病句和错别字，才修改我的句子，如果有句子没写完，就模仿我的风格把句子写完。最后再幽默延展续写几个段落。	zz
