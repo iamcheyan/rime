@@ -4,8 +4,8 @@
 __include: sbxlm.yaml:/prelude
 
 schema:
-  schema_id: sbzr
-  name: "声笔自然"
+  schema_id: sbxh
+  name: "声笔小鹤"
   version: "11.0"
   icon: "sbxlm.ico"
   author:
@@ -15,7 +15,7 @@ schema:
     - sbyp
     - bihua
     - zhlf
-    - sbzr2
+    - sbxh2
 
 switches:
   - name: ascii_mode
@@ -107,7 +107,7 @@ speller:
       - sbxlm.yaml:/zrxh_popping
 
 translator:
-  dictionary: sbzr
+  dictionary: sbxh
   enable_user_dict: true
   forced_selection: true
   single_selection: false
@@ -120,8 +120,8 @@ translator:
     - "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywv]"
 
 extended:
-  dictionary: sbzr.extended
-  user_dictionary: "sbzr"
+  dictionary: sbxh.extended
+  user_dictionary: "sbxh"
   enable_user_dict: true
 
 punctuator:
@@ -136,7 +136,7 @@ key_binder:
 reverse_lookup:
   __include: sbxlm.yaml:/prelude/reverse_lookup
   tags: [bihua, sbyp, zhlf]
-  dictionary: sbzr.extended
+  dictionary: sbxh.extended
 
 menu:
   __include: sbxlm.yaml:/prelude/menu

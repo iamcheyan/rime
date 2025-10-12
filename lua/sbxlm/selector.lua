@@ -27,6 +27,14 @@ function this.init(env)
   end
   env.select_patterns = rime.get_string_list(config, "menu/alternative_select_patterns")
   env.selector = rime.Processor(env.engine, "", "selector")
+
+  local function clear()
+    env.engine.context:set_property("stroke_input", "")
+    env.engine.context:refresh_non_confirmed_composition()
+  end
+  local context = env.engine.context
+  context.select_notifier:connect(clear)
+  context.commit_notifier:connect(clear)
 end
 
 ---@param key_event KeyEvent
@@ -39,7 +47,7 @@ function this.func(key_event, env)
   if not segment then
     return rime.process_results.kNoop
   end
-  if segment:has_tag("hypy") or segment:has_tag("bihua")
+  if segment:has_tag("sbyp") or segment:has_tag("bihua")
       or segment:has_tag("zhlf") or segment:has_tag("sbzdy")
       or segment:has_tag("lua") then
     local pat = "[_23789]"
@@ -69,6 +77,7 @@ function this.func(key_event, env)
   -- 如果当前编码符合选重模式，就将这些键视为选重键
   for _, pattern in ipairs(env.select_patterns) do
     if rime.match(input, pattern) then
+      env.engine.context:set_property("stroke_input", "")
       return env.selector:process_key_event(key_event)
     end
   end

@@ -1,40 +1,33 @@
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.16.1
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Sat Sep 21 00:38:39 2024"
-  rime_version: 1.11.2
 patch:
-  menu:
-    page_size: 10
   schema_list:
-    - {schema: sbzr}
-    - {schema: jaroomaji}
+    - schema: sbyp
+    - schema: sbpy
+    - schema: sbjp
+    - schema: sbjm
+    - schema: sbfd
+    - schema: sbfm
+    - schema: sbfy
+    - schema: sbfx
+    - schema: sbfj
+    - schema: sbzr
+    - schema: sbzz
+    - schema: sbxh
+    - schema: sbhz
   switcher:
     abbreviate_options: true
-    caption: "アイエムイ—"
+    caption: "〔方案选单〕"
     fold_options: true
-    hotkeys: ["Control+grave", 
-              "Control+Shift+grave", 
-              F4]
-    option_list_separator: ""
-  key_binder/bindings:
-    # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）
-    - when: has_menu
-      accept: Return
-      send: Shift+Return
-
-    # 在候选菜单中，Shift+Return 发送普通回车（反转回车行为）
-    - when: has_menu
-      accept: Shift+Return
-      send: Return
-
-    # 在候选菜单中，减号键（-）翻到上一页
-    - when: has_menu
-      accept: minus
-      send: Page_Up
-      
-    # 在候选菜单中，等号键（=）翻到下一页
-    - when: has_menu
-      accept: equal
-      send: Page_Down
+    option_list_separator: '／'
+    hotkeys:
+      - "Control+grave"
+      - "Control+Shift+grave"
+      - F4
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: inline_ascii
+      Shift_R: inline_ascii
+      Control_L: commit_code
+      Control_R: noop
+      Caps_Lock: clear
+      Eisu_toggle: clear

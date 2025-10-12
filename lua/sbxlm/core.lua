@@ -63,6 +63,16 @@ function core.sxsb(input)
 end
 
 ---@param input string
+function core.sxsx(input)
+  return match(input, s .. x .. s .. x)
+end
+
+---@param input string
+function core.ssss(input)
+  return match(input, s .. s .. s .. s)
+end
+
+---@param input string
 function core.ssb(input)
   return match(input, s .. s .. b)
 end
@@ -83,7 +93,7 @@ end
 
 ---@param id string
 function core.feixi(id)
-  return id == "sbfd" or id == "sbfm" or id == "sbfx"
+  return id == "sbfd" or id == "sbfm" or id == "sbfx" or id == 'sbfj' or id == "sbfy"
 end
 
 ---@param id string
@@ -97,6 +107,11 @@ function core.jp(id)
 end
 
 ---@param id string
+function core.yp(id)
+  return id == "sbyp"
+end
+
+---@param id string
 function core.py(id)
   return id == "sbpy"
 end
@@ -107,6 +122,11 @@ function core.fm(id)
 end
 
 ---@param id string
+function core.fy(id)
+  return id == "sbfy"
+end
+
+---@param id string
 function core.fd(id)
   return id == "sbfd"
 end
@@ -114,6 +134,11 @@ end
 ---@param id string
 function core.fx(id)
   return id == "sbfx"
+end
+
+---@param id string
+function core.fj(id)
+  return id == "sbfj"
 end
 
 ---@param id string
@@ -150,9 +175,9 @@ function core.word_rules(code, id)
   -- 不考虑扩展编码时，词组的基本编码
   local base = ""
   local jm = core.jm(id)
-  local fm = core.fm(id) or core.fd(id)
+  local fm = core.fm(id) or core.fd(id) or core.fy(id)
   local sp = core.sp(id)
-  local fx = core.fx(id)
+  local fx = core.fx(id) or core.fj(id)
   if #code == 2 then
     if jm then           -- s1s2b2b2
       base = code[1]:sub(1, 1) .. code[2]:sub(1, 3)
@@ -200,7 +225,7 @@ end
 
 function core.reverse(id)
   --相当于三目运算符a ? b : c
-  local dict_name = id == "sbfd" and "sbfm" or id
+  local dict_name = (id == "sbfd" or id == "sbfy") and "sbfm" or id
   --如果不是飞系方案，单字构词码在扩展词库里
   if not core.feixi(id) then
     dict_name = dict_name .. ".extended"

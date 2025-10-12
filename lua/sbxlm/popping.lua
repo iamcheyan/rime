@@ -98,6 +98,27 @@ function this.func(key_event, env)
     end
   end
   local incoming = utf8.char(key_event.keycode)
+  if (core.fm(schema_id) or core.fy(schema_id)) and context:get_option("delayed_pop") and seg:has_tag("paging") then
+    if rime.match(incoming, "[aeuio]") then
+      return rime.process_results.kNoop
+    elseif rime.match(incoming, "[bpmfdtnlgkhjqxzcsrywv]") then
+      context:commit()
+      return rime.process_results.kNoop
+    end
+  end
+  if (core.fm(schema_id) and incoming == ';'
+  and rime.match(input, "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}[aeiou]{0,2}[AEUIO][aeiouAEUIO]?")) then
+    local start =  string.find(input, "%u")
+    local part1 = input:sub(1, 2) .. input:sub(start):lower()
+    local part2 = input:sub(3, start - 1)
+    context:clear()
+    context:push_input(part1)
+    env.engine:process_key(rime.KeyEvent("space"))
+    context:clear()
+    context:push_input(part2)
+    env.engine:process_key(rime.KeyEvent("space"))
+    return rime.process_results.kAccepted
+  end
   for _, rule in ipairs(env.popping) do
     local when = rule.when
     local success = false
@@ -125,8 +146,13 @@ function this.func(key_event, env)
       end
       context:pop_input(1)
     end
-    if rule.prefix then
-      context:pop_input(input:len() - rule.prefix)
+    local index = string.find(string.reverse(input), "[bpmfdtnlgkhjqxzcsrywv]")
+    if rule.prefix and index then
+      if rule.prefix > 0 then
+        context:pop_input(input:len() - rule.prefix)
+      elseif rule.prefix == 0 then
+        context:pop_input(index)
+      end
     end
     -- 如果当前有候选，则执行顶屏；否则顶功失败，继续执行下一个规则
     if context:has_menu() then
@@ -136,8 +162,14 @@ function this.func(key_event, env)
       end
       success = true
     end
-    if rule.prefix then
-      context:push_input(input:sub(rule.prefix + 1))
+    if rule.prefix and index then
+      local tmpStr = ""
+      if rule.prefix > 0 then
+        tmpStr = input:sub(rule.prefix + 1)
+      elseif rule.prefix == 0 then
+        tmpStr = input:sub(input:len() - index + 1)
+      end
+      context:push_input(tmpStr)
       if rule.strategy == strategies.ignore then
         context:commit()
         return rime.process_results.kAccepted

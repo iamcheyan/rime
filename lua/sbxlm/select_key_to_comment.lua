@@ -19,7 +19,7 @@ function this.tags_match(segment, env)
   local pattern = env.engine.schema.config:get_string("menu/select_comment_pattern") or ""
   local input = rime.current(env.engine.context) or ""
   return (segment:has_tag("abc") and rime.match(input, pattern))
-      or segment:has_tag("punct") or segment:has_tag("hypy")
+      or segment:has_tag("punct") or segment:has_tag("sbyp")
       or input:len() >= 2 and segment:has_tag("bihua") or segment:has_tag("zhlf")
       or segment:has_tag("sbzdy") or segment:has_tag("lua")
 end
@@ -31,7 +31,7 @@ function this.func(translation, env)
   local input = rime.current(env.engine.context) or ""
   local select_keys = env.engine.schema.select_keys or ""
   local segment = env.engine.context.composition:back()
-  if segment:has_tag("hypy") or input:len() >= 2 and segment:has_tag("bihua")
+  if segment:has_tag("sbyp") or input:len() >= 2 and segment:has_tag("bihua")
       or segment:has_tag("zhlf") or segment:has_tag("sbzdy") then
     select_keys = "_23789"
   elseif segment:has_tag("lua") then
@@ -46,14 +46,22 @@ function this.func(translation, env)
     if key == "_" then
       goto continue
     end
+
     -- 如果是单次选重非全码产生的补全选项，无需操作
     if candidate.type == "completion" and core.zici(schema_id) and segment:has_tag("abc") then
-      if (input:len() < 6) and not segment:has_tag("sbjm") then
+      if (input:len() < 7) and (core.fx(schema_id) or core.fj(schema_id)) then
+        goto continue
+      elseif (input:len() < 6) and not segment:has_tag("sbjm") then
         goto continue
       end
     end
+    if (core.fm(schema_id) or core.fy(schema_id)) and segment:has_tag("abc") and env.engine.context:get_option("delayed_pop")
+    and rime.match(env.engine.context.input, "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}") then
+      key = key:upper()
+    end
     if candidate.comment:len() > 0 then
-      if (schema_id == "sbpy" or schema_id == "sbjp") and segment:has_tag("abc") then
+      if (core.py(schema_id) or core.jp(schema_id)) and segment:has_tag("abc") 
+      and rime.match(input, "[bpmfdtnlgkhjqxzcsrywv][a-z]?") then
         candidate.comment = key .. candidate.comment
       else
         candidate.comment = candidate.comment .. ":" .. key

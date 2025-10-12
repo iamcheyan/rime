@@ -9,6 +9,12 @@ basic_popping:
     # 标点大写顶
     - match: ".*[a-z0-9;']"
       accept: "[^a-z0-9;' ]"
+    # 单引号顶
+    - match: "^[;]"
+      accept: "[;',./]"
+    # 标点顶
+    - match: "^[bpmfdtnlgkhjqxzcsrywv][;',./]"
+      accept: "[;',./]"
 
 # 字词方案通用的顶功
 table_popping:
@@ -42,15 +48,14 @@ table_popping:
     # 其他情况，数字顶
     - match: ".*"
       accept: "[0-9]"
-    # 条件顶屏
-    - match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}"
-      accept: "[aeiou]"
-      prefix: 2
-      strategy: conditional
     # 大写顶屏
     - match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}"
-      accept: "[A-Z]"
+      accept: "[BPMFDTNLGKHJQXZCSRYWV]"
       prefix: 2
+    # 大写补码
+    - match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}[aeiou]{0,2}[AEUIO]?"
+      accept: "[AEUIO]"
+      strategy: append
 
 prelude:
   menu:
@@ -75,7 +80,7 @@ prelude:
 
   history:
     tag: history
-    input: ";"
+    input: "/"
     size: 5
     initial_quality: -1
 
@@ -90,14 +95,26 @@ prelude:
     encode_commit_history: false
     tips: "〔笔画反查〕"
 
-  hypy:
-    tag: hypy
+  sbyp:
+    tag: sbyp
     dictionary: sbpy
+    enable_user_dict: false
+    enable_encoder: false
     packs:
       - sbpy.base
-    prism: hypy
+    prism: sbyp
     prefix: a
     tips: "〔拼音反查〕"
+
+  emoji:
+    tag: emoji
+    dictionary: sbpy
+    enable_user_dict: false
+    enable_encoder: false
+    packs:
+      - sbpy.base
+    prism: sbyp
+    prefix: e
 
   zhlf:
     tag: zhlf
@@ -106,9 +123,9 @@ prelude:
     prefix: i
     tips: "〔两分反查〕"
 
-  sbjm:
-    tag: sbjm
-    dictionary: sbjm.extended
+  sbfc:
+    tag: sbfc
+    dictionary: sbfc
     enable_user_dict: false
     enable_encoder: false
     enable_sentence: false
@@ -118,9 +135,14 @@ prelude:
     tips: "〔声笔反查〕"
 
   reverse_lookup:
-    tags: [bihua, hypy, zhlf, sbjm]
+    tags: [bihua, sbyp, zhlf, sbfc]
     overwrite_comment: true
     dictionary: sbjm.extended
+
+  es_conversion:
+    tags: [emoji]
+    opencc_config: es.json
+    option_name: show_es
 
 rime_key_bindings:
   __append:
@@ -139,12 +161,23 @@ rime_key_bindings:
     - { when: composing, accept: Control+y, send: Page_Up }
     - { when: composing, accept: Alt+v, send: Page_Up }
     - { when: composing, accept: Control+v, send: Page_Down }
+    - { when: composing, accept: Control+c, send: Page_Up }
+    # numbered_mode_switch:
+    - { when: always, accept: Control+Shift+1, select: .next }
+    - { when: always, accept: Control+Shift+2, toggle: ascii_mode }
+    - { when: always, accept: Control+Shift+3, toggle: full_shape }
+    - { when: always, accept: Control+Shift+4, toggle: simplification }
+    - { when: always, accept: Control+Shift+5, toggle: extended_charset }
+    - { when: always, accept: Control+Shift+exclam, select: .next }
+    - { when: always, accept: Control+Shift+at, toggle: ascii_mode }
+    - { when: always, accept: Control+Shift+numbersign, toggle: full_shape }
+    - { when: always, accept: Control+Shift+dollar, toggle: simplification }
+    - { when: always, accept: Control+Shift+percent, toggle: extended_charset }
     # other key bindings
     - { when: has_menu, accept: Tab, send: Page_Down }
     - { when: paging, accept: Shift+Tab, send: Page_Up }
     - { when: has_menu, accept: Shift+Tab, send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}" }
     - { when: composing, accept: "Control+l", send_sequence: "{Home}{Right}{Right}" }
-    - { when: composing, accept: F6, toggle: pro_char }
     - { when: paging, accept: Shift+ISO_Left_Tab, send: Page_Up }
     - { when: has_menu, accept: Shift+ISO_Left_Tab, send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}" }
     - { when: composing, accept: Shift+BackSpace, send: Escape }
@@ -162,18 +195,12 @@ sbxlm_basic_bindings:
     - match: "[bpmfdtnlgkhjqxzcsrywv]{3}"
       accept: "Shift+space"
       send_sequence: "{Home}{Right}{space}{Home}{Right}{space}{space}"
-    - match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}"
-      accept: ";"
-      send_sequence: "{Home}{Right}{Right}{space}{space}"
     - match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv]{2}"
       accept: "Shift+space"
       send_sequence: "{Home}{Right}{Right}{space}{Home}{Right}{space}{space}"
-    - match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[a-z0-9]"
+    - match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[aeuio]{0,2}"
       accept: ";"
       send_sequence: "{Home}{Right}{Right}{space}{space}"
-    - match: "[bpmfdtnlgkhjqxzcsrywv][a-z]"
-      accept: "Shift+space"
-      send_sequence: "{F6}"
 sbxlm_extra_bindings:
   __append:
     - match: "[bpmfdtnlgkhjqxzcsrywv][a-z]"
@@ -191,6 +218,54 @@ sbxlm_extra_bindings:
     - match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv][a-z]"
       accept: "'"
       send_sequence: "{Home}{Right}{Right}{space}{apostrophe}{space}"
+# 用于声笔自整和声笔鹤整的键绑定
+zzhz_bindings:
+  __append:
+    - { when: has_menu, accept: 1, send_sequence: "{Shift+Right}" }
+    - { when: has_menu, accept: 4, send_sequence: "{Shift+Right}{Shift+Right}" }
+    - { when: has_menu, accept: 5, send_sequence: "{Shift+Right}{Shift+Right}{Shift+Right}" }
+    - { when: has_menu, accept: 6, send_sequence: "{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}" }
+    - { when: has_menu, accept: 0, send_sequence: "{End}" }
+    - { match: "[bpmfdtnlgkhjqxzcsrywv]{3}", accept: "'", send_sequence: "{Home}{Right}{space}2"}
+    - { match: "[bpmfdtnlgkhjqxzcsrywv]{3}", accept: "Tab", send_sequence: "{Home}{Right}{Right}2{space}{space}"}
+    - { match: "[bpmfdtnlgkhjqxzcsrywv][a-z]{0,1}", accept: "'", send_sequence: "2" }
+    - { match: "[bpmfdtnlgkhjqxzcsrywv][a-z]{0,1}", accept: Tab, send_sequence: "2" }
+    - { match: "[bpmfdtnlgkhjqxzcsrywv]{2}", accept: ";", send_sequence: "{Home}{Right}{space}{space}"}
+    - match: "[bpmfdtnlgkhjqxzcsrywv]{3}"
+      accept: "Shift+space"
+      send_sequence: "{Home}{Right}{space}{Home}{Right}{space}{space}"
+    - match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv]{2}"
+      accept: "Shift+space"
+      send_sequence: "{Home}{Right}{Right}{space}{Home}{Right}{space}{space}"
+    - match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywv]{2}"
+      accept: "'"
+      send_sequence: "{Home}{Right}{Right}{space}2"
+# 用于声笔自整和声笔鹤整的顶屏
+zzhz_popping:
+  __append:
+    - when: popping
+      match: "([bpmfdtnlgkhjqxzcsrywv][a-z][aeiou]*)+[aeiou]+"
+      accept: "[bpmfdtnlgkhjqxzcsrywv]"
+    - when: popping
+      match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){1,}[bpmfdtnlgkhjqxzcsrywv]{0,2}"
+      accept: ";"
+      prefix: 0
+      strategy: ignore   
+# 用于声笔自然和声笔小鹤的顶屏
+zrxh_popping:
+  __append:
+    # 词组顶
+    - match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeiou]*"
+      accept: "[bpmfdtnlgkhjqxzcsrywv]"
+    # 大写字母输入词组
+    - when: pro_char
+      match: "[bpmfdtnlgkhjqxzcsrywv][a-z]"
+      accept: "[BPMFDTNLGKHJQXZCSRYWV]"
+      strategy: append
+    - when: pro_char
+      match: "[bpmfdtnlgkhjqxzcsrywv][a-z][BPMFDTNLGKHJQXZCSRYWV]"
+      accept: "[a-z]"
+      strategy: append
 
 key_binder:
   bindings:
@@ -202,48 +277,52 @@ key_binder:
 recognizer:
   patterns:
     punct: '^\\([0-9]|10|[A-Za-z][A-Zbpmfdtnlgkhjqxzcsrywv]*)$'
-    sbjm: "^[bpmfdtnlgkhjqxzcsrywv][aeiou]{3}$"
+    sbfc: "^[bpmfdtnlgkhjqxzcsrywv][aeiou]{3}$"
     bihua: "^[aeiou]+$"
-    hypy: "^a[bpmfdtnlgkhjqxzcsrywv][a-z]*'?$"
-    zhlf: "^i[bpmfdtnlgkhjqxzcsrywv][a-z]*'?$"
+    sbyp: "^a[bpmfdtnlgkhjqxzcsrywv][a-z']*$"
+    emoji: "^e[bpmfdtnlgkhjqxzcsrywv][a-z']*$"
+    zhlf: "^i[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
     sbzdy: "^u[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
     jsq: "^=.+$"
     lua: "^o[bpmfdtnlgkhjqxzcsrywv0-9]+$"
-    history: "^;$"
+    history: "^/$"
 
-punctuator:
+punctuator: 
+  digit_separator_action: commit
   half_shape: &symtable
-    ",": { commit: ， }
-    ".": { commit: 。 }
-    "<": [《, 〈, «, ‹]
-    ">": [》, 〉, », ›]
-    "/": ["、", "/", "／"]
-    "?": "？"
-    ";": { commit: ； }
-    ":": { commit: ： }
-    "'": { pair: ["‘", "’"] }
-    '"': { pair: ["“", "”"] }
-    '\': [、, '\', ＼]
-    "|": [·, ・, "|", ｜, "§", "¦", "‖"]
-    #"`": ["`", ‵, ‶, ‷, ′, ″, ‴]
-    "!": [！, "`", "``", "```"]
-    "%": ["%", ％, "°", "℃", ‰, ‱, ℉]
-    "@": "@"
-    "$": [￥, "$"]
-    "^": { commit: …… }
-    "&": "&"
-    "*": ["*", ＊, ·, ・, ×, ※]
-    "~": ~
-    "(": [（, 「, "{", "[", "<", "《"]
-    ")": [）, 」, "}", "]", ">", "》"]
-    "-": "-"
-    "_": "_"
-    "]": ["」", "]"]
-    "[": ["「", "["]
-    "=": "="
-    "+": ["+", "-", "*", "/"]
+    ',' : { commit: ， }
+    '.' : { commit: 。 }
+    '<' : [ 《, 〈, «, ‹, ↑, ← ]
+    '>' : [ 》, 〉, », ›, ↓, → ]
+    '/' : [ 、 ]
+    '?' : { commit: ？ }
+    ';' : [ ；, ……, ——, （, ！, ）]
+    ':' : { commit: ： }
+    '''' : { pair: [ '‘', '’' ] }
+    '"' : { pair: [ '“', '”' ] }
+    '\' : [ '\' ]
+    '|' : [ ｜, '§', '¦', '‖', '||' ]
+    '`' : [ '`', ′, ″, ‴, ‵, ‶, ‷, ⁗ ]
+    '~' : [ '~', ～, ˜, ≈, ≋, ≃, ≅, ≇, ∽, ⋍, ≌, ﹏, ﹋, ﹌ ]
+    '!' : { commit: ！ }
+    '@' : [ '@', ©, ®, ℗ ,＠]
+    '#' : [ '#', №, ＃, ⌘ ]
+    '%' : [ '%', ％, '°', '℃', ‰, ‱, ℉ ]
+    '$' : [ '$', ￥, '€', '£', '¥', '¢', '¤', ₩ ]
+    '^' : [……, …, '≠', '≡', '〃', '々',＝]
+    '&' : ['&', ＆]
+    '*' : [ '*', ＊, ·, ×, ※, ❂, ⁂, ☮, ☯, ☣, ・ ]
+    '(' : [（,'(']
+    ')' : [）,')']
+    '-' : [——, －, '---', '--', '- ']
+    '_' : [_, '__', '___', '____', '_____']
+    '+' : ['+', ＋]
+    '=' : ['=']
+    '[' : [ 「, 【, 〔, '[',［ ]
+    ']' : [ 」, 】, 〕, ']',］ ]
+    '{' : [ 『, 〖, '{',｛ ]
+    '}' : [ 』, 〗, '}',｝ ]
   full_shape: *symtable
   symbols:
     __patch:
       - sbfh.yaml:/punctuator/symbols
-      - sbfh.yaml:/punctuator/emojis

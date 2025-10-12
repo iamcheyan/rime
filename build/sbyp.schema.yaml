@@ -8,10 +8,43 @@ __build_info:
     punctuation.custom: 0
     sbfh: 1759829458
     sbfh.custom: 0
+    sbpy.custom: 0
+    sbpy.schema: 1759829458
     sbxlm: 1759829458
     sbxlm.custom: 0
-    sbzr.custom: 1757431639
-    sbzr.schema: 1759829458
+    sbyp.custom: 0
+    sbyp.schema: 1759829458
+algebra:
+  - "xform/^(?=[aoe])/v/"
+  - "derive/^([zcs])h([a-z]+)(?=\\d)/$1$2/"
+  - "derive/([nl])v/$1u/"
+  - "derive/^([jqx])i([aeo][a-z]*)(?=\\d)/$1$2/"
+  - "derive/([aeio])ng(?=\\d)/$1n/"
+  - "derive/un(?=\\d)/uen/"
+  - "derive/ui(?=\\d)/uei/"
+  - "derive/iu(?=\\d)/iou/"
+  - "derive/([aeiou])ng(?=\\d)/$1gn/"
+  - "derive/([dtngkhrzcs])o(u|ng)(?=\\d)/$1o/"
+  - "derive/ong(?=\\d)/on/"
+  - "derive/ao(?=\\d)/oa/"
+  - "derive/([iu])a(o|ng?)(?=\\d)/a$1$2/"
+  - "abbrev/^([a-z]).+$/$1/"
+  - "derive/^([a-z])[a-z]+(\\d)(\\d+)$/$1$2/"
+  - "derive/^([a-z])[a-z]+(\\d)(\\d+)$/$1'$2/"
+  - "derive/^([a-z])[a-z]+(\\d{2})(\\d+)$/$1$2/"
+  - "derive/^([a-z])[a-z]+(\\d{3})(\\d+)$/$1$2/"
+  - "derive/^([a-z])[a-z]+(\\d{4})(\\d+)$/$1$2/"
+  - "derive/^([a-z])[a-z]+(\\d{5})(\\d+)$/$1$2/"
+  - "abbrev/^([a-z]+)\\d+$/$1/"
+  - "derive/^([a-z]+)(\\d+)$/$1/"
+  - "derive/^([a-z]+)(\\d+)$/$1'/"
+  - "derive/^([a-z]+\\d)(\\d+)$/$1/"
+  - "derive/^([a-z]+\\d{2})(\\d+)$/$1/"
+  - "derive/^([a-z]+\\d{3})(\\d+)$/$1/"
+  - "derive/^([a-z]+\\d{4})(\\d+)$/$1/"
+  - "derive/^([a-z]+\\d{5})(\\d+)$/$1/"
+  - "xform/([a-z]+)(?=\\d)/$1'/"
+  - "xlit/12345/eiuoa/"
 bihua:
   dictionary: bihua
   enable_completion: true
@@ -36,6 +69,8 @@ engine:
     - "simplifier@es_conversion"
     - "lua_filter@*sbxlm.hint"
     - "reverse_lookup_filter@reverse_lookup"
+    - "lua_filter@*sbxlm.fix"
+    - "lua_filter@*sbxlm.postpone"
     - "lua_filter@*sbxlm.select_key_to_comment"
     - simplifier
     - uniquifier
@@ -58,18 +93,16 @@ engine:
     - abc_segmentor
     - "affix_segmentor@sbzdy"
     - "affix_segmentor@bihua"
-    - "affix_segmentor@sbyp"
-    - "affix_segmentor@emoji"
     - "affix_segmentor@zhlf"
+    - "affix_segmentor@emoji"
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
-    - "lua_translator@*sbxlm.auto_length"
+    - script_translator
     - "table_translator@bihua"
-    - "script_translator@sbyp"
-    - "script_translator@emoji"
     - "script_translator@zhlf"
+    - "script_translator@emoji"
     - "lua_translator@*sbxlm.utils.datetime"
     - "lua_translator@*sbxlm.utils.number"
     - "lua_translator@*sbxlm.utils.calculator"
@@ -80,10 +113,6 @@ es_conversion:
   option_name: show_es
   tags:
     - emoji
-extended:
-  dictionary: sbzr.extended
-  enable_user_dict: true
-  user_dictionary: sbzr
 history:
   initial_quality: "-1"
   input: "/"
@@ -123,20 +152,13 @@ key_binder:
     - {accept: "Shift+ISO_Left_Tab", send: Page_Up, when: paging}
     - {accept: "Shift+ISO_Left_Tab", send_sequence: "{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}{Page_Down}", when: has_menu}
     - {accept: "Shift+BackSpace", send: Escape, when: composing}
-    - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv]{2}", send_sequence: "{Home}{Right}{space}{space}"}
-    - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][a-z0-9]", send_sequence: "{Home}{Right}{space}{space}"}
-    - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][bpmfdtnlgkhjqxzcsrywv][aeuio]{2}", send_sequence: "{Home}{Right}{space}{space}"}
-    - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{space}{Home}{Right}{space}{space}"}
-    - {accept: "Shift+space", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv]{2}", send_sequence: "{Home}{Right}{Right}{space}{Home}{Right}{space}{space}"}
-    - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[aeuio]{0,2}", send_sequence: "{Home}{Right}{Right}{space}{space}"}
-    - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
-    - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
-    - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{Right}{apostrophe}{space}{space}"}
-    - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv]{2}[a-z]", send_sequence: "{Home}{Right}{space}{apostrophe}{space}"}
-    - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{Home}{Right}{Right}{space}{apostrophe}{space}"}
-  import_preset: sbxlm
+    - {accept: 1, send_sequence: "{Home}{Shift+Right}'", when: has_menu}
+    - {accept: 4, send_sequence: "{Home}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 5, send_sequence: "{Home}{Shift+Right}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 6, send_sequence: "{Home}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 0, send_sequence: "{Home}{End}'", when: has_menu}
 menu:
-  alternative_select_keys: _aeuio
+  alternative_select_keys: _23789
   alternative_select_labels:
     - ""
     - ""
@@ -144,11 +166,12 @@ menu:
     - ""
     - ""
     - ""
-  alternative_select_patterns:
-    - "[bpmfdtnlgkhjqxzcsrywv][a-z][aeuio]{4}"
-    - "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeuio]{2}"
   page_size: 6
-  select_comment_pattern: "^[a-z]{4,}|[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeuio]{0,2}$"
+  select_comment_pattern: "^[bpmfdtnlgkhjqxzcsrywv].*$"
+popping:
+  __append:
+    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z']*'[aeiou]*$", when: popping}
+    - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]*[bpmfdtnlgkhjqxzcsrywv]", prefix: 0, strategy: ignore}
 punctuator:
   digit_separator_action: commit
   full_shape:
@@ -617,11 +640,10 @@ recognizer:
     sbzdy: "^u[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
     zhlf: "^i[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
 reverse_lookup:
-  dictionary: sbzr.extended
+  dictionary: sbpy
   overwrite_comment: true
   tags:
     - bihua
-    - sbyp
     - zhlf
 sbfc:
   dictionary: sbfc
@@ -643,6 +665,13 @@ sbyp:
   prism: sbyp
   tag: sbyp
   tips: "〔拼音反查〕"
+sbyp_extra_bindings:
+  __append:
+    - {accept: 1, send_sequence: "{Home}{Shift+Right}'", when: has_menu}
+    - {accept: 4, send_sequence: "{Home}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 5, send_sequence: "{Home}{Shift+Right}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 6, send_sequence: "{Home}{Shift+Right}{Shift+Right}{Shift+Right}{Shift+Right}'", when: has_menu}
+    - {accept: 0, send_sequence: "{Home}{End}'", when: has_menu}
 sbzdy:
   db_class: stabledb
   dictionary: ""
@@ -657,42 +686,55 @@ schema:
     - "戴石麟 <https://sbxlm.github.io>"
     - "蓝落萧 <https://tansongchen.com>"
   dependencies:
-    - sbyp
     - bihua
     - zhlf
-    - sbzr2
   icon: sbxlm.ico
-  name: "声笔自然"
-  schema_id: sbzr
+  name: "声笔易拼"
+  schema_id: sbyp
   version: 11.0
 simplifier:
   opencc_config: s2t.json
   option_name: zh_trad
 speller:
   algebra:
-    - "derive/'//"
-  alphabet: "bpmfdtnlgkhjqxzcsrywvaeiou;'BPMFDTNLGKHJQXZCSRYWV"
-  auto_clear: none
-  initials: bpmfdtnlgkhjqxzcsrywv
-  max_code_length: 6
+    - "xform/^(?=[aoe])/v/"
+    - "derive/^([zcs])h([a-z]+)(?=\\d)/$1$2/"
+    - "derive/([nl])v/$1u/"
+    - "derive/^([jqx])i([aeo][a-z]*)(?=\\d)/$1$2/"
+    - "derive/([aeio])ng(?=\\d)/$1n/"
+    - "derive/un(?=\\d)/uen/"
+    - "derive/ui(?=\\d)/uei/"
+    - "derive/iu(?=\\d)/iou/"
+    - "derive/([aeiou])ng(?=\\d)/$1gn/"
+    - "derive/([dtngkhrzcs])o(u|ng)(?=\\d)/$1o/"
+    - "derive/ong(?=\\d)/on/"
+    - "derive/ao(?=\\d)/oa/"
+    - "derive/([iu])a(o|ng?)(?=\\d)/a$1$2/"
+    - "abbrev/^([a-z]).+$/$1/"
+    - "derive/^([a-z])[a-z]+(\\d)(\\d+)$/$1$2/"
+    - "derive/^([a-z])[a-z]+(\\d)(\\d+)$/$1'$2/"
+    - "derive/^([a-z])[a-z]+(\\d{2})(\\d+)$/$1$2/"
+    - "derive/^([a-z])[a-z]+(\\d{3})(\\d+)$/$1$2/"
+    - "derive/^([a-z])[a-z]+(\\d{4})(\\d+)$/$1$2/"
+    - "derive/^([a-z])[a-z]+(\\d{5})(\\d+)$/$1$2/"
+    - "abbrev/^([a-z]+)\\d+$/$1/"
+    - "derive/^([a-z]+)(\\d+)$/$1/"
+    - "derive/^([a-z]+)(\\d+)$/$1'/"
+    - "derive/^([a-z]+\\d)(\\d+)$/$1/"
+    - "derive/^([a-z]+\\d{2})(\\d+)$/$1/"
+    - "derive/^([a-z]+\\d{3})(\\d+)$/$1/"
+    - "derive/^([a-z]+\\d{4})(\\d+)$/$1/"
+    - "derive/^([a-z]+\\d{5})(\\d+)$/$1/"
+    - "xform/([a-z]+)(?=\\d)/$1'/"
+    - "xlit/12345/eiuoa/"
+  alphabet: "bpmfdtnlgkhjqxzcsrywvaeiou'"
   popping:
-    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][aeiou]+"}
-    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", when: pro_char}
-    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
-    - {accept: "[^ ]", match: "[bpmfdtnlgkhjqxzcsrywv].+[;'0-9]"}
-    - {accept: "[aeuio]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]?[;'0-9][aeuio]*", strategy: append}
-    - {accept: "[^ aeuio]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]?[;'0-9][aeuio]*"}
-    - {accept: "[0-9]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]?", strategy: append, when: is_enhanced}
-    - {accept: "[0-9]", match: ".*"}
-    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}", prefix: 2}
-    - {accept: "[AEUIO]", match: "([bpmfdtnlgkhjqxzcsrywv][a-z]){2}[aeiou]{0,2}[AEUIO]?", strategy: append}
+    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z']*'[aeiou]*$", when: popping}
+    - {accept: ";", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]*[bpmfdtnlgkhjqxzcsrywv]", prefix: 0, strategy: ignore}
     - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: ".*[^a-z0-9]"}
     - {accept: "[^a-z0-9;' ]", match: ".*[a-z0-9;']"}
     - {accept: "[;',./]", match: "^[;]"}
     - {accept: "[;',./]", match: "^[bpmfdtnlgkhjqxzcsrywv][;',./]"}
-    - {accept: "[bpmfdtnlgkhjqxzcsrywv]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywvBPMFDTNLGKHJQXZCSRYWV][a-z][aeiou]*"}
-    - {accept: "[BPMFDTNLGKHJQXZCSRYWV]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", strategy: append, when: pro_char}
-    - {accept: "[a-z]", match: "[bpmfdtnlgkhjqxzcsrywv][a-z][BPMFDTNLGKHJQXZCSRYWV]", strategy: append, when: pro_char}
 switches:
   - name: ascii_mode
     reset: 0
@@ -703,33 +745,27 @@ switches:
   - name: zh_trad
     reset: 0
     states: ["简体", "繁体"]
-  - name: pro_char
-    reset: 0
-    states: ["词组", "单字"]
+  - name: postpone
+    reset: 1
+    states: ["前置", "后置"]
+  - options: [free, fixed, popping]
+    reset: 2
+    states: ["自由", "固定", "顶功"]
+  - name: show_es
+    reset: 1
   - name: auto_inline
     reset: 1
   - name: is_buffered
     reset: 0
-  - name: single_display
-    reset: 0
-  - name: show_es
-    reset: 1
-  - name: third_pop
-    reset: 0
-  - name: fast_pop
-    reset: 0
 translator:
-  delete_threshold: 2000
-  dictionary: sbzr
-  disable_user_dict_for_patterns:
-    - "[bpmfdtnlgkhjqxzcsrywv][a-z]?[aeuio;']?"
-    - "[bpmfdtnlgkhjqxzcsrywv][a-z][bpmfdtnlgkhjqxzcsrywv]"
-  enable_encoder: true
-  enable_user_dict: true
-  forced_selection: true
-  max_phrase_length: 5
-  single_selection: false
-  stop_change: false
+  dictionary: sbpy
+  fix_combination: true
+  packs:
+    - sbpy.base
+    - sbpy.ext
+    - sbpy.tencent
+  prism: sbyp
+  strict_spelling: true
 zhlf:
   dictionary: zhlf
   enable_user_dict: false
