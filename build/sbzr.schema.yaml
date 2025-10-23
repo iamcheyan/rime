@@ -131,9 +131,9 @@ key_binder:
     - {accept: ";", match: "([bpmfdtnlgkhjqxzcsrywv][a-z0-9]){2}[aeuio]{0,2}", send_sequence: "{Home}{Right}{Right}{space}{space}"}
     - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
     - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{apostrophe}{space}"}
-    - {accept: Tab, match: "[bpmfdtnlgkhjqxzcsrywv]{3}", send_sequence: "{Home}{Right}{Right}{apostrophe}{space}{space}"}
-    - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv]{2}[a-z]", send_sequence: "{Home}{Right}{space}{apostrophe}{space}"}
-    - {accept: "'", match: "[bpmfdtnlgkhjqxzcsrywv][a-z0-9][bpmfdtnlgkhjqxzcsrywv][a-z]", send_sequence: "{Home}{Right}{Right}{space}{apostrophe}{space}"}
+    - {accept: "Control+z", select: .next, when: always}  # 全局下一个候选
+    - {accept: "Control+j", select: .next, when: always}  # 全局下一个候选
+    - {accept: "Control+k", select: .next, when: always}  # 全局下一个候选
   import_preset: sbxlm
 menu:
   alternative_select_keys: _aeuio
