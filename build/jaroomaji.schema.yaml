@@ -35,15 +35,15 @@ key_binder:
   bindings:
     # 以下为按键绑定，含详细注释，便于维护和理解
 
-    # Control+z：无论何时，选择下一个候选项
-    - {accept: "Control+z", select: .next, when: always}  # 全局下一个候选
-
-    # Control+j：无论何时，选择下一个候选项（与上面类似，兼容不同习惯）
-    - {accept: "Control+j", select: .next, when: always}  # 全局下一个候选
-
-    # Control+k：无论何时，选择下一个候选项（同上，方便多种快捷键习惯）
-    - {accept: "Control+k", select: .next, when: always}  # 全局下一个候选
-
+    # 下方为全局下一个候选操作的快捷键绑定，通过指定"accept"字段为组合键（如Control+z、Control+j等），
+    # 并使用"select: .next"实现无条件切换到下一个候选词（"when: always"表示总是生效）。
+    # 例如，"Control+z"，即按下Ctrl+z的组合键时，会切换到下一个候选词，无论当前处于什么状态。
+    
+    - {accept: "Control+j", select: .next, when: always}         # Ctrl+j 切换到下一个候选
+    - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
+    - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
+    - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+    
     # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
     - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
 
