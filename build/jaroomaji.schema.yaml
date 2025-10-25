@@ -80,7 +80,7 @@ key_binder:
     # Shift+Return：在 has_menu 状态下，发送 Return（与上面重复，可能为兼容性保留）
     - {accept: "Shift+Return", send: Return, when: has_menu}  # 菜单中 Shift+回车特殊处理（重复）
 
-    - {accept: comma, send: Page_Up, when: paging}      # 使用`,　<`进行向上翻页（第一页时候无效）
+    - {accept: comma, send: Page_Up, when: has_menu}      # 使用`,　<`进行向上翻页（第一页时候无效）
     - {accept: period, send: Page_Down, when: has_menu} # 使用`.　>`进行向下翻页
 
   import_preset: default

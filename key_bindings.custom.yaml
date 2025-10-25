@@ -1,0 +1,25 @@
+# Rime key bindings custom configuration
+# encoding: utf-8
+
+# 覆盖默认的 paging_with_comma_period 配置
+paging_with_comma_period:
+  __append:
+    # 在候选菜单中，逗号和句号键用于翻页
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    # 在翻页状态下也能使用
+    - { when: paging, accept: comma, send: Page_Up }
+    - { when: paging, accept: period, send: Page_Down }
+    # 在输入状态下也尝试翻页（防止标点符号处理器拦截）
+    - { when: composing, accept: comma, send: Page_Up }
+    - { when: composing, accept: period, send: Page_Down }
+
+# 覆盖 emacs_editing 配置
+emacs_editing:
+  __append:
+    # 确保逗号和句号键在候选菜单中用于翻页
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    # 在翻页状态下也能使用
+    - { when: paging, accept: comma, send: Page_Up }
+    - { when: paging, accept: period, send: Page_Down }

@@ -17,6 +17,8 @@ emacs_editing:
     - { when: composing, accept: Control+y, send: Page_Up }
     - { when: composing, accept: Alt+v, send: Page_Up }
     - { when: composing, accept: Control+v, send: Page_Down }
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
 
 move_by_word_with_tab:
   __append:

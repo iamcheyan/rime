@@ -32,29 +32,6 @@ patch:
       accept: Shift+Return
       send: Return
 
-    # 在候选菜单中，减号键（-）翻到上一页
-    - when: has_menu
-      accept: minus
-      send: Page_Up
 
-    # 在候选菜单中，等号键（=）翻到下一页
-    - when: has_menu
-      accept: equal
-      send: Page_Down
-
-    # Control+z：无论何时，选择下一个候选项
-    - accept: "Control+z"
-      select: .next
-      when: always
-
-    # Control+j：无论何时，选择下一个候选项（与上面类似，兼容不同习惯）
-    - accept: "Control+j"
-      select: .next
-      when: always
-
-    # Control+k：无论何时，选择下一个候选项（同上，方便多种快捷键习惯）
-    - accept: "Control+k"
-      select: .next
-      when: always
 
 

@@ -134,6 +134,9 @@ key_binder:
     - {accept: "Control+z", select: .next, when: always}  # 全局下一个候选
     - {accept: "Control+j", select: .next, when: always}  # 全局下一个候选
     - {accept: "Control+k", select: .next, when: always}  # 全局下一个候选
+    - {accept: comma, send: Page_Up, when: has_menu}      # 用,翻页
+    - {accept: period, send: Page_Down, when: has_menu}    # 用.翻页
+
   import_preset: sbxlm
 menu:
   alternative_select_keys: _aeuio
