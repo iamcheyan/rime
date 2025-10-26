@@ -5,9 +5,10 @@
 set -e
 
 # 配置变量
-RIME_DIR="/Users/tetsuya/.dotfiles/config/org.fcitx.Fcitx5/data/fcitx5/rime"
+RIME_DIR="$HOME/.dotfiles/config/org.fcitx.Fcitx5/data/fcitx5/rime"
 GITHUB_REPO="https://github.com/lazyfoxchan/rime-jaroomaji"
-TEMP_DIR="/tmp/rime-jaroomaji-update"
+USER_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
+TEMP_DIR="$USER_CACHE_DIR/rime-jaroomaji-update"
 LOG_FILE="$RIME_DIR/update_jarooma.log"
 
 # 需要更新的文件列表

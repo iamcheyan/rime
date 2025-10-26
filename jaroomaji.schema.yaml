@@ -24,7 +24,7 @@ schema:
 switches:
   - name: ascii_mode
     states: [ あ, A ]
-    reset: 0  # デフォルトで英数モード
+    reset: 1  # デフォルトで英数モード
   - name: full_shape
     states: [ 半角記号, 全角記号 ]
     reset: 0  # デフォルトで半角記号モード
