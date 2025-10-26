@@ -1,0 +1,89 @@
+# Rime schema customization
+# encoding: utf-8
+
+patch:
+  # 自定义按键绑定
+  key_binder:
+    bindings:
+      # 以下为按键绑定，含详细注释，便于维护和理解
+
+      # 下方为全局下一个候选操作的快捷键绑定，通过指定"accept"字段为组合键（如Control+z、Control+j等），
+      # 并使用"select: .next"实现无条件切换到下一个候选词（"when: always"表示总是生效）。
+      # 例如，"Control+z"，即按下Ctrl+z的组合键时，会切换到下一个候选词，无论当前处于什么状态。
+      
+      - {accept: "Control+j", select: .next, when: always}         # Ctrl+j 切换到下一个候选
+      - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
+      - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
+      - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+      # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
+      - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
+
+      # Tab：在 composing 状态下，向右移动光标（下一个选项，Tab 键支持）
+      - {accept: "Tab", send: Right, when: composing}  # 下一个选项
+
+      # Shift+Tab：在 composing 状态下，向左移动光标（上一个选项，Shift+Tab 支持）
+      - {accept: "Shift+Tab", send: Left, when: composing}  # 上一个选项
+
+      # Control+Shift+n：在 composing 状态下，向上移动（通常用于候选菜单上移）
+      - {accept: "Control+Shift+n", send: Up, when: composing}  # 向上移动
+
+      # Control+Shift+m：在 composing 状态下，向下移动（通常用于候选菜单下移）
+      - {accept: "Control+Shift+m", send: Down, when: composing}  # 向下移动
+
+      # Return：在 has_menu 状态下，发送 Shift+Return（特殊回车处理，可能用于候选确认）
+      - {accept: Return, send: "Shift+Return", when: has_menu}  # 菜单中回车特殊处理
+
+      # Shift+Return：在 has_menu 状态下，发送 Return（Shift+回车反向处理）
+      - {accept: "Shift+Return", send: Return, when: has_menu}  # 菜单中 Shift+回车特殊处理
+
+      # minus（减号）：在 has_menu 状态下，翻上一页
+      - {accept: minus, send: Page_Up, when: has_menu}  # 候选菜单上一页
+
+      # equal（等号）：在 has_menu 状态下，翻下一页
+      - {accept: equal, send: Page_Down, when: has_menu}  # 候选菜单下一页
+
+      # minus（减号）：在 has_menu 状态下，直接输入减号字符
+      - {accept: minus, send: minus, when: has_menu}  # 候选菜单中直接输入减号
+
+      # 使用`,　<`进行向上翻页（第一页时候无效）
+      - {accept: comma, send: Page_Up, when: has_menu}      # 使用`,　<`进行向上翻页（第一页时候无效）
+      - {accept: period, send: Page_Down, when: has_menu} # 使用`.　>`进行向下翻页
+
+  # 自定义菜单设置
+  menu:
+    page_size: 10
+
+  # 自定义标点符号设置
+  punctuator:
+    full_shape:
+      " ": "　"
+      "!": "！"
+      ",": "、"
+      ".": "。"
+      "/": ["・", "…", "，", "／"]
+      "<": ["《", "〈"]
+      ">": ["》", "〉"]
+      "?": "？"
+      "[": ["「", "【", "〔", "［"]
+      "]": ["」", "】", "〕", "］"]
+      "{": ["『", "〖", "｛"]
+      "}": ["』", "〗", "｝"]
+      "(": "（"
+      ")": "）"
+      "&": "＆"
+      "*": ["＊", "・", "×", "※"]
+      "+": "＋"
+      "-": "－"
+      "=": "＝"
+      ":": "："
+      ";": "；"
+      "@": "＠"
+      "#": "＃"
+      "%": "％"
+      "$": "￥"
+      "^": "……"
+      "_": "——"
+      "`": "｀"
+      "~": "～"
+      "|": "｜"
+      "\\": "＼"

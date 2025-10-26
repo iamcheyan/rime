@@ -21,16 +21,28 @@ patch:
       Caps_Lock: clear
       Eisu_toggle: clear
       
-  key_binder/bindings:
-    # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）
-    - when: has_menu
-      accept: Return
-      send: Shift+Return
+  key_binder:
+    bindings:
+      # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）
+      - when: has_menu
+        accept: Return
+        send: Shift+Return
 
-    # 在候选菜单中，Shift+Return 发送普通回车（反转回车行为）
-    - when: has_menu
-      accept: Shift+Return
-      send: Return
+      # 在候选菜单中，Shift+Return 发送普通回车（反转回车行为）
+      - when: has_menu
+        accept: Shift+Return
+        send: Return
+
+      # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
+      - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
+
+      # Tab：在 composing 状态下，向右移动光标（下一个选项，Tab 键支持）
+      - {accept: "Tab", send: Right, when: composing}  # 下一个选项
+
+      # Shift+Tab：在 composing 状态下，向左移动光标（上一个选项，Shift+Tab 支持）
+      - {accept: "Shift+Tab", send: Left, when: composing}  # 上一个选项
+
+
 
 
 

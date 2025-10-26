@@ -1,11 +1,38 @@
-# Rime default settings
+# Rime schema customization
 # encoding: utf-8
 
-config_version: '0.40'
-
-customization:
-  distribution_code_name: Weasel
-  distribution_version: 0.16.1
-  generator: "Rime::SwitcherSettings"
-  modified_time: "Sat Sep 21 00:38:39 2024"
-  rime_version: 1.11.2
+patch:
+  # 自定义按键绑定
+  key_binder:
+    bindings:
+      # Emacs风格的按键绑定
+      - {accept: "Control+p", send: Up, when: composing}
+      - {accept: "Control+n", send: Down, when: composing}
+      - {accept: "Control+b", send: Left, when: composing}
+      - {accept: "Control+f", send: Right, when: composing}
+      - {accept: "Control+a", send: Home, when: composing}
+      - {accept: "Control+e", send: End, when: composing}
+      - {accept: "Control+d", send: Delete, when: composing}
+      - {accept: "Control+h", send: BackSpace, when: composing}
+      - {accept: "Control+k", send: "Shift+End", when: composing}
+      - {accept: "Control+u", send: "Shift+Home", when: composing}
+      - {accept: "Control+w", send: "Control+BackSpace", when: composing}
+      - {accept: "Control+y", send: "Control+v", when: composing}
+      - {accept: "Control+slash", send: "Control+z", when: composing}
+      - {accept: "Control+Shift+slash", send: "Control+Shift+z", when: composing}
+      - {accept: "Control+Shift+u", send: "Control+Shift+Home", when: composing}
+      - {accept: "Control+Shift+k", send: "Control+Shift+End", when: composing}
+      - {accept: "Control+Shift+b", send: "Control+Left", when: composing}
+      - {accept: "Control+Shift+f", send: "Control+Right", when: composing}
+      - {accept: "Control+Shift+p", send: "Control+Up", when: composing}
+      - {accept: "Control+Shift+n", send: "Control+Down", when: composing}
+      - {accept: "Control+Shift+a", send: "Control+Home", when: composing}
+      - {accept: "Control+Shift+e", send: "Control+End", when: composing}
+      - {accept: "Control+Shift+d", send: "Control+Delete", when: composing}
+      - {accept: "Control+Shift+h", send: "Control+BackSpace", when: composing}
+      - {accept: "Control+Shift+k", send: "Control+Shift+End", when: composing}
+      - {accept: "Control+Shift+u", send: "Control+Shift+Home", when: composing}
+      - {accept: "Control+Shift+w", send: "Control+Shift+BackSpace", when: composing}
+      - {accept: "Control+Shift+y", send: "Control+Shift+v", when: composing}
+      - {accept: "Control+Shift+slash", send: "Control+Shift+z", when: composing}
+      - {accept: "Control+Alt+slash", select: .next, when: always}    # Ctrl+Alt+/ 切换到下一个候选
