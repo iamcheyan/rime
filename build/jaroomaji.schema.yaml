@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.14.0
   timestamps:
     default: 1756624134
-    jaroomaji.custom: 1761457868
+    jaroomaji.custom: 1761459067
     jaroomaji.schema: 1761238591
     key_bindings: 1761389571
     key_bindings.custom: 1761389489
@@ -36,6 +36,7 @@ key_binder:
     - {accept: "Control+k", select: .next, when: always}
     - {accept: "Control+comma", select: .next, when: always}
     - {accept: "Control+period", select: .next, when: always}
+    - {accept: "Alt+Shift+k", select: .next, when: always}
     - {accept: "Shift+BackSpace", send: Escape, when: composing}
     - {accept: Tab, send: Right, when: composing}
     - {accept: "Shift+Tab", send: Left, when: composing}

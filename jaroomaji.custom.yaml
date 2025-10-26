@@ -15,6 +15,7 @@ patch:
       - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
       - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
       - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+
       # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
       - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
 
