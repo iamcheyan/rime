@@ -35,4 +35,15 @@ patch:
       - {accept: "Control+Shift+w", send: "Control+Shift+BackSpace", when: composing}
       - {accept: "Control+Shift+y", send: "Control+Shift+v", when: composing}
       - {accept: "Control+Shift+slash", send: "Control+Shift+z", when: composing}
-      - {accept: "Control+Alt+slash", select: .next, when: always}    # Ctrl+Alt+/ 切换到下一个候选
+
+      # 下方为全局下一个候选操作的快捷键绑定，通过指定"accept"字段为组合键（如Control+z、Control+j等），
+      # 并使用"select: .next"实现无条件切换到下一个候选词（"when: always"表示总是生效）。
+      # 例如，"Control+z"，即按下Ctrl+z的组合键时，会切换到下一个候选词，无论当前处于什么状态。
+      
+      - {accept: "Control+j", select: .next, when: always}         # Ctrl+j 切换到下一个候选
+      - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
+      - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
+      - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+
+      - {accept: comma, send: Page_Up, when: has_menu}      # 用,翻页
+      - {accept: period, send: Page_Down, when: has_menu}    # 用.翻页
