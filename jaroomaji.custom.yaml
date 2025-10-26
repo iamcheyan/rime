@@ -1,7 +1,17 @@
 # Rime schema customization
 # encoding: utf-8
-
 patch:
+  # schema名をパッチ適用
+  "schema/jaroomaji":
+    switches:
+      # 英数・かなモード切替スイッチのデフォルトリセット値を0で上書き
+      - name: ascii_mode
+        states: [ あ, A ]
+        reset: 0
+      - name: full_shape
+        states: [ 半角記号, 全角記号 ]
+        reset: 0
+        
   # 自定义按键绑定
   key_binder:
     bindings:

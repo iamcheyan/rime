@@ -1,84 +1,90 @@
-# #!/bin/bash
-# # chmod +x 脚本名称，给于运行权限
+#!/bin/bash
+# Rime jaroomaji 词库更新脚本
+# 从 GitHub 仓库更新 jaroomaji 相关词库文件
 
-# # 获取当前脚本所在目录的绝对路径
-# script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -e
 
-# # 检查 rime-jaroomaji 仓库是否存在
-# if [ ! -d "$script_dir/rime-jaroomaji" ]; then
-#     echo "rime-jaroomaji 目录不存在，正在创建并克隆仓库..."
-#     mkdir -p "$script_dir/rime-jaroomaji"
-#     git clone https://github.com/lazyfoxchan/rime-jaroomaji.git "$script_dir/rime-jaroomaji"
-#     if [ $? -eq 0 ]; then
-#         echo "rime-jaroomaji 仓库克隆成功"
-#     else
-#         echo "rime-jaroomaji 仓库克隆失败，请检查网络连接或仓库地址"
-#         exit 1
-#     fi
-# else
-#     # 检查 rime-jaroomaji 仓库是否有更新
-#     echo "正在检查 rime-jaroomaji 仓库是否有更新..."
-#     git -C "$script_dir/rime-jaroomaji" fetch origin
-#     local_commit=$(git -C "$script_dir/rime-jaroomaji" rev-parse HEAD)
-#     remote_commit=$(git -C "$script_dir/rime-jaroomaji" rev-parse @{u})
+# 配置变量
+RIME_DIR="/Users/tetsuya/.dotfiles/config/org.fcitx.Fcitx5/data/fcitx5/rime"
+GITHUB_REPO="https://github.com/lazyfoxchan/rime-jaroomaji"
+TEMP_DIR="/tmp/rime-jaroomaji-update"
+LOG_FILE="$RIME_DIR/update_jarooma.log"
 
-#     if [ "$local_commit" != "$remote_commit" ]; then
-#         echo "检测到 rime-jaroomaji 仓库有更新，正在更新..."
-#         # 先查看远程分支
-#         remote_branches=$(git -C "$script_dir/rime-jaroomaji" branch -r)
-#         if echo "$remote_branches" | grep -q "origin/master"; then
-#             git -C "$script_dir/rime-jaroomaji" fetch origin
-#             git -C "$script_dir/rime-jaroomaji" reset --hard origin/master
-#             git -C "$script_dir/rime-jaroomaji" clean -fd
-#         elif echo "$remote_branches" | grep -q "origin/main"; then
-#             git -C "$script_dir/rime-jaroomaji" fetch origin
-#             git -C "$script_dir/rime-jaroomaji" reset --hard origin/main
-#             git -C "$script_dir/rime-jaroomaji" clean -fd
-#         else
-#             echo "无法确定远程主分支，请手动检查仓库状态"
-#             exit 1
-#         fi
+# 需要更新的文件列表
+FILES_TO_UPDATE=(
+    "jaroomaji.jmdict.dict.yaml"       # 主词库（来自 JMdict）
+    "jaroomaji.kana_kigou.dict.yaml"   # かな与符号词库
+    "jaroomaji.mozc.dict.yaml"         # mozc 词库（常用词/短语）
+    "jaroomaji.mozcemoji.dict.yaml"    # Emoji 词库
+    "jaroomaji.kanjidic2.dict.yaml"    # 漢字字典（Kanjidic2）
+    "jaroomaji.schema.yaml"            # 配置文件 schema（定义输入法行为）
+)
 
-#         # 检查更新是否成功
-#         if [ $? -eq 0 ]; then
-#             echo "rime-jaroomaji 仓库更新成功"
+# 日志函数
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
 
-#             # 复制 rime-jaroomaji 文件到当前目录
-#             echo "正在复制 rime-jaroomaji 文件..."
-            
-#             jaroomaji_dir="$script_dir/rime-jaroomaji"
-            
-#             files_to_copy=(
-#                 "dict_tools"
-#                 "jaroomaji.*.yaml"
-#             )
-            
-#             for item in "${files_to_copy[@]}"; do
-#                 if [ "$item" = "dict_tools" ]; then
-#                     src="$jaroomaji_dir/$item"
-#                     dest="$script_dir/jaroomaji.dict.tools"
-#                     if [ -d "$src" ]; then
-#                         rm -rf "$dest"
-#                         cp -r "$src" "$dest"
-#                         echo "已更新文件夹: $src -> $dest"
-#                     else
-#                         echo "警告: $src 不是一个文件夹"
-#                     fi
-#                 else
-#                     for file in "$jaroomaji_dir"/$item; do
-#                         filename=$(basename "$file")
-#                         cp -f "$file" "$script_dir/$filename"
-#                         echo "已更新文件: $file -> $script_dir/$filename"
-#                     done
-#                 fi
-#             done
-            
-#             echo "rime-jaroomaji 文件复制完成"
-#         else
-#             echo "rime-jaroomaji 仓库更新失败，请检查网络连接或仓库状态"
-#             exit 1
-#         fi
-#     else
-#         echo "rime-jaroomaji 仓库已是最新版本，无需更新"
-#     fi
-# fi
+# 检查目录是否存在
+check_directories() {
+    if [ ! -d "$RIME_DIR" ]; then
+        log "错误: Rime 配置目录不存在: $RIME_DIR"
+        exit 1
+    fi
+    
+    if [ ! -d "$TEMP_DIR" ]; then
+        mkdir -p "$TEMP_DIR"
+        log "创建临时目录: $TEMP_DIR"
+    fi
+}
+
+# 下载最新文件
+download_files() {
+    log "开始从 GitHub 下载最新文件..."
+    
+    # 克隆或更新仓库
+    if [ -d "$TEMP_DIR/.git" ]; then
+        cd "$TEMP_DIR"
+        git pull origin master
+        log "更新本地仓库"
+    else
+        git clone "$GITHUB_REPO.git" "$TEMP_DIR"
+        log "克隆仓库到: $TEMP_DIR"
+    fi
+    
+    # 复制文件到 Rime 目录
+    for file in "${FILES_TO_UPDATE[@]}"; do
+        if [ -f "$TEMP_DIR/$file" ]; then
+            cp "$TEMP_DIR/$file" "$RIME_DIR/"
+            log "更新文件: $file"
+        else
+            log "警告: 文件不存在: $file"
+        fi
+    done
+}
+
+# 清理临时文件
+cleanup() {
+    if [ -d "$TEMP_DIR" ]; then
+        rm -rf "$TEMP_DIR"
+        log "清理临时目录"
+    fi
+}
+
+# 主函数
+main() {
+    log "开始更新 jaroomaji 词库..."
+    
+    check_directories
+    download_files
+    cleanup
+    
+    log "词库更新完成！"
+    log "=========================================="
+}
+
+# 错误处理
+trap cleanup EXIT
+
+# 运行主函数
+main "$@"
