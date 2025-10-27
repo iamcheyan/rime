@@ -2,8 +2,8 @@ __build_info:
   rime_version: 1.14.0
   timestamps:
     default: 1756624134
-    jaroomaji.custom: 1761459929
-    jaroomaji.schema: 1761459878
+    jaroomaji.custom: 1761585368
+    jaroomaji.schema: 1761461351
     key_bindings: 1761389571
     key_bindings.custom: 1761389489
     punctuation: 1761238591
@@ -36,6 +36,10 @@ key_binder:
     - {accept: "Control+k", select: .next, when: always}
     - {accept: "Control+comma", select: .next, when: always}
     - {accept: "Control+period", select: .next, when: always}
+    - {accept: plus, send: Page_Down, when: has_menu}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: underscore, send: Page_Down, when: has_menu}
     - {accept: "Shift+BackSpace", send: Escape, when: composing}
     - {accept: Tab, send: Right, when: composing}
     - {accept: "Shift+Tab", send: Left, when: composing}
@@ -261,7 +265,7 @@ speller:
   initials: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
 switches:
   - name: ascii_mode
-    reset: 0
+    reset: 1
     states: ["あ", A]
   - name: full_shape
     reset: 0
