@@ -5,6 +5,23 @@ patch:
   # 自定义按键绑定
   key_binder:
     bindings:
+      # 下方为全局下一个候选操作的快捷键绑定，通过指定"accept"字段为组合键（如Control+z、Control+j等），
+      # 并使用"select: .next"实现无条件切换到下一个候选词（"when: always"表示总是生效）。
+      # 例如，"Control+z"，即按下Ctrl+z的组合键时，会切换到下一个候选词，无论当前处于什么状态。
+      
+      #########################################################################################
+      - {accept: "Control+j", select: .next, when: always}         # Ctrl+j 切换到下一个候选
+      - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
+      - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
+      - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+      - {accept: plus, send: Page_Down, when: has_menu}            # + 翻到下一页
+      - {accept: minus, send: Page_Up, when: has_menu}             # - 翻到上一页
+      - {accept: equal, send: Page_Down, when: has_menu}           # = 翻到下一页
+      - {accept: underscore, send: Page_Down, when: has_menu}      # _ 翻到下一页
+      - {accept: comma, send: Page_Up, when: has_menu}             # 用,翻页
+      - {accept: period, send: Page_Down, when: has_menu}          # 用.翻页
+      #########################################################################################
+
       # Emacs风格的按键绑定
       - {accept: "Control+p", send: Up, when: composing}
       - {accept: "Control+n", send: Down, when: composing}
@@ -35,15 +52,3 @@ patch:
       - {accept: "Control+Shift+w", send: "Control+Shift+BackSpace", when: composing}
       - {accept: "Control+Shift+y", send: "Control+Shift+v", when: composing}
       - {accept: "Control+Shift+slash", send: "Control+Shift+z", when: composing}
-
-      # 下方为全局下一个候选操作的快捷键绑定，通过指定"accept"字段为组合键（如Control+z、Control+j等），
-      # 并使用"select: .next"实现无条件切换到下一个候选词（"when: always"表示总是生效）。
-      # 例如，"Control+z"，即按下Ctrl+z的组合键时，会切换到下一个候选词，无论当前处于什么状态。
-      
-      - {accept: "Control+j", select: .next, when: always}         # Ctrl+j 切换到下一个候选
-      - {accept: "Control+k", select: .next, when: always}         # Ctrl+k 切换到下一个候选
-      - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
-      - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
-
-      - {accept: comma, send: Page_Up, when: has_menu}      # 用,翻页
-      - {accept: period, send: Page_Down, when: has_menu}    # 用.翻页

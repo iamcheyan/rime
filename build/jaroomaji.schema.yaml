@@ -2,7 +2,7 @@ __build_info:
   rime_version: 1.14.0
   timestamps:
     default: 1756624134
-    jaroomaji.custom: 1761585368
+    jaroomaji.custom: 1761586070
     jaroomaji.schema: 1761461351
     key_bindings: 1761389571
     key_bindings.custom: 1761389489
@@ -40,6 +40,8 @@ key_binder:
     - {accept: minus, send: Page_Up, when: has_menu}
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: underscore, send: Page_Down, when: has_menu}
+    - {accept: comma, send: Page_Up, when: has_menu}
+    - {accept: period, send: Page_Down, when: has_menu}
     - {accept: "Shift+BackSpace", send: Escape, when: composing}
     - {accept: Tab, send: Right, when: composing}
     - {accept: "Shift+Tab", send: Left, when: composing}
@@ -47,11 +49,6 @@ key_binder:
     - {accept: "Control+Shift+m", send: Down, when: composing}
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
-    - {accept: minus, send: Page_Up, when: has_menu}
-    - {accept: equal, send: Page_Down, when: has_menu}
-    - {accept: minus, send: minus, when: has_menu}
-    - {accept: comma, send: Page_Up, when: has_menu}
-    - {accept: period, send: Page_Down, when: has_menu}
 menu:
   page_size: 10
 punctuator:
