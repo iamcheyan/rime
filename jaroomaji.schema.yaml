@@ -24,10 +24,10 @@ schema:
 switches:
   - name: ascii_mode
     states: [ あ, A ]
-    reset: 1  # デフォルトで英数モード
+    reset: 0  # 默认日语罗马字输入模式
   - name: full_shape
     states: [ 半角記号, 全角記号 ]
-    reset: 0  # デフォルトで半角記号モード
+    reset: 0  # 默认半角記号模式
 
 # # # # # # # # # # # # # # # # # # # #
 # 読み込むエンジンの設定
