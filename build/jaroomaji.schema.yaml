@@ -2,8 +2,8 @@ __build_info:
   rime_version: 1.14.0
   timestamps:
     default: 1756624134
-    jaroomaji.custom: 1761970628
-    jaroomaji.schema: 1761970628
+    jaroomaji.custom: 1761971973
+    jaroomaji.schema: 1761970761
     key_bindings: 1761389571
     key_bindings.custom: 1761389489
     punctuation: 1761238591
@@ -50,7 +50,7 @@ key_binder:
     - {accept: Return, send: "Shift+Return", when: has_menu}
     - {accept: "Shift+Return", send: Return, when: has_menu}
 menu:
-  page_size: 10
+  page_size: 5
 punctuator:
   full_shape:
     " ": "　"
@@ -262,7 +262,7 @@ speller:
   initials: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-"
 switches:
   - name: ascii_mode
-    reset: 1
+    reset: 0
     states: ["あ", A]
   - name: full_shape
     reset: 0
