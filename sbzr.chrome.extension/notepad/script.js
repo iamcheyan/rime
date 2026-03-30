@@ -40,6 +40,7 @@ const IME_DICT_TABLES = window.SBZR_DICTS?.TABLES || [];
 const DEFAULT_IME_DICT_PATHS = IME_DICT_TABLES.map((table) => table.path);
 const NATIVE_HOST_NAME = 'com.sbzr.filehost';
 const SBZR_CORE_SCRIPT_PATH = '../shared/sbzr-core.js';
+const CONTENT_IME_SCRIPT_PATH = '../content.js';
 const VIM_SCRIPT_PATH = '../shared/vim-mode.js';
 const HIGHLIGHTER_SCRIPT_PATH = '../shared/highlighter.js';
 
@@ -107,6 +108,19 @@ function loadSharedScript(path, globalName) {
 async function ensureSBZRShared() {
   await loadSharedScript(SBZR_CORE_SCRIPT_PATH, 'SBZRShared');
   return window.SBZRShared;
+}
+
+async function ensureContentIME() {
+  await ensureSBZRShared();
+  if (!window.SBZRContentIME) {
+    window.__SBZR_CONTENT_AUTO_INIT__ = false;
+  }
+  try {
+    await loadSharedScript(CONTENT_IME_SCRIPT_PATH, 'SBZRContentIME');
+  } finally {
+    delete window.__SBZR_CONTENT_AUTO_INIT__;
+  }
+  return window.SBZRContentIME;
 }
 
 function getDictFileLabel(path) {
@@ -241,15 +255,15 @@ async function reinstallImeController() {
     return;
   }
 
-  const SBZRShared = await ensureSBZRShared();
-  if (!SBZRShared?.installTextareaIME) return;
+  const SBZRContentIME = await ensureContentIME();
+  if (!SBZRContentIME?.installTextareaIME) return;
   if (sbzrImeController?.destroy) {
     sbzrImeController.destroy();
   }
 
   const selectedPaths = await getStoredImeDictPaths();
   const { packagedPaths, affixSources } = buildImeDictConfig(selectedPaths);
-  sbzrImeController = SBZRShared.installTextareaIME({
+  sbzrImeController = SBZRContentIME.installTextareaIME({
     target: editor,
     packagedPaths,
     affixSources,

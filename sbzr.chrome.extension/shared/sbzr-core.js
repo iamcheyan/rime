@@ -1977,8 +1977,6 @@ function recordUserHistorySelection(code, word, userHistory, maxEntries = 5) {
     applyUserHistory,
     recordUserHistorySelection,
     syncUserHistoryToRime,
-    installTabDragging,
-    processImeKeyDown,
-    installTextareaIME
+    installTabDragging
   };
 })(window);

@@ -49,6 +49,7 @@ const PACKAGED_RIME_DICT_PATHS = window.SBZR_DICTS?.RIME_PATHS || [
 const PACKAGED_AFFIX_DICT_SOURCES = window.SBZR_DICTS?.AFFIX_SOURCES || [
     { path: 'dicts/zdy.dict.yaml', prefix: 'u', dictName: 'sbzdy.extension' }
 ];
+const CONTENT_AUTO_INIT = window.__SBZR_CONTENT_AUTO_INIT__ !== false;
 const RIME_USER_DICT_NAME = 'sbzr.user_dict';
 const SITE_RULES_STORAGE_KEY = 'sbzr_site_rules';
 const PUNCTUATION_MODE_STORAGE_KEY = 'sbzr_punctuation_mode';
@@ -70,6 +71,14 @@ const CN_PUNCTUATION_MAP = {
     "'": '‘',
     '\\': '、'
 };
+let runtimePackagedRimeDictPaths = [...PACKAGED_RIME_DICT_PATHS];
+let runtimePackagedAffixDictSources = [...PACKAGED_AFFIX_DICT_SOURCES];
+let runtimeMode = 'detached';
+let managedTarget = null;
+let suppressionCheck = null;
+let listenersInstalled = false;
+let storageSyncInstalled = false;
+let messageListenerInstalled = false;
 
 function attachShadowStyles(shadowRoot) {
     if (!chrome.runtime?.id) return;
@@ -290,9 +299,46 @@ function prioritizeByWordLength(list) {
 
 let lastLocalDictText = null;
 
-// Sync state with storage
-try {
-    if (chrome.storage && chrome.storage.local) {
+function handleStorageChanged(changes) {
+    if (changes.sbzr_enabled) {
+        extensionEnabled = changes.sbzr_enabled.newValue !== false;
+        if (!extensionEnabled && uiVisible) {
+            hideUI();
+            buffer = '';
+        }
+    }
+    if (changes[SITE_RULES_STORAGE_KEY]) {
+        siteRules = normalizeSiteRules(changes[SITE_RULES_STORAGE_KEY].newValue);
+        evaluateCurrentPageEnabled();
+        if (uiVisible) renderUI();
+    }
+    if (changes[PUNCTUATION_MODE_STORAGE_KEY]) {
+        punctuationMode = changes[PUNCTUATION_MODE_STORAGE_KEY].newValue === 'en' ? 'en' : 'cn';
+        if (uiVisible) renderUI();
+    }
+    if (changes[WIDTH_MODE_STORAGE_KEY]) {
+        widthMode = changes[WIDTH_MODE_STORAGE_KEY].newValue === 'full' ? 'full' : 'half';
+        if (uiVisible) renderUI();
+    }
+    if (changes.sbzr_font_size) {
+        fontSize = changes.sbzr_font_size.newValue;
+        updateUIMode();
+    }
+    if (changes.sbzr_user_history) {
+        userHistory = changes.sbzr_user_history.newValue || {};
+    }
+    if (changes.sbzr_ui_pos) {
+        manualPosition = changes.sbzr_ui_pos.newValue || null;
+    }
+    if (changes.sbzr_custom_dict || changes.sbzr_user_dict || changes[SBZRShared.PACKAGED_DICT_OVERRIDES_STORAGE_KEY]) {
+        void reloadEffectiveDictFromStorage();
+    }
+}
+
+function installStorageSync() {
+    if (storageSyncInstalled) return;
+    try {
+        if (!chrome.storage || !chrome.storage.local) return;
         chrome.storage.local.get(['sbzr_enabled', 'sbzr_font_size', 'sbzr_custom_dict', 'sbzr_user_history', 'sbzr_ui_pos', SITE_RULES_STORAGE_KEY, PUNCTUATION_MODE_STORAGE_KEY, WIDTH_MODE_STORAGE_KEY, SBZRShared.PACKAGED_DICT_OVERRIDES_STORAGE_KEY], (result) => {
             extensionEnabled = result.sbzr_enabled !== false;
             if (result.sbzr_font_size) fontSize = result.sbzr_font_size;
@@ -305,46 +351,23 @@ try {
             updateUIMode();
             void loadEffectiveDict(result.sbzr_custom_dict || '', true);
         });
-
-        // React to state changes
-        chrome.storage.onChanged.addListener((changes) => {
-            if (changes.sbzr_enabled) {
-                extensionEnabled = changes.sbzr_enabled.newValue;
-                if (!extensionEnabled && uiVisible) {
-                    hideUI();
-                    buffer = '';
-                }
-            }
-            if (changes[SITE_RULES_STORAGE_KEY]) {
-                siteRules = normalizeSiteRules(changes[SITE_RULES_STORAGE_KEY].newValue);
-                evaluateCurrentPageEnabled();
-                if (uiVisible) renderUI();
-            }
-            if (changes[PUNCTUATION_MODE_STORAGE_KEY]) {
-                punctuationMode = changes[PUNCTUATION_MODE_STORAGE_KEY].newValue === 'en' ? 'en' : 'cn';
-                if (uiVisible) renderUI();
-            }
-            if (changes[WIDTH_MODE_STORAGE_KEY]) {
-                widthMode = changes[WIDTH_MODE_STORAGE_KEY].newValue === 'full' ? 'full' : 'half';
-                if (uiVisible) renderUI();
-            }
-            if (changes.sbzr_font_size) {
-                fontSize = changes.sbzr_font_size.newValue;
-                updateUIMode();
-            }
-            if (changes.sbzr_user_history) {
-                userHistory = changes.sbzr_user_history.newValue || {};
-            }
-            if (changes.sbzr_ui_pos) {
-                manualPosition = changes.sbzr_ui_pos.newValue || null;
-            }
-            if (changes.sbzr_custom_dict || changes.sbzr_user_dict || changes[SBZRShared.PACKAGED_DICT_OVERRIDES_STORAGE_KEY]) {
-                void reloadEffectiveDictFromStorage();
-            }
-        });
+        chrome.storage.onChanged.addListener(handleStorageChanged);
+        storageSyncInstalled = true;
+    } catch (e) {
+        console.log('SBZR: Initial storage sync failed (context invalidated).');
     }
-} catch (e) {
-    console.log('SBZR: Initial storage sync failed (context invalidated).');
+}
+
+function uninstallStorageSync() {
+    if (!storageSyncInstalled) return;
+    try {
+        if (chrome.storage?.onChanged) {
+            chrome.storage.onChanged.removeListener(handleStorageChanged);
+        }
+    } catch (e) {
+        // Ignore invalidated extension context during teardown.
+    }
+    storageSyncInstalled = false;
 }
 
 // Candidates are labeled and selected by 1-6 on the current page.
@@ -595,32 +618,49 @@ function toggleNotepad() {
     }
 }
 
-try {
-    if (chrome.runtime && chrome.runtime.onMessage) {
-        chrome.runtime.onMessage.addListener((msg) => {
-            if (msg && msg.type === 'sbzr_toggle_notepad') {
-                toggleNotepad();
-                return;
-            }
-            if (msg && msg.type === 'sbzr_add_selected_to_dict') {
-                void promptAndSaveCustomEntry(msg.text || '');
-                return;
-            }
-            if (msg && msg.type === 'sbzr_add_selection_to_fixed_dict') {
-                void SBZRShared.promptAndSaveFixedEntry(msg.text || '');
-                return;
-            }
-            if (msg && msg.type === 'sbzr_add_current_selection_to_fixed_dict') {
-                void SBZRShared.promptAndSaveFixedEntry(SBZRShared.getActiveSelectedText());
-                return;
-            }
-            if (msg && msg.type === 'sbzr_reload_effective_dict') {
-                void reloadEffectiveDictFromStorage();
-            }
-        });
+function handleRuntimeMessage(msg) {
+    if (msg && msg.type === 'sbzr_toggle_notepad') {
+        toggleNotepad();
+        return;
     }
-} catch (e) {
-    console.log('SBZR: Notepad message listener failed (context invalidated).');
+    if (msg && msg.type === 'sbzr_add_selected_to_dict') {
+        void promptAndSaveCustomEntry(msg.text || '');
+        return;
+    }
+    if (msg && msg.type === 'sbzr_add_selection_to_fixed_dict') {
+        void SBZRShared.promptAndSaveFixedEntry(msg.text || '');
+        return;
+    }
+    if (msg && msg.type === 'sbzr_add_current_selection_to_fixed_dict') {
+        void SBZRShared.promptAndSaveFixedEntry(SBZRShared.getActiveSelectedText());
+        return;
+    }
+    if (msg && msg.type === 'sbzr_reload_effective_dict') {
+        void reloadEffectiveDictFromStorage();
+    }
+}
+
+function installRuntimeMessageListener() {
+    if (messageListenerInstalled) return;
+    try {
+        if (!chrome.runtime || !chrome.runtime.onMessage) return;
+        chrome.runtime.onMessage.addListener(handleRuntimeMessage);
+        messageListenerInstalled = true;
+    } catch (e) {
+        console.log('SBZR: Notepad message listener failed (context invalidated).');
+    }
+}
+
+function uninstallRuntimeMessageListener() {
+    if (!messageListenerInstalled) return;
+    try {
+        if (chrome.runtime?.onMessage) {
+            chrome.runtime.onMessage.removeListener(handleRuntimeMessage);
+        }
+    } catch (e) {
+        // Ignore invalidated extension context during teardown.
+    }
+    messageListenerInstalled = false;
 }
 
 function injectUI() {
@@ -943,7 +983,7 @@ function applyCodeIndex(codeIndex) {
 async function fetchPackagedRimeDictTexts() {
     return SBZRShared.fetchPackagedRimeDictTexts({
         runtime: chrome.runtime,
-        paths: PACKAGED_RIME_DICT_PATHS
+        paths: runtimePackagedRimeDictPaths
     });
 }
 
@@ -961,7 +1001,7 @@ function prefixCodeMap(codeMap, prefix) {
 async function fetchPackagedAffixDictTexts() {
     return SBZRShared.fetchPackagedAffixDictTexts({
         runtime: chrome.runtime,
-        sources: PACKAGED_AFFIX_DICT_SOURCES
+        sources: runtimePackagedAffixDictSources
     });
 }
 
@@ -1212,10 +1252,9 @@ function init() {
     injectUI();
 }
 
-init();
-
 function isInput(el) {
     if (!el) return false;
+    if (managedTarget) return el === managedTarget;
     if (notepadTextarea && el === notepadTextarea) return true;
     const isStandard = el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.isContentEditable;
     const isRoleTextbox = el.getAttribute('role') === 'textbox';
@@ -1225,6 +1264,12 @@ function isInput(el) {
 }
 
 function resolveActiveElement(e) {
+    if (managedTarget) {
+        const path = typeof e?.composedPath === 'function' ? e.composedPath() : [];
+        if (path.includes(managedTarget)) return managedTarget;
+        if (document.activeElement === managedTarget) return managedTarget;
+    }
+
     let activeEl = document.activeElement;
     if (activeEl && activeEl.shadowRoot && activeEl.shadowRoot.activeElement) {
         activeEl = activeEl.shadowRoot.activeElement;
@@ -1245,10 +1290,19 @@ function resolveActiveElement(e) {
     return activeEl;
 }
 
-document.addEventListener('keydown', (e) => {
+function isManagedTargetFocused() {
+    if (!managedTarget) return false;
+    return document.activeElement === managedTarget;
+}
+
+function isImeSuppressed() {
+    return !!(suppressionCheck && suppressionCheck());
+}
+
+function handleDocumentKeyDown(e) {
     let activeEl = resolveActiveElement(e);
 
-    if (e.key === 'f' && e.altKey && !e.ctrlKey && !e.metaKey) {
+    if (runtimeMode === 'page' && e.key === 'f' && e.altKey && !e.ctrlKey && !e.metaKey) {
         e.preventDefault();
         e.stopPropagation();
         if (notepadVisible) {
@@ -1262,11 +1316,6 @@ document.addEventListener('keydown', (e) => {
 
     // Shift key toggle
     if (e.key === 'Shift' && !e.ctrlKey && !e.altKey && !e.metaKey) {
-        // We only toggle if Shift is pressed alone. 
-        // Note: This might trigger on every shift. 
-        // Improved logic: capture Shift down/up to ensure no other key was pressed.
-        // For simplicity now, let's just use Shift keydown.
-        // But better to use keyup.
         return;
     }
 
@@ -1279,7 +1328,7 @@ document.addEventListener('keydown', (e) => {
     }
     focusedElement = activeEl;
 
-    if (!isImeActive()) return;
+    if (!isImeActive() || isImeSuppressed()) return;
 
     if (!codes || Object.keys(codes).length === 0) {
         void loadDict();
@@ -1482,25 +1531,33 @@ document.addEventListener('keydown', (e) => {
             renderUI();
         }
     }
-}, true);
+}
 
 let shiftPressedOnly = false;
-document.addEventListener('keyup', (e) => {
+function handleDocumentKeyUp(e) {
+    if (managedTarget && !isManagedTargetFocused()) {
+        shiftPressedOnly = false;
+        return;
+    }
     if (e.key === 'Shift') {
         if (shiftPressedOnly) {
             toggleMode();
         }
         shiftPressedOnly = false;
     }
-}, true);
+}
 
-document.addEventListener('keydown', (e) => {
+function handleShiftTrackingKeyDown(e) {
+    if (managedTarget && !isManagedTargetFocused()) {
+        shiftPressedOnly = false;
+        return;
+    }
     if (e.key === 'Shift') {
         shiftPressedOnly = true;
     } else {
         shiftPressedOnly = false;
     }
-}, true);
+}
 
 function startBuffer(newBuffer) {
     buffer = newBuffer;
@@ -1669,8 +1726,80 @@ function endDrag() {
     saveManualPosition();
 }
 
-document.addEventListener('mousemove', onDragMove, true);
-document.addEventListener('mouseup', endDrag, true);
+function installRuntimeListeners() {
+    if (listenersInstalled) return;
+    document.addEventListener('keydown', handleDocumentKeyDown, true);
+    document.addEventListener('keyup', handleDocumentKeyUp, true);
+    document.addEventListener('keydown', handleShiftTrackingKeyDown, true);
+    document.addEventListener('mousemove', onDragMove, true);
+    document.addEventListener('mouseup', endDrag, true);
+    listenersInstalled = true;
+}
+
+function uninstallRuntimeListeners() {
+    if (!listenersInstalled) return;
+    document.removeEventListener('keydown', handleDocumentKeyDown, true);
+    document.removeEventListener('keyup', handleDocumentKeyUp, true);
+    document.removeEventListener('keydown', handleShiftTrackingKeyDown, true);
+    document.removeEventListener('mousemove', onDragMove, true);
+    document.removeEventListener('mouseup', endDrag, true);
+    listenersInstalled = false;
+}
+
+function applyRuntimeConfig(options = {}) {
+    runtimePackagedRimeDictPaths = Array.isArray(options.packagedPaths) && options.packagedPaths.length > 0
+        ? [...options.packagedPaths]
+        : [...PACKAGED_RIME_DICT_PATHS];
+    runtimePackagedAffixDictSources = Array.isArray(options.affixSources)
+        ? options.affixSources.map((item) => ({ ...item }))
+        : [...PACKAGED_AFFIX_DICT_SOURCES];
+    suppressionCheck = typeof options.isSuppressed === 'function' ? options.isSuppressed : null;
+}
+
+function resetRuntimeState() {
+    buffer = '';
+    displayBuffer = '';
+    candidates = [];
+    baseCandidates = [];
+    pageIndex = 0;
+    selectedCandidateIndex = 0;
+    visibleCandidateRows = DEFAULT_VISIBLE_CANDIDATE_ROWS;
+    focusedElement = null;
+    hideUI();
+}
+
+function installPageIme() {
+    runtimeMode = 'page';
+    managedTarget = null;
+    applyRuntimeConfig();
+    installStorageSync();
+    installRuntimeMessageListener();
+    installRuntimeListeners();
+    init();
+}
+
+function installTextareaIME(options = {}) {
+    if (!options.target) {
+        throw new Error('installTextareaIME requires a target.');
+    }
+    runtimeMode = 'target';
+    managedTarget = options.target;
+    applyRuntimeConfig(options);
+    installStorageSync();
+    installRuntimeListeners();
+    injectUI();
+    void loadDict();
+    return {
+        destroy() {
+            resetRuntimeState();
+            uninstallRuntimeListeners();
+            uninstallStorageSync();
+            managedTarget = null;
+            suppressionCheck = null;
+            runtimeMode = 'detached';
+        }
+    };
+}
 
 function renderUI() {
     uiRoot.textContent = '';
@@ -1758,4 +1887,12 @@ function renderUI() {
     uiRoot.appendChild(listDiv);
 
     positionUI();
+}
+
+window.SBZRContentIME = {
+    installTextareaIME
+};
+
+if (CONTENT_AUTO_INIT) {
+    installPageIme();
 }
