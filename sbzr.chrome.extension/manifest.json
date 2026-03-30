@@ -1,0 +1,63 @@
+{
+    "manifest_version": 3,
+    "name": "声笔自然输入法",
+    "version": "1.0.1",
+    "description": "基于 Rime 词库的声笔自然输入法。",
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "tabs",
+        "nativeMessaging",
+        "contextMenus"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "add-selection-to-fixed-dict": {
+            "suggested_key": {
+                "default": "Alt+Shift+A",
+                "mac": "Command+Shift+A"
+            },
+            "description": "Add selected text to sbzr.shortcut.dict.yaml"
+        }
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "shared/dicts.js",
+                "shared/sbzr-core.js",
+                "content.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "style.css",
+                "popup.html",
+                "popup.css",
+                "popup.js",
+                "dicts/*.yaml",
+                "fonts/*.ttf",
+                "notepad/index.html",
+                "notepad/styles.css",
+                "notepad/script.js",
+                "shared/dicts.js",
+                "shared/sbzr-core.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,621 @@
+@font-face {
+  font-family: "SBZR Sarasa Mono SC";
+  src: url("../fonts/SarasaMonoSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #1b1b1b;
+  --panel: #252525;
+  --panel-2: #2d2d2d;
+  --panel-3: #1f1f1f;
+  --border: #353535;
+  --border-soft: #434343;
+  --text: #deddda;
+  --muted: #9a9996;
+  --accent: #3584e4;
+  --line-bg: #242424;
+  --line-active: rgba(255, 255, 255, 0.05);
+  --editor-font-size: 15px;
+  --editor-line-height: 1.6;
+  --editor-line-height-px: calc(var(--editor-font-size) * var(--editor-line-height));
+  --editor-pad-y: 10px;
+  --editor-pad-x: 12px;
+  --current-line-top: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "SBZR Sarasa Mono SC", monospace;
+}
+
+body.font-builtin-disabled,
+body.font-builtin-disabled .editor,
+body.font-builtin-disabled .line-numbers,
+body.font-builtin-disabled .status-bar {
+  font-family: monospace;
+}
+
+.app-shell {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 38px 36px minmax(0, 1fr) 24px;
+}
+
+/* TOPBAR & LOGO */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-bottom: 1px solid #141414;
+  background: linear-gradient(180deg, #2c2c2c 0%, #222222 100%);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 4px;
+  display: none;
+}
+
+.veikin-logo {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.veikin-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title-text h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.title-text p {
+  margin: 0;
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* TOOLBAR BUTTONS */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tool-button {
+  appearance: none;
+  height: 26px;
+  border: 1px solid #141414;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #3d3d3d 0%, #323232 100%);
+  color: #d0d0d0;
+  padding: 0 10px;
+  font: 500 12px "SBZR Sarasa Mono SC", monospace;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.tool-button:hover {
+  background: linear-gradient(180deg, #464646 0%, #3a3232 100%);
+  color: #fff;
+}
+
+.tool-button.is-active {
+  background: linear-gradient(180deg, #4a4a4a 0%, #3d3d3d 100%);
+  border-color: #111;
+  color: #fff;
+}
+
+.icon-button {
+  width: 28px;
+  min-width: 28px;
+  padding: 0;
+}
+
+.icon-button svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* TABS SYSTEM */
+.tabs-shell {
+  border-bottom: 1px solid #1f1f1f;
+  background: #2a2a2a;
+  height: 36px;
+}
+
+.tabs {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.tabs::-webkit-scrollbar {
+  height: 0px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px;
+  max-width: 240px;
+  padding: 0 12px;
+  height: 100%;
+  border-right: 1px solid #1f1f1f;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  background: #2b2b2b;
+  transition: all 0.1s ease;
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  background: #333;
+  color: #fff;
+}
+
+.tab.is-active {
+  background: #1f1f1f;
+  border-bottom-color: var(--accent);
+  color: #fff;
+}
+
+.tab-title {
+  flex: 1;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.tab-close {
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.1s;
+}
+
+.tab-close:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff4d4d;
+}
+
+.tab.is-dirty .tab-title::after {
+  content: " *";
+  color: var(--accent);
+}
+
+/* EDITOR AREA */
+.editor-shell {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  background: var(--panel-3);
+  min-height: 0;
+}
+
+.line-numbers {
+  padding-top: var(--editor-pad-y);
+  font: 400 var(--editor-font-size) / var(--editor-line-height-px) "SBZR Sarasa Mono SC", monospace;
+  color: #6d7686;
+  background: var(--line-bg);
+  border-right: 1px solid var(--border);
+  text-align: right;
+  padding-right: 8px;
+  user-select: none;
+  overflow: hidden;
+}
+
+.line-numbers div {
+  height: var(--editor-line-height-px);
+}
+
+.editor-pane {
+  position: relative;
+  overflow: hidden;
+  background: var(--panel-3);
+}
+
+/* SYNCED LAYERS */
+.editor,
+.whitespace-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  font: 400 var(--editor-font-size) / var(--editor-line-height-px) "SBZR Sarasa Mono SC", monospace;
+  letter-spacing: 0px !important;
+  font-variant-ligatures: none !important;
+  tab-size: 4;
+  white-space: pre;
+  word-break: normal;
+}
+
+.whitespace-overlay {
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  padding: 0;
+}
+
+.whitespace-overlay.is-visible {
+  opacity: 1;
+}
+
+.editor {
+  z-index: 5;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: var(--text);
+  caret-color: var(--accent);
+  padding: var(--editor-pad-y) 16px 0 var(--editor-pad-x);
+  overflow: auto;
+}
+
+.editor.is-whitespace-visible {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.editor::selection {
+  background: rgba(53, 132, 228, 0.35);
+}
+
+/* DECORATIONS */
+.current-line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--current-line-top);
+  height: var(--editor-line-height-px);
+  background: var(--line-active);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vertical-ruler {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 1;
+  display: none;
+  pointer-events: none;
+}
+
+.editor.vim-normal-mode+.vertical-ruler {
+  display: block;
+}
+
+/* HIGHLIGHTER COLORS */
+.hl-comment {
+  color: #8e98aa;
+  font-style: italic;
+}
+
+.hl-keyword {
+  color: #ff7b72;
+  font-weight: 600;
+}
+
+.hl-string {
+  color: #a5d6ff;
+}
+
+.hl-number {
+  color: #d2a8ff;
+}
+
+.hl-operator {
+  color: #ff7b72;
+}
+
+.hl-key {
+  color: #62a0ea;
+}
+
+.hl-value {
+  color: #57e389;
+}
+
+.hl-word {
+  color: #ffffff;
+}
+
+.hl-code {
+  color: #fce94f;
+}
+
+.hl-weight {
+  color: #c0bfbc;
+}
+
+.hl-yaml-text {
+  color: #deddda;
+}
+
+.hl-tab,
+.hl-space {
+  position: relative;
+}
+
+.hl-ws-visible.hl-tab::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #c9a35a;
+  opacity: 0.6;
+}
+
+.hl-ws-visible.hl-space::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #6d7686;
+  opacity: 0.8;
+}
+
+/* STATUS BAR */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  z-index: 100;
+  font-family: "SBZR Sarasa Mono SC", monospace;
+}
+
+.vim-status-tag {
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.vim-status-tag.mode-normal {
+  background: #3584e4;
+  color: white;
+}
+
+.vim-status-tag.mode-insert {
+  background: #2ec27e;
+  color: white;
+}
+
+/* SETTINGS PANEL */
+.shortcuts-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--text);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+.shortcuts-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+.shortcuts-panel {
+  width: min(480px, calc(100vw - 32px));
+  background: #252525;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+}
+
+.shortcuts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid #333;
+  background: #2d2d2d;
+}
+
+.shortcuts-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  background: #222;
+}
+
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.setting-item:last-child {
+  border-bottom: 0;
+}
+
+.setting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setting-info strong {
+  font-size: 13px;
+  color: #fff;
+}
+
+.setting-info p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* SWITCHES */
+.switch-control {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.switch-control input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #3a3a3a;
+  transition: .25s;
+  border-radius: 20px;
+  border: 1px solid #444;
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #eee;
+  transition: .25s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+input:checked+.switch-slider {
+  background-color: var(--accent);
+  border-color: #1a5fb4;
+}
+
+input:checked+.switch-slider:before {
+  transform: translateX(20px);
+  background-color: #fff;
+}
+
+.feature-module-hidden {
+  display: none !important;
+}
+
+/* DICTIONARY LIST */
+.dict-file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #1a1a1a;
+}
+
+.dict-file-button {
+  appearance: none;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #333;
+  background: linear-gradient(180deg, #2d2d2d 0%, #252525 100%);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font: 400 13px "SBZR Sarasa Mono SC", monospace;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.1s;
+}
+
+.dict-file-button:hover {
+  border-color: var(--accent);
+  background: #333;
+  transform: translateX(4px);
+}
+
+.dict-file-button::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.dict-file-button:hover::before {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}

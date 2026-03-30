@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ベイケン</title>
+  <link rel="icon" href="./logo.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button id="open-dict-button" class="tool-button open-button feature-module-ime" type="button"
+          aria-label="Open dictionary">Open</button>
+        <button id="new-tab-button" class="tool-button icon-button new-tab-header-button" type="button"
+          aria-label="New tab">+</button>
+        <div class="title-block">
+          <div class="veikin-logo">
+            <img src="./logo.png" alt="Veikin Logo" width="22" height="22">
+          </div>
+          <div class="title-text">
+            <h1>Veikin</h1>
+            <p>ベイケン</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button id="auto-copy-button" class="tool-button icon-button feature-module-autocopy" type="button"
+          aria-label="Toggle auto copy" title="Auto Copy Off">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="9" y="9" width="10" height="10" rx="2" />
+            <path d="M7 15H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1" />
+          </svg>
+        </button>
+        <button id="show-whitespace-button" class="tool-button icon-button feature-module-whitespace" type="button"
+          aria-label="Toggle visible whitespace" aria-pressed="false" title="Toggle Visible Whitespace">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M13 4v16" />
+            <path d="M17 4v16" />
+            <path d="M19 4H9.5a4.5 4.5 0 0 0 0 9H13" />
+          </svg>
+        </button>
+        <button id="toggle-highlighter-button" class="tool-button icon-button is-active feature-module-highlighter"
+          type="button" aria-label="Toggle Syntax Highlighting" aria-pressed="true" title="Toggle Syntax Highlighting">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.7a2.1 2.1 0 0 1 3 0 2.1 2.1 0 0 1 0 3l-3.7 3.77a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.7a2.1 2.1 0 0 1 3 0 2.1 2.1 0 0 1 0 3l-3.7 3.77" />
+            <path d="M2 22l5-5" />
+            <path d="M11 7l3 3" />
+            <path d="M8 10l3 3" />
+            <path d="M5 13l3 3" />
+          </svg>
+        </button>
+        <button id="save-button" class="tool-button" type="button" aria-label="Save current dictionary file">
+          Save
+        </button>
+        <button id="vim-mode-button" class="tool-button icon-button feature-module-vim" type="button"
+          aria-label="Toggle VIM mode" title="VIM Mode (Press Esc for Normal, i for Insert)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 4l5 16 5-16" />
+          </svg>
+        </button>
+        <button id="ime-status-button" class="tool-button icon-button feature-module-ime" type="button"
+          aria-label="Toggle input method" title="Input Method Status">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+            <line x1="7" y1="8" x2="7" y2="8"></line>
+            <line x1="12" y1="8" x2="12" y2="8"></line>
+            <line x1="17" y1="8" x2="17" y2="8"></line>
+            <line x1="7" y1="12" x2="7" y2="12"></line>
+            <line x1="12" y1="12" x2="12" y2="12"></line>
+            <line x1="17" y1="12" x2="17" y2="12"></line>
+            <line x1="7" y1="16" x2="17" y2="16"></line>
+          </svg>
+        </button>
+        <button id="settings-button" class="tool-button icon-button" type="button" aria-label="Settings"
+          title="Editor Settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+        </button>
+        <button id="shortcuts-button" class="tool-button icon-button" type="button" aria-label="Show shortcuts"
+          title="Keyboard shortcuts">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section class="tabs-shell" aria-label="Tabs">
+      <div id="tabs" class="tabs" role="tablist" aria-label="Veikin tabs"></div>
+    </section>
+
+    <section class="editor-shell" aria-label="Veikin editor">
+      <div id="line-numbers" class="line-numbers" aria-hidden="true">1</div>
+      <div class="editor-pane">
+        <div id="current-line-highlight" class="current-line-highlight" aria-hidden="true"></div>
+        <div id="whitespace-overlay" class="whitespace-overlay" aria-hidden="true"></div>
+        <textarea id="editor" class="editor" spellcheck="false" wrap="off" placeholder=""></textarea>
+        <div id="vertical-ruler" class="vertical-ruler" aria-hidden="true"></div>
+      </div>
+    </section>
+
+
+    <footer class="status-bar">
+      <div class="status-left">
+        <span id="vim-status" class="vim-status-tag">INSERT</span>
+        <span id="file-info">Ready</span>
+      </div>
+      <div class="status-right">
+        <span id="cursor-pos">1:1</span>
+        <span id="file-encoding">UTF-8</span>
+      </div>
+    </footer>
+  </main>
+
+  <dialog id="shortcuts-dialog" class="shortcuts-dialog">
+    <form method="dialog" class="shortcuts-panel">
+      <div class="shortcuts-header">
+        <h2>Keyboard Shortcuts</h2>
+        <button class="dialog-close" type="submit" aria-label="Close shortcuts">×</button>
+      </div>
+      <div class="shortcuts-list">
+        <div class="shortcut-row"><span>Toggle input method</span><code>Shift</code></div>
+        <div class="shortcut-row"><span>New tab</span><code>Ctrl/Cmd + T</code></div>
+        <div class="shortcut-row"><span>Close tab</span><code>Ctrl/Cmd + W</code></div>
+        <div class="shortcut-row"><span>Switch tab</span><code>Alt + 1..9</code></div>
+        <div class="shortcut-row"><span>Copy all text</span><code>Ctrl/Cmd + Shift + C</code></div>
+        <div class="shortcut-row"><span>Undo</span><code>Ctrl/Cmd + Z</code></div>
+        <div class="shortcut-row"><span>Redo</span><code>Ctrl/Cmd + Shift + Z / Ctrl/Cmd + Y</code></div>
+        <div class="shortcut-row"><span>Save dictionary</span><code>Ctrl/Cmd + S</code></div>
+        <div class="shortcut-row"><span>Increase font size</span><code>Ctrl/Cmd + =</code></div>
+        <div class="shortcut-row"><span>Decrease font size</span><code>Ctrl/Cmd + -</code></div>
+        <div class="shortcut-row"><span>Reset font size</span><code>Ctrl/Cmd + 0</code></div>
+        <div class="shortcut-row"><span>Indent selection</span><code>Tab</code></div>
+        <div class="shortcut-row"><span>Insert tab</span><code>Tab (no selection)</code></div>
+        <div class="shortcut-row"><span>Outdent selection</span><code>Shift + Tab</code></div>
+        <div class="shortcut-row"><span>Zoom with mouse</span><code>Ctrl + Wheel</code></div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="open-dict-dialog" class="shortcuts-dialog">
+    <form method="dialog" class="shortcuts-panel">
+      <div class="shortcuts-header">
+        <h2>Open Dictionary</h2>
+        <button class="dialog-close" type="submit" aria-label="Close dictionary list">×</button>
+      </div>
+      <div id="dict-file-list" class="dict-file-list"></div>
+    </form>
+  </dialog>
+
+  <!-- Settings Dialog -->
+  <dialog id="settings-dialog" class="shortcuts-dialog">
+    <form method="dialog" class="shortcuts-panel">
+      <div class="shortcuts-header">
+        <h2>Editor Settings</h2>
+        <button class="dialog-close" type="submit" aria-label="Close settings">Close</button>
+      </div>
+      <div class="settings-list" id="settings-feature-list">
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Built-in Input Method</strong>
+            <p>Enable XSB IME inside this editor.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-ime">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Auto-copy to Clipboard</strong>
+            <p>Automatically copy text when typing pauses.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-autocopy">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>VIM Mode</strong>
+            <p>Enable VIM keybindings and normal/insert modes.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-vim">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Syntax Highlighting</strong>
+            <p>High-performance code coloring for Rime, JS, Python, etc.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-highlighter">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Built-in Font</strong>
+            <p>Use Sarasa Mono SC for better Chinese alignment.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-font">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <div class="setting-info">
+            <strong>Whitespace Indicators</strong>
+            <p>Show visible dots for spaces and arrows for tabs.</p>
+          </div>
+          <label class="switch-control">
+            <input type="checkbox" id="setting-feature-whitespace">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="../shared/dicts.js"></script>
+  <script src="../shared/sbzr-core.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

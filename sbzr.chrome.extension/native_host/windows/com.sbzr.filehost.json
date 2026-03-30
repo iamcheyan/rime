@@ -1,0 +1,9 @@
+{
+  "name": "com.sbzr.filehost",
+  "description": "SBZR local file host",
+  "path": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hkaku\\Dotfiles\\rime\\sbzr.chrome.extension\\native_host\\windows\\sbzr_native_host.cmd",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://lcfomhoeajhamclpdahlgjbadhhmpbhi/"
+  ]
+}

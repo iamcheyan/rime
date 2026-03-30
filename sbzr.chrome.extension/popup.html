@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBZR Settings</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <main class="popup-shell">
+    <header class="popup-header">
+      <h1>SBZR</h1>
+      <label class="toggle-row">
+        <span>Enabled</span>
+        <input id="global-enabled" type="checkbox">
+      </label>
+    </header>
+
+    <section class="panel">
+      <div class="panel-title">Current Page</div>
+      <div id="current-url" class="current-url">Loading...</div>
+      <div id="current-status" class="status-text"></div>
+      <div class="button-row">
+        <button id="enable-here" type="button">Enable Here</button>
+        <button id="disable-here" type="button">Disable Here</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Regex Rule</div>
+      <input id="regex-input" class="regex-input" type="text" placeholder="^https://example\\.com/">
+      <div class="button-row">
+        <button id="save-enabled" type="button">Save Enabled</button>
+        <button id="save-disabled" type="button">Save Disabled</button>
+      </div>
+      <div id="message" class="message"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Tools</div>
+      <label class="setting-row" for="candidate-font-size">
+        <span>Candidate Font Size</span>
+        <span id="candidate-font-size-value" class="setting-value">13px</span>
+      </label>
+      <input
+        id="candidate-font-size"
+        class="range-input"
+        type="range"
+        min="12"
+        max="28"
+        step="1"
+        value="13"
+      >
+      <div class="button-row">
+        <button id="open-notepad" type="button">Open Veikin（ベイケン）</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Input Method</div>
+      <div class="setting-block">
+        <div class="setting-block-header">
+          <span>Loaded Dictionaries</span>
+          <span class="setting-block-note">Choose which tables the built-in IME mounts in Notepad.</span>
+        </div>
+        <div id="ime-dict-list" class="ime-dict-list"></div>
+      </div>
+      <div class="button-row">
+        <button id="reload-dicts" type="button">Reload Dictionaries</button>
+        <button id="sync-to-rime" type="button">Sync to Rime</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Shortcut</div>
+      <div class="setting-row">
+        <span>Add To Fixed Dict</span>
+        <span id="add-fixed-dict-shortcut" class="setting-value">Loading...</span>
+      </div>
+      <div id="shortcut-hint" class="status-text"></div>
+      <div class="button-row">
+        <button id="open-shortcuts" type="button">Open Shortcuts</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Saved Rules</div>
+      <div id="rules-list" class="rules-list"></div>
+    </section>
+  </main>
+
+  <script src="./shared/dicts.js"></script>
+  <script src="./shared/sbzr-core.js"></script>
+  <script src="./popup.js"></script>
+</body>
+</html>

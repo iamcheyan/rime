@@ -1,0 +1,76 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+echo "=== 根据 .gitignore 自动管理文件 ==="
+echo ""
+
+# 1. 找出应该被忽略但仍在 Git 中跟踪的文件，从 Git 中删除
+echo "检查应该被忽略的文件..."
+REMOVED_COUNT=0
+while IFS= read -r file; do
+    if [ -n "$file" ] && [ "$file" != ".gitignore" ]; then
+        if git check-ignore -q "$file" 2>/dev/null; then
+            if git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
+                echo "  删除: $file (被 .gitignore 忽略)"
+                git rm --cached "$file" 2>/dev/null && REMOVED_COUNT=$((REMOVED_COUNT + 1))
+            fi
+        fi
+    fi
+done < <(git ls-files)
+
+if [ "$REMOVED_COUNT" -gt 0 ]; then
+    echo "✓ 已从 Git 中删除 $REMOVED_COUNT 个应该被忽略的文件"
+else
+    echo "✓ 没有需要删除的文件"
+fi
+echo ""
+
+# 2. 强制添加 userdb 文件（即使被 .gitignore 忽略）
+echo "添加 userdb 文件（强制添加）..."
+git add -f sbzr.userdb/*.ldb sbzr.userdb/lost/*.ldb 2>/dev/null || true
+git add -f jaroomaji.userdb/*.ldb jaroomaji.userdb/lost/*.ldb 2>/dev/null || true
+git add -f sync/*/*.txt 2>/dev/null || true
+git add -f sync/*/*.yaml 2>/dev/null || true
+echo "✓ userdb 和 sync 同步文件已强制添加"
+echo ""
+
+# 3. 添加其他所有文件（遵循 .gitignore 规则）
+echo "添加其他文件..."
+git add -A
+echo "✓ 其他文件已添加"
+echo ""
+
+# 4. 显示最终状态
+echo "=== 文件状态总结 ==="
+TRACKED_COUNT=$(git ls-files | wc -l)
+IGNORED_COUNT=$(git ls-files | xargs git check-ignore 2>/dev/null | wc -l)
+echo "已跟踪文件: $TRACKED_COUNT"
+echo "应该被忽略但仍跟踪的文件: $IGNORED_COUNT"
+echo ""
+
+# 5. 生成提交消息
+DEVICE_NAME=$(hostname)
+OS_NAME=$(uname -s)
+if [ "$OS_NAME" = "Linux" ] && [ -f /etc/os-release ]; then
+    OS_NAME=$(grep "^ID=" /etc/os-release | cut -d= -f2 | tr -d '"')
+fi
+# 组合标识符，例如: [CFSV9/fedora]
+IDENTIFIER="$DEVICE_NAME/$OS_NAME"
+
+if [ -n "$*" ]; then
+    # 使用所有参数作为消息（自动拼接，不需要引号）
+    COMMIT_MSG="[$IDENTIFIER] $*"
+else
+    # 使用默认时间戳消息
+    COMMIT_MSG="[$IDENTIFIER] 同步配置到仓库 [$(date +"%Y%m%d_%H%M%S")]"
+fi
+
+# 打印提交消息
+echo "=== 提交消息 ==="
+echo "$COMMIT_MSG"
+echo ""
+
+# 提交并推送
+git commit --allow-empty -m "$COMMIT_MSG"
+git push --force origin main
+

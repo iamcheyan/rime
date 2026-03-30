@@ -1,0 +1,767 @@
+# Uncommon characters removed from sbzr.chars.dict.yaml based on 常用字3500.txt
+丟	dqe
+丫	ya	10
+丫	yaou	10
+丫	yao
+乜	mxa
+乜	nxa
+乪	nha
+伉	khu
+伖	nuu
+伽	gau
+佐	zo	10
+佐	zoui	10
+佤	wau
+佬	lk	10
+佬	lkui	10
+佬	lku
+佻	tcu
+侃	kju
+侔	mbu
+侬	nsu
+倆	lwu
+倜	tiu
+倥	ksu
+倪	niui	10
+倪	nx	10
+倪	niu
+倭	wou
+倰	lgu
+倷	neu
+偄	nru
+偌	rou
+傩	nou
+僮	zdu
+儜	ngu
+兺	vvu
+冉	rj	10
+冉	rjia	10
+冉	rji
+冚	kjo
+冥	myo
+冽	lxo
+凋	dco
+凵	kja
+別	bxi
+剁	do	10
+剁	doua	10
+剻	fbi
+劃	hya
+卯	mk	10
+卯	mkua	10
+厄	eeu	10
+厄	vee	10
+叩	kbi	10
+叩	kbia	10
+叻	lei
+叾	vva
+吥	pbi
+吾	wuei	10
+呃	veia	9900
+呒	mv
+呗	bzia	11728
+呱	gwi
+呶	nki
+呶	nui
+呷	gai
+咅	tbo
+咋	zaia	17127
+咚	ds	10
+咚	dsia	10
+咚	dsi
+咛	nyi
+咣	gdi
+咦	yiia	11857
+咩	mxi
+咯	loia	10
+哇	wa	942
+哇	waia	942
+哇	wai
+哌	pli
+哏	gfi
+哒	dai
+哔	bi	5379
+哔	biia	5379
+哙	kyi
+哝	nsi
+哦	o	10
+哦	ou	10
+哦	vo	10
+哽	ggi
+唒	mqi
+唔	vvi	10
+唔	wuia	10
+唰	swi	10
+唰	swia	10
+唷	yoi
+唼	qxi
+啂	nbi
+啕	tki
+啜	coi
+喋	dx	10
+喋	zaia	10
+喏	noi
+喏	rei
+喔	voi
+喟	kvi
+喽	lbi
+嗄	vai
+嗣	siia	10
+嗨	hlia	10
+嗨	hz	10
+嗨	hli
+嗯	vf	1307
+嗯	vfia	1307
+嗯	vv	1307
+嗯	nvi
+嗲	dw
+嗷	kia	10
+嘎	ga	10
+嘎	gaia	10
+嘚	dei
+嘚	dzi
+嘛	maia	13953
+嘜	mli
+嘭	pgi
+嘸	mvi
+嘻	xiia	10
+噂	zpi
+噗	pui
+噙	qni
+噴	pfi
+嚅	rui
+嚓	cai
+嚜	mei
+囔	nhi
+囜	nni
+囧	js	11435
+囧	jsia	11435
+囵	lpi	10
+囵	lpia	10
+囸	rii
+圳	zf	10
+圳	zfei	10
+坨	to	10
+坨	toei	10
+垰	kae
+埔	puei	10
+墾	kfu
+壖	rre
+夥	hoi
+夬	gya
+奂	hru
+奎	kve
+奘	zda
+奤	hae
+奵	dya
+奻	nra
+妊	rfau	10
+妍	yj	10
+妍	yjau	10
+妎	haa
+妑	paa
+妞	nq	10
+妞	nqau	10
+妮	nia	10
+妮	niau	10
+妲	daa
+妵	tba
+姡	koa
+姩	nma
+姯	gda
+姱	kwa
+娀	ssa
+娅	yaa
+娆	rka
+娏	mha
+娓	wz	10
+娓	wzau	10
+娕	lla
+娟	jra
+娥	vea
+娴	xmau	10
+娻	dsa
+娼	cha
+婄	bua
+婄	pba
+婊	bca
+婑	rva
+婑	woa
+婥	nka
+婫	kpa
+婷	tya	10
+婷	tyau	10
+婻	nja
+媆	nfa
+媕	vja
+媪	vka
+媾	gba
+嫇	mya
+嫎	pha
+嫔	pna
+嫝	kha
+嫧	zea
+嫱	qda
+嫶	qca
+嫼	hza
+嬒	wla
+嬛	qsa
+嬣	nya
+嬲	nci
+孀	sda
+孃	nda
+孈	sya
+孫	spa
+孭	mea
+孺	rua
+宕	dh	10
+宕	dhvo	10
+宕	dho
+寰	hro
+尕	gaa
+尬	gae	10
+尬	gaeu	10
+尻	kka
+屇	tma
+屻	rfi
+岶	poi
+峏	vri
+峨	vei
+峮	qpi
+崆	ksi
+崛	jti
+崴	wli
+崽	zli
+嵘	rsi
+嵩	ssi
+嵶	roi
+嵻	khi
+巛	cra
+巜	kya
+巯	qqa
+帑	tha
+帧	zf	10
+帧	zfia	10
+庚	ggo
+弘	hsa
+弩	nuau	10
+弴	dpa
+彄	kba
+彉	goa
+彖	tra
+彦	yj	10
+彦	yjoe	10
+彿	fou
+徶	bxu
+徻	wlu
+忐	tj	10
+忐	tjie	10
+忑	te	10
+忑	teei	10
+忑	tee
+忒	tve
+忒	tz
+忕	dlo
+忖	cpo
+忸	nqo
+忸	nuo
+怂	ssuo	10
+怅	chvo	10
+怗	txo
+怡	yivo	10
+怦	pgo
+恁	nfu
+恁	nnu
+恏	hka
+恗	kwo
+恠	gyo
+恧	nve
+恿	ys	10
+恿	ysao	10
+悖	bzo
+悶	mfi
+悾	kso
+惢	rvo
+惴	zvo
+愞	rro
+愣	lgo	10
+愣	lgvo	10
+慁	hpi
+憃	cde
+憴	sgo
+懟	dvi
+懱	mxo
+懵	mgo
+戎	rs	10
+戎	rsve	10
+戧	cdu
+扥	df
+扪	mfe
+抐	nee
+抟	tre
+抿	mne
+拈	nme
+拫	hfe
+拰	nne
+拽	zy	10
+拽	zyei	10
+挝	zwe
+挞	taei	10
+挳	kge
+捋	lve	10
+捋	lvei	10
+掇	doei	10
+掊	pbe
+搋	cye
+搙	nue
+摁	vfe
+攮	nhe
+敖	kee	10
+敖	vke	10
+旰	gji
+昊	hk	5087
+昊	hkia	5087
+昕	xni
+晇	kwi
+晏	yjia	10
+晏	yr	10
+晖	hv	10
+晖	hvia	10
+暧	nr	10
+暧	vlia	10
+曰	yt	10
+曰	ytia	10
+曰	yti
+朊	rru
+朔	soou	10
+杲	gki
+枊	vhe
+柚	ybei	10
+柯	keei	10
+栍	vve
+桄	gde
+桔	juei	10
+桔	jx	10
+桙	mbe
+梡	kre
+梻	foe
+椴	dre
+椽	cre
+楄	pme
+榭	xxei	10
+槈	nbe
+樽	zpe
+橍	rpe
+欵	kru
+歕	pfe
+毮	voe
+氖	nlu
+氦	hlu
+氹	dha
+汀	tyvo	10
+汕	sj	10
+汕	sjvo	10
+汝	ruo
+沁	qn	10
+沁	qnvo	10
+沆	hho
+沌	zro
+沱	too
+況	kd	10
+泐	leo
+泷	sd	10
+泷	srvo	10
+泷	sdo
+洱	vro
+浃	jwo
+浍	kyo
+浏	lqvo	10
+浚	jpo
+涅	nxo
+涸	hevo	10
+渀	bfo
+渃	reo
+渲	xrvo	10
+湍	tro
+湎	mmo
+湓	pfo
+滕	tgu
+漳	zh	10
+漳	zhvo	10
+潠	spo
+潶	hzo
+灢	nho
+炅	js	10
+炅	jsia	10
+炖	dpou	10
+炙	ziua	10
+炯	js	10
+炯	jsou	10
+炽	ciou	10
+烬	jnou	10
+焄	hpa
+焉	yjei	10
+焉	yr	10
+焫	roo
+焸	xsi
+煗	nro
+煭	lxa
+煾	vfo
+熲	jsu
+爇	roe
+爿	pja
+牀	cda
+牟	mba
+犉	rpu
+犥	pcu
+犷	grua	10
+犸	mau
+狨	rsu
+狻	sru
+猯	tru
+猱	nku
+獭	tau
+獳	nbu
+珀	pove	10
+珐	fae
+珑	ls	10
+珑	lsve	10
+琶	pae	10
+琶	pave	10
+瑕	xw	10
+瑕	xwve	10
+甕	wgo
+甭	bge
+畚	bfa
+畧	lti
+疃	tri
+疓	nlo
+疵	cioe	10
+痞	pioe	10
+痤	coo	10
+痤	cooe	10
+癸	gva
+発	faa
+皓	hku
+皰	pka
+盎	vhi
+眩	xria	10
+眪	byi
+眸	mbi
+眺	tc	10
+眺	tcia	10
+睐	lli
+睔	gpi
+睖	lgi
+睘	qsi
+睨	nii
+睿	rv	1075
+睿	rvie	1075
+睿	rvi
+瞅	cb	10
+瞅	cbia	10
+瞅	cbi
+瞟	pci
+瞥	px	10
+瞥	pxou	10
+矔	gri
+矜	qna
+硸	nte
+磋	coeu	10
+磴	dge
+礽	rgo
+祁	qi	10
+祁	qioa	10
+禅	cj	10
+禅	sjoa	10
+禳	rho
+秙	kuu
+稞	keu
+穰	rhu
+穹	qso
+竵	wlo
+笾	bmu
+筇	qsu
+筘	kbu
+箔	boue	10
+篾	mxu
+籁	llu
+籗	kou
+籹	nvo
+粨	blo
+粰	fbo
+糅	rbo
+紑	fba
+絓	gwa
+給	gza
+綧	zpa
+緁	qxa
+縇	vva
+縩	cla
+縪	bxa
+繆	mqa
+繎	rja
+繷	nsa
+繺	sla
+纀	pua
+纄	pga
+纕	rha
+纣	zb	10
+纣	zbva	10
+纩	kda
+纶	lpa
+绔	kua
+绗	hga
+绗	hha
+绚	xra	10
+绚	xrva	10
+绠	gga
+绦	tk	10
+绦	tkva	10
+绲	gpa
+绺	lqa
+缈	mca
+缗	mna
+缟	gka
+缥	pca
+缦	mja
+缪	mq
+缮	sj	10
+缮	sjva	10
+缯	zga
+缵	zra
+缶	fbu
+羀	lqi
+羉	lri
+羌	qdo
+翟	zla
+翵	hba
+耨	nb	10
+耨	nbve	10
+聆	ly	10
+聆	lyei	10
+肰	rju
+胩	kau
+胫	jyua	10
+胫	kg	10
+胱	grua	10
+腩	nju
+腬	rbu
+膑	bnu
+膪	cyu
+臦	wha
+臬	nxu
+舛	cr	10
+舛	crua	10
+艮	gfa
+芘	biei	10
+芣	fbe
+芮	rve
+苑	yr	10
+苑	yrei	10
+苯	bfei	10
+茑	nce
+茗	mye
+茨	ciei	10
+茹	ruei	10
+莎	soei	10
+莓	mzei	10
+萱	xrei	10
+蓊	wge
+薍	lre
+薰	xpe
+蘅	hge
+蘏	jse
+蘼	mie
+蚄	fhi
+蚝	hk	10
+蚝	hkia	10
+蛞	koi
+蛟	jci	10
+蛟	jcia	10
+蛢	pyi
+蛼	cei
+蝂	bji
+螂	lh	10
+螂	lhia	10
+蟒	mhi	10
+蟒	mhia	10
+蟘	tei
+蟯	rki
+蠊	lmi
+衮	gpo
+衲	nao
+袅	ncu
+袤	mko
+裃	kao
+裉	kfo
+裒	pbo
+裔	yioe	10
+裱	bco
+裴	pzi
+褭	nco
+襓	rko
+襨	vvo
+訇	hsu
+誒	vzo
+誙	kgo
+誜	swo
+誰	szo
+諵	njo
+譳	nbo
+讴	vbo
+讷	neo
+诙	hv	10
+诙	hvoa	10
+诧	caoa	10
+诶	vz	10
+诶	zoa	10
+谑	nto
+豉	ciei	10
+豚	tp	10
+豚	tpua	10
+豚	tpu
+豤	kfe
+豳	bni
+赅	gli
+赣	gjo
+跄	qdi
+跆	tli
+跩	zyi
+踉	lhi
+踝	hyi
+踹	cy	10
+踹	cyia	10
+踹	cyi
+蹁	pmi
+蹉	coia	10
+蹍	nmi
+蹑	nx	10
+蹑	nxia	10
+蹑	nxi
+躇	cui
+躖	dri
+軬	fja
+辍	coea	10
+辸	rga
+迢	tca
+迥	js	10
+迥	jsia	10
+迥	jsi
+迪	dii	10
+迪	diia	10
+迭	dx	10
+迭	dxue	10
+迭	dxu
+迸	bgo
+這	zzo
+逡	qpa
+遐	xwa
+遛	lqua	10
+邆	tga
+邋	laa
+邝	kdo
+邱	qqui	10
+郝	hk	10
+郝	hkei	10
+郡	jpae	10
+酋	qqo
+酶	mzei	10
+酾	sle
+醃	vae
+醢	hle
+釯	mhu
+釰	riu
+錞	cpu
+鏰	bgu
+鐅	pxo
+钔	mfu
+钕	nvu
+钛	tl	10
+钛	tlue	10
+铂	boue	10
+铉	xru
+铠	klu
+铥	dqu
+铪	hau
+铽	teu
+铿	kgu
+锊	ltu
+锗	zeu	10
+锗	zeue	10
+锲	qxu
+镁	mzue	10
+镍	nx	10
+镍	nxue	10
+镑	bhue	10
+镖	bc	10
+镖	bcue	10
+镖	bcu
+镦	dvu
+镫	dgu
+閂	sri
+閠	rpi
+闩	sro
+阃	kpo
+阙	qto
+阞	lea
+阬	kga
+阮	rr	10
+阮	rrai	10
+阮	rra
+阼	zoa
+陀	toa	10
+陀	toai	10
+隍	hda
+隗	kva
+隣	lna
+隭	vra
+雙	sdu
+雯	wfe
+霆	tyeo	10
+韖	rba
+韘	sea
+韛	bla
+韦	hv	10
+韦	wzve	10
+飻	txu
+餮	txe
+饽	boua	10
+馈	kv	10
+馈	kvua	10
+馕	nhu
+馨	xne	10
+馨	xnei	10
+馹	rie
+驲	ria
+骁	xca
+骅	hwa
+骒	kea
+骢	csa
+骰	tbi
+骼	gei
+髋	kri
+髯	rje
+魅	mzui	10
+魻	qwu
+鮛	swu
+鰂	zzu
+鲍	bkua	10
+鲎	hbo
+鲠	ggu
+鲧	gpu
+鲨	savo	10
+鲲	kpu
+鳟	zpu
+鵖	lha
+鶷	xwo
+鸾	lro
+麟	lno
+麽	meo
+鼗	tku
+𠙶	vba
+𫟅	lda
+𬭯	pxu
+𬭶	hzu
+𬳶	jsa
+𬴃	hoa

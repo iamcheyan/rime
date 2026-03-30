@@ -1,0 +1,17 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: sbpy
+  name: 声笔拼音
+  version: "0.1"
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyz
+  algebra:
+    - derive/^([a-z]+)\d+$/$1/
+    - derive/^([a-z]+)\d+(\d+)$/$1$2/
+    - abbrev/^([a-z]).+$/$1/
+
+translator:
+  dictionary: sbpy

@@ -1,0 +1,23 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: sbzr.shortcut
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+...
+明天	mt	1999
+差分逻辑	cflj	1999
+关键点	gjd	1999
+结果集	jgji	1999
+苦行僧	kxs	1999
+苦行僧	kxsg	1999
+跑通	pkts	1999
+python	py	1999
+vscode	vs	1999
+源表	yrbc	1999

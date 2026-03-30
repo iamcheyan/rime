@@ -1,0 +1,34 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  正在从 GitHub 强制同步最新配置"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo ""
+
+# 1. 检查本地状态
+echo "检查本地更改状况..."
+if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo ""
+    echo "⚠️  警告: 检测到本地有未提交的更改。"
+    echo "强制拉取 (Force Pull) 会覆盖掉本地这些未提交的内容！"
+    read -p "确定要放弃本地更改并强制同步吗？(y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "已取消操作"
+        exit 0
+    fi
+fi
+
+# 2. 执行强制同步
+echo "正在从远程获取 (fetch)..."
+git fetch origin main
+
+echo "正在强制重置本地分支 (reset --hard)..."
+git reset --hard origin/main
+
+# 3. 清理可能多出的未跟踪文件（可选，保持纯净）
+# git clean -fd  # 如果你想彻底保持和远程一模一样，可以取消注释这一行
+
+echo ""
+echo "✓ 所有配置已更新至最新版本。"

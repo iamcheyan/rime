@@ -1,0 +1,8 @@
+# iBus-Rime 自定义配置
+# 候选词显示方向设置
+
+patch:
+  style/horizontal: false  # false=竖排显示，true=横排显示
+  style/inline_preedit: true  # 在输入位置显示预编辑文本
+  style/cursor_type: insert  # 光标类型
+  style/preedit_style: composition  # 预编辑样式
