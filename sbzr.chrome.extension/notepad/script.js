@@ -25,16 +25,21 @@ const whitespaceOverlay = document.getElementById('whitespace-overlay');
 
 const STORAGE_KEY = 'local_notepad_workspace';
 const IME_DICT_PATHS_STORAGE_KEY = 'sbzr_ime_dict_paths';
+const GLOBAL_ENABLED_STORAGE_KEY = 'sbzr_enabled';
 const WORKSPACE_SAVE_DELAY = 120;
 const AUTO_COPY_IDLE_DELAY = 700;
 const SAVE_SUCCESS_FEEDBACK_MS = 1400;
 const SAVE_ERROR_FEEDBACK_MS = 2200;
 const TAB_WIDTH = 4;
 const HISTORY_LIMIT = 100;
-const EDITABLE_DICT_PATHS = window.SBZRShared?.getEditableDictPaths?.() || [];
+const EDITABLE_DICT_PATHS = [
+  ...(window.SBZR_DICTS?.RIME_PATHS || []),
+  ...(window.SBZR_DICTS?.AFFIX_SOURCES || []).map((item) => item.path)
+];
 const IME_DICT_TABLES = window.SBZR_DICTS?.TABLES || [];
 const DEFAULT_IME_DICT_PATHS = IME_DICT_TABLES.map((table) => table.path);
 const NATIVE_HOST_NAME = 'com.sbzr.filehost';
+const SBZR_CORE_SCRIPT_PATH = '../shared/sbzr-core.js';
 const VIM_SCRIPT_PATH = '../shared/vim-mode.js';
 const HIGHLIGHTER_SCRIPT_PATH = '../shared/highlighter.js';
 
@@ -99,6 +104,15 @@ function loadSharedScript(path, globalName) {
   return promise;
 }
 
+async function ensureSBZRShared() {
+  await loadSharedScript(SBZR_CORE_SCRIPT_PATH, 'SBZRShared');
+  return window.SBZRShared;
+}
+
+function getDictFileLabel(path) {
+  return `${path || ''}`.split('/').pop() || 'dict';
+}
+
 function createId() {
   return `tab_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -132,7 +146,7 @@ function getFallbackTabTitle(tab, index = workspace.tabs.findIndex((item) => ite
 
 function getTabDisplayTitle(tab, index = workspace.tabs.findIndex((item) => item.id === tab?.id)) {
   if (tab?.sourcePath) {
-    return window.SBZRShared?.getDictFileLabel?.(tab.sourcePath) || tab.sourcePath;
+    return getDictFileLabel(tab.sourcePath) || tab.sourcePath;
   }
   return deriveTabTitle(tab?.content, getFallbackTabTitle(tab, index));
 }
@@ -219,14 +233,23 @@ function buildImeDictConfig(selectedPaths) {
 }
 
 async function reinstallImeController() {
-  if (!window.SBZRShared?.installTextareaIME) return;
+  if (workspace.featureIme === false) {
+    if (sbzrImeController?.destroy) {
+      sbzrImeController.destroy();
+    }
+    sbzrImeController = null;
+    return;
+  }
+
+  const SBZRShared = await ensureSBZRShared();
+  if (!SBZRShared?.installTextareaIME) return;
   if (sbzrImeController?.destroy) {
     sbzrImeController.destroy();
   }
 
   const selectedPaths = await getStoredImeDictPaths();
   const { packagedPaths, affixSources } = buildImeDictConfig(selectedPaths);
-  sbzrImeController = window.SBZRShared.installTextareaIME({
+  sbzrImeController = SBZRShared.installTextareaIME({
     target: editor,
     packagedPaths,
     affixSources,
@@ -235,6 +258,11 @@ async function reinstallImeController() {
       (vimMode && vimMode.enabled && vimMode.mode === 'normal')
     )
   });
+}
+
+function ensureImeControllerIfNeeded() {
+  if (workspace.featureIme === false || sbzrImeController) return;
+  void reinstallImeController();
 }
 
 function destroyVimMode() {
@@ -406,6 +434,10 @@ function syncFeatureVisibility() {
     workspace.highlighterEnabled = false;
     destroyHighlighter();
   }
+  if (!workspace.featureIme && sbzrImeController?.destroy) {
+    sbzrImeController.destroy();
+    sbzrImeController = null;
+  }
   if (!workspace.featureAutoCopy && workspace.autoCopyEnabled) {
     workspace.autoCopyEnabled = false;
     clearAutoCopyTimer();
@@ -433,8 +465,8 @@ function syncVimModeButton() {
 }
 
 async function syncImeStatusButton() {
-  const result = await chrome.storage.local.get([window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY]);
-  const enabled = result[window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY] !== false;
+  const result = await chrome.storage.local.get([GLOBAL_ENABLED_STORAGE_KEY]);
+  const enabled = result[GLOBAL_ENABLED_STORAGE_KEY] !== false;
   imeStatusButton.classList.toggle('is-active', enabled);
   imeStatusButton.title = enabled ? 'Input Method Enabled (Press Shift to toggle)' : 'Input Method Disabled (Press Shift to toggle)';
   imeStatusButton.setAttribute('aria-label', enabled ? 'Disable Input Method' : 'Enable Input Method');
@@ -451,7 +483,7 @@ function syncSaveButton() {
   saveButton.title = !isSourceTab
     ? 'Open a dictionary file to save'
     : isDirty
-      ? `Save ${window.SBZRShared?.getDictFileLabel?.(currentTab.sourcePath) || currentTab.sourcePath}`
+      ? `Save ${getDictFileLabel(currentTab.sourcePath) || currentTab.sourcePath}`
       : 'No changes to save';
 }
 
@@ -654,7 +686,7 @@ function updateStatusFileInfo() {
   const tab = getCurrentTab();
   const fileInfo = document.getElementById('file-info');
   if (fileInfo) {
-    fileInfo.textContent = tab.sourcePath ? (window.SBZRShared?.getDictFileLabel?.(tab.sourcePath) || tab.sourcePath) : 'Untitled';
+    fileInfo.textContent = tab.sourcePath ? (getDictFileLabel(tab.sourcePath) || tab.sourcePath) : 'Untitled';
   }
 }
 
@@ -785,6 +817,7 @@ function addTab(title) {
 
 async function openDictFile(path) {
   if (!path) return;
+  const SBZRShared = await ensureSBZRShared();
 
   persistCurrentTabState();
   const existing = workspace.tabs.find((tab) => tab.sourcePath === path);
@@ -797,12 +830,12 @@ async function openDictFile(path) {
     return;
   }
 
-  const content = await window.SBZRShared.readPackagedDictText(path);
-  const tab = createTab(window.SBZRShared.getDictFileLabel(path));
+  const content = await SBZRShared.readPackagedDictText(path);
+  const tab = createTab(getDictFileLabel(path));
   tab.sourcePath = path;
   tab.content = content;
   tab.savedContent = content;
-  tab.title = window.SBZRShared.getDictFileLabel(path);
+  tab.title = getDictFileLabel(path);
   resetTabHistory(tab);
   workspace.tabs.push(tab);
   workspace.activeTabId = tab.id;
@@ -813,6 +846,7 @@ async function openDictFile(path) {
 }
 
 async function saveCurrentSourceTab() {
+  const SBZRShared = await ensureSBZRShared();
   const tab = getCurrentTab();
   if (!tab?.sourcePath) return;
   if (!isSourceTabDirty(tab)) {
@@ -821,7 +855,7 @@ async function saveCurrentSourceTab() {
   }
 
   persistCurrentTabState({ render: false });
-  const localPath = window.SBZRShared?.getDictFileLabel?.(tab.sourcePath) || tab.sourcePath;
+  const localPath = getDictFileLabel(tab.sourcePath) || tab.sourcePath;
   setSaveButtonFeedback('is-saving', 'Saving...');
 
   try {
@@ -836,7 +870,7 @@ async function saveCurrentSourceTab() {
   } catch (error) {
     console.warn('SBZR: Native save unavailable, falling back to storage override.', error);
     try {
-      await window.SBZRShared.savePackagedDictOverride(tab.sourcePath, editor.value);
+      await SBZRShared.savePackagedDictOverride(tab.sourcePath, editor.value);
     } catch (fallbackError) {
       console.error('SBZR: Fallback save failed.', fallbackError);
       setSaveButtonFeedback('is-error', 'Save failed', SAVE_ERROR_FEEDBACK_MS);
@@ -852,7 +886,8 @@ async function saveCurrentSourceTab() {
 }
 
 async function promptAndSaveFixedEntry(selectedText) {
-  await window.SBZRShared.promptAndSaveFixedEntry(selectedText, {
+  const SBZRShared = await ensureSBZRShared();
+  await SBZRShared.promptAndSaveFixedEntry(selectedText, {
     nativeHostName: NATIVE_HOST_NAME,
     afterSave: async ({ path, localPath, text }) => {
       syncSourceTabsWithTexts({
@@ -1062,7 +1097,7 @@ function syncSourceTabsWithTexts(dictTexts) {
 
   for (const tab of workspace.tabs) {
     if (!tab.sourcePath) continue;
-    const localPath = window.SBZRShared?.getDictFileLabel?.(tab.sourcePath) || tab.sourcePath;
+    const localPath = getDictFileLabel(tab.sourcePath) || tab.sourcePath;
     if (!Object.prototype.hasOwnProperty.call(dictTexts, localPath)) continue;
 
     const nextText = `${dictTexts[localPath] || ''}`;
@@ -1250,6 +1285,12 @@ settingFeatureIme.addEventListener('change', () => {
   workspace.featureIme = settingFeatureIme.checked;
   saveWorkspace();
   syncFeatureVisibility();
+  if (workspace.featureIme) {
+    ensureImeControllerIfNeeded();
+  } else if (sbzrImeController?.destroy) {
+    sbzrImeController.destroy();
+    sbzrImeController = null;
+  }
   void syncImeStatusButton();
 });
 
@@ -1272,9 +1313,9 @@ tabsRoot.addEventListener('dblclick', (event) => {
 });
 
 imeStatusButton.addEventListener('click', async () => {
-  const result = await chrome.storage.local.get([window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY]);
-  const currentlyEnabled = result[window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY] !== false;
-  await chrome.storage.local.set({ [window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY]: !currentlyEnabled });
+  const result = await chrome.storage.local.get([GLOBAL_ENABLED_STORAGE_KEY]);
+  const currentlyEnabled = result[GLOBAL_ENABLED_STORAGE_KEY] !== false;
+  await chrome.storage.local.set({ [GLOBAL_ENABLED_STORAGE_KEY]: !currentlyEnabled });
 });
 
 shortcutsButton.addEventListener('click', () => {
@@ -1414,7 +1455,9 @@ if (chrome.runtime?.onMessage) {
       return;
     }
     if (message?.type === 'sbzr_add_current_selection_to_fixed_dict') {
-      void promptAndSaveFixedEntry(window.SBZRShared.getActiveSelectedText());
+      void ensureSBZRShared().then((SBZRShared) => {
+        void promptAndSaveFixedEntry(SBZRShared.getActiveSelectedText());
+      });
     }
   });
 }
@@ -1422,17 +1465,18 @@ if (chrome.runtime?.onMessage) {
 if (chrome.storage?.onChanged) {
   chrome.storage.onChanged.addListener((changes, areaName) => {
     if (areaName === 'local') {
-      if (changes[window.SBZRShared.GLOBAL_ENABLED_STORAGE_KEY]) {
+      if (changes[GLOBAL_ENABLED_STORAGE_KEY]) {
         void syncImeStatusButton();
       }
-      if (changes[IME_DICT_PATHS_STORAGE_KEY]) {
+      if (changes[IME_DICT_PATHS_STORAGE_KEY] && sbzrImeController) {
         void reinstallImeController();
       }
     }
   });
 }
 
-void reinstallImeController();
+editor.addEventListener('focus', ensureImeControllerIfNeeded);
+editor.addEventListener('pointerdown', ensureImeControllerIfNeeded);
 
 renderTabs();
 syncAutoCopyButton();
@@ -1454,19 +1498,26 @@ if (workspace.featureHighlighter && workspace.highlighterEnabled !== false) {
   });
 }
 
-if (window.SBZRShared?.installTabDragging) {
-  window.SBZRShared.installTabDragging(tabsRoot, {
-    onOrderChange: (elements) => {
-      const newTabs = [];
-      for (const el of elements) {
-        const tabId = el.dataset.id;
-        const tab = workspace.tabs.find((t) => t.id === tabId);
-        if (tab) newTabs.push(tab);
+let tabDraggingInstalled = false;
+
+tabsRoot.addEventListener('pointerdown', () => {
+  if (tabDraggingInstalled) return;
+  void ensureSBZRShared().then((SBZRShared) => {
+    if (tabDraggingInstalled || !SBZRShared?.installTabDragging) return;
+    SBZRShared.installTabDragging(tabsRoot, {
+      onOrderChange: (elements) => {
+        const newTabs = [];
+        for (const el of elements) {
+          const tabId = el.dataset.id;
+          const tab = workspace.tabs.find((t) => t.id === tabId);
+          if (tab) newTabs.push(tab);
+        }
+        if (newTabs.length === workspace.tabs.length) {
+          workspace.tabs = newTabs;
+          saveWorkspace();
+        }
       }
-      if (newTabs.length === workspace.tabs.length) {
-        workspace.tabs = newTabs;
-        saveWorkspace();
-      }
-    }
+    });
+    tabDraggingInstalled = true;
   });
-}
+}, { once: false });

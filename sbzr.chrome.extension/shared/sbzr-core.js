@@ -1818,8 +1818,16 @@ function recordUserHistorySelection(code, word, userHistory, maxEntries = 5) {
       }
     }
 
+    function isTargetFocused() {
+      let active = document.activeElement;
+      while (active?.shadowRoot?.activeElement) {
+        active = active.shadowRoot.activeElement;
+      }
+      return active === target;
+    }
+
     function onDocumentKeyDown(event) {
-      if (document.activeElement !== target) return;
+      if (!isTargetFocused()) return;
       if (event.key === 'Shift' && !event.ctrlKey && !event.altKey && !event.metaKey) {
         shiftPressedOnly = true;
         shiftToggleArmed = true;
