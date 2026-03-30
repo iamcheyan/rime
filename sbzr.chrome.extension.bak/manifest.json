@@ -1,0 +1,65 @@
+{
+    "manifest_version": 3,
+    "name": "SBZR Input Method",
+    "version": "1.0.1",
+    "description": "SBZR input method using bundled Rime dictionaries.",
+    "permissions": [
+        "storage",
+        "unlimitedStorage",
+        "tabs",
+        "nativeMessaging",
+        "contextMenus"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "commands": {
+        "add-selection-to-fixed-dict": {
+            "suggested_key": {
+                "default": "Alt+Shift+A",
+                "mac": "Command+Shift+A"
+            },
+            "description": "Add selected text to fixed.dict.yaml"
+        }
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "shared/sbzr-core.js",
+                "content.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "style.css",
+                "popup.html",
+                "popup.css",
+                "popup.js",
+                "dicts/fixed.dict.yaml",
+                "dicts/zdy.dict.yaml",
+                "dicts/xsb.char2.dict.yaml",
+                "dicts/xsb.dict.yaml",
+                "fonts/MapleMonoNormal-CN-Regular.ttf",
+                "fonts/SarasaMonoSC-Regular.ttf",
+                "notepad/index.html",
+                "notepad/styles.css",
+                "notepad/script.js",
+                "shared/sbzr-core.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ]
+}

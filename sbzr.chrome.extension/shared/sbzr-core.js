@@ -1467,12 +1467,29 @@ function recordUserHistorySelection(code, word, userHistory, maxEntries = 5) {
 
     function insertText(text, consumedLen = 0, isSelection = false) {
       if (consumedLen === 0) consumedLen = buffer.length;
-      const start = target.selectionStart || 0;
-      const end = target.selectionEnd || 0;
-      const value = target.value || '';
-      target.value = value.slice(0, start) + text + value.slice(end);
-      target.selectionStart = target.selectionEnd = start + text.length;
-      target.dispatchEvent(new Event('input', { bubbles: true }));
+      if (target.isContentEditable) {
+        target.focus();
+        const execOk = document.execCommand && document.execCommand('insertText', false, text);
+        if (!execOk) {
+          const sel = window.getSelection();
+          if (sel && sel.rangeCount > 0) {
+            const range = sel.getRangeAt(0);
+            range.deleteContents();
+            range.insertNode(document.createTextNode(text));
+            range.collapse(false);
+            sel.removeAllRanges();
+            sel.addRange(range);
+          }
+        }
+        target.dispatchEvent(new Event('input', { bubbles: true }));
+      } else {
+        const start = target.selectionStart || 0;
+        const end = target.selectionEnd || 0;
+        const value = target.value || '';
+        target.value = value.slice(0, start) + text + value.slice(end);
+        target.selectionStart = target.selectionEnd = start + text.length;
+        target.dispatchEvent(new Event('input', { bubbles: true }));
+      }
       
       if (isSelection && buffer) {
         const consumedCodePart = buffer.substring(0, consumedLen);
@@ -1805,7 +1822,7 @@ function recordUserHistorySelection(code, word, userHistory, maxEntries = 5) {
     function onBlur() {
       window.setTimeout(() => {
         if (draggingUI) return;
-        if (document.activeElement !== target) {
+        if (!isTargetFocused()) {
           hideUI();
           buffer = '';
         }
