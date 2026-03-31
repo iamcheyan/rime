@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "声笔自然输入法",
+    "name": "Veikin",
     "version": "1.0.1",
-    "description": "基于 Rime 词库的声笔自然输入法。",
+    "description": "Veikin Input Method based on Rime dictionaries.",
     "permissions": [
         "storage",
         "unlimitedStorage",

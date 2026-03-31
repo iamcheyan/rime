@@ -712,7 +712,7 @@
   } = {}) {
     const word = `${selectedText || ''}`.trim();
     if (!word) {
-      showAppToast('没有可添加的选中文本。', { document: doc, tone: 'warning' });
+      showAppToast('No text selected for addition.', { document: doc, tone: 'warning' });
       return { ok: false, reason: 'empty_selection' };
     }
 
@@ -728,7 +728,7 @@
       const codeMap = buildWeightedCodeMapFromTexts([sourceText]);
       const wordsMap = codeMap.get(code);
       if (wordsMap?.has(word)) {
-        showAppToast(`已存在：${word} -> ${code}`, { document: doc, tone: 'warning' });
+        showAppToast(`Already exists: ${word} -> ${code}`, { document: doc, tone: 'warning' });
         return { ok: false, reason: 'duplicate', word, code };
       }
 
@@ -746,11 +746,11 @@
           weight
         });
       }
-      showAppToast(`已添加：${word} -> ${code} (${weight})`, { document: doc, tone: 'success' });
+      showAppToast(`Added: ${word} -> ${code} (${weight})`, { document: doc, tone: 'success' });
       return { ok: true, word, code, weight, text: nextText };
     } catch (error) {
       logger?.error?.('SBZR: Add fixed dictionary entry failed.', error);
-      showAppToast(`添加失败：${error.message}`, { document: doc, tone: 'error', duration: 3200 });
+      showAppToast(`Failed to add: ${error.message}`, { document: doc, tone: 'error', duration: 3200 });
       return { ok: false, reason: 'error', error };
     }
   }

@@ -51,7 +51,7 @@ body.font-builtin-disabled .status-bar {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-rows: 38px 36px minmax(0, 1fr) 24px;
+  grid-template-rows: 38px auto minmax(0, 1fr) 24px;
 }
 
 /* TOPBAR & LOGO */
@@ -159,16 +159,17 @@ body.font-builtin-disabled .status-bar {
 
 /* TABS SYSTEM */
 .tabs-shell {
-  border-bottom: 1px solid #1f1f1f;
-  background: #2a2a2a;
-  height: 36px;
+  border-bottom: 1px solid #141414;
+  background: #252525;
+  width: 100%;
 }
 
 .tabs {
-  display: flex;
-  height: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  /* max-width: 1000px; */
+  margin: 0 auto;
+  border-left: 1px solid #1f1f1f;
 }
 
 .tabs::-webkit-scrollbar {
@@ -179,17 +180,16 @@ body.font-builtin-disabled .status-bar {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-width: 120px;
-  max-width: 240px;
+  min-width: 0;
   padding: 0 12px;
-  height: 100%;
+  height: 36px;
   border-right: 1px solid #1f1f1f;
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid #1f1f1f;
   color: var(--muted);
   cursor: pointer;
   background: #2b2b2b;
   transition: all 0.1s ease;
-  flex-shrink: 0;
+  position: relative;
 }
 
 .tab:hover {
@@ -198,9 +198,19 @@ body.font-builtin-disabled .status-bar {
 }
 
 .tab.is-active {
-  background: #1f1f1f;
-  border-bottom-color: var(--accent);
+  background: #1b1b1b;
   color: #fff;
+  border-bottom-color: transparent;
+}
+
+.tab.is-active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
 }
 
 .tab-title {

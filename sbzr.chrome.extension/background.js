@@ -6,7 +6,7 @@ function createContextMenus() {
   chrome.contextMenus.removeAll(() => {
     chrome.contextMenus.create({
       id: ADD_TO_FIXED_DICT_MENU_ID,
-      title: '添加到词库',
+      title: 'Add to Dictionary',
       contexts: ['selection']
     });
   });

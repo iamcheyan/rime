@@ -1222,7 +1222,7 @@ async function reloadEffectiveDictFromStorage() {
 async function promptAndSaveCustomEntry(selectedText) {
     const word = (selectedText || '').trim();
     if (!word) {
-        SBZRShared.showAppToast('没有可添加的选中文本。', { tone: 'warning' });
+        SBZRShared.showAppToast('No text selected for addition.', { tone: 'warning' });
         return;
     }
 
@@ -1237,10 +1237,10 @@ async function promptAndSaveCustomEntry(selectedText) {
         await chrome.storage.local.set({
             sbzr_user_dict: nextText
         });
-        SBZRShared.showAppToast(`已添加到 SBZR 词库：${word} -> ${code}`, { tone: 'success' });
+        SBZRShared.showAppToast(`Added to SBZR dictionary: ${word} -> ${code}`, { tone: 'success' });
     } catch (err) {
         console.error('SBZR: Add custom entry failed', err);
-        SBZRShared.showAppToast(`添加失败：${err.message}`, { tone: 'error', duration: 3200 });
+        SBZRShared.showAppToast(`Failed to add: ${err.message}`, { tone: 'error', duration: 3200 });
     }
 }
 
@@ -1828,7 +1828,7 @@ function renderUI() {
     headerActions.appendChild(punctuationButton);
 
     const widthButton = createImeButton(
-        widthMode === 'full' ? '全' : '半',
+        widthMode === 'full' ? 'Full' : 'Half',
         widthMode === 'full' ? 'Full width' : 'Half width',
         async () => {
             toggleWidthMode();
