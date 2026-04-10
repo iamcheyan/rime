@@ -1,13 +1,14 @@
 customization:
   distribution_code_name: Weasel
-  distribution_version: 0.16.1
+  distribution_version: 0.17.0
   generator: "Weasel::UIStyleSettings"
-  modified_time: "Fri Sep 20 22:06:43 2024"
-  rime_version: 1.11.2
+  modified_time: "Fri Apr 10 16:46:45 2026"
+  rime_version: 1.13.1
 patch:
-  "style/color_scheme": dark_temple # 深色皮肤
-  "style/font_point": 18
-  "style/horizontal": true  # 水平排列
-  "style/font_face": "HanaMinA"
-  "style/vertical": "true"
-  "style/inline_preedit": true  # 在输入过程中将预编辑文字内嵌显示
+  "style/color_scheme": steam
+  "style/font_face": HanaMinA
+  "style/font_point": 14
+  "style/horizontal": true
+  "style/inline_preedit": true
+  "style/vertical": true
+  us_keyboard_layout: false

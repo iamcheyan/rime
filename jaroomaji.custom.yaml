@@ -1,0 +1,12 @@
+patch:
+  "key_binder/bindings/+":
+    # 翻页快捷键
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { accept: "Control+comma", select: .next, when: always }
+    - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Shift+BackSpace", send: Escape, when: composing }
+
+    # 日语长音修正
+    - { when: has_menu, accept: minus, send: minus }
+    - { when: has_menu, accept: underscore, send: underscore }

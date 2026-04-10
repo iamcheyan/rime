@@ -1,0 +1,5 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layouts\00000804]
+"Layout File"="KBD106.dll"
+"Layout Text"="Chinese (Simplified) - JIS Keyboard"
