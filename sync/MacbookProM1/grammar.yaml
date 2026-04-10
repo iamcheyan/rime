@@ -1,0 +1,6 @@
+# Minimal grammar config for librime sentence lookup on synced devices.
+
+grammar:
+  language: zh-hans
+  collocation_max_length: 8
+  collocation_min_length: 2

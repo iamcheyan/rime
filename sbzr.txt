@@ -2,11 +2,11 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	5069
+#@/tick	5095
 啊	a	6
 不	b	29
 扒	ba	1
-把	ba	19
+把	ba	20
 爸爸	baba	12696
 爸不	babu	4382
 把被	babz	1882
@@ -7854,7 +7854,7 @@
 传递给	cdji	180
 单独给	cdji	2334
 彻底几	cdji	101
-创建	cdjm	29549
+创建	cdjm	29551
 池袋见	cdjm	1891
 闯进	cdjn	0
 菜单就要被	cdjp	7225
@@ -7930,7 +7930,7 @@
 菜单没	cdmo	31
 词的默认	cdmr	6440
 菜单没显示	cdms	34
-错提目	cdmu	502
+错提目	cdmu	503
 彻底没	cdmz	4470
 菜单没	cdmz	31
 词典那个	cdng	9139
@@ -8153,7 +8153,7 @@
 车外	cewl	89
 撤销	cexc	14311
 测验	ceyj	13530
-澈言	ceyj	10006
+澈言	ceyj	10007
 册子	cezi	231
 陈	cfai	466
 抽风吧	cfba	9950
@@ -12002,7 +12002,7 @@
 操作只在	czzz	4843
 操作自在	czzz	3985
 词组作的在	czzz	3753
-的	d	186
+的	d	187
 大	da	1
 打	da	2
 大巴	daba	4127
@@ -12109,7 +12109,7 @@
 大鱼	dayu	3570
 答应	dayy	8436
 大致	dazi	6942
-打字	dazi	38008
+打字	dazi	38009
 大战	dazj	1458
 大在	dazl	7046
 搭载	dazl	8776
@@ -15354,7 +15354,7 @@
 不够的话	dgdl	7633
 代管的资料	dgdl	116
 的固定栏	dgdl	0
-等待	dgdl	9512
+等待	dgdl	9513
 都干掉了	dgdl	3328
 点观点	dgdm	1604
 的改动说明	dgdm	2059
@@ -18123,7 +18123,7 @@
 大家蒸报纸	djzz	4795
 点击左侧	djzz	4538
 的技术栈	djzz	4317
-到	dk	12
+到	dk	14
 不会吧	dkba	4382
 不会把	dkba	1817
 都看不明白	dkbb	8187
@@ -19507,7 +19507,7 @@
 电	dmia	23
 多买几把	dmjb	1091
 代码给	dmji	1027
-点击	dmji	37515
+点击	dmji	37518
 点己	dmji	0
 的门槛	dmjm	154
 点旧	dmjq	1373
@@ -47959,7 +47959,7 @@ EventBridgeスケジュール設定	eve	2
 今日	jnri	599
 给内容	jnrs	10
 给内容加上	jnrs	10
-进入	jnru	26502
+进入	jnru	26503
 就能收	jnsb	1022
 就能收到	jnsd	83
 就能收缩到	jnsd	2490
@@ -52821,7 +52821,7 @@ EventBridgeスケジュール設定	eve	2
 可笑	kexc	6976
 可惜	kexi	13239
 科学	kext	16738
-可以	keyi	65426
+可以	keyi	65427
 课椅	keyi	11743
 可以了	keyi l	1
 可以了	keyi le	1
@@ -55601,7 +55601,7 @@ EventBridgeスケジュール設定	eve	2
 控制这些	kzzx	2
 卡着作者	kzzz	6537
 控制这	kzzz	4795
-了	l	100
+了	l	101
 林	l	1
 喇叭	laba	7910
 拉从	lacs	898
@@ -57312,7 +57312,7 @@ EventBridgeスケジュール設定	eve	2
 礼貌	limk	13836
 里买	liml	8650
 利面	limm	1274
-里面	limm	25932
+里面	limm	25933
 里么	limo	7225
 里没	limo	0
 里能	ling	7827
@@ -76709,7 +76709,7 @@ python	py	1
 人家公司里	rjgl	5712
 人家公司	rjgs	5543
 日交后	rjhb	1
-然后	rjhb	25213
+然后	rjhb	25214
 软件可以	rjky	7261
 入籍了吧	rjlb	2429
 入籍了	rjlc	2357
@@ -80970,7 +80970,7 @@ python	py	1
 时候才能	shcn	1703
 是缓存	shcp	2836
 时候从去	shcq	963
-上传	shcr	30017
+上传	shcr	30019
 时候从	shcs	850
 时候从公司	shcs	58
 时候才显示	shcs	40
@@ -93630,7 +93630,7 @@ python	py	1
 而且那个	vjng	7710
 而且你	vjni	2417
 而且你们	vjnm	278
-按钮	vjnq	36110
+按钮	vjnq	36111
 而且便利店	vjpd	9464
 按键比较好	vjph	6703
 按键被	vjpi	366
@@ -95353,7 +95353,7 @@ python	py	1
 我法给	wfji	2393
 无法拒绝	wfjj	1488
 我发给小米	wfjm	3678
-文件	wfjm	69466
+文件	wfjm	69467
 我发给你	wfjn	3790
 问津	wfjn	14725
 我不就	wfjq	8650
@@ -95381,6 +95381,7 @@ python	py	1
 文联	wflm	1518
 我不了解	wflx	7985
 免费吗	wfma	4274
+蚊蟆	wfma	1
 违法吗	wfma	8869
 为父母拙笨	wfmb	167
 我不明白	wfmb	4965
@@ -96021,7 +96022,7 @@ python	py	1
 维护这个	whzg	8693
 往回找很	whzh	8105
 王子	whzi	1339
-网址	whzi	3806
+网址	whzi	3807
 完后自己	whzj	2618
 我会自己	whzj	7827
 网站	whzj	33826
@@ -96049,7 +96050,7 @@ python	py	1
 外接屏幕和	wjbh	7633
 文件并进行	wjbh	428
 文件被转换	wjbh	808
-完毕	wjbi	12744
+完毕	wjbi	12745
 文件体积	wjbj	2478
 文件本身	wjbj	18
 我就不会	wjbk	0
@@ -113070,7 +113071,7 @@ python	py	1
 一双	yisd	206
 一生	yisg	10113
 医生	yisg	6872
-以上	yish	16646
+以上	yish	16647
 仪式	yisi	2381
 意思	yisi	21496
 意识	yisi	7089

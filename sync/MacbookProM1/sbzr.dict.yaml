@@ -32,6 +32,7 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.shortcut
   - sbzr.chrome.extension/dicts/sbzr.userdb
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
+  - zdy
 
 
 ...

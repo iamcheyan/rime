@@ -5,7 +5,6 @@ schema:
   version: "0.5.3"
   dependencies:
     - sbpy
-    - sbzrExtension
 
 switches:
   - name: ascii_mode
@@ -41,7 +40,6 @@ engine:
   translators:
     - punct_translator
     - table_translator
-    - table_translator@sbzdy
     - history_translator
   filters:
     - simplifier
@@ -93,18 +91,6 @@ punctuator:
 
 recognizer:
   import_preset: default
-  patterns:
-    sbzdy: "^u[a-z]*$"
-
-sbzdy:
-  tag: sbzdy
-  dictionary: sbzr.chrome.extension/dicts/zdy
-  user_dict: sbzdy
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  prefix: u
-  tips: "〔自定义〕"
 
 simplifier:
   opencc_config: s2t.json

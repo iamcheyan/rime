@@ -6,8 +6,8 @@ customization:
   rime_version: 1.11.2
 patch:
   "style/color_scheme": dark_temple # 深色皮肤
-  "style/font_point": 22
+  "style/font_point": 18
   "style/horizontal": true  # 水平排列
   "style/font_face": "HanaMinA"
   "style/vertical": "true"
-　"style/inline_preedit": true  # 在输入过程中将文字发送给应用程序
+  "style/inline_preedit": true  # 在输入过程中将预编辑文字内嵌显示
