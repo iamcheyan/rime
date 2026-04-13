@@ -3,15 +3,15 @@
 
 patch:
   # 候选词显示方向：false=竖排，true=横排
-  style/horizontal: false
+  "style/horizontal": false
   
   # 候选词数量
-  style/candidate_list_layout: stacked  # stacked=竖排，linear=横排
+  "style/candidate_list_layout": stacked  # stacked=竖排，linear=横排
   
   # 其他显示选项
-  style/inline_preedit: true  # 在输入位置显示预编辑文本
-  style/corner_radius: 5  # 候选框圆角
-  style/border_height: 0  # 边框高度
-  style/border_width: 0  # 边框宽度
-  style/line_spacing: 5  # 行间距
-  style/spacing: 10  # 候选词间距
+  "style/inline_preedit": true  # 在输入位置显示预编辑文本
+  "style/corner_radius": 5  # 候选框圆角
+  "style/border_height": 0  # 边框高度
+  "style/border_width": 0  # 边框宽度
+  "style/line_spacing": 5  # 行间距
+  "style/spacing": 10  # 候选词间距

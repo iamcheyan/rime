@@ -73,9 +73,14 @@ build/
 .directory
 .Trash-*
 
-# Oversized generated dictionaries
-dicts.jp/jaroomaji.mozc.dict.yaml
-dict_backups_*/jaroomaji.mozc.dict.yaml
-sync/**/jaroomaji.mozc.dict.yaml
+# Downloaded jaroomaji dictionaries
+sbzr.chrome.extension/dicts.jp/jaroomaji.user.dict.yaml
+sbzr.chrome.extension/dicts.jp/jaroomaji.kana_kigou.dict.yaml
+sbzr.chrome.extension/dicts.jp/jaroomaji.mozc.dict.yaml
+sbzr.chrome.extension/dicts.jp/jaroomaji.jmdict.dict.yaml
+sbzr.chrome.extension/dicts.jp/jaroomaji.mozcemoji.dict.yaml
+sbzr.chrome.extension/dicts.jp/jaroomaji.kanjidic2.dict.yaml
+dict_backups_*/jaroomaji.*.dict.yaml
+sync/**/jaroomaji.*.dict.yaml
 rime-shuangpin-fuzhuma
 rime-shuangpin-fuzhuma

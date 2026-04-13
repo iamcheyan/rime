@@ -7,11 +7,11 @@ version: "1.0"
 sort: by_weight
 use_preset_vocabulary: false
 import_tables:
-  - dicts.jp/jaroomaji.user
-  - dicts.jp/jaroomaji.kana_kigou
-  - dicts.jp/jaroomaji.mozc
-  - dicts.jp/jaroomaji.jmdict
-  - dicts.jp/jaroomaji.mozcemoji
-  - dicts.jp/jaroomaji.kanjidic2
-# - dicts.jp/jaroomaji.neologd  # TODO neologdから変換した辞書を作成する
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.user
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.kana_kigou
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.mozc
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.jmdict
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.mozcemoji
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.kanjidic2
+# - sbzr.chrome.extension/dicts.jp/jaroomaji.neologd  # TODO neologdから変換した辞書を作成する
 ...

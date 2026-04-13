@@ -1,8 +1,16 @@
 patch:
   "key_binder/bindings/+":
+    - { when: has_menu, accept: Tab, send: Down }
+    - { when: has_menu, accept: "Shift+Tab", send: Up }
+    - { when: has_menu, accept: ISO_Left_Tab, send: Up }
+
     # 翻页快捷键
+    - { when: has_menu, accept: Up, send: Page_Up }
+    - { when: has_menu, accept: Down, send: Page_Down }
     - { when: has_menu, accept: comma, send: Page_Up }
     - { when: has_menu, accept: period, send: Page_Down }
+    - { when: has_menu, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }
     - { accept: "Control+comma", select: .next, when: always }
     - { accept: "Control+period", select: .next, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
