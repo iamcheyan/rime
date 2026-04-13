@@ -1,5 +1,8 @@
 patch:
   "key_binder/bindings/+":
+    # # 在 jaroomaji 候选菜单中，Enter 与空格保持一致，直接上屏当前候选
+    # - { when: has_menu, accept: Return, send: space }
+    # - { when: has_menu, accept: Shift+Return, send: space }
     - { when: has_menu, accept: Tab, send: Down }
     - { when: has_menu, accept: "Shift+Tab", send: Up }
     - { when: has_menu, accept: ISO_Left_Tab, send: Up }

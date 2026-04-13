@@ -237,8 +237,12 @@ speller:
 # # # # # # # # # # # # # # # # # # # #
 translator:
   dictionary: jaroomaji
+  user_dict: jaroomaji
+  db_class: tabledb
   enable_user_dict: true  # 学習機能ON
-  enable_completion: false
+  enable_encoder: true
+  encode_commit_history: true
+  enable_completion: true
   preedit_format:
     # 区切り文字の空白は消す
     - "xform/ //"
