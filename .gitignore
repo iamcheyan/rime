@@ -73,7 +73,7 @@ build/
 .directory
 .Trash-*
 
-# Downloaded jaroomaji dictionaries
+# jaroomaji dictionaries
 jaroomaji.user.dict.yaml
 jaroomaji.kana_kigou.dict.yaml
 jaroomaji.mozc.dict.yaml
