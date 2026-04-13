@@ -1,0 +1,23 @@
+# Rime user dictionary
+#@/db_name	jaroomaji
+#@/db_type	userdb
+#@/rime_version	1.15.0
+#@/tick	19
+#@/user_id	MacbookProM1
+de su ka 	ですか	c=1 d=1 t=6
+do kyu me nn to 	ドキュメント	c=1 d=1 t=13
+ge nn za i 	現在	c=1 d=1 t=10
+hyo u zi 	表示	c=1 d=1 t=19
+i ma 	今	c=1 d=1 t=11
+ke xtu ka 	結果	c=1 d=1 t=9
+ki do u 	起動	c=1 d=1 t=7
+ko no 	この	c=1 d=1 t=3
+ko u si nn 	更新	c=1 d=1 t=14
+ni ho nn go 	日本語	c=2 d=2.01653 t=18
+ni ho nn go wo 	日本語を	c=2 d=1.99501 t=16
+no 	の	c=1 d=1 t=12
+nyu u ryo ku 	入力	c=1 d=1 t=17
+ri ka i 	理解	c=1 d=1 t=4
+ta da si i 	正しい	c=1 d=1 t=5
+wo 	を	c=1 d=1.04176 t=14
+zi xtu syo u 	実証	c=1 d=1 t=8

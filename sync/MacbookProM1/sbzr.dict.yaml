@@ -26,6 +26,7 @@ columns:
 #     - length_in_range: [2, 32]
 #       formula: "AaAbAcAdBaBbBcBdCaCbCcCdDaDbDcDdEaEbEcEdFaFbFcFdGaGbGcGdHaHbHcHd"
 import_tables:
+  - sbzr.chrome.extension/dicts/base
   - sbzr.chrome.extension/dicts/sbzr.len1
   - sbzr.chrome.extension/dicts/sbzr.len1.full
   - sbzr.chrome.extension/dicts/sbzr.len2

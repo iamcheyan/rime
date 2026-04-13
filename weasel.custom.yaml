@@ -13,4 +13,4 @@ patch:
   "style/horizontal": false         # 候选词竖向排列
   "style/inline_preedit": true      # 输入拼音时直接显示在光标位置，而不是单独一个浮动框
   "style/vertical": true            # 启用“竖排候选窗口”能力
-  us_keyboard_layout: false
+  "us_keyboard_layout": false

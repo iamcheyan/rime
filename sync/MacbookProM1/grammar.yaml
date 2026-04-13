@@ -1,4 +1,5 @@
-# Minimal grammar config for librime sentence lookup on synced devices.
+# Minimal grammar config for librime sentence lookup on Windows.
+# Keep this file present so deployment does not warn about a missing grammar.yaml.
 
 grammar:
   language: zh-hans

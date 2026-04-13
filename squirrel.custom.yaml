@@ -4,10 +4,10 @@
 patch:
   "style/font_face": "Sarasa Mono SC"
   # 候选词显示方向：false=竖排，true=横排
-  "style/horizontal": false
+  # "style/horizontal": false
   
   # 候选词数量
-  "style/candidate_list_layout": stacked  # stacked=竖排，linear=横排
+  # "style/candidate_list_layout": stacked  # stacked=竖排，linear=横排
   
   # 其他显示选项
   "style/inline_preedit": true  # 在输入位置显示预编辑文本

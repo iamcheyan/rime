@@ -74,12 +74,12 @@ build/
 .Trash-*
 
 # Downloaded jaroomaji dictionaries
-sbzr.chrome.extension/dicts.jp/jaroomaji.user.dict.yaml
-sbzr.chrome.extension/dicts.jp/jaroomaji.kana_kigou.dict.yaml
-sbzr.chrome.extension/dicts.jp/jaroomaji.mozc.dict.yaml
-sbzr.chrome.extension/dicts.jp/jaroomaji.jmdict.dict.yaml
-sbzr.chrome.extension/dicts.jp/jaroomaji.mozcemoji.dict.yaml
-sbzr.chrome.extension/dicts.jp/jaroomaji.kanjidic2.dict.yaml
+jaroomaji.user.dict.yaml
+jaroomaji.kana_kigou.dict.yaml
+jaroomaji.mozc.dict.yaml
+jaroomaji.jmdict.dict.yaml
+jaroomaji.mozcemoji.dict.yaml
+jaroomaji.kanjidic2.dict.yaml
 dict_backups_*/jaroomaji.*.dict.yaml
 sync/**/jaroomaji.*.dict.yaml
 rime-shuangpin-fuzhuma

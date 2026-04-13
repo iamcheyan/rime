@@ -1,8 +1,8 @@
 patch:
   schema_list:
     - schema: sbzr
-  menu/page_size: 6
     - schema: jaroomaji
+  menu/page_size: 6
   switcher/save_options: []
   switcher/abbreviate_options: true
   switcher/caption: "〔方案选单〕"
@@ -37,5 +37,4 @@ patch:
 
 
       
-
 
