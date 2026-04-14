@@ -66,7 +66,7 @@ translator:
   max_phrase_length: 32
   user_dict: sbzr
   db_class: tabledb
-  initial_quality: 1000
+  initial_quality: 800
   enable_preedit: false
 
 easy_en_mix:
@@ -77,7 +77,7 @@ easy_en_mix:
   enable_sentence: false
   enable_completion: true
   spelling_hints: 9
-  initial_quality: 900
+  initial_quality: 700
   comment_format:
     - xform/^.+$//
 
@@ -91,7 +91,7 @@ jp_mix:
   enable_encoder: true
   encode_commit_history: true
   enable_completion: true
-  initial_quality: 950
+  initial_quality: 1000
   preedit_format:
     __include: jaroomaji.schema.yaml:/translator/preedit_format
 
