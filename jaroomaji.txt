@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	62
+#@/tick	65
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
@@ -36,9 +36,9 @@
 確認	ka ku ni nn	1
 感想	ka nn so u	1
 件数	ke nn su u	1
-機能	ki no u	2
+機能	ki no u	4
 この	ko no	1
-更新	ko u si nn	5
+更新	ko u si nn	6
 マスカ	ma su ka	0
 まず	ma zu	1
 に	ni	1
