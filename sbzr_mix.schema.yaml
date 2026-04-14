@@ -1,0 +1,133 @@
+# 输入方案定义：中日英混输实验方案
+schema:
+  schema_id: sbzr_mix
+  name: "声笔自然·中日英"
+  version: "0.1.0"
+  dependencies:
+    - easy_en
+    - jaroomaji
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [中文, 西文]
+  - name: ascii_punct
+    reset: 0
+    states: [。，, ．，]
+  - name: zh_trad
+    reset: 0
+    states: [简体, 繁体]
+
+menu:
+  page_size: 6
+  select_keys: " 12345"
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@easy_en_mix
+    - affix_segmentor@jp_mix
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - table_translator@easy_en_mix
+    - script_translator@jp_mix
+    - history_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-
+  delimiter: " '"
+  auto_select: false
+  max_code_length: 0
+  use_space: false
+
+translator:
+  dictionary: sbzr
+  enable_user_dict: true
+  enable_sentence: true
+  enable_completion: true
+  sentence_over_completion: true
+  enable_encoder: true
+  encode_whole_phrase: true
+  max_phrase_length: 32
+  user_dict: sbzr
+  db_class: tabledb
+  initial_quality: 1000
+  enable_preedit: false
+
+easy_en_mix:
+  tag: easy_en_mix
+  dictionary: easy_en
+  prism: easy_en
+  prefix: ";"
+  tips: "〔英〕"
+  enable_user_dict: false
+  enable_sentence: false
+  enable_completion: true
+  spelling_hints: 9
+  initial_quality: 900
+  comment_format:
+    - xform/^.+$//
+
+jp_mix:
+  tag: jp_mix
+  dictionary: jaroomaji
+  prism: jaroomaji
+  prefix: "/"
+  tips: "〔日〕"
+  user_dict: jaroomaji
+  db_class: tabledb
+  enable_user_dict: true
+  enable_encoder: true
+  encode_commit_history: true
+  enable_completion: true
+  initial_quality: 950
+  preedit_format:
+    __include: jaroomaji.schema.yaml:/translator/preedit_format
+
+history_translator:
+  size: 1
+  initial_quality: 10000
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: Tab, send: Down }
+    - { when: has_menu, accept: "Shift+Tab", send: Up }
+    - { when: has_menu, accept: Up, send: Page_Up }
+    - { when: has_menu, accept: Down, send: Page_Down }
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { accept: "Control+comma", select: .next, when: always }
+    - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Shift+BackSpace", send: Escape, when: composing }
+
+punctuator:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    uppercase: ''
+    easy_en_mix: "^;[A-Za-z][-_+'.0-9A-Za-z]*$"
+    jp_mix: "^/[A-Za-z-]+$"
+
+simplifier:
+  opencc_config: s2t.json
+  option_name: zh_trad

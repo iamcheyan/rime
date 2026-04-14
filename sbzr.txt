@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	7313
+#@/tick	7380
 啊	a	14
 阿	aa	1
 挨	ai	1
@@ -2196,7 +2196,7 @@
 包含我的	bhwd	5272
 不会完	bhwj	3166
 包含我	bhwo	8025
-帮我	bhwo	22906
+帮我	bhwo	22907
 不回我消息	bhwx	4941
 包含我没有	bhwy	8187
 不会完整	bhwz	25
@@ -5351,7 +5351,7 @@
 不满	bumj	0
 不没	bumo	10
 不没	bumz	10
-不能	bung	29929
+不能	bung	29931
 不你	buni	266
 不虐	bunt	1790
 补	buoa	5683
@@ -5401,7 +5401,7 @@
 不屑	buxx	8361
 不行	buxy	34079
 不又	buyb	65
-不要	buyk	25993
+不要	buyk	25994
 部要	buyk	3552
 不冤	buyr	550
 不用	buys	17776
@@ -6058,8 +6058,8 @@
 表现在于	bxzy	37
 体现在一张	bxzz	850
 保险知识	bxzz	5488
-丙	by	11
-并	by	11
+丙	by	12
+并	by	12
 便宜吧	byba	1652
 必要吧	byba	7082
 背景把	byba	461
@@ -8457,7 +8457,7 @@
 单个文档不	cgwf	7827
 单个文件	cgwj	1826
 超过位置时	cgws	862
-成为	cgwz	6445
+成为	cgwz	6447
 超过位置	cgwz	854
 传个新的	cgxd	1075
 吃过见过的	cgxd	2952
@@ -11372,6 +11372,7 @@
 程序在工作	cxzz	1518
 程序最早	cxzz	4295
 程序自动从	cxzz	2310
+揣	cy	1
 从右边滑动	cybd	47
 参与本书的	cybd	3430
 参与编码的	cybd	2658
@@ -12020,7 +12021,7 @@
 操作只在	czzz	4843
 操作自在	czzz	3985
 词组作的在	czzz	3753
-的	d	462
+的	d	463
 大	da	3
 打	da	4
 大巴	daba	4127
@@ -16501,7 +16502,7 @@
 的话只	dhqi	10
 的话只增加	dhqj	11
 不会启动了	dhql	3925
-当前	dhqm	38477
+当前	dhqm	38478
 大好青年	dhqn	428
 得获取当前	dhqq	1686
 的会切图	dhqt	3279
@@ -17074,7 +17075,7 @@
 的着	dizu	862
 的最	dizv	5627
 的这	dizz	6004
-但	dj	33
+但	dj	35
 对齐吧	djba	374
 提交吧	djba	97
 的身体不	djbb	7985
@@ -20454,7 +20455,7 @@
 多越	doyt	8650
 多余	doyu	11073
 多姿	dozi	4819
-多种	dozs	7480
+多种	dozs	7482
 多组	dozu	658
 的繁体全部	dpbb	3624
 不怕被抄	dpbc	8869
@@ -29303,7 +29304,7 @@ EventBridgeスケジュール設定	eve	2
 覆盖调么	fhty	175
 不行啊	fhva	6976
 返回按钮好	fhvh	4891
-方案	fhvj	20275
+方案	fhvj	20276
 覆盖按钮	fhvn	2381
 覆盖按钮这	fhvz	2553
 方问	fhwf	4317
@@ -33793,7 +33794,7 @@ EventBridgeスケジュール設定	eve	2
 适合更的	ghgd	147
 共和国宫	ghgg	3345
 蛤蛤蛤蛤	ghgg	8394
-刚刚	ghgh	23245
+刚刚	ghgh	23246
 蛤蛤蛤蛤	ghgh	8436
 蛤蛤蛤蛤和	ghgh	1287
 蛤蛤蛤蛤绗	ghgh	2198
@@ -35482,7 +35483,7 @@ EventBridgeスケジュール設定	eve	2
 国企	goqi	0
 国旗	goqi	18273
 过期	goqi	11037
-过去	goqu	28038
+过去	goqu	28039
 国庆	goqy	761
 国人	gorf	17
 果然	gorj	3412
@@ -37861,7 +37862,7 @@ EventBridgeスケジュール設定	eve	2
 蛤蛤	haha	32534
 哈绗	hahg	1746
 哈绗	hahh	1755
-后	hb	11
+后	hb	12
 毫不	hb	2
 合并吧	hbba	60
 和爸爸	hbba	1147
@@ -41073,7 +41074,7 @@ EventBridgeスケジュール設定	eve	2
 浑身	hpsf	8187
 干坏事	hpsi	3447
 会被删除么	hpsm	5
-混输	hpsu	6
+混输	hpsu	8
 会被删除么	hpsy	5
 会被跳到	hptd	4470
 和普通油管	hptg	131
@@ -44108,7 +44109,7 @@ EventBridgeスケジュール設定	eve	2
 或者走海运	hzzy	2231
 或者这样	hzzy	7189
 汉字只有	hzzy	3166
-爱	i	2
+爱	i	3
 就	j	61
 就不保存	jbbc	61
 脚本并指定	jbbd	335
@@ -47531,7 +47532,7 @@ EventBridgeスケジュール設定	eve	2
 加面包屑	jmbx	164
 就没办法做	jmbz	1069
 进模版中	jmbz	5015
-检查	jmca	29943
+检查	jmca	29944
 假名拆成	jmcc	655
 就每次都	jmcd	263
 检测	jmce	14196
@@ -52871,7 +52872,7 @@ EventBridgeスケジュール設定	eve	2
 颗粒	keli	792
 可怜	kelm	8065
 可虑	kelv	4
-可能	keng	24465
+可能	keng	24466
 课	keoa	1154
 客	keoo	14070
 可怕	kepa	2826
@@ -52884,7 +52885,7 @@ EventBridgeスケジュール設定	eve	2
 可笑	kexc	6976
 可惜	kexi	13239
 科学	kext	16739
-可以	keyi	65457
+可以	keyi	65458
 课椅	keyi	11743
 可以了	keyi l	1
 可以了	keyi le	1
@@ -55669,7 +55670,7 @@ EventBridgeスケジュール設定	eve	2
 控制这些	kzzx	2
 卡着作者	kzzz	6537
 控制这	kzzz	4795
-了	l	195
+了	l	199
 林	l	1
 喇叭	laba	7910
 拉从	lacs	898
@@ -60406,3 +60407,30 @@ lazynvim	lnm	12
 里要保留	lybd	1053
 了一部分	lybf	4065
 录音笔	lybi	7985
+没有	mzyb	1
+你看	nikj	2
+殴	ou	1
+平台	pytl	1
+切换	qxhr	2
+亲眼看到	qykd	1
+日	ri	1
+是	s	1
+实用	siys	1
+三种	sjzs	1
+禅宗	sjzs	1
+什么	sm	1
+输入	suru	1
+同时	tssi	2
+通俗	tssu	1
+问题	wfti	1
+下面再	xmzl	3
+现在	xmzl	5
+新增	xnzg	1
+一个	yige	1
+用	ys	1
+语言	yuyj	3
+英	yyei	1
+这是	zesi	1
+中	zs	1
+注意	zuyi	1
+足矣	zuyi	1

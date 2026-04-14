@@ -1,6 +1,7 @@
 patch:
   schema_list:
     - schema: sbzr
+    - schema: sbzr_mix
     - schema: jaroomaji
   menu/page_size: 6
   switcher/save_options: []
@@ -37,4 +38,3 @@ patch:
 
 
       
-
