@@ -5,6 +5,7 @@ schema:
   version: "0.5.3"
   dependencies:
     - sbpy
+    - easy_en
 
 switches:
   - name: ascii_mode
@@ -40,13 +41,14 @@ engine:
   translators:
     - punct_translator
     - table_translator
+    - table_translator@easy_en
     - history_translator
   filters:
     - simplifier
     - uniquifier
 
 speller:
-  alphabet: abcdefghijklmnopqrstuvwxyz
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
   # 关键：不要设置 initials，防止分段器根据声母自动切分
   delimiter: " '"
   auto_select: false
@@ -68,6 +70,16 @@ translator:
   db_class: tabledb
   initial_quality: 1000
   enable_preedit: false
+
+easy_en:
+  dictionary: easy_en
+  enable_user_dict: false
+  enable_sentence: false
+  enable_completion: true
+  spelling_hints: 9
+  initial_quality: 900
+  comment_format:
+    - xform/^.+$//
 
 history_translator:
   size: 1
@@ -91,6 +103,8 @@ punctuator:
 
 recognizer:
   import_preset: default
+  patterns:
+    uppercase: ''
 
 simplifier:
   opencc_config: s2t.json
