@@ -2,14 +2,14 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	7380
+#@/tick	7467
 啊	a	14
 阿	aa	1
 挨	ai	1
 隘	aiai	1
 不	b	52
 扒	ba	1
-把	ba	53
+把	ba	54
 爸爸	baba	12696
 爸不	babu	4382
 把被	babz	1882
@@ -3654,7 +3654,7 @@
 避免类似	bmls	7557
 把妈妈	bmma	141
 报名么	bmma	7557
-编码	bmma	38205
+编码	bmma	38208
 编码吗	bmma	8521
 屏幕面板	bmmb	3312
 避免每次	bmmc	4470
@@ -5327,7 +5327,7 @@
 不和	buho	8311
 捕获	buho	8146
 不和	buhu	8352
-不会	buhv	20943
+不会	buhv	20944
 不回	buhv	3778
 补交	bujc	7877
 补缴	bujc	12
@@ -5351,7 +5351,7 @@
 不满	bumj	0
 不没	bumo	10
 不没	bumz	10
-不能	bung	29931
+不能	bung	29933
 不你	buni	266
 不虐	bunt	1790
 补	buoa	5683
@@ -5359,7 +5359,7 @@
 不怕	bupa	7945
 不起	buqi	4539
 不全	buqr	7482
-补全	buqr	17428
+补全	buqr	17430
 不去	buqu	3828
 不卡	buqw	426
 不忍	burf	7985
@@ -10641,7 +10641,7 @@
 处	cuua	9139
 出而	cuvr	10000
 出小	cuxc	7011
-出现	cuxm	32026
+出现	cuxm	32028
 出血	cuxt	290
 出央	cuyh	3447
 处于	cuyu	4630
@@ -12021,7 +12021,7 @@
 操作只在	czzz	4843
 操作自在	czzz	3985
 词组作的在	czzz	3753
-的	d	463
+的	d	469
 大	da	3
 打	da	4
 大巴	daba	4127
@@ -27955,7 +27955,7 @@
 的中端设置	dzzz	5194
 的最左侧	dzzz	6035
 都在作者	dzzz	1845
-EventBridgeスケジュール設定	eve	2
+EventBridgeスケジュール設定	eve	3
 法	fa	2
 发布	fabu	17023
 发出	facu	3516
@@ -27986,7 +27986,7 @@ EventBridgeスケジュール設定	eve	2
 发生	fasg	15948
 发送	fass	3
 发她	fata	934
-发现	faxm	11916
+发现	faxm	11917
 发泄	faxx	0
 发型	faxy	7418
 发行	faxy	10478
@@ -30806,7 +30806,7 @@ EventBridgeスケジュール設定	eve	2
 复制	fuzi	21576
 父子	fuzi	1564
 浮肿	fuzs	162
-辅助	fuzu	8104
+辅助	fuzu	8105
 反而不擅长	fvbc	1949
 反而报错	fvbc	2334
 反而不会	fvbh	3570
@@ -34844,7 +34844,7 @@ EventBridgeスケジュール設定	eve	2
 家里没电脑	glmn	230
 家里没	glmo	221
 给里面书	glms	131
-改名	glmy	8771
+改名	glmy	8772
 给里面对应	glmy	982
 家里没	glmz	222
 跟黑莓	glmz	1711
@@ -35448,6 +35448,7 @@ EventBridgeスケジュール設定	eve	2
 国内这下	gnzx	4274
 给你这样	gnzy	5460
 功能只在	gnzz	2644
+国	go	1
 国策	goce	4168
 过程	gocg	7183
 国产	gocj	2550
@@ -36494,7 +36495,7 @@ EventBridgeスケジュール設定	eve	2
 古代	gudl	6537
 古典	gudm	8222
 孤独	gudu	12788
-固定	gudy	43544
+固定	gudy	43545
 古法	gufa	488
 家寒	guhj	3447
 估计	guji	18996
@@ -37855,7 +37856,7 @@ EventBridgeスケジュール設定	eve	2
 合作作者	gzzz	5015
 工作志愿者	gzzz	2879
 给这	gzzz	1422
-和	h	31
+和	h	32
 红	h	1
 哈	ha	2
 哈哈	haha	11289
@@ -40318,7 +40319,7 @@ EventBridgeスケジュール設定	eve	2
 后会怎样	hkzy	4426
 和控制这	hkzz	4990
 亥	hl	1
-还	hl	13
+还	hl	14
 行了吧	hlba	1988
 回来并删掉	hlbd	1
 忽略标点	hlbd	608
@@ -41074,7 +41075,7 @@ EventBridgeスケジュール設定	eve	2
 浑身	hpsf	8187
 干坏事	hpsi	3447
 会被删除么	hpsm	5
-混输	hpsu	8
+混输	hpsu	13
 会被删除么	hpsy	5
 会被跳到	hptd	4470
 和普通油管	hptg	131
@@ -41102,7 +41103,7 @@ EventBridgeスケジュール設定	eve	2
 后配置	hpzi	1525
 和配置	hpzi	9048
 和配置文件	hpzj	4
-混在	hpzl	7618
+混在	hpzl	7619
 和配置一些	hpzx	9323
 很强	hq	1
 红圈标	hqbc	6505
@@ -42404,7 +42405,7 @@ EventBridgeスケジュール設定	eve	2
 糊在	huzl	5015
 户总	huzs	12
 和注	huzu	1636
-会	hv	19
+会	hv	22
 黑暗	hv	1
 绘本	hvbf	8650
 会被	hvbz	8650
@@ -44110,7 +44111,7 @@ EventBridgeスケジュール設定	eve	2
 或者这样	hzzy	7189
 汉字只有	hzzy	3166
 爱	i	3
-就	j	61
+就	j	63
 就不保存	jbbc	61
 脚本并指定	jbbd	335
 身体不还	jbbh	21
@@ -46640,7 +46641,7 @@ EventBridgeスケジュール設定	eve	2
 几行	jihh	739
 给干	jihj	236
 给好	jihk	6669
-激活	jiho	7303
+激活	jiho	7304
 几乎	jihu	28775
 机会	jihv	13794
 计划	jihw	9533
@@ -49769,7 +49770,7 @@ EventBridgeスケジュール設定	eve	2
 接它的	jtde	8478
 系统的	jtde	7482
 给它的	jtde	2209
-觉得	jtde	20021
+觉得	jtde	20022
 身体的	jtde	4990
 其他地方	jtdf	5379
 其他地方不	jtdf	5712
@@ -50563,7 +50564,7 @@ EventBridgeスケジュール設定	eve	2
 给我三个	jwsg	8564
 给我提供	jwsg	15
 给我设计个	jwsg	3230
-加上	jwsh	30288
+加上	jwsh	30289
 键位上	jwsh	1
 加是	jwsi	8913
 家事	jwsi	5572
@@ -51012,6 +51013,8 @@ EventBridgeスケジュール設定	eve	2
 进行日语	jxry	2850
 更新日志	jxrz	125
 劫杀	jxsa	1
+就想搜	jxsb	2
+接受	jxsb	1
 就显示成	jxsc	3642
 强行提交到	jxsd	1669
 继续参与断	jxsd	165
@@ -57337,7 +57340,7 @@ EventBridgeスケジュール設定	eve	2
 了或者哪个	lhzg	452
 了会咋样	lhzy	6
 流行这样	lhzy	2
-里	li	58
+里	li	59
 里扒	liba	5379
 里百	libl	804
 里百	libo	808
@@ -58113,7 +58116,7 @@ EventBridgeスケジュール設定	eve	2
 话总	lkzs	544
 留空站位	lkzw	1
 了会咋样	lkzy	7
-来	ll	21
+来	ll	23
 理论	ll	1
 弄了吧	llba	1458
 来弄吧	llba	54
@@ -60407,30 +60410,73 @@ lazynvim	lnm	12
 里要保留	lybd	1053
 了一部分	lybf	4065
 录音笔	lybi	7985
+么	me	2
+没人	morf	1
+默认	morf	1
+模式	mosi	3
+没是	mosi	1
 没有	mzyb	1
+那个	nage	1
+耐	ng	2
+能	ng	2
+那个合并	nggb	1
+你和	niho	1
 你看	nikj	2
+您	nn	1
 殴	ou	1
 平台	pytl	1
+全部	qrbu	1
 切换	qxhr	2
 亲眼看到	qykd	1
 日	ri	1
-是	s	1
-实用	siys	1
+日语	riyu	1
+是	s	3
+时候	sihb	1
+实现	sixm	2
+使用	siys	2
+实用	siys	2
+三	sjee	1
 三种	sjzs	1
 禅宗	sjzs	1
 什么	sm	1
-输入	suru	1
+输入法	srfa	1
+输入	suru	3
+提示	tisi	2
 同时	tssi	2
 通俗	tssu	1
+我	w	4
 问题	wfti	1
+为什么	wsme	2
+为	wz	2
+伪	wz	1
+下	x	1
+效果	xcgo	1
+像	xdui	1
 下面再	xmzl	3
-现在	xmzl	5
+现在	xmzl	13
 新增	xnzg	1
+需要	xuyk	1
+右侧	ybce	1
+椰	ye	1
+也就	yej	1
 一个	yige	1
-用	ys	1
+一起	yiqi	1
+用	ys	2
+用户	yshu	1
+语	yuoa	1
 语言	yuyj	3
 英	yyei	1
+英文	yywf	1
+在	z	4
+这个	zege	4
 这是	zesi	1
+怎么	zfme	2
+之劫	zijx	1
+直接	zijx	5
+左到	zodk	1
 中	zs	1
+中文	zswf	4
+纵纹	zswf	1
+中英	zsyy	1
 注意	zuyi	1
 足矣	zuyi	1

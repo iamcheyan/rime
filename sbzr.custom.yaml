@@ -3,7 +3,7 @@ patch:
   # 纯 Rime 降级版：收敛为接近 sbzr 的交互方式
   "menu/select_keys": " 12345"
   "menu/page_size": 6
-  "translator/enable_completion": false
+  "translator/enable_completion": true
   "translator/enable_sentence": true
   "translator/max_phrase_length": 32
 

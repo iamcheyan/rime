@@ -1,7 +1,7 @@
 # 输入方案定义：中日英混输实验方案
 schema:
   schema_id: sbzr_mix
-  name: "声笔自然·中日英"
+  name: "混输模式"
   version: "0.1.0"
   dependencies:
     - easy_en
@@ -35,8 +35,6 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@easy_en_mix
-    - affix_segmentor@jp_mix
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -72,10 +70,8 @@ translator:
   enable_preedit: false
 
 easy_en_mix:
-  tag: easy_en_mix
   dictionary: easy_en
   prism: easy_en
-  prefix: ";"
   tips: "〔英〕"
   enable_user_dict: false
   enable_sentence: false
@@ -86,10 +82,8 @@ easy_en_mix:
     - xform/^.+$//
 
 jp_mix:
-  tag: jp_mix
   dictionary: jaroomaji
   prism: jaroomaji
-  prefix: "/"
   tips: "〔日〕"
   user_dict: jaroomaji
   db_class: tabledb
@@ -125,8 +119,6 @@ recognizer:
   import_preset: default
   patterns:
     uppercase: ''
-    easy_en_mix: "^;[A-Za-z][-_+'.0-9A-Za-z]*$"
-    jp_mix: "^/[A-Za-z-]+$"
 
 simplifier:
   opencc_config: s2t.json
