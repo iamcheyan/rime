@@ -2,14 +2,14 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	7060
+#@/tick	7185
 啊	a	14
 阿	aa	1
 挨	ai	1
 隘	aiai	1
 不	b	52
 扒	ba	1
-把	ba	48
+把	ba	51
 爸爸	baba	12696
 爸不	babu	4382
 把被	babz	1882
@@ -648,7 +648,7 @@
 表在	bczl	8025
 保存在页面	bczm	3103
 把操作	bczo	4106
-标准	bczp	9126
+标准	bczp	9127
 保持之前	bczq	1218
 变成暂停	bczt	833
 编程展他	bczt	18
@@ -5293,7 +5293,7 @@
 不便	bubm	9417
 不变	bubm	3734
 不错	buco	24882
-补充	bucs	15272
+补充	bucs	15274
 不怵	bucu	1
 不大	buda	8564
 不提	budi	5220
@@ -6058,7 +6058,7 @@
 表现在于	bxzy	37
 体现在一张	bxzz	850
 保险知识	bxzz	5488
-丙	by	10
+丙	by	11
 并	by	9
 便宜吧	byba	1652
 必要吧	byba	7082
@@ -8609,7 +8609,7 @@
 才唤醒	chxy	63
 擦汗一	chyi	2209
 长音	chyn	6751
-常用	chys	26965
+常用	chys	26967
 策划与	chyu	1394
 床画这种	chzc	678
 长征	chzg	1969
@@ -8658,7 +8658,7 @@
 持久	cijq	8187
 此车	ciju	5040
 吃苦	ciku	17162
-词库	ciku	39990
+词库	ciku	39997
 词会	ciky	8824
 词快	ciky	2937
 吃了	cilc	6281
@@ -12020,7 +12020,7 @@
 操作只在	czzz	4843
 操作自在	czzz	3985
 词组作的在	czzz	3753
-的	d	443
+的	d	458
 大	da	3
 打	da	4
 大巴	daba	4127
@@ -12132,7 +12132,7 @@
 大战	dazj	1458
 大在	dazl	7046
 搭载	dazl	8776
-都	db	46
+都	db	47
 都吧	dbba	7985
 的白边扣掉	dbbd	189
 的版本	dbbf	7408
@@ -16501,7 +16501,7 @@
 的话只	dhqi	10
 的话只增加	dhqj	11
 不会启动了	dhql	3925
-当前	dhqm	38475
+当前	dhqm	38476
 大好青年	dhqn	428
 得获取当前	dhqq	1686
 的会切图	dhqt	3279
@@ -29400,7 +29400,7 @@ EventBridgeスケジュール設定	eve	2
 不合作了	fhzl	1306
 不行再	fhzl	9048
 不许再	fhzl	6570
-放在	fhzl	30712
+放在	fhzl	30714
 符号在	fhzl	8780
 不合作了吗	fhzm	1604
 发挥只能	fhzn	75
@@ -31055,7 +31055,7 @@ EventBridgeスケジュール設定	eve	2
 发现背景的	fxbd	4360
 发行版的	fxbd	804
 发现背景	fxbj	4147
-发行版	fxbj	8647
+发行版	fxbj	8648
 发型变	fxbm	3430
 发泄不满	fxbm	0
 发行版呢	fxbn	1572
@@ -34787,7 +34787,7 @@ EventBridgeスケジュール設定	eve	2
 过了后他	glht	3753
 改回	glhv	10171
 改悔	glhv	7457
-改坏	glhy	138
+改坏	glhy	139
 割了韭菜	gljc	1
 个逻辑上的	gljd	124
 混乱记得	gljd	4025
@@ -36042,7 +36042,7 @@ EventBridgeスケジュール設定	eve	2
 故事介绍	gsjs	8564
 赶上今天	gsjt	3230
 个数据	gsju	7672
-工具	gsju	18931
+工具	gsju	18933
 合适键位	gsjw	7557
 故事加	gsjw	1255
 格式给我	gsjw	4916
@@ -36116,7 +36116,7 @@ EventBridgeスケジュール設定	eve	2
 公司魔域	gsmy	6537
 公司没	gsmz	3312
 公司呢	gsne	3328
-功能	gsng	35066
+功能	gsng	35067
 公司呢	gsni	3345
 告诉你咋弄	gsnl	1652
 告诉你咋弄	gsnn	1661
@@ -40290,7 +40290,7 @@ EventBridgeスケジュール設定	eve	2
 好远	hkyr	5040
 后可以开始	hkys	4045
 好咏	hkys	7710
-好用	hkys	14869
+好用	hkys	14870
 好说	hkyt	7225
 话可以雇我	hkyw	593
 会快一些	hkyx	1136
@@ -40572,7 +40572,7 @@ EventBridgeスケジュール設定	eve	2
 后来写前端	hlxz	3262
 后来又	hlyb	515
 后来有	hlyb	2658
-还有	hlyb	22923
+还有	hlyb	22924
 和李颖的	hlyd	1346
 后来又开发	hlyf	523
 回来听歌	hlyg	6250
@@ -41071,7 +41071,7 @@ EventBridgeスケジュール設定	eve	2
 浑身	hpsf	8187
 干坏事	hpsi	3447
 会被删除么	hpsm	5
-混输	hpsu	2
+混输	hpsu	3
 会被删除么	hpsy	5
 会被跳到	hptd	4470
 和普通油管	hptg	131
@@ -46603,7 +46603,7 @@ EventBridgeスケジュール設定	eve	2
 暨大	jida	1
 技的	jide	2049
 给的	jide	1978
-记得	jide	18124
+记得	jide	18125
 技的	jidi	2059
 机的	jidi	1588
 给的	jidi	1988
@@ -47964,7 +47964,7 @@ EventBridgeスケジュール設定	eve	2
 尽力	jnli	7672
 给你来得及	jnlj	5040
 给你来	jnll	7945
-进来	jnll	31071
+进来	jnll	31072
 给你来一瓶	jnlp	8146
 给你弄	jnls	187
 给你了宝塔	jnlt	99
@@ -50314,7 +50314,7 @@ EventBridgeスケジュール設定	eve	2
 更而为啥	jvws	1525
 就安装	jvzd	2738
 就按咱们	jvzm	48
-加	jw	5
+加	jw	7
 加尾巴	jwba	6004
 教我把	jwba	6703
 给我吧	jwba	8311
@@ -52882,7 +52882,7 @@ EventBridgeスケジュール設定	eve	2
 可笑	kexc	6976
 可惜	kexi	13239
 科学	kext	16739
-可以	keyi	65453
+可以	keyi	65454
 课椅	keyi	11743
 可以了	keyi l	1
 可以了	keyi le	1
@@ -55666,7 +55666,7 @@ EventBridgeスケジュール設定	eve	2
 控制这些	kzzx	2
 卡着作者	kzzz	6537
 控制这	kzzz	4795
-了	l	185
+了	l	188
 林	l	1
 喇叭	laba	7910
 拉从	lacs	898
@@ -56337,7 +56337,7 @@ EventBridgeスケジュール設定	eve	2
 量够	ldgb	1
 里的关键词	ldgc	655
 亮光	ldgd	4338
-两个	ldge	22076
+两个	ldge	22077
 老大哥	ldge	513
 里但根	ldgf	5769
 列大纲	ldgh	505
@@ -59814,7 +59814,7 @@ lazynvim	lnm	12
 鲁哥	luge	6703
 路过	lugo	0
 撸管	lugr	3166
-路径	lujy	37982
+路径	lujy	37983
 录屏	lupy	25115
 路去	luqu	16
 路人	lurf	1
@@ -60980,7 +60980,7 @@ lazynvim	lnm	12
 了这时	lzsi	2265
 俩这是	lzsi	1737
 来展示	lzsi	536
-类似	lzsi	36687
+类似	lzsi	36688
 裸着上身	lzsj	57
 俩这是咋了	lzsl	2253
 落在水池里	lzsl	0
@@ -61094,7 +61094,7 @@ lazynvim	lnm	12
 里支支吾吾	lzzw	478
 里再查询	lzzx	6570
 例子注意	lzzy	728
-没	m	38
+没	m	39
 吗	ma	17
 骂	ma	1
 马	maaa	1
@@ -61119,7 +61119,7 @@ lazynvim	lnm	12
 吗	maia	12
 嘛	maia	13959
 蚂	maia	2
-骂	maia	18530
+骂	maia	18532
 麻辣	mala	6218
 马来	mall	7153
 妈妈	mama	27586
@@ -61623,7 +61623,7 @@ lazynvim	lnm	12
 卖点仔细	mdzx	2345
 摸到纸张	mdzz	2618
 目的最终	mdzz	8228
-么	me	20
+么	me	22
 末的	mede	1086
 末的	medi	1091
 么么	meme	14614
@@ -63081,7 +63081,7 @@ lazynvim	lnm	12
 模式不完整	msdz	3166
 民宿的网站	msdz	3103
 没啥读者	msdz	13
-没事儿啊	msea	1
+没事儿啊	msea	2
 模式不	msfb	2865
 麦书房的	msfd	1495
 麦书坊	msfh	4607
@@ -63770,7 +63770,7 @@ lazynvim	lnm	12
 某一类视频	mylp	2393
 没有弄完	mylw	1080
 没有留复位	mylw	5299
-命令	myly	23085
+命令	myly	23086
 没有了再	mylz	237
 密钥吗	myma	977
 没有明白	mymb	9093
@@ -63982,7 +63982,7 @@ lazynvim	lnm	12
 名章	myzh	5091
 没有执行	myzh	11
 没有转换	myzh	7520
-名字	myzi	17781
+名字	myzi	17782
 每页只	myzi	401
 没意识	myzi	4025
 没有字	myzi	702
@@ -64179,7 +64179,7 @@ lazynvim	lnm	12
 没准行	mzxy	4538
 民众写得再	mzxz	5379
 没呀	mzya	1
-没有	mzyb	51659
+没有	mzyb	51661
 吗只用回答	mzyd	53
 名字也	mzye	4147
 每页	mzye	411
@@ -64218,7 +64218,7 @@ lazynvim	lnm	12
 魅族	mzzu	6838
 没租主卧	mzzw	0
 么在在不在	mzzz	257
-你	n	78
+你	n	80
 能	n	3
 拿	na	1
 那	na	22
@@ -64255,7 +64255,7 @@ lazynvim	lnm	12
 哪来	nall	536
 拿俩	nalw	925
 那俩	nalw	948
-那么	name	10860
+那么	name	10861
 纳闷	namf	2198
 那那	nane	1596
 那呢	nani	845
@@ -65265,7 +65265,7 @@ lazynvim	lnm	12
 年都在写	ndzx	4965
 难道只能学	ndzx	3516
 那不重要	ndzy	236
-呢	ne	17
+呢	ne	18
 那吧	neba	100
 那把	neba	620
 那不	nebu	7011
@@ -73034,7 +73034,7 @@ python	py	3
 其实	qisi	12133
 只是	qisi	608
 启示	qisi	4771
-其他	qita	20665
+其他	qita	20666
 其它	qita	3697
 奇特	qite	1
 气团	qitr	32
@@ -76266,7 +76266,7 @@ python	py	3
 如果这	rgzz	120
 如果这次做	rgzz	854
 嚷	rh	5
-让	rh	17
+让	rh	18
 如何吧	rhba	4630
 然后吧	rhba	4676
 然后不关闭	rhbb	8065
@@ -76778,7 +76778,7 @@ python	py	3
 日校	rixc	1969
 日像	rixd	8869
 日元	riyr	20023
-日语	riyu	77798
+日语	riyu	77799
 日影	riyy	42
 日子	rizi	9277
 日志	rizi	18893
@@ -76806,7 +76806,7 @@ python	py	3
 人家公司里	rjgl	5712
 人家公司	rjgs	5543
 日交后	rjhb	1
-然后	rjhb	25231
+然后	rjhb	25232
 软件可以	rjky	7261
 入籍了吧	rjlb	2429
 入籍了	rjlc	2357
@@ -77985,7 +77985,7 @@ python	py	3
 让照着	rzzu	2276
 让照着写	rzzx	2334
 十	s	4
-是	s	146
+是	s	150
 傻逼	sabi	753
 煞笔	sabi	3476
 仨都	sadb	31
@@ -80219,14 +80219,14 @@ python	py	3
 实现	sixm	2
 试下	sixw	1
 石崖	siya	1
-使用	siys	54
+使用	siys	55
 删除	sjcu	2
 删掉	sjdc	3
 删	sjua	1
 三种	sjzs	1
 禅宗	sjzs	1
 少	sk	1
-什么	sm	16
+什么	sm	18
 什么因素	smys	2
 什么意思	smys	2
 缩	so	5
@@ -80245,8 +80245,8 @@ python	py	3
 说清除	sqcu	1
 拴	sr	1
 算	sr	1
-算法	srfa	8
-输入法	srfa	5
+算法	srfa	9
+输入法	srfa	6
 松手	sssb	1
 鼠标	subc	1
 书蠹	sudu	3
@@ -80268,12 +80268,13 @@ python	py	3
 提供	tigs	1
 替换	tihr	1
 提交	tijc	2
+啼哭	tiku	1
 提示	tisi	4
 提醒	tixy	1
 套	tk	1
 太长	tlch	1
 天骄	tmjc	1
-添加	tmjw	5
+添加	tmjw	7
 同构	tsgb	1
 通过	tsgo	4
 同时	tssi	1
@@ -80301,7 +80302,7 @@ python	py	3
 暗桩	vjzd	1
 而	vr	1
 而且	vrqx	2
-我	w	73
+我	w	74
 问得好啊	wdha	1
 瘟	wf	2
 文档	wfdh	19
@@ -80322,18 +80323,19 @@ python	py	3
 我	wo	1
 沃玛	woma	1
 我们	womf	16
-为什么	wsme	14
+为什么	wsme	15
 无论	wulp	1
 无脑	wunk	1
 无效	wuxc	1
 无性无爱	wxwa	1
 为	wz	2
 伪	wz	1
+维护	wzhu	1
 惟恐	wzks	1
 为了	wzle	1
 围绕	wzrk	1
 为准	wzzp	1
-下	x	31
+下	x	32
 效果	xcgo	2
 消耗	xchk	5
 消失	xcsi	1
@@ -80343,7 +80345,7 @@ python	py	3
 镶	xd	1
 乡党	xddh	1
 相对	xddv	3
-相关	xdgr	1
+相关	xdgr	2
 向后	xdhb	1
 项目	xdmu	5
 祥	xdoa	1
@@ -80356,10 +80358,11 @@ python	py	3
 仙逝	xmsi	3
 显示	xmsi	6
 腺	xmua	4
-先	xmue	6
-现在	xmzl	47
+先	xmue	7
+现在	xmzl	49
 现在打字	xmzldazi	2
 新	xn	2
+新词	xnci	1
 新凯	xnkl	1
 心	xnoa	3
 新	xnoe	1
@@ -80369,7 +80372,7 @@ python	py	3
 循环	xphr	1
 询问	xpwf	1
 绣球干贝	xqgb	1
-修改	xqgl	17
+修改	xqgl	18
 选词	xrci	1
 选项	xrxd	3
 选择	xrze	2
@@ -80394,7 +80397,7 @@ python	py	3
 先走了啊	xzla	1
 一	y	4
 友	yb	6
-有	yb	16
+有	yb	17
 又	ybao	1
 有点	ybdm	2
 有	ybeu	2
@@ -80403,7 +80406,8 @@ python	py	3
 有效	ybxc	1
 邮箱	ybxd	3
 隐藏文件	ycwj	1
-也	ye	14
+越多越好	ydyh	1
+也	ye	15
 叶	ye	3
 页	yeeu	1
 也回	yehv	1
@@ -80415,11 +80419,11 @@ python	py	3
 伊甸	yidm	1
 移动	yids	3
 一份	yiff	1
-一个	yige	16
+一个	yige	19
 以后	yihb	1
 一行	yihh	1
-一集	yiji	3
-以及	yiji	3
+一集	yiji	4
+以及	yiji	4
 乙腈	yijy	1
 已经	yijy	8
 依赖	yill	1
@@ -80427,7 +80431,7 @@ python	py	3
 一套	yitk	1
 一下	yixw	8
 以下	yixw	1
-一些	yixx	1
+一些	yixx	3
 已有	yiyb	1
 一样	yiyh	1
 一直	yizi	2
@@ -80444,6 +80448,7 @@ python	py	3
 有没有	ymyb	4
 引导	yndk	1
 因为	ynwz	10
+引用	ynys	1
 有排行榜	ypxb	1
 允许	ypxu	1
 运行	ypxy	8
@@ -80457,7 +80462,7 @@ python	py	3
 拥	ys	12
 用	ys	12
 用到	ysdk	1
-用户	yshu	13
+用户	yshu	14
 用了	ysl	1
 用么	ysma	1
 用时	yssi	1
@@ -80469,7 +80474,8 @@ python	py	3
 预览	yulj	1
 语言	yuyj	3
 应该	yygl	4
-英文	yywf	1
+英文	yywf	3
+英语	yyyu	2
 在	z	41
 咋办	zabj	2
 杂说	zaso	1
@@ -80482,11 +80488,11 @@ python	py	3
 这个	zege	67
 这哥	zege	1
 这楼	zelb	1
-这里	zeli	7
+这里	zeli	10
 这么	zeme	1
 这是	zesi	5
 这些	zexx	4
-这样	zeyh	11
+这样	zeyh	12
 蔗渣	zeza	1
 这宗	zezs	4
 这种	zezs	4
@@ -80517,12 +80523,14 @@ python	py	3
 只会	zihv	1
 只	ziia	6
 蜘	ziia	1
-子就	zij	2
-自己	ziji	6
+子就	zij	4
+自己	ziji	8
 之劫	zijx	2
 直接	zijx	5
 资料	zilc	1
 指令	zily	1
+之类	zilz	1
+脂类	zilz	1
 只能	zing	4
 之前	ziqm	6
 自签	ziqm	1
@@ -80547,7 +80555,7 @@ python	py	3
 展开到	zkdk	1
 找到	zkdk	4
 找找	zkzk	1
-再	zl	10
+再	zl	11
 在	zl	5
 再	zlei	1
 这么用	zmys	1
@@ -80569,11 +80577,12 @@ python	py	3
 总会	zshv	1
 总	zsou	1
 总体	zsti	1
-中文	zswf	6
+中文	zswf	8
 纵纹	zswf	1
 中英	zsyy	1
 注视	zusi	1
 注释	zusi	7
+主题	zuti	2
 主一	zuyi	4
 注意	zuyi	4
 醉	zv	1
