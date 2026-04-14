@@ -2,24 +2,53 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	29
+#@/tick	62
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
 ウ	U	0
+場合	ba a i	1
+部分	bu bu nn	1
 ド	do	1
 ドキュメント	do kyu me nn to	1
 ドキュメント更新	do kyu me nn to ko u si nn	5
+ファイル	fwa i ru	2
 現在	ge nn za i	1
 ぎ	gi	1
-は	ha	1
+ご	go	1
+は	ha	2
+はい	ha i	1
+比較	hi ka ku	1
+不一	hu i ti	1
+二つ	hu ta tu	1
 いい方法	i i ho u ho u	1
 イイ方法	i i ho u ho u	3
 以下	i ka	1
+いただけ	i ta da ke	0
+いただけマスカ	i ta da ke ma su ka	1
+頂きます	i ta da ki ma su	0
+頂きますか	i ta da ki ma su ka	1
 一番	i ti ba nn	2
+以上	i zyo u	1
+か	ka	0
+書い	ka i	0
+書いて	ka i te	1
+確認	ka ku ni nn	1
 感想	ka nn so u	1
+件数	ke nn su u	1
 機能	ki no u	2
-更新	ko u si nn	2
-の	no	2
+この	ko no	1
+更新	ko u si nn	5
+マスカ	ma su ka	0
+まず	ma zu	1
+に	ni	1
+んっ	nn xtu	1
+の	no	6
+お願いします	o ne ga i si ma su	1
+料金	ryo u ki nn	1
+しました	si ma si ta	1
+て	te	0
 時	to ki	2
-っ	xtu	2
+続き	tu du ki	1
+ついて	tu i te	1
+っ	xtu	3
