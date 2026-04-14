@@ -2,9 +2,24 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	5
+#@/tick	29
+ホ	HO	0
+カク	KA KU	0
+カクホウ	KA KU HO U	1
+ウ	U	0
 ド	do	1
 ドキュメント	do kyu me nn to	1
-ドキュメント更新	do kyu me nn to ko u si nn	2
-更新	ko u si nn	0
-設定	se xtu te i	1
+ドキュメント更新	do kyu me nn to ko u si nn	5
+現在	ge nn za i	1
+ぎ	gi	1
+は	ha	1
+いい方法	i i ho u ho u	1
+イイ方法	i i ho u ho u	3
+以下	i ka	1
+一番	i ti ba nn	2
+感想	ka nn so u	1
+機能	ki no u	2
+更新	ko u si nn	2
+の	no	2
+時	to ki	2
+っ	xtu	2
