@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	131
+#@/tick	139
 ー	-	1
 ホ	HO	0
 カク	KA KU	0
@@ -11,8 +11,9 @@
 場合	ba a i	1
 部分	bu bu nn	1
 de	de	2
+で	de	1
 できる	de ki ru	1
-です	de su	1
+です	de su	5
 ですか	de su ka	0
 ド	do	1
 ドキュメント	do kyu me nn to	1
@@ -36,6 +37,7 @@ de	de	2
 いま	i ma	3
 今	i ma	1
 いの	i no	0
+いし	i si	1
 忙しい	i so ga si i	0
 忙しいですか	i so ga si i de su ka	2
 いただけ	i ta da ke	0
@@ -85,3 +87,5 @@ de	de	2
 っっっっ	xtu xtu xtu xtu	8
 ざ	za	0
 ぜげ	ze ge	2
+攻め	ze me	1
+ぜっ	ze xtu	1

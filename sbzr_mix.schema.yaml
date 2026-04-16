@@ -39,10 +39,11 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
+    - echo_translator
     - punct_translator
     - script_translator@jp_mix
-    - table_translator
     - table_translator@easy_en_mix
+    - table_translator
     - history_translator
   filters:
     - simplifier
@@ -71,13 +72,12 @@ translator:
 
 easy_en_mix:
   dictionary: easy_en
-  prism: easy_en
   tips: "〔英〕"
   enable_user_dict: false
   enable_sentence: false
   enable_completion: true
   spelling_hints: 9
-  initial_quality: 700
+  initial_quality: 0.5
   comment_format:
     - xform/^.+$//
 
@@ -91,7 +91,6 @@ jp_mix:
   enable_encoder: true
   encode_commit_history: true
   enable_completion: true
-  initial_quality: 800
   preedit_format:
     __include: jaroomaji.schema.yaml:/translator/preedit_format
 
