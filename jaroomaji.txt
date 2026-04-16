@@ -2,16 +2,19 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	139
+#@/tick	166
 ー	-	1
+ーいる	- i ru	1
+ーいっっ	- i xtu xtu	3
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
 ウ	U	0
 場合	ba a i	1
 部分	bu bu nn	1
+ぶす	bu su	1
 de	de	2
-で	de	1
+で	de	3
 できる	de ki ru	1
 です	de su	5
 ですか	de su ka	0
@@ -37,6 +40,7 @@ de	de	2
 いま	i ma	3
 今	i ma	1
 いの	i no	0
+いる	i ru	0
 いし	i si	1
 忙しい	i so ga si i	0
 忙しいですか	i so ga si i de su ka	2
@@ -51,6 +55,7 @@ de	de	2
 書いて	ka i te	1
 確認	ka ku ni nn	1
 感想	ka nn so u	1
+刑	ke i	2
 件数	ke nn su u	1
 機能	ki no u	5
 この	ko no	1
@@ -61,21 +66,21 @@ de	de	2
 まず	ma zu	1
 何時	na nn zi	1
 に	ni	1
-日本語	ni ho nn go	5
+日本語	ni ho nn go	6
 んっ	nn xtu	1
 の	no	6
 入力	nyu u ryo ku	1
 オア	o a	0
 お願いします	o ne ga i si ma su	1
 リユ	ri yu	4
-ルゴ	ru go	1
+ルゴ	ru go	3
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
 しました	si ma si ta	1
 私財	si za i	2
 資材	si za i	1
-する	su ru	2
+する	su ru	6
 て	te	0
 時	to ki	2
 続き	tu du ki	1
@@ -83,9 +88,15 @@ de	de	2
 ウブンツ	u bu nn tu	1
 浮い	u i	1
 私	wa ta si	1
-っ	xtu	19
+っ	xtu	23
+っげ	xtu ge	1
+っっ	xtu xtu	3
+っっっ	xtu xtu xtu	1
 っっっっ	xtu xtu xtu xtu	8
 ざ	za	0
 ぜげ	ze ge	2
 攻め	ze me	1
 ぜっ	ze xtu	1
+じし	zi si	1
+ぞ	zo	0
+ぞっっ	zo xtu xtu	1
