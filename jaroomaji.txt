@@ -2,20 +2,24 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	96
+#@/tick	131
+ー	-	1
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
 ウ	U	0
 場合	ba a i	1
 部分	bu bu nn	1
+de	de	2
 できる	de ki ru	1
 です	de su	1
 ですか	de su ka	0
 ド	do	1
 ドキュメント	do kyu me nn to	1
 ドキュメント更新	do kyu me nn to ko u si nn	5
+ふぁ	fwa	0
 ファイル	fwa i ru	2
+ふぁオア	fwa o a	1
 現	ge nn	0
 現在	ge nn za i	2
 現ざいの	ge nn za i no	1
@@ -59,20 +63,25 @@
 んっ	nn xtu	1
 の	no	6
 入力	nyu u ryo ku	1
+オア	o a	0
 お願いします	o ne ga i si ma su	1
-リユ	ri yu	1
+リユ	ri yu	4
+ルゴ	ru go	1
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
 しました	si ma si ta	1
 私財	si za i	2
 資材	si za i	1
+する	su ru	2
 て	te	0
 時	to ki	2
 続き	tu du ki	1
 ついて	tu i te	1
+ウブンツ	u bu nn tu	1
+浮い	u i	1
 私	wa ta si	1
-っ	xtu	3
-っっっっ	xtu xtu xtu xtu	2
+っ	xtu	19
+っっっっ	xtu xtu xtu xtu	8
 ざ	za	0
-ぜげ	ze ge	1
+ぜげ	ze ge	2
