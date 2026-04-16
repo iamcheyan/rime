@@ -40,9 +40,9 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - script_translator@jp_mix
     - table_translator
     - table_translator@easy_en_mix
-    - script_translator@jp_mix
     - history_translator
   filters:
     - simplifier
@@ -59,7 +59,7 @@ translator:
   dictionary: sbzr
   enable_user_dict: true
   enable_sentence: true
-  enable_completion: true
+  enable_completion: false
   sentence_over_completion: true
   enable_encoder: true
   encode_whole_phrase: true
@@ -91,7 +91,7 @@ jp_mix:
   enable_encoder: true
   encode_commit_history: true
   enable_completion: true
-  initial_quality: 1000
+  initial_quality: 1500
   preedit_format:
     __include: jaroomaji.schema.yaml:/translator/preedit_format
 

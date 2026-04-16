@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	89
+#@/tick	96
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
@@ -10,6 +10,7 @@
 場合	ba a i	1
 部分	bu bu nn	1
 できる	de ki ru	1
+です	de su	1
 ですか	de su ka	0
 ド	do	1
 ドキュメント	do kyu me nn to	1
@@ -59,6 +60,9 @@
 の	no	6
 入力	nyu u ryo ku	1
 お願いします	o ne ga i si ma su	1
+リユ	ri yu	1
+了解	ryo u ka i	1
+了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
 しました	si ma si ta	1
 私財	si za i	2
@@ -69,4 +73,6 @@
 ついて	tu i te	1
 私	wa ta si	1
 っ	xtu	3
+っっっっ	xtu xtu xtu xtu	2
 ざ	za	0
+ぜげ	ze ge	1
