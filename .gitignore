@@ -85,3 +85,5 @@ dict_backups_*/jaroomaji.*.dict.yaml
 sync/**/jaroomaji.*.dict.yaml
 rime-shuangpin-fuzhuma
 rime-shuangpin-fuzhuma
+
+*.userdb/
