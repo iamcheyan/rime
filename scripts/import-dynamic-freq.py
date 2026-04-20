@@ -32,6 +32,18 @@ def parse_records(path: Path) -> dict[str, tuple[str, str, int]]:
     return records
 
 
+def merge_records(
+    base: dict[str, tuple[str, str, int]],
+    incoming: dict[str, tuple[str, str, int]],
+) -> dict[str, tuple[str, str, int]]:
+    merged = dict(base)
+    for input_code, rec in incoming.items():
+        current = merged.get(input_code)
+        if current is None or rec[2] >= current[2]:
+            merged[input_code] = rec
+    return merged
+
+
 def write_records(path: Path, records: dict[str, tuple[str, str, int]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
@@ -46,7 +58,7 @@ def write_records(path: Path, records: dict[str, tuple[str, str, int]]) -> None:
 def main() -> int:
     merged: dict[str, tuple[str, str, int]] = {}
     for path in sorted(SYNC_ROOT.glob("*/dynamic_freq.txt")):
-        merged.update(parse_records(path))
+        merged = merge_records(merged, parse_records(path))
 
     if not merged and LOCAL_FILE.exists():
         print("No synced dynamic_freq snapshots found, keeping local cache.")

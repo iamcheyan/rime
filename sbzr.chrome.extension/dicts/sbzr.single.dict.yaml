@@ -1,0 +1,43 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# sbzr.single - 单编码单字候选
+#
+
+---
+name: sbzr.chrome.extension/dicts/sbzr.single
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+...
+啊	a	50014
+不	b	50014
+出	c	50014
+的	d	50014
+大  d 50014
+发	f	50014
+个	g	50014
+和	h	50014
+爱	i	50014
+就	j	50014
+可	k	50014
+了	l	50014
+没	m	50014
+你	n	50014
+哦	o	50014
+平	p	50014
+去	q	50014
+人	r	50014
+是	s	50014
+他	t	50014
+无	u	50014
+而	v	50014
+娥	v	50000
+我	w	50014
+下	x	50014
+一	y	50014
+在	z	50014

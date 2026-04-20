@@ -7,6 +7,7 @@
    * reloadable: (可选) 是否允许在 Notepad 中通过 Native Host 保存/重载
    */
   const TABLES = [
+    { path: 'dicts/sbzr.single.dict.yaml' },
     { path: 'dicts/base.dict.yaml' },
     { path: 'dicts/sbzr.len1.full.dict.yaml' },
     { path: 'dicts/zdy.dict.yaml', prefix: 'u', reloadable: true }

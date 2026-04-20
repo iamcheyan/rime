@@ -39,6 +39,18 @@ def parse_records(path: Path) -> dict[str, tuple[str, str, int]]:
     return records
 
 
+def merge_records(
+    base: dict[str, tuple[str, str, int]],
+    incoming: dict[str, tuple[str, str, int]],
+) -> dict[str, tuple[str, str, int]]:
+    merged = dict(base)
+    for input_code, rec in incoming.items():
+        current = merged.get(input_code)
+        if current is None or rec[2] >= current[2]:
+            merged[input_code] = rec
+    return merged
+
+
 def write_records(path: Path, records: dict[str, tuple[str, str, int]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
@@ -53,8 +65,7 @@ def write_records(path: Path, records: dict[str, tuple[str, str, int]]) -> None:
 def main() -> int:
     local_records = parse_records(LOCAL_FILE)
     target = SYNC_ROOT / device_name() / "dynamic_freq.txt"
-    merged = parse_records(target)
-    merged.update(local_records)
+    merged = merge_records(parse_records(target), local_records)
 
     write_records(LOCAL_FILE, merged)
     write_records(target, merged)

@@ -78,6 +78,8 @@ function normalizeImeDictPaths(paths) {
 
 function describeImeDict(path) {
   switch (path) {
+    case 'dicts/sbzr.single.dict.yaml':
+      return 'Single-code single-character table.';
     case 'dicts/sbzr.len1.dict.yaml':
       return 'Single-character base table.';
     case 'dicts/sbzr.len1.full.dict.yaml':
