@@ -37,7 +37,7 @@ const EDITABLE_DICT_PATHS = [
   ...(window.SBZR_DICTS?.AFFIX_SOURCES || []).map((item) => item.path)
 ];
 const IME_DICT_TABLES = window.SBZR_DICTS?.TABLES || [];
-const DEFAULT_IME_DICT_PATHS = IME_DICT_TABLES.map((table) => table.path);
+const DEFAULT_IME_DICT_PATHS = window.SBZR_DICTS?.DEFAULT_PATHS || IME_DICT_TABLES.map((table) => table.path);
 const NATIVE_HOST_NAME = 'com.sbzr.filehost';
 const SBZR_CORE_SCRIPT_PATH = '../shared/sbzr-core.js';
 const CONTENT_IME_SCRIPT_PATH = '../content.js';

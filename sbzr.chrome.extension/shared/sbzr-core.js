@@ -8,14 +8,14 @@
   const FIXED_DICT_PATH = 'dicts/sbzr.shortcut.dict.yaml';
   const FIXED_DICT_NAME = 'sbzr.shortcut';
   const FIXED_DICT_BASE_WEIGHT = 2000;
-  const DEFAULT_PACKAGED_RIME_DICT_PATHS = global.SBZR_DICTS?.RIME_PATHS || [
+  const DEFAULT_PACKAGED_RIME_DICT_PATHS = global.SBZR_DICTS?.DEFAULT_RIME_PATHS || global.SBZR_DICTS?.RIME_PATHS || [
     FIXED_DICT_PATH,
     'dicts/sbzr.char2.dict.yaml',
     'dicts/sbzr.dict.yaml',
     'dicts/sbzr.len2.dict.yaml',
     'dicts/sbzr.txt'
   ];
-  const DEFAULT_PACKAGED_AFFIX_DICT_SOURCES = global.SBZR_DICTS?.AFFIX_SOURCES || [
+  const DEFAULT_PACKAGED_AFFIX_DICT_SOURCES = global.SBZR_DICTS?.DEFAULT_AFFIX_SOURCES || global.SBZR_DICTS?.AFFIX_SOURCES || [
     { path: 'dicts/zdy.dict.yaml', prefix: 'u', dictName: 'sbzdy.extension' }
   ];
   function getEditableDictPaths() {

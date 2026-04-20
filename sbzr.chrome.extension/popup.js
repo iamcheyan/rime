@@ -24,7 +24,7 @@ let candidateFontSize = 13;
 let imeDictPaths = [];
 const ADD_TO_FIXED_DICT_COMMAND = 'add-selection-to-fixed-dict';
 const IME_DICT_TABLES = window.SBZR_DICTS?.TABLES || [];
-const DEFAULT_IME_DICT_PATHS = IME_DICT_TABLES.map((table) => table.path);
+const DEFAULT_IME_DICT_PATHS = window.SBZR_DICTS?.DEFAULT_PATHS || IME_DICT_TABLES.map((table) => table.path);
 const RELOADABLE_DICT_PATHS = window.SBZR_DICTS?.RELOADABLE_PATHS || [];
 
 function escapeRegexLiteral(text) {

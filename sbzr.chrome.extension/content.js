@@ -38,7 +38,7 @@ let notepadDragging = false;
 let notepadDragOffset = { x: 0, y: 0 };
 const USER_HISTORY_BEGIN_MARKER = '# sbzr-user-history-begin';
 const USER_HISTORY_END_MARKER = '# sbzr-user-history-end';
-const PACKAGED_RIME_DICT_PATHS = window.SBZR_DICTS?.RIME_PATHS || [
+const PACKAGED_RIME_DICT_PATHS = window.SBZR_DICTS?.DEFAULT_RIME_PATHS || window.SBZR_DICTS?.RIME_PATHS || [
     'dicts/sbzr.shortcut.dict.yaml',
     'dicts/sbzr.len1.dict.yaml',
     'dicts/sbzr.len1.full.dict.yaml',
@@ -46,7 +46,7 @@ const PACKAGED_RIME_DICT_PATHS = window.SBZR_DICTS?.RIME_PATHS || [
     'dicts/sbzr.userdb.dict.yaml',
     'dicts/sbzr.userdb.full.dict.yaml'
 ];
-const PACKAGED_AFFIX_DICT_SOURCES = window.SBZR_DICTS?.AFFIX_SOURCES || [
+const PACKAGED_AFFIX_DICT_SOURCES = window.SBZR_DICTS?.DEFAULT_AFFIX_SOURCES || window.SBZR_DICTS?.AFFIX_SOURCES || [
     { path: 'dicts/zdy.dict.yaml', prefix: 'u', dictName: 'sbzdy.extension' }
 ];
 const CONTENT_AUTO_INIT = window.__SBZR_CONTENT_AUTO_INIT__ !== false;

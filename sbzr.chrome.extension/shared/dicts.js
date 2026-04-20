@@ -7,15 +7,23 @@
    * reloadable: (可选) 是否允许在 Notepad 中通过 Native Host 保存/重载
    */
   const TABLES = [
-    { path: 'dicts/sbzr.single.dict.yaml' },
-    { path: 'dicts/base.dict.yaml' },
-    { path: 'dicts/sbzr.len1.full.dict.yaml' },
-    { path: 'dicts/zdy.dict.yaml', prefix: 'u', reloadable: true }
+    { path: 'dicts/sbzr.single.dict.yaml', defaultEnabled: true },
+    { path: 'dicts/base.dict.yaml', defaultEnabled: true },
+    { path: 'dicts/sbzr.len1.full.dict.yaml', defaultEnabled: false },
+    { path: 'dicts/zdy.dict.yaml', prefix: 'u', reloadable: true, defaultEnabled: false }
   ];
+  const DEFAULT_TABLES = TABLES.filter((table) => table.defaultEnabled !== false);
 
   // 内部转换逻辑，保持跟原有 API 的兼容性，这样不需要改动其他代码
   const DICTS = {
     TABLES,
+    DEFAULT_PATHS: DEFAULT_TABLES.map((table) => table.path),
+    DEFAULT_RIME_PATHS: DEFAULT_TABLES.filter((table) => !table.prefix).map((table) => table.path),
+    DEFAULT_AFFIX_SOURCES: DEFAULT_TABLES.filter((table) => table.prefix).map((table) => ({
+      path: table.path,
+      prefix: table.prefix,
+      dictName: `sb${table.prefix || 'ext'}.extension`
+    })),
     RIME_PATHS: TABLES.filter(t => !t.prefix).map(t => t.path),
     AFFIX_SOURCES: TABLES.filter(t => t.prefix).map(t => ({
       path: t.path,
