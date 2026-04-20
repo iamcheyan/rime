@@ -16,7 +16,6 @@
 输入	Kieserite	1
 无论	Merna	1
 效果	Minae	1
-下面再	Mortification	1
 现在	Mortification	1
 又	Nearing	1
 优先	Nej	1
@@ -36,7 +35,6 @@ N	n	1
 输入	suru	1
 无论	wulp	1
 效果	xcgo	1
-下面再	xmzl	3
 现在	xmzl	3
 っ	xtu	1
 又	yb	1
