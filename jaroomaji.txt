@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	204
+#@/tick	206
 ー	-	1
 ーいる	- i ru	1
 ーいっっ	- i xtu xtu	3
@@ -90,6 +90,7 @@ de	de	2
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
+最適化	sa i te ki ka	1
 整理	se i ri	1
 しました	si ma si ta	1
 私財	si za i	2
@@ -115,6 +116,7 @@ de	de	2
 攻め	ze me	2
 ぜっ	ze xtu	1
 じし	zi si	2
+辞書	zi syo	1
 ぞ	zo	0
 ぞっっ	zo xtu xtu	1
 じゃない	zya na i	0
