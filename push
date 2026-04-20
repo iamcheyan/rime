@@ -1,6 +1,11 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
+echo "导出 dynamic_freq 同步快照..."
+python3 scripts/export-dynamic-freq.py || exit 1
+echo "✓ dynamic_freq 已导出"
+echo ""
+
 echo "=== 根据 .gitignore 自动管理文件 ==="
 echo ""
 
@@ -73,4 +78,3 @@ echo ""
 # 提交并推送
 git commit --allow-empty -m "$COMMIT_MSG"
 git push --force origin main
-

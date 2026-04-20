@@ -27,6 +27,11 @@ git fetch origin main
 echo "正在强制重置本地分支 (reset --hard)..."
 git reset --hard origin/main
 
+echo ""
+echo "导入 dynamic_freq 同步快照..."
+python3 scripts/import-dynamic-freq.py || exit 1
+echo "✓ dynamic_freq 已导入"
+
 # 3. 清理可能多出的未跟踪文件（可选，保持纯净）
 # git clean -fd  # 如果你想彻底保持和远程一模一样，可以取消注释这一行
 

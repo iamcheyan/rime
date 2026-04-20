@@ -44,7 +44,7 @@ engine:
     - history_translator
   filters:
     - simplifier
-    - lua_filter@mix_recent_filter
+    - lua_filter@dynamic_freq_filter
     - uniquifier
 
 speller:
