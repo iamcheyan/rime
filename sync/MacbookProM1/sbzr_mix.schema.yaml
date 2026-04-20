@@ -1,10 +1,11 @@
-# 输入方案定义：核心配置文件
+# 输入方案定义：中日英混输实验方案
 schema:
-  schema_id: sbzr
-  name: "声笔自然"
-  version: "0.5.3"
+  schema_id: sbzr_mix
+  name: "混输模式"
+  version: "0.1.0"
   dependencies:
     - easy_en
+    - jaroomaji
 
 switches:
   - name: ascii_mode
@@ -38,9 +39,11 @@ engine:
     - punct_segmentor
     - fallback_segmentor
   translators:
+    - echo_translator
     - punct_translator
+    - script_translator@jp_mix
+    - table_translator@easy_en_mix
     - table_translator
-    - table_translator@easy_en
     - history_translator
   filters:
     - simplifier
@@ -48,38 +51,49 @@ engine:
     - uniquifier
 
 speller:
-  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
-  # 关键：不要设置 initials，防止分段器根据声母自动切分
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-
   delimiter: " '"
   auto_select: false
-  max_code_length: 0     # 恢复为 0，允许无限长度输入（整句模式）
-  algebra:
-    - derive/^([a-z]{3})[a-z]$/$1/  # 派生 3 码前缀（如 ggei -> gge）
+  max_code_length: 0
   use_space: false
 
 translator:
   dictionary: sbzr
   enable_user_dict: true
-  enable_sentence: true        # 开启码表整句
-  enable_completion: true      # 开启追加补全提示
-  sentence_over_completion: true # 优先匹配整句而非补全
+  enable_sentence: true
+  enable_completion: false
+  sentence_over_completion: true
   enable_encoder: true
   encode_whole_phrase: true
-  max_phrase_length: 32        # 支持超长长句
+  max_phrase_length: 32
   user_dict: sbzr
   db_class: tabledb
-  initial_quality: 1000
+  initial_quality: 800
   enable_preedit: false
 
-easy_en:
+easy_en_mix:
   dictionary: easy_en
+  tips: "〔英〕"
   enable_user_dict: false
   enable_sentence: false
   enable_completion: true
   spelling_hints: 9
-  initial_quality: 900
+  initial_quality: 0.5
   comment_format:
     - xform/^.+$//
+
+jp_mix:
+  dictionary: jaroomaji
+  prism: jaroomaji
+  tips: "〔日〕"
+  user_dict: jaroomaji
+  db_class: tabledb
+  enable_user_dict: true
+  enable_encoder: true
+  encode_commit_history: true
+  enable_completion: true
+  preedit_format:
+    __include: jaroomaji.schema.yaml:/translator/preedit_format
 
 history_translator:
   size: 1

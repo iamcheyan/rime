@@ -11,6 +11,8 @@ schema:
   schema_id: jaroomaji
   name: 日本語ローマ字
   version: "1.0"
+  dependencies:
+    - easy_en
   author:
     - lazy fox chan
   description: |
@@ -52,6 +54,7 @@ engine:
     - echo_translator
     - punct_translator
     - script_translator
+    - table_translator@easy_en
   filters:
     - uniquifier
 
@@ -820,6 +823,16 @@ translator:
     - "xform/l/ー/"
     - "xform/L/ー/"
     - "xform/-/ー/"
+
+easy_en:
+  dictionary: easy_en
+  enable_user_dict: false
+  enable_sentence: false
+  enable_completion: true
+  spelling_hints: 9
+  initial_quality: 0.5
+  comment_format:
+    - xform/^.+$//
 
 # # # # # # # # # # # # # # # # # # # #
 # 記号入力の設定

@@ -2,9 +2,123 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	5
+#@/tick	214
+ー	-	1
+ーいる	- i ru	2
+ーいっっ	- i xtu xtu	3
+ホ	HO	0
+カク	KA KU	0
+カクホウ	KA KU HO U	1
+ウ	U	0
+場合	ba a i	1
+バグ	ba gu	1
+ぶ	bu	0
+部分	bu bu nn	1
+ぶす	bu su	1
+ぶっっ	bu xtu xtu	3
+de	de	2
+で	de	3
+できる	de ki ru	1
+です	de su	5
+ですか	de su ka	0
 ド	do	1
 ドキュメント	do kyu me nn to	1
-ドキュメント更新	do kyu me nn to ko u si nn	2
-更新	ko u si nn	0
-設定	se xtu te i	1
+ドキュメント更新	do kyu me nn to ko u si nn	5
+エーラ	e - ra	1
+ふぁ	fwa	0
+ファイル	fwa i ru	3
+ふぁオア	fwa o a	1
+現	ge nn	0
+現在	ge nn za i	2
+現ざいの	ge nn za i no	1
+ぎ	gi	1
+ご	go	1
+ゴー	go -	0
+ゴーっっ	go - xtu xtu	1
+は	ha	3
+はい	ha i	1
+判断能力	ha nn da nn no u ryo ku	1
+比較	hi ka ku	1
+必要	hi tu yo u	0
+必要じゃない	hi tu yo u zya na i	1
+不一	hu i ti	1
+複雑	hu ku za tu	1
+二つ	hu ta tu	1
+いい方法	i i ho u ho u	1
+イイ方法	i i ho u ho u	3
+以下	i ka	1
+いま	i ma	3
+今	i ma	1
+いの	i no	0
+いる	i ru	0
+いし	i si	1
+忙しい	i so ga si i	0
+忙しいですか	i so ga si i de su ka	2
+いただけ	i ta da ke	0
+いただけマスカ	i ta da ke ma su ka	1
+頂きます	i ta da ki ma su	0
+頂きますか	i ta da ki ma su ka	1
+一番	i ti ba nn	2
+以上	i zyo u	1
+か	ka	0
+書い	ka i	0
+書いて	ka i te	1
+確認	ka ku ni nn	1
+感想	ka nn so u	1
+刑	ke i	2
+件数	ke nn su u	1
+機能	ki no u	5
+この	ko no	1
+更新	ko u si nn	8
+構造	ko u zo u	1
+黒島	ku ro si ma	4
+今日	kyo u	0
+今日は	kyo u ha	2
+マスカ	ma su ka	0
+まず	ma zu	1
+む	mu	0
+むっっっ	mu xtu xtu xtu	1
+何時	na nn zi	1
+に	ni	1
+日本語	ni ho nn go	6
+んっ	nn xtu	1
+の	no	8
+入力	nyu u ryo ku	1
+オア	o a	0
+お願いします	o ne ga i si ma su	1
+王	o u	1
+リユ	ri yu	4
+ルゴ	ru go	6
+了解	ryo u ka i	1
+了解です	ryo u ka i de su	1
+料金	ryo u ki nn	1
+最適化	sa i te ki ka	1
+整理	se i ri	1
+しました	si ma si ta	1
+私財	si za i	2
+資材	si za i	1
+それほど	so re ho do	1
+する	su ru	6
+て	te	0
+時	to ki	2
+続き	tu du ki	1
+ついて	tu i te	1
+ウブンツ	u bu nn tu	1
+浮い	u i	1
+私	wa ta si	1
+っ	xtu	26
+っげ	xtu ge	1
+っけ	xtu ke	1
+っっ	xtu xtu	10
+っっっ	xtu xtu xtu	3
+っっっっ	xtu xtu xtu xtu	11
+っっっっっ	xtu xtu xtu xtu xtu	1
+ざ	za	0
+ぜげ	ze ge	2
+攻め	ze me	2
+ぜっ	ze xtu	1
+じし	zi si	2
+辞書	zi syo	1
+ぞ	zo	0
+ぞっっ	zo xtu xtu	1
+じゃない	zya na i	0

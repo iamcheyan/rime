@@ -1,7 +1,7 @@
-distribution_code_name: Weasel
-distribution_name: Weasel
-distribution_version: 0.17.0
+distribution_code_name: "fcitx-rime"
+distribution_name: Rime
+distribution_version: 5.1.12
 install_time: "Sun Nov 24 17:05:56 2024"
 installation_id: MacbookProM1
 rime_version: 1.13.1
-update_time: "Thu Apr 16 09:31:23 2026"
+update_time: "Tue Apr 21 06:10:47 2026"

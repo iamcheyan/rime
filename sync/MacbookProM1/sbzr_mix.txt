@@ -1,0 +1,41 @@
+# Rime table
+#@/db_name	sbzr_mix
+#@/db_type	tabledb
+#@/rime_version	1.13.1
+#@/tick	22
+リユ	Abdeen Abelite	1
+する	Abdicable Abdelaziz	1
+っ	Abegging	1
+多少	Bhardwaj	1
+多少次	Bioclean	1
+还是	Cootie	1
+没有	Fruitless	1
+你的	Garsten	1
+你	Gastar	1
+日语	Ihle	1
+输入	Kieserite	1
+无论	Merna	1
+效果	Minae	1
+现在	Mortification	1
+又	Nearing	1
+优先	Nej	1
+リユ	aiwh ands	1
+する	aixr aiwo	1
+っ	ande	1
+多少	dosk	1
+多少次	dsci	1
+还是	hlsi	1
+没有	mzyb	1
+N	n	1
+你的	nide	5
+你	niui	1
+リユ	ri yu	1
+日语	riyu	1
+する	su ru	1
+输入	suru	1
+无论	wulp	1
+效果	xcgo	1
+现在	xmzl	3
+っ	xtu	1
+又	yb	1
+优先	ybxm	1

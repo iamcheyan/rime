@@ -9,7 +9,10 @@ patch:
   switcher/caption: "〔方案选单〕"
   switcher/fold_options: true
   switcher/option_list_separator: '／'
-  switcher/hotkeys: []
+  switcher/hotkeys:
+    - Control+grave
+    - Control+Shift+grave
+    - F4
   var/previously_selected_schema: sbzr
   ascii_composer:
     good_old_caps_lock: true
