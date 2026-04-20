@@ -95,27 +95,6 @@ prelude:
     encode_commit_history: false
     tips: "〔笔画反查〕"
 
-  sbyp:
-    tag: sbyp
-    dictionary: sbpy
-    enable_user_dict: false
-    enable_encoder: false
-    packs:
-      - sbpy.base
-    prism: sbpy
-    prefix: a
-    tips: "〔拼音反查〕"
-
-  emoji:
-    tag: emoji
-    dictionary: sbpy
-    enable_user_dict: false
-    enable_encoder: false
-    packs:
-      - sbpy.base
-    prism: sbpy
-    prefix: e
-
   zhlf:
     tag: zhlf
     dictionary: zhlf
@@ -135,7 +114,7 @@ prelude:
     tips: "〔声笔反查〕"
 
   reverse_lookup:
-    tags: [bihua, sbyp, zhlf, sbfc]
+    tags: [bihua, zhlf, sbfc]
     overwrite_comment: true
     dictionary: sbjm.extended
 
@@ -265,8 +244,6 @@ recognizer:
     punct: '^\\([0-9]|10|[A-Za-z][A-Zbpmfdtnlgkhjqxzcsrywv]*)$'
     sbfc: "^[bpmfdtnlgkhjqxzcsrywv][aeiou]{3}$"
     bihua: "^[aeiou]+$"
-    sbyp: "^a[bpmfdtnlgkhjqxzcsrywv][a-z']*$"
-    emoji: "^e[bpmfdtnlgkhjqxzcsrywv][a-z']*$"
     zhlf: "^i[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
     sbzdy: "^u[bpmfdtnlgkhjqxzcsrywv][a-z]*$"
     jsq: "^=.+$"

@@ -4,7 +4,6 @@ schema:
   name: "声笔自然"
   version: "0.5.3"
   dependencies:
-    - sbpy
 
 switches:
   - name: ascii_mode

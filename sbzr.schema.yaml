@@ -4,7 +4,6 @@ schema:
   name: "声笔自然"
   version: "0.5.3"
   dependencies:
-    - sbpy
     - easy_en
 
 switches:
@@ -45,6 +44,7 @@ engine:
     - history_translator
   filters:
     - simplifier
+    - lua_filter@mix_recent_filter
     - uniquifier
 
 speller:

@@ -30,9 +30,16 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.len1
   - sbzr.chrome.extension/dicts/sbzr.len1.full
   - sbzr.chrome.extension/dicts/sbzr.len2
+  - sbzr.chrome.extension/dicts/sbzr.extended.common
+  - sbzr.chrome.extension/dicts/sbzr.extended.diming
+  - sbzr.chrome.extension/dicts/sbzr.extended.duoyin
+  - sbzr.chrome.extension/dicts/sbzr.extended.lianxiang
+  - sbzr.chrome.extension/dicts/sbzr.extended.shici
+  - sbzr.chrome.extension/dicts/sbzr.extended.wuzhong
   - sbzr.chrome.extension/dicts/sbzr.shortcut
   - sbzr.chrome.extension/dicts/sbzr.userdb
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
+  - sbzr.chrome.extension/dicts/chengyu
   - zdy
 
 

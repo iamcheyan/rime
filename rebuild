@@ -491,54 +491,6 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                     fi
                 fi
                 
-                # 恢复 sbpy/sbyp 拼音反查文件（如果缺失）
-                if [ -d "$BUILD_DIR" ]; then
-                    BACKUP_BUILD_DIR="$PERMANENT_BACKUP_DIR/build"
-                    if [ -d "$BACKUP_BUILD_DIR" ]; then
-                        # 检查 build 目录中是否缺少 sbpy/sbyp 文件
-                        EXPECTED_SBPY_FILES=("sbpy.base.table.bin" "sbpy.ext.table.bin" "sbpy.tencent.table.bin" "sbpy.table.bin" "sbpy.prism.bin" "sbpy.reverse.bin" "sbyp.prism.bin")
-                        MISSING_SBPY_COUNT=0
-                        for expected_file in "${EXPECTED_SBPY_FILES[@]}"; do
-                            if [ ! -f "$BUILD_DIR/$expected_file" ]; then
-                                MISSING_SBPY_COUNT=$((MISSING_SBPY_COUNT + 1))
-                            fi
-                        done
-                        
-                        # 如果有缺失的文件，从备份目录恢复
-                        if [ "$MISSING_SBPY_COUNT" -gt 0 ]; then
-                            SBPY_BACKUP_FILES=$(find "$BACKUP_BUILD_DIR" -name "sbpy.*.bin" -o -name "sbyp.*.bin" 2>/dev/null)
-                            if [ -n "$SBPY_BACKUP_FILES" ]; then
-                                echo ""
-                                echo -e "${YELLOW}从备份目录恢复拼音反查文件...${NC}"
-                                RESTORE_COUNT=0
-                                while IFS= read -r backup_file; do
-                                    if [ -f "$backup_file" ]; then
-                                        FILENAME=$(basename "$backup_file")
-                                        TARGET_FILE="$BUILD_DIR/$FILENAME"
-                                        if [ ! -f "$TARGET_FILE" ]; then
-                                            if cp "$backup_file" "$TARGET_FILE" 2>/dev/null; then
-                                                echo -e "  ${GREEN}✓ 已从备份恢复: $FILENAME${NC}"
-                                                RESTORE_COUNT=$((RESTORE_COUNT + 1))
-                                            fi
-                                        fi
-                                    fi
-                                done <<< "$SBPY_BACKUP_FILES"
-                                if [ "$RESTORE_COUNT" -gt 0 ]; then
-                                    echo -e "${GREEN}✓ 拼音反查文件恢复完成（共 $RESTORE_COUNT 个文件）${NC}"
-                                fi
-                            fi
-                        fi
-                    fi
-                    
-                    # 恢复 sbyp.schema.yaml（如果缺失）
-                    if [ ! -f "$RIME_DIR/sbyp.schema.yaml" ] && [ -f "$PERMANENT_BACKUP_DIR/sbyp.schema.yaml" ]; then
-                        echo ""
-                        echo -e "${YELLOW}从备份目录恢复 sbyp.schema.yaml...${NC}"
-                        if cp "$PERMANENT_BACKUP_DIR/sbyp.schema.yaml" "$RIME_DIR/sbyp.schema.yaml" 2>/dev/null; then
-                            echo -e "${GREEN}✓ 已从备份恢复: sbyp.schema.yaml${NC}"
-                        fi
-                    fi
-                fi
             fi
         else
             echo -e "${RED}✗ 编译过程中出现错误（退出码: $COMPILE_EXIT_CODE）${NC}"
@@ -574,43 +526,6 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                 rm -rf "$BACKUP_DIR" 2>/dev/null
             fi
             
-            # 即使编译失败，也尝试恢复 sbpy/sbyp 文件
-            if [ -d "$BUILD_DIR" ]; then
-                PERMANENT_BACKUP_DIR="$RIME_DIR/resources"
-                BACKUP_BUILD_DIR="$PERMANENT_BACKUP_DIR/build"
-                if [ -d "$BACKUP_BUILD_DIR" ]; then
-                    SBPY_BACKUP_FILES=$(find "$BACKUP_BUILD_DIR" -name "sbpy.*.bin" -o -name "sbyp.*.bin" 2>/dev/null)
-                    if [ -n "$SBPY_BACKUP_FILES" ]; then
-                        echo ""
-                        echo -e "${YELLOW}尝试恢复拼音反查文件...${NC}"
-                        RESTORE_COUNT=0
-                        while IFS= read -r backup_file; do
-                            if [ -f "$backup_file" ]; then
-                                FILENAME=$(basename "$backup_file")
-                                TARGET_FILE="$BUILD_DIR/$FILENAME"
-                                if [ ! -f "$TARGET_FILE" ]; then
-                                    if cp "$backup_file" "$TARGET_FILE" 2>/dev/null; then
-                                        echo -e "  ${GREEN}✓ 已恢复: $FILENAME${NC}"
-                                        RESTORE_COUNT=$((RESTORE_COUNT + 1))
-                                    fi
-                                fi
-                            fi
-                        done <<< "$SBPY_BACKUP_FILES"
-                        if [ "$RESTORE_COUNT" -gt 0 ]; then
-                            echo -e "${GREEN}✓ 拼音反查文件恢复完成（共 $RESTORE_COUNT 个文件）${NC}"
-                        fi
-                    fi
-                fi
-                
-                # 恢复 sbyp.schema.yaml（如果缺失）
-                if [ ! -f "$RIME_DIR/sbyp.schema.yaml" ] && [ -f "$PERMANENT_BACKUP_DIR/sbyp.schema.yaml" ]; then
-                    echo ""
-                    echo -e "${YELLOW}从备份目录恢复 sbyp.schema.yaml...${NC}"
-                    if cp "$PERMANENT_BACKUP_DIR/sbyp.schema.yaml" "$RIME_DIR/sbyp.schema.yaml" 2>/dev/null; then
-                        echo -e "${GREEN}✓ 已从备份恢复: sbyp.schema.yaml${NC}"
-                    fi
-                fi
-            fi
         fi
         
         # 保存日志文件路径供后续查看

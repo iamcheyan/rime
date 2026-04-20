@@ -2,9 +2,9 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	206
+#@/tick	214
 ー	-	1
-ーいる	- i ru	1
+ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
 ホ	HO	0
 カク	KA KU	0
@@ -15,7 +15,7 @@
 ぶ	bu	0
 部分	bu bu nn	1
 ぶす	bu su	1
-ぶっっ	bu xtu xtu	2
+ぶっっ	bu xtu xtu	3
 de	de	2
 で	de	3
 できる	de ki ru	1
@@ -76,6 +76,8 @@ de	de	2
 今日は	kyo u ha	2
 マスカ	ma su ka	0
 まず	ma zu	1
+む	mu	0
+むっっっ	mu xtu xtu xtu	1
 何時	na nn zi	1
 に	ni	1
 日本語	ni ho nn go	6
@@ -86,7 +88,7 @@ de	de	2
 お願いします	o ne ga i si ma su	1
 王	o u	1
 リユ	ri yu	4
-ルゴ	ru go	5
+ルゴ	ru go	6
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
@@ -107,8 +109,8 @@ de	de	2
 っ	xtu	26
 っげ	xtu ge	1
 っけ	xtu ke	1
-っっ	xtu xtu	7
-っっっ	xtu xtu xtu	2
+っっ	xtu xtu	10
+っっっ	xtu xtu xtu	3
 っっっっ	xtu xtu xtu xtu	11
 っっっっっ	xtu xtu xtu xtu xtu	1
 ざ	za	0
