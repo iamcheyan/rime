@@ -1,5 +1,10 @@
 # 用户自定义补丁：用于覆盖 sbzr.schema.yaml 中的默认配置（如快捷键、开关状态）。
 patch:
+  # 1. 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
+  "switches/@0":
+    name: ascii_mode
+    reset: 0
+
   # 纯 Rime 降级版：收敛为接近 sbzr 的交互方式
   "menu/select_keys": " 12345"
   "menu/page_size": 6
