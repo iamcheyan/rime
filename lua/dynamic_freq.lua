@@ -1,6 +1,8 @@
 local SEP = "\31"
 local DB_NAME = "dynamic_freq"
 local CACHE_LIMIT = 256
+local MIN_PROMOTION_INPUT_LENGTH = 2
+local MAX_PROMOTION_SCAN = 64
 local db_pool = db_pool or {}
 local ROOT_DIR = nil
 local LOCAL_SYNC_FILE = nil
@@ -236,6 +238,9 @@ function M.func(translation, env)
   if not input or input == "" or not env.db then
     return passthrough(translation)
   end
+  if string.len(input) < MIN_PROMOTION_INPUT_LENGTH then
+    return passthrough(translation)
+  end
 
   local rec = lookup_recent(env, input)
   if not rec or not rec.text or rec.text == "" then
@@ -244,25 +249,36 @@ function M.func(translation, env)
 
   local buffered = {}
   local promoted = false
+  local scan_count = 0
+  local scanning = true
 
   for cand in translation:iter() do
-    if not promoted and cand.text == rec.text and (rec.type == "" or cand.type == rec.type) then
-      promoted = true
-      yield(cand)
-      for i = 1, #buffered do
-        yield(buffered[i])
-      end
-      buffered = nil
-    else
-      if promoted then
+    if scanning then
+      scan_count = scan_count + 1
+      if cand.text == rec.text and (rec.type == "" or cand.type == rec.type) then
+        promoted = true
+        scanning = false
         yield(cand)
+        for i = 1, #buffered do
+          yield(buffered[i])
+        end
+        buffered = nil
       else
         table.insert(buffered, cand)
+        if scan_count >= MAX_PROMOTION_SCAN then
+          scanning = false
+          for i = 1, #buffered do
+            yield(buffered[i])
+          end
+          buffered = nil
+        end
       end
+    else
+      yield(cand)
     end
   end
 
-  if not promoted then
+  if buffered ~= nil then
     for i = 1, #buffered do
       yield(buffered[i])
     end

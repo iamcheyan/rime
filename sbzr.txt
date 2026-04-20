@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	9837
+#@/tick	9861
 啊	a	14
 阿	aa	1
 挨	ai	1
@@ -12143,7 +12143,7 @@
 大鱼	dayu	3570
 答应	dayy	8436
 大致	dazi	6942
-打字	dazi	38016
+打字	dazi	38017
 大战	dazj	1458
 大在	dazl	7046
 搭载	dazl	8776
@@ -19627,7 +19627,7 @@
 打满能	dmng	0
 对么你	dmni	1059
 点呢	dmni	9464
-电脑	dmnk	38311
+电脑	dmnk	38315
 但没那么	dmnm	7334
 但没那么	dmny	7371
 店	dmoe	1
@@ -41390,6 +41390,7 @@ EventBridgeスケジュール設定	eve	3
 后月少的越	hrsy	1153
 很认同那段	hrtd	2154
 恍然大悟的	hrtd	841
+换台	hrtl	4
 很认同	hrts	2039
 还听	hrty	50
 还挺	hrty	4470
@@ -60521,8 +60522,8 @@ lazynvim	lnm	19
 能	ng	22
 能够	nggb	2
 那个合并	nggb	1
-你	ni	1
-昵	ni	5
+你	ni	2
+昵	ni	6
 你好	nihk	2
 你和	niho	1
 你看	nikj	2
@@ -60614,9 +60615,9 @@ python	py	1
 如何	ruhe	17
 汝河	ruhe	1
 如下	ruxw	1
-是	s	126
-啥	saia	1
-杀人	sarf	1
+是	s	127
+啥	saia	4
+杀人	sarf	3
 杀手	sasb	1
 杀死	sasi	1
 是不是	sbs	12
@@ -60678,7 +60679,7 @@ python	py	1
 顺便	spbm	2
 输入法	srfa	4
 输出	sucu	6
-舒服	sufu	2
+舒服	sufu	3
 数据	suju	1
 输入	suru	9
 属性	suxy	1
@@ -60770,7 +60771,7 @@ python	py	1
 系统	xits	2
 希望	xiwh	13
 先解释	xjsi	1
-腺	xm	3
+腺	xm	4
 县丞	xmcg	1
 现成	xmcg	1
 线上	xmsh	2
@@ -60778,7 +60779,7 @@ python	py	1
 先	xmue	15
 仙	xmui	1
 下面再	xmzl	3
-现在	xmzl	62
+现在	xmzl	64
 新	xn	3
 新建	xnjm	2
 新增	xnzg	1
@@ -60902,7 +60903,7 @@ python	py	1
 英文	yywf	21
 影响	yyxd	1
 英语	yyyu	1
-在	z	91
+在	z	92
 咋	zaia	4
 喳	zaia	1
 找不到	zbdk	1
@@ -60917,7 +60918,7 @@ python	py	1
 这	zeoe	1
 这是	zesi	6
 这些	zexx	7
-这样	zeyh	37
+这样	zeyh	38
 这种	zezs	6
 这番话	zfhw	1
 怎么	zfme	20
@@ -60963,7 +60964,7 @@ python	py	1
 只有	ziyb	4
 挚友	ziyb	1
 置疑	ziyi	1
-只要	ziyk	1
+只要	ziyk	2
 资源	ziyr	2
 只用	ziys	1
 制作	zizo	3

@@ -30,14 +30,14 @@ else
 fi
 echo ""
 
-# 2. 强制添加 userdb 文件（即使被 .gitignore 忽略）
-echo "添加 userdb 文件（强制添加）..."
-git add -f sbzr.userdb/*.ldb sbzr.userdb/lost/*.ldb 2>/dev/null || true
-git add -f jaroomaji.userdb/*.ldb jaroomaji.userdb/lost/*.ldb 2>/dev/null || true
-git add -f sync/*/*.txt 2>/dev/null || true
-git add -f sync/*/*.yaml 2>/dev/null || true
-echo "✓ userdb 和 sync 同步文件已强制添加"
-echo ""
+# # 2. 强制添加 userdb 文件（即使被 .gitignore 忽略）
+# echo "添加 userdb 文件（强制添加）..."
+# git add -f sbzr.userdb/*.ldb sbzr.userdb/lost/*.ldb 2>/dev/null || true
+# git add -f jaroomaji.userdb/*.ldb jaroomaji.userdb/lost/*.ldb 2>/dev/null || true
+# git add -f sync/*/*.txt 2>/dev/null || true
+# git add -f sync/*/*.yaml 2>/dev/null || true
+# echo "✓ userdb 和 sync 同步文件已强制添加"
+# echo ""
 
 # 3. 添加其他所有文件（遵循 .gitignore 规则）
 echo "添加其他文件..."

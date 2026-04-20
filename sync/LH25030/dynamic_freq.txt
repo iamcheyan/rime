@@ -1,0 +1,10 @@
+# dynamic_freq sync snapshot
+# format: input<TAB>type<TAB>text<TAB>updated_at
+hrtldmnk	sentence	换台电脑	1776661400
+dmnk	user_table	电脑	1776661397
+hrtl	user_table	换台	1776661396
+ni	user_table	昵	1776661375
+s	completion	杀人	1776661363
+sufu	user_table	舒服	1776661353
+dazi	user_table	打字	1776661352
+xmzl	user_table	现在	1776661352
