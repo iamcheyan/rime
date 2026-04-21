@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	214
+#@/tick	221
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -10,6 +10,7 @@
 カク	KA KU	0
 カクホウ	KA KU HO U	1
 ウ	U	0
+ウッ	U XTU	1
 場合	ba a i	1
 バグ	ba gu	1
 ぶ	bu	0
@@ -19,6 +20,7 @@
 de	de	2
 で	de	3
 できる	de ki ru	1
+でも	de mo	1
 です	de su	5
 ですか	de su ka	0
 ド	do	1
@@ -28,6 +30,7 @@ de	de	2
 ふぁ	fwa	0
 ファイル	fwa i ru	3
 ふぁオア	fwa o a	1
+が	ga	1
 現	ge nn	0
 現在	ge nn za i	2
 現ざいの	ge nn za i no	1
@@ -74,8 +77,10 @@ de	de	2
 黒島	ku ro si ma	4
 今日	kyo u	0
 今日は	kyo u ha	2
+ませんでした	ma se nn de si ta	1
 マスカ	ma su ka	0
 まず	ma zu	1
+見つかり	mi tu ka ri	1
 む	mu	0
 むっっっ	mu xtu xtu xtu	1
 何時	na nn zi	1
@@ -106,7 +111,7 @@ de	de	2
 ウブンツ	u bu nn tu	1
 浮い	u i	1
 私	wa ta si	1
-っ	xtu	26
+っ	xtu	28
 っげ	xtu ge	1
 っけ	xtu ke	1
 っっ	xtu xtu	10

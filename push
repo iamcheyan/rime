@@ -1,22 +1,22 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-echo "导出 dynamic_freq 同步快照..."
+echo "Exporting dynamic_freq sync snapshot..."
 python3 scripts/export-dynamic-freq.py || exit 1
-echo "✓ dynamic_freq 已导出"
+echo "✓ dynamic_freq exported"
 echo ""
 
-echo "=== 根据 .gitignore 自动管理文件 ==="
+echo "=== Managing files based on .gitignore ==="
 echo ""
 
 # 1. 找出应该被忽略但仍在 Git 中跟踪的文件，从 Git 中删除
-echo "检查应该被忽略的文件..."
+echo "Checking for tracked files that should be ignored..."
 REMOVED_COUNT=0
 while IFS= read -r file; do
     if [ -n "$file" ] && [ "$file" != ".gitignore" ]; then
         if git check-ignore -q "$file" 2>/dev/null; then
             if git ls-files --error-unmatch "$file" >/dev/null 2>&1; then
-                echo "  删除: $file (被 .gitignore 忽略)"
+                echo "  Removing: $file (ignored by .gitignore)"
                 git rm --cached "$file" 2>/dev/null && REMOVED_COUNT=$((REMOVED_COUNT + 1))
             fi
         fi
@@ -24,9 +24,9 @@ while IFS= read -r file; do
 done < <(git ls-files)
 
 if [ "$REMOVED_COUNT" -gt 0 ]; then
-    echo "✓ 已从 Git 中删除 $REMOVED_COUNT 个应该被忽略的文件"
+    echo "✓ Removed $REMOVED_COUNT tracked file(s) that should be ignored"
 else
-    echo "✓ 没有需要删除的文件"
+    echo "✓ No tracked ignored files needed to be removed"
 fi
 echo ""
 
@@ -40,17 +40,17 @@ echo ""
 # echo ""
 
 # 3. 添加其他所有文件（遵循 .gitignore 规则）
-echo "添加其他文件..."
+echo "Adding remaining files..."
 git add -A
-echo "✓ 其他文件已添加"
+echo "✓ Remaining files added"
 echo ""
 
 # 4. 显示最终状态
-echo "=== 文件状态总结 ==="
+echo "=== File Status Summary ==="
 TRACKED_COUNT=$(git ls-files | wc -l)
 IGNORED_COUNT=$(git ls-files | xargs git check-ignore 2>/dev/null | wc -l)
-echo "已跟踪文件: $TRACKED_COUNT"
-echo "应该被忽略但仍跟踪的文件: $IGNORED_COUNT"
+echo "Tracked files: $TRACKED_COUNT"
+echo "Tracked files that should be ignored: $IGNORED_COUNT"
 echo ""
 
 # 5. 生成提交消息
@@ -67,11 +67,11 @@ if [ -n "$*" ]; then
     COMMIT_MSG="[$IDENTIFIER] $*"
 else
     # 使用默认时间戳消息
-    COMMIT_MSG="[$IDENTIFIER] 同步配置到仓库 [$(date +"%Y%m%d_%H%M%S")]"
+    COMMIT_MSG="[$IDENTIFIER] Sync config to repo [$(date +"%Y%m%d_%H%M%S")]"
 fi
 
 # 打印提交消息
-echo "=== 提交消息 ==="
+echo "=== Commit Message ==="
 echo "$COMMIT_MSG"
 echo ""
 

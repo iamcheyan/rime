@@ -3,15 +3,15 @@
 
 bash ~/.dotfiles/config/rime/update.sh
 
-echo "检测到 rime，正在同步..."
+echo "Rime detected, syncing..."
 cd ~/.dotfiles/config/rime
 rime_dict_manager -s
 rime_deployer --build
-echo "rime 同步完成"
+echo "Rime sync completed"
 
 PRIVATE_SYNC="$HOME/.dotfiles/private/scripts/utils/sync_windows.sh"
 if [ -x "$PRIVATE_SYNC" ]; then
     bash "$PRIVATE_SYNC"
 else
-    echo "⚠️  未找到私有同步脚本: $PRIVATE_SYNC"
+    echo "⚠️  Private sync script not found: $PRIVATE_SYNC"
 fi

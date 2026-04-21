@@ -4,7 +4,7 @@
 if [ -f ".env" ]; then
   export $(grep -v '^#' .env | xargs)
 else
-  echo "❌ 当前目录没有 .env 文件"
+  echo "❌ No .env file found in the current directory"
   exit 1
 fi
 
@@ -14,12 +14,12 @@ REPO_URL=$(git config --get remote.origin.url)
 
 # ===== 校验 =====
 if [ -z "$PAT" ]; then
-  echo "❌ .env 中未设置 GIT_PAT"
+  echo "❌ GIT_PAT is not set in .env"
   exit 1
 fi
 
 if [ -z "$REPO_URL" ]; then
-  echo "❌ 当前目录不是 git 仓库"
+  echo "❌ The current directory is not a Git repository"
   exit 1
 fi
 

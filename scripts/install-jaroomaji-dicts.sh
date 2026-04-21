@@ -61,15 +61,15 @@ ensure_root_files() {
   for file in "${ROOT_FILES[@]}"; do
     local dest="$RIME_DIR/$file"
     if [ -f "$dest" ]; then
-      log "$GREEN" "已存在: $file"
+      log "$GREEN" "Already present: $file"
       continue
     fi
 
-    log "$CYAN" "下载根文件: $file"
+    log "$CYAN" "Downloading root file: $file"
     if download_file "$RAW_BASE_URL/$file" "$dest"; then
-      log "$GREEN" "下载成功: $file"
+      log "$GREEN" "Download complete: $file"
     else
-      fail "下载失败: $file"
+      fail "Download failed: $file"
     fi
   done
 }
@@ -78,36 +78,36 @@ ensure_jp_dicts() {
   local file
   local missing=0
 
-  mkdir -p "$JP_DICT_DIR" || fail "无法创建目录: $JP_DICT_DIR"
+  mkdir -p "$JP_DICT_DIR" || fail "Unable to create directory: $JP_DICT_DIR"
 
   for file in "${JP_DICT_FILES[@]}"; do
     local dest="$JP_DICT_DIR/$file"
     if [ -f "$dest" ]; then
-      log "$GREEN" "已存在: sbzr.chrome.extension/dicts.jp/$file"
+      log "$GREEN" "Already present: sbzr.chrome.extension/dicts.jp/$file"
       continue
     fi
 
     missing=$((missing + 1))
-    log "$CYAN" "下载词典: $file"
+    log "$CYAN" "Downloading dictionary: $file"
     if download_file "$RAW_BASE_URL/$file" "$dest"; then
-      log "$GREEN" "下载成功: sbzr.chrome.extension/dicts.jp/$file"
+      log "$GREEN" "Download complete: sbzr.chrome.extension/dicts.jp/$file"
     else
-      fail "下载失败: $file"
+      fail "Download failed: $file"
     fi
   done
 
   if [ "$missing" -eq 0 ]; then
-    log "$GREEN" "日语词典完整，无需下载"
+    log "$GREEN" "Japanese dictionaries are complete; no download needed"
   fi
 }
 
 ensure_schema_in_default_custom() {
   local file="$1"
 
-  [ -f "$file" ] || fail "配置文件不存在: $file"
+  [ -f "$file" ] || fail "Config file not found: $file"
 
   if grep -Eq '^[[:space:]]*-[[:space:]]*schema:[[:space:]]*jaroomaji[[:space:]]*$' "$file"; then
-    log "$GREEN" "已启用 jaroomaji: $file"
+    log "$GREEN" "jaroomaji already enabled in: $file"
     return 0
   fi
 
@@ -148,12 +148,12 @@ if not inserted:
 path.write_text("\n".join(out) + "\n", encoding="utf-8")
 PY
 
-  log "$GREEN" "已添加 jaroomaji 到: $file"
+  log "$GREEN" "Added jaroomaji to: $file"
 }
 
 main() {
-  log "$CYAN" "Rime 目录: $RIME_DIR"
-  log "$CYAN" "日语词典目录: $JP_DICT_DIR"
+  log "$CYAN" "Rime directory: $RIME_DIR"
+  log "$CYAN" "Japanese dictionary directory: $JP_DICT_DIR"
 
   ensure_root_files
   ensure_jp_dicts
@@ -163,7 +163,7 @@ main() {
     ensure_schema_in_default_custom "$RIME_DIR/sync/MacbookProM1/default.custom.yaml"
   fi
 
-  log "$YELLOW" "完成后请重新部署 Rime"
+  log "$YELLOW" "Redeploy Rime after completion"
 }
 
 main "$@"

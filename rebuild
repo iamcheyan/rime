@@ -30,17 +30,17 @@ if [ ! -d "$SHARED_DATA_DIR" ]; then
 fi
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${BLUE}Rime 输入法重建脚本${NC}"
+echo -e "${BLUE}Rime Rebuild Script${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo ""
 
 # 检查目录是否存在
 if [ ! -d "$RIME_DIR" ]; then
-    echo -e "${RED}错误：配置目录不存在: $RIME_DIR${NC}"
+    echo -e "${RED}Error: config directory does not exist: $RIME_DIR${NC}"
     exit 1
 fi
 
-echo -e "${YELLOW}配置目录: $RIME_DIR${NC}"
+echo -e "${YELLOW}Config directory: $RIME_DIR${NC}"
 echo ""
 
 # 检查 build 目录是否存在
@@ -50,12 +50,12 @@ EXTENDED_FILES_RESTORED=false
 if [ -d "$BUILD_DIR" ]; then
     # 计算 build 目录大小
     BUILD_SIZE=$(du -sh "$BUILD_DIR" 2>/dev/null | cut -f1)
-    echo -e "${YELLOW}检测到 build 目录，大小: $BUILD_SIZE${NC}"
+    echo -e "${YELLOW}Detected build directory, size: $BUILD_SIZE${NC}"
     
     # 备份扩展词库文件（如果存在）
     EXTENDED_FILES=$(find "$BUILD_DIR" -name "*.extended.*" -type f 2>/dev/null)
     if [ -n "$EXTENDED_FILES" ]; then
-        echo -e "${YELLOW}检测到扩展词库文件，正在备份...${NC}"
+        echo -e "${YELLOW}Detected extended dictionary files, backing up...${NC}"
         mkdir -p "$BACKUP_DIR"
         BACKUP_COUNT=0
         while IFS= read -r file; do
@@ -64,26 +64,26 @@ if [ -d "$BUILD_DIR" ]; then
                 BACKUP_PATH="$BACKUP_DIR/$RELATIVE_PATH"
                 mkdir -p "$(dirname "$BACKUP_PATH")"
                 if cp "$file" "$BACKUP_PATH" 2>/dev/null; then
-                    echo -e "  ${GREEN}✓ 已备份: $(basename "$file")${NC}"
+                    echo -e "  ${GREEN}✓ Backed up: $(basename "$file")${NC}"
                     BACKUP_COUNT=$((BACKUP_COUNT + 1))
                 fi
             fi
         done <<< "$EXTENDED_FILES"
         if [ "$BACKUP_COUNT" -gt 0 ]; then
-            echo -e "${GREEN}✓ 扩展词库文件备份完成（共 $BACKUP_COUNT 个文件）${NC}"
+            echo -e "${GREEN}✓ Extended dictionary backup complete ($BACKUP_COUNT file(s))${NC}"
         fi
     fi
     
-    echo -e "${YELLOW}正在删除 build 目录...${NC}"
+    echo -e "${YELLOW}Removing build directory...${NC}"
     rm -rf "$BUILD_DIR"
-    echo -e "${GREEN}✓ build 目录已删除${NC}"
+    echo -e "${GREEN}✓ Build directory removed${NC}"
 else
-    echo -e "${YELLOW}build 目录不存在，跳过删除步骤${NC}"
+    echo -e "${YELLOW}Build directory does not exist, skipping removal${NC}"
 fi
 
 # 链接 Rime 配置文件到系统目录
 link_rime_config() {
-    echo -e "${CYAN}检查系统 Rime 配置链接...${NC}"
+    echo -e "${CYAN}Checking system Rime config symlinks...${NC}"
     
     # 目标路径列表
     local targets=(
@@ -102,7 +102,7 @@ link_rime_config() {
                 local current_src=$(readlink "$target")
                 # 简单检查链接目标是否匹配
                 if [[ "$current_src" == "$RIME_DIR" ]]; then
-                   echo -e "  ${GREEN}✓ [已链接] $target${NC}"
+                   echo -e "  ${GREEN}✓ [linked] $target${NC}"
                    continue
                 fi
             fi
@@ -112,21 +112,21 @@ link_rime_config() {
                 # 如果是真实目录或文件（非链接），则备份
                 if [ ! -L "$target" ]; then
                     local backup_path="${target}.backup.$(date +%Y%m%d_%H%M%S)"
-                    echo -e "  ${YELLOW}⚠ 发现现有配置（非链接），备份至: $backup_path${NC}"
+                    echo -e "  ${YELLOW}⚠ Existing config found (not a symlink), backing up to: $backup_path${NC}"
                     mv "$target" "$backup_path"
                 else
                     # 如果是错误的链接（包括失效链接），直接删除
-                    echo -e "  ${YELLOW}⚠ 发现错误或失效链接，正在移除...${NC}"
+                    echo -e "  ${YELLOW}⚠ Broken or incorrect symlink found, removing...${NC}"
                     rm "$target"
                 fi
             fi
             
             # 3. 创建软链接 (使用 -sfn 强制更新，或者先 rm 后 ln)
-            echo -e "  ${YELLOW}创建链接: $target -> $RIME_DIR${NC}"
+            echo -e "  ${YELLOW}Creating symlink: $target -> $RIME_DIR${NC}"
             if ln -sf "$RIME_DIR" "$target"; then
-                echo -e "  ${GREEN}✓ 链接创建成功${NC}"
+                echo -e "  ${GREEN}✓ Symlink created${NC}"
             else
-                echo -e "  ${RED}✗ 链接创建失败${NC}"
+                echo -e "  ${RED}✗ Failed to create symlink${NC}"
             fi
         fi
     done
@@ -138,7 +138,7 @@ link_themes() {
     local themes_source="$RIME_DIR/themes"
     
     if [ -d "$themes_source" ]; then
-        echo -e "${CYAN}检查 Fcitx5 主题链接...${NC}"
+        echo -e "${CYAN}Checking Fcitx5 theme symlinks...${NC}"
         
         # 目标主题目录列表
         local theme_targets=(
@@ -160,16 +160,16 @@ link_themes() {
                         # 如果已存在（无论是链接还是实际目录），强制删除以确保覆盖
                         if [ -L "$target_path" ] || [ -e "$target_path" ]; then
                             if ! rm -rf "$target_path" 2>/dev/null; then
-                                echo -e "  ${YELLOW}⚠ [跳过主题]${NC} $theme_name，无法移除现有目标: $target_path"
+                                echo -e "  ${YELLOW}⚠ [skip theme]${NC} $theme_name, unable to remove existing target: $target_path"
                                 continue
                             fi
                         fi
                         
                         # 创建软链接
                         if ln -sf "$theme_path" "$target_path"; then
-                            echo -e "  ${GREEN}✓ [已链接主题]${NC} $theme_name -> $target_dir"
+                            echo -e "  ${GREEN}✓ [theme linked]${NC} $theme_name -> $target_dir"
                         else
-                            echo -e "  ${RED}✗ [链接失败]${NC} $theme_name"
+                            echo -e "  ${RED}✗ [link failed]${NC} $theme_name"
                         fi
                     fi
                 done
@@ -203,7 +203,7 @@ check_jaroomaji_files() {
     fi
     
     # jaroomaji 已启用，检查必要的词库文件
-    echo -e "${CYAN}检查 jaroomaji 词库文件...${NC}"
+    echo -e "${CYAN}Checking jaroomaji dictionary files...${NC}"
     
     # 需要检查的文件列表
     local required_files=(
@@ -224,14 +224,14 @@ check_jaroomaji_files() {
         
         if [ ! -f "$check_path" ]; then
             missing_files=$((missing_files + 1))
-            echo -e "${YELLOW}  ✗ 缺失: $file${NC}"
+            echo -e "${YELLOW}  ✗ Missing: $file${NC}"
         fi
     done
     
     # 如果缺少文件，自动下载
     if [ "$missing_files" -gt 0 ]; then
-        echo -e "${YELLOW}⚠ 检测到 $missing_files 个 jaroomaji 词库文件缺失${NC}"
-        echo -e "${CYAN}正在自动下载缺失的文件...${NC}"
+        echo -e "${YELLOW}⚠ Detected $missing_files missing jaroomaji dictionary file(s)${NC}"
+        echo -e "${CYAN}Downloading missing files automatically...${NC}"
         echo ""
         
         local raw_base_url="https://raw.githubusercontent.com/lazyfoxchan/rime-jaroomaji/master"
@@ -261,9 +261,9 @@ check_jaroomaji_files() {
             
             if [ ! -f "$dest_path" ]; then
                 local url="$raw_base_url/$file"
-                echo -e "${CYAN}  下载中: $file${NC}"
+                echo -e "${CYAN}  Downloading: $file${NC}"
                 if eval "$curl_cmd \"$url\" -o \"$dest_path\"" 2>/dev/null; then
-                    echo -e "${GREEN}  ✓ $file 下载成功${NC}"
+                    echo -e "${GREEN}  ✓ $file downloaded${NC}"
                     downloaded=$((downloaded + 1))
                     
                     # 如果是主词库文件，修正其引用路径
@@ -278,31 +278,31 @@ check_jaroomaji_files() {
                     # 为 macOS 重试 -k 选项
                     if [ "$(uname -s)" = "Darwin" ] && ! echo "$curl_cmd" | grep -q " -k"; then
                         if curl -sSLf -k "$url" -o "$dest_path" 2>/dev/null; then
-                            echo -e "${GREEN}  ✓ $file 下载成功 (SSL Skip)${NC}"
+                            echo -e "${GREEN}  ✓ $file downloaded (SSL skip)${NC}"
                             downloaded=$((downloaded + 1))
                             if [ "$file" == "jaroomaji.dict.yaml" ]; then
                                 # 修正路径
                                 sed -i '' "s/  - jaroomaji/  - $dict_subdir\/jaroomaji/g" "$dest_path"
                             fi
                         else
-                            echo -e "${RED}  ✗ $file 下载失败${NC}"
+                            echo -e "${RED}  ✗ Failed to download $file${NC}"
                         fi
                     else
-                        echo -e "${RED}  ✗ $file 下载失败${NC}"
+                        echo -e "${RED}  ✗ Failed to download $file${NC}"
                     fi
                 fi
             fi
         done
         
         if [ "$downloaded" -gt 0 ]; then
-            echo -e "${GREEN}✓ jaroomaji 词库文件下载完成（共 $downloaded 个文件）${NC}"
+            echo -e "${GREEN}✓ jaroomaji dictionary download complete ($downloaded file(s))${NC}"
             echo ""
         else
-            echo -e "${YELLOW}⚠ jaroomaji 词库文件下载失败，请检查网络连接${NC}"
+            echo -e "${YELLOW}⚠ Failed to download jaroomaji dictionary files, please check your network connection${NC}"
             echo ""
         fi
     else
-        echo -e "${GREEN}✓ jaroomaji 词库文件完整${NC}"
+        echo -e "${GREEN}✓ jaroomaji dictionary files are complete${NC}"
         echo ""
     fi
 }
@@ -314,7 +314,7 @@ link_themes
 # 词库清理入口已禁用。
 # 这套旧工具链依赖历史目录结构和已移除的词库文件，继续执行会破坏当前仓库。
 dedup_dictionaries() {
-    echo -e "${YELLOW}跳过词库去重与清理：该流程已禁用${NC}"
+    echo -e "${YELLOW}Skipping dictionary dedup/cleanup: this flow is disabled${NC}"
     echo ""
 }
 
@@ -322,7 +322,7 @@ dedup_dictionaries() {
 dedup_dictionaries
 
 echo ""
-echo -e "${BLUE}开始重新编译...${NC}"
+echo -e "${BLUE}Starting rebuild...${NC}"
 echo ""
 
 # 检测系统类型
@@ -331,43 +331,43 @@ DEPLOY_SUCCESS=false
 
 # macOS (Squirrel)
 if [ "$OS_TYPE" = "Darwin" ]; then
-    echo -e "${YELLOW}检测到 macOS，使用 Squirrel 部署方式${NC}"
+    echo -e "${YELLOW}Detected macOS, using the Squirrel deployment flow${NC}"
     echo ""
     
     # 方法3: 检查 Fcitx5-macOS
     FCITX5_APP="/Library/Input Methods/Fcitx5.app"
     if [ -d "$FCITX5_APP" ]; then
-        echo -e "${GREEN}检测到 Fcitx5-macOS${NC}"
+        echo -e "${GREEN}Detected Fcitx5-macOS${NC}"
         FCITX5_REMOTE="$FCITX5_APP/Contents/bin/fcitx5-remote"
         
         # 既然找到了 Fcitx5，我们就标记部署成功（指指令下达或提示完成）
         DEPLOY_SUCCESS=true
         
-        echo -e "${YELLOW}提示：Fcitx5-macOS 暂未提供命令行触发部署工具${NC}"
-        echo -e "${CYAN}推荐操作：${NC}"
-        echo -e "  1. 点击状态栏 ${GREEN}Fcitx5(企鹅)${NC} 图标"
-        echo -e "  2. 选择「输入法特殊动作 (Input Method Special Action)」"
-        echo -e "  3. 点击「重新部署 (Redeploy)」"
+        echo -e "${YELLOW}Note: Fcitx5-macOS does not currently provide a CLI redeploy command${NC}"
+        echo -e "${CYAN}Recommended steps:${NC}"
+        echo -e "  1. Click the ${GREEN}Fcitx5 (penguin)${NC} icon in the menu bar"
+        echo -e "  2. Choose \"Input Method Special Action\""
+        echo -e "  3. Click \"Redeploy\""
         echo ""
-        echo -e "${YELLOW}或者运行以下命令重启 Fcitx5 以强制重新部署：${NC}"
+        echo -e "${YELLOW}Or run the following command to restart Fcitx5 and force redeploy:${NC}"
         echo -e "  killall Fcitx5 && open -a \"$FCITX5_APP\""
     else
         # 只有在没找到 Fcitx5 时才显示 Squirrel 的警告
-        echo -e "${YELLOW}⚠ 未找到 Squirrel.app 或 Fcitx5.app${NC}"
-        echo -e "${CYAN}请在输入法设置中手动点击「重新部署」${NC}"
+        echo -e "${YELLOW}⚠ Squirrel.app or Fcitx5.app was not found${NC}"
+        echo -e "${CYAN}Please click \"Redeploy\" manually in the input method settings${NC}"
     fi
 
 
 # Linux (Fcitx5)
 elif [ "$OS_TYPE" = "Linux" ]; then
-    echo -e "${YELLOW}检测到 Linux，使用 Fcitx5 部署方式${NC}"
+    echo -e "${YELLOW}Detected Linux, using the Fcitx5 deployment flow${NC}"
     echo ""
     
     if command -v rime_deployer &> /dev/null; then
         if [ -n "$SHARED_DATA_DIR" ]; then
-            echo -e "${YELLOW}运行: rime_deployer --build $RIME_DIR $SHARED_DATA_DIR $BUILD_DIR${NC}"
+            echo -e "${YELLOW}Running: rime_deployer --build $RIME_DIR $SHARED_DATA_DIR $BUILD_DIR${NC}"
         else
-            echo -e "${YELLOW}运行: rime_deployer --build $RIME_DIR${NC}"
+            echo -e "${YELLOW}Running: rime_deployer --build $RIME_DIR${NC}"
         fi
         echo ""
         
@@ -391,7 +391,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
             SCHEMA_RESULT=$(grep "finished updating schemas" "$LOG_FILE" 2>/dev/null | tail -1)
             
             if [ "$ERROR_COUNT" -eq 0 ] && [ -n "$SCHEMA_RESULT" ]; then
-                echo -e "${GREEN}✓ 编译完成！${NC}"
+                echo -e "${GREEN}✓ Build completed${NC}"
                 
                 # 显示方案编译结果
                 if echo "$SCHEMA_RESULT" | grep -q "finished updating schemas"; then
@@ -400,16 +400,16 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                     FAILURE_COUNT=$(echo "$SCHEMA_RESULT" | sed -n 's/.*\([0-9]*\) failure.*/\1/p' | head -1)
                     SUCCESS_COUNT=${SUCCESS_COUNT:-0}
                     FAILURE_COUNT=${FAILURE_COUNT:-0}
-                    echo -e "${GREEN}  方案编译: ${SUCCESS_COUNT} 成功, ${FAILURE_COUNT} 失败${NC}"
+                    echo -e "${GREEN}  Schema build: ${SUCCESS_COUNT} succeeded, ${FAILURE_COUNT} failed${NC}"
                 fi
                 
                 DEPLOY_SUCCESS=true
             else
-                echo -e "${YELLOW}⚠ 编译完成，但检测到可能的错误${NC}"
+                echo -e "${YELLOW}⚠ Build finished, but possible errors were detected${NC}"
                 if [ "$ERROR_COUNT" -gt 0 ]; then
-                    echo -e "${YELLOW}  发现 $ERROR_COUNT 个错误${NC}"
+                    echo -e "${YELLOW}  Found $ERROR_COUNT error(s)${NC}"
                     echo ""
-                    echo -e "${YELLOW}关键错误信息：${NC}"
+                    echo -e "${YELLOW}Key error messages:${NC}"
                     grep -E "error building config|unresolved dependency|ERROR" "$LOG_FILE" 2>/dev/null | tail -5 | while read line; do
                         echo -e "  ${RED}$line${NC}"
                     done
@@ -422,7 +422,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                 RESTORED_FILES=$(find "$BACKUP_DIR" -type f 2>/dev/null)
                 if [ -n "$RESTORED_FILES" ]; then
                     echo ""
-                    echo -e "${YELLOW}检查并恢复扩展词库文件...${NC}"
+                    echo -e "${YELLOW}Checking and restoring extended dictionary files...${NC}"
                     RESTORE_COUNT=0
                     while IFS= read -r backup_file; do
                         if [ -f "$backup_file" ]; then
@@ -433,7 +433,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                             if [ ! -f "$TARGET_FILE" ]; then
                                 mkdir -p "$(dirname "$TARGET_FILE")"
                                 if cp "$backup_file" "$TARGET_FILE" 2>/dev/null; then
-                                    echo -e "  ${GREEN}✓ 已恢复: $(basename "$TARGET_FILE")${NC}"
+                                    echo -e "  ${GREEN}✓ Restored: $(basename "$TARGET_FILE")${NC}"
                                     RESTORE_COUNT=$((RESTORE_COUNT + 1))
                                     EXTENDED_FILES_RESTORED=true
                                 fi
@@ -442,9 +442,9 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                     done <<< "$RESTORED_FILES"
                     
                     if [ "$RESTORE_COUNT" -gt 0 ]; then
-                        echo -e "${GREEN}✓ 扩展词库文件恢复完成（共 $RESTORE_COUNT 个文件）${NC}"
+                        echo -e "${GREEN}✓ Extended dictionary restore complete ($RESTORE_COUNT file(s))${NC}"
                     else
-                        echo -e "${YELLOW}  扩展词库文件已存在或无需恢复${NC}"
+                        echo -e "${YELLOW}  Extended dictionary files already exist or do not need restoration${NC}"
                     fi
                 fi
                 
@@ -470,7 +470,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                         PERMANENT_BACKUP_FILES=$(find "$PERMANENT_BACKUP_DIR" -name "*.extended.*" -type f 2>/dev/null)
                         if [ -n "$PERMANENT_BACKUP_FILES" ]; then
                             echo ""
-                            echo -e "${YELLOW}从永久备份目录恢复扩展词库文件...${NC}"
+                            echo -e "${YELLOW}Restoring extended dictionary files from the permanent backup directory...${NC}"
                             RESTORE_COUNT=0
                             while IFS= read -r backup_file; do
                                 if [ -f "$backup_file" ]; then
@@ -478,14 +478,14 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                                     TARGET_FILE="$BUILD_DIR/$FILENAME"
                                     if [ ! -f "$TARGET_FILE" ]; then
                                         if cp "$backup_file" "$TARGET_FILE" 2>/dev/null; then
-                                            echo -e "  ${GREEN}✓ 已从备份恢复: $FILENAME${NC}"
+                                            echo -e "  ${GREEN}✓ Restored from backup: $FILENAME${NC}"
                                             RESTORE_COUNT=$((RESTORE_COUNT + 1))
                                         fi
                                     fi
                                 fi
                             done <<< "$PERMANENT_BACKUP_FILES"
                             if [ "$RESTORE_COUNT" -gt 0 ]; then
-                                echo -e "${GREEN}✓ 扩展词库文件恢复完成（共 $RESTORE_COUNT 个文件）${NC}"
+                                echo -e "${GREEN}✓ Extended dictionary restore complete ($RESTORE_COUNT file(s))${NC}"
                             fi
                         fi
                     fi
@@ -493,10 +493,10 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                 
             fi
         else
-            echo -e "${RED}✗ 编译过程中出现错误（退出码: $COMPILE_EXIT_CODE）${NC}"
-            echo -e "${YELLOW}详细日志已保存到: $LOG_FILE${NC}"
+            echo -e "${RED}✗ Build failed (exit code: $COMPILE_EXIT_CODE)${NC}"
+            echo -e "${YELLOW}Detailed log saved to: $LOG_FILE${NC}"
             echo ""
-            echo -e "${YELLOW}关键错误信息：${NC}"
+            echo -e "${YELLOW}Key error messages:${NC}"
             grep -E "error building config|unresolved dependency|ERROR" "$LOG_FILE" 2>/dev/null | tail -10 | while read line; do
                 echo -e "  ${RED}$line${NC}"
             done
@@ -506,7 +506,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                 RESTORED_FILES=$(find "$BACKUP_DIR" -type f 2>/dev/null)
                 if [ -n "$RESTORED_FILES" ]; then
                     echo ""
-                    echo -e "${YELLOW}尝试恢复扩展词库文件...${NC}"
+                    echo -e "${YELLOW}Attempting to restore extended dictionary files...${NC}"
                     RESTORE_COUNT=0
                     while IFS= read -r backup_file; do
                         if [ -f "$backup_file" ]; then
@@ -514,13 +514,13 @@ elif [ "$OS_TYPE" = "Linux" ]; then
                             TARGET_FILE="$BUILD_DIR/$RELATIVE_PATH"
                             mkdir -p "$(dirname "$TARGET_FILE")"
                             if cp "$backup_file" "$TARGET_FILE" 2>/dev/null; then
-                                echo -e "  ${GREEN}✓ 已恢复: $(basename "$TARGET_FILE")${NC}"
+                                echo -e "  ${GREEN}✓ Restored: $(basename "$TARGET_FILE")${NC}"
                                 RESTORE_COUNT=$((RESTORE_COUNT + 1))
                             fi
                         fi
                     done <<< "$RESTORED_FILES"
                     if [ "$RESTORE_COUNT" -gt 0 ]; then
-                        echo -e "${GREEN}✓ 扩展词库文件恢复完成（共 $RESTORE_COUNT 个文件）${NC}"
+                        echo -e "${GREEN}✓ Extended dictionary restore complete ($RESTORE_COUNT file(s))${NC}"
                     fi
                 fi
                 rm -rf "$BACKUP_DIR" 2>/dev/null
@@ -531,33 +531,33 @@ elif [ "$OS_TYPE" = "Linux" ]; then
         # 保存日志文件路径供后续查看
         echo "$LOG_FILE" > /tmp/rime_last_build_log.txt 2>/dev/null
     else
-        echo -e "${RED}错误：未找到 rime_deployer 命令${NC}"
+        echo -e "${RED}Error: rime_deployer command not found${NC}"
         
         # 尝试检测发行版以提供更精准的建议
         if [ -f /etc/fedora-release ]; then
-            echo -e "${YELLOW}检测到 Fedora，请确保已安装 fcitx5-rime 和 librime-tools${NC}"
-            echo -e "${YELLOW}安装命令: sudo dnf install fcitx5-rime librime-tools${NC}"
+            echo -e "${YELLOW}Detected Fedora, please make sure fcitx5-rime and librime-tools are installed${NC}"
+            echo -e "${YELLOW}Install command: sudo dnf install fcitx5-rime librime-tools${NC}"
         elif [ -f /etc/debian_version ]; then
-            echo -e "${YELLOW}检测到 Debian/Ubuntu，请确保已安装 fcitx5-rime${NC}"
-            echo -e "${YELLOW}安装命令: sudo apt install fcitx5-rime${NC}"
+            echo -e "${YELLOW}Detected Debian/Ubuntu, please make sure fcitx5-rime is installed${NC}"
+            echo -e "${YELLOW}Install command: sudo apt install fcitx5-rime${NC}"
         elif [ -f /etc/arch-release ]; then
-            echo -e "${YELLOW}检测到 Arch Linux，请确保已安装 fcitx5-rime 和 librime${NC}"
-            echo -e "${YELLOW}安装命令: sudo pacman -S fcitx5-rime librime${NC}"
+            echo -e "${YELLOW}Detected Arch Linux, please make sure fcitx5-rime and librime are installed${NC}"
+            echo -e "${YELLOW}Install command: sudo pacman -S fcitx5-rime librime${NC}"
         else
-            echo -e "${YELLOW}请确保已安装 Rime 部署工具 (rime_deployer)${NC}"
+            echo -e "${YELLOW}Please make sure the Rime deployment tool (rime_deployer) is installed${NC}"
         fi
     fi
 fi
 
 if [ "$DEPLOY_SUCCESS" = false ]; then
     echo ""
-    echo -e "${YELLOW}⚠ 自动部署失败，请手动重新部署配置${NC}"
-    echo -e "${CYAN}macOS: 在 Squirrel 设置中点击「重新部署」${NC}"
-    echo -e "${CYAN}Linux: 在 Fcitx5 设置中点击「重新部署」${NC}"
+    echo -e "${YELLOW}⚠ Automatic deployment failed, please redeploy manually${NC}"
+    echo -e "${CYAN}macOS: click \"Redeploy\" in Squirrel settings${NC}"
+    echo -e "${CYAN}Linux: click \"Redeploy\" in Fcitx5 settings${NC}"
 fi
 
 echo ""
-echo -e "${BLUE}编译结果统计：${NC}"
+echo -e "${BLUE}Build Summary:${NC}"
 
 # 检查 build 目录
 if [ -d "$BUILD_DIR" ]; then
@@ -565,13 +565,13 @@ if [ -d "$BUILD_DIR" ]; then
     BIN_COUNT=$(find "$BUILD_DIR" -name "*.bin" 2>/dev/null | wc -l)
     SCHEMA_COUNT=$(find "$BUILD_DIR" -name "*.schema.yaml" 2>/dev/null | wc -l)
     
-    echo -e "  ${GREEN}build 目录大小: $BUILD_SIZE${NC}"
-    echo -e "  ${GREEN}二进制文件数量: $BIN_COUNT${NC}"
-    echo -e "  ${GREEN}配置文件数量: $SCHEMA_COUNT${NC}"
+    echo -e "  ${GREEN}Build directory size: $BUILD_SIZE${NC}"
+    echo -e "  ${GREEN}Binary file count: $BIN_COUNT${NC}"
+    echo -e "  ${GREEN}Schema file count: $SCHEMA_COUNT${NC}"
     
     # 列出主要的二进制文件
     echo ""
-    echo -e "${BLUE}主要编译文件：${NC}"
+    echo -e "${BLUE}Main build artifacts:${NC}"
     # 优先显示扩展词库文件
     EXTENDED_BINS=$(find "$BUILD_DIR" -name "*.extended.*" -type f 2>/dev/null)
     if [ -n "$EXTENDED_BINS" ]; then
@@ -587,9 +587,9 @@ if [ -d "$BUILD_DIR" ]; then
         awk '{printf "  %s %s\n", $5, $9}' | head -10
 else
     if [ "$OS_TYPE" = "Darwin" ]; then
-        echo -e "${YELLOW}  提示：请手动重新部署以生成 build 目录${NC}"
+        echo -e "${YELLOW}  Note: redeploy manually to generate the build directory${NC}"
     else
-        echo -e "${RED}  build 目录未创建，编译可能失败${NC}"
+        echo -e "${RED}  Build directory was not created; the build may have failed${NC}"
         exit 1
     fi
 fi
@@ -597,9 +597,9 @@ fi
 echo ""
 echo -e "${GREEN}========================================${NC}"
 if [ "$DEPLOY_SUCCESS" = true ]; then
-    echo -e "${GREEN}重建完成！${NC}"
+    echo -e "${GREEN}Rebuild complete${NC}"
 else
-    echo -e "${YELLOW}build 目录已清理，请手动重新部署${NC}"
+    echo -e "${YELLOW}Build directory was cleaned; please redeploy manually${NC}"
 fi
 echo -e "${GREEN}========================================${NC}"
 echo ""
@@ -607,13 +607,13 @@ echo ""
 # 根据系统类型提供不同的提示
 OS_TYPE=$(uname -s)
 if [ "$OS_TYPE" = "Darwin" ]; then
-    echo -e "${YELLOW}macOS 提示：${NC}"
-    echo -e "${CYAN}  1. 打开系统设置 > 键盘 > 输入法${NC}"
-    echo -e "${CYAN}  2. 找到「日本語ローマ字」或「Rime」${NC}"
-    echo -e "${CYAN}  3. 右键点击 > 重新部署${NC}"
+    echo -e "${YELLOW}macOS notes:${NC}"
+    echo -e "${CYAN}  1. Open System Settings > Keyboard > Input Sources${NC}"
+    echo -e "${CYAN}  2. Find \"Japanese Romaji\" or \"Rime\"${NC}"
+    echo -e "${CYAN}  3. Right-click it > Redeploy${NC}"
     echo ""
-    echo -e "${CYAN}  或者重启应用以触发自动重新部署${NC}"
+    echo -e "${CYAN}  Or restart the app to trigger auto redeploy${NC}"
 else
-    echo -e "${YELLOW}提示：如果输入法未正常工作，请重启 Fcitx5${NC}"
-    echo -e "${YELLOW}重启命令: killall fcitx5 && fcitx5 &${NC}"
+    echo -e "${YELLOW}Note: if the input method is not working properly, restart Fcitx5${NC}"
+    echo -e "${YELLOW}Restart command: killall fcitx5 && fcitx5 &${NC}"
 fi
