@@ -1,6 +1,11 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
-ceyj	table	赐恩岩	1776665692
+sbxm	user_table	首先	1776731154
+wzyi	table	唯一	1776731146
+wudi	table	无敌	1776731141
+ceyj	user_table	澈言	1776731137
+yizi	table	一直	1776731134
+z	user_table	在	1776731130
 kela	table	可落	1776665686
 rrjm	table	软软件	1776665680
 lqbz	table	礼器碑	1776665669
@@ -9,7 +14,6 @@ hods	completion	活动办	1776665656
 dazi	table	达孜	1776665105
 xmzl	table	心没在	1776665100
 fzxd	user_table	房子现在都	1776665089
-wudi	table	雾笛	1776665076
 keyi	table	可依	1776665072
 m	completion	吗	1776664770
 wfti	user_table	问题	1776664768
@@ -91,7 +95,6 @@ jcbf	user_table	脚本	1776662904
 ghgh	user_table	刚刚	1776662903
 kjll	user_table	看来	1776662902
 na	user_table	那	1776662901
-z	user_table	在	1776662899
 hrtl	user_table	换台	1776662895
 zgch	user_table	正常	1776662895
 yiqx	table	一切	1776662894
