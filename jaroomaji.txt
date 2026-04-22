@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	221
+#@/tick	266
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -19,6 +19,8 @@
 ぶっっ	bu xtu xtu	3
 de	de	2
 で	de	3
+では	de ha	1
+できません	de ki ma se nn	0
 できる	de ki ru	1
 でも	de mo	1
 です	de su	5
@@ -26,6 +28,7 @@ de	de	2
 ド	do	1
 ドキュメント	do kyu me nn to	1
 ドキュメント更新	do kyu me nn to ko u si nn	5
+どし	do si	1
 エーラ	e - ra	1
 ふぁ	fwa	0
 ファイル	fwa i ru	3
@@ -41,6 +44,7 @@ de	de	2
 は	ha	3
 はい	ha i	1
 判断能力	ha nn da nn no u ryo ku	1
+減し	he si	1
 比較	hi ka ku	1
 必要	hi tu yo u	0
 必要じゃない	hi tu yo u zya na i	1
@@ -68,7 +72,7 @@ de	de	2
 書いて	ka i te	1
 確認	ka ku ni nn	1
 感想	ka nn so u	1
-刑	ke i	2
+刑	ke i	6
 件数	ke nn su u	1
 機能	ki no u	5
 この	ko no	1
@@ -87,36 +91,47 @@ de	de	2
 に	ni	1
 日本語	ni ho nn go	6
 んっ	nn xtu	1
-の	no	8
+の	no	9
 入力	nyu u ryo ku	1
+お	o	0
 オア	o a	0
 お願いします	o ne ga i si ma su	1
 王	o u	1
+プロセス	pu ro se su	1
 リユ	ri yu	4
+理事	ri zi	1
 ルゴ	ru go	6
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
 最適化	sa i te ki ka	1
 整理	se i ri	1
+生成	se i se i	1
 しました	si ma si ta	1
+🤫	si xtu	0
+使用	si yo u	1
+使用できません	si yo u de ki ma se nn	1
 私財	si za i	2
 資材	si za i	1
 それほど	so re ho do	1
 する	su ru	6
 て	te	0
 時	to ki	2
+当社	to u sya	1
 続き	tu du ki	1
 ついて	tu i te	1
 ウブンツ	u bu nn tu	1
 浮い	u i	1
 私	wa ta si	1
-っ	xtu	28
+を	wo	1
+っ	xtu	53
 っげ	xtu ge	1
 っけ	xtu ke	1
-っっ	xtu xtu	10
-っっっ	xtu xtu xtu	3
+っっ	xtu xtu	12
+っっ🤫	xtu xtu si xtu	1
+っっっ	xtu xtu xtu	4
 っっっっ	xtu xtu xtu xtu	11
+っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	1
 ざ	za	0
 ぜげ	ze ge	2
