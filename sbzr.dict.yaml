@@ -41,7 +41,7 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.userdb
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
   - sbzr.chrome.extension/dicts/chengyu
-  - zdy
+  - sbzr.chrome.extension/dicts/zdy
 
 
 ...

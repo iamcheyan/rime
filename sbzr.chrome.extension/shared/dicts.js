@@ -3,14 +3,14 @@
    * 统一词库配置列表 (类似 Rime 的 import_tables 结构)
    * 
    * path: 相对扩展根目录的路径
-   * prefix: (可选) 引导词，如 'u' 代表手动造词
+   * prefix: (optional) affix to prepend at runtime
    * reloadable: (可选) 是否允许在 Notepad 中通过 Native Host 保存/重载
    */
   const TABLES = [
     { path: 'dicts/sbzr.single.dict.yaml', defaultEnabled: true },
     { path: 'dicts/base.dict.yaml', defaultEnabled: true },
     { path: 'dicts/sbzr.len1.full.dict.yaml', defaultEnabled: false },
-    { path: 'dicts/zdy.dict.yaml', prefix: 'u', reloadable: true, defaultEnabled: false }
+    { path: 'dicts/zdy.dict.yaml', reloadable: true, defaultEnabled: false }
   ];
   const DEFAULT_TABLES = TABLES.filter((table) => table.defaultEnabled !== false);
 

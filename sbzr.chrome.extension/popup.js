@@ -93,7 +93,7 @@ function describeImeDict(path) {
     case 'dicts/sbzr.userdb.full.dict.yaml':
       return 'Full-code derived userdb table.';
     case 'dicts/zdy.dict.yaml':
-      return 'Affix dictionary mounted with the `u` prefix.';
+      return 'Shared custom dictionary for Nova and Rime.';
     default:
       return 'Packaged IME dictionary.';
   }

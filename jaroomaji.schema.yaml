@@ -825,7 +825,7 @@ translator:
     - "xform/-/ー/"
 
 easy_en:
-  dictionary: easy_en
+  dictionary: sbzr.chrome.extension/dicts.en/easy_en
   enable_user_dict: false
   enable_sentence: false
   enable_completion: true

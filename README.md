@@ -25,11 +25,11 @@
 -   `sbzr.dict.yaml`: 主词典入口，通过 `import_tables` 聚合所有拆分词库。
 
 ### 词库与数据 (sbzr.chrome.extension/dicts/)
-所有词库文件均存放在扩展目录下，便于编辑器直接访问：
+词库源文件统一存放在扩展目录下，便于编辑器直接访问，也作为 Rime 的共享词典来源：
 -   `sbzr.len1`, `sbzr.len2`: 核心字词编码库。
 -   `sbzr.extended.*`: 扩展词库（词组、地名、多音字、成语等）。
 -   `sbzr.userdb`: 用户习惯词库。
--   `zdy.dict.yaml`: 手动维护的自定义补充词。
+-   `dicts/zdy.dict.yaml`: 手动维护的自定义补充词。
 
 ### Nova Editor (Chrome 扩展)
 代码位于 `sbzr.chrome.extension/`：

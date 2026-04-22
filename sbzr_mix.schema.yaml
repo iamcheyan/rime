@@ -72,7 +72,7 @@ translator:
   enable_preedit: false
 
 easy_en_mix:
-  dictionary: easy_en
+  dictionary: sbzr.chrome.extension/dicts.en/easy_en
   tips: "〔英〕"
   enable_user_dict: false
   enable_sentence: false

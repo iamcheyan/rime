@@ -1,7 +1,7 @@
 local SEP = "\31"
 local DB_NAME = "dynamic_freq"
 local CACHE_LIMIT = 256
-local MIN_PROMOTION_INPUT_LENGTH = 2
+local MIN_PROMOTION_INPUT_LENGTH = 1
 local MAX_PROMOTION_SCAN = 64
 local db_pool = db_pool or {}
 local ROOT_DIR = nil
@@ -66,6 +66,26 @@ local function passthrough(translation)
   for cand in translation:iter() do
     yield(cand)
   end
+end
+
+local function texts_compatible(a, b)
+  if not a or a == "" or not b or b == "" then
+    return false
+  end
+  if a == b then
+    return true
+  end
+  return string.find(a, b, 1, true) ~= nil or string.find(b, a, 1, true) ~= nil
+end
+
+local function cand_matches(cand, rec, strict_type)
+  if not cand or not rec or cand.text ~= rec.text then
+    return false
+  end
+  if not strict_type then
+    return true
+  end
+  return rec.type == "" or cand.type == rec.type
 end
 
 local function split_tsv(line)
@@ -210,14 +230,19 @@ function M.init(env)
   end)
 
   env.commit_conn = env.engine.context.commit_notifier:connect(function(ctx)
-    local rec = snapshot(ctx) or env.pending
+    local rec = snapshot(ctx)
+    local rec_from_pending = false
+    if not rec then
+      rec = env.pending
+      rec_from_pending = rec ~= nil
+    end
     env.pending = nil
     if not rec or not rec.input or rec.input == "" then
       return
     end
 
     local committed = ctx:get_commit_text()
-    if committed and committed ~= "" and committed ~= rec.text then
+    if committed and committed ~= "" and not texts_compatible(committed, rec.text) and not rec_from_pending then
       return
     end
 
@@ -248,30 +273,38 @@ function M.func(translation, env)
   end
 
   local buffered = {}
-  local promoted = false
   local scan_count = 0
   local scanning = true
+  local exact_match_index = nil
+  local text_match_index = nil
 
   for cand in translation:iter() do
     if scanning then
       scan_count = scan_count + 1
-      if cand.text == rec.text and (rec.type == "" or cand.type == rec.type) then
-        promoted = true
+      table.insert(buffered, cand)
+
+      if exact_match_index == nil and cand_matches(cand, rec, true) then
+        exact_match_index = #buffered
+      elseif text_match_index == nil and cand_matches(cand, rec, false) then
+        text_match_index = #buffered
+      end
+
+      if exact_match_index ~= nil or scan_count >= MAX_PROMOTION_SCAN then
         scanning = false
-        yield(cand)
-        for i = 1, #buffered do
-          yield(buffered[i])
-        end
-        buffered = nil
-      else
-        table.insert(buffered, cand)
-        if scan_count >= MAX_PROMOTION_SCAN then
-          scanning = false
+        local promote_index = exact_match_index or text_match_index
+        if promote_index ~= nil then
+          yield(buffered[promote_index])
+          for i = 1, #buffered do
+            if i ~= promote_index then
+              yield(buffered[i])
+            end
+          end
+        else
           for i = 1, #buffered do
             yield(buffered[i])
           end
-          buffered = nil
         end
+        buffered = nil
       end
     else
       yield(cand)

@@ -10,7 +10,7 @@
 #
 
 ---
-name: easy_en
+name: sbzr.chrome.extension/dicts.en/easy_en
 version: "0.2"
 sort: by_weight
 use_preset_vocabulary: false

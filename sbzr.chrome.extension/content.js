@@ -46,9 +46,7 @@ const PACKAGED_RIME_DICT_PATHS = window.SBZR_DICTS?.DEFAULT_RIME_PATHS || window
     'dicts/sbzr.userdb.dict.yaml',
     'dicts/sbzr.userdb.full.dict.yaml'
 ];
-const PACKAGED_AFFIX_DICT_SOURCES = window.SBZR_DICTS?.DEFAULT_AFFIX_SOURCES || window.SBZR_DICTS?.AFFIX_SOURCES || [
-    { path: 'dicts/zdy.dict.yaml', prefix: 'u', dictName: 'sbzdy.extension' }
-];
+const PACKAGED_AFFIX_DICT_SOURCES = window.SBZR_DICTS?.DEFAULT_AFFIX_SOURCES || window.SBZR_DICTS?.AFFIX_SOURCES || [];
 const CONTENT_AUTO_INIT = window.__SBZR_CONTENT_AUTO_INIT__ !== false;
 const RIME_USER_DICT_NAME = 'sbzr.user_dict';
 const SITE_RULES_STORAGE_KEY = 'sbzr_site_rules';
