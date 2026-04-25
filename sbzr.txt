@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	12367
+#@/tick	12410
 啊	a	14
 阿	aa	1
 挨	ai	1
@@ -7634,9 +7634,10 @@
 尺寸	cicp	1
 词典	cidm	2
 吃苦	ciku	1
-词库	ciku	5
+词库	ciku	7
 词	cioa	2
 词频	cipn	3
+词组	cizu	1
 参考	cjkk	2
 产生	cjsg	1
 产物	cjwu	1
@@ -7645,7 +7646,7 @@
 错误	cowu	2
 存在	cpzl	1
 村寨	cpzl	1
-从	cs	5
+从	cs	6
 重复	csfu	1
 从新	csxn	1
 重装	cszd	1
@@ -7655,7 +7656,7 @@
 初期	cuqi	1
 出现	cuxm	1
 滁县	cuxm	1
-的	d	165
+的	d	168
 大	da	3
 打开	dakl	2
 蚪	db	1
@@ -7692,11 +7693,13 @@
 多了	dole	1
 躲了	dole	1
 多少	dosk	1
+堕胎	dotl	1
+多台	dotl	1
 东西	dsxi	1
 杜丽	duli	1
 独立	duli	1
 兑	dv	1
-对	dv	6
+对	dv	7
 对吧	dvba	1
 对应	dvyy	5
 顶部	dybu	1
@@ -7704,13 +7707,14 @@
 得	dz	3
 发	f	1
 法	faoo	1
-发现	faxm	2
+发现	faxm	3
 分别	ffbx	2
 分开	ffkl	1
 分支	ffzi	1
 方便	fhbm	4
 放到	fhdk	2
 返回到	fhdk	1
+方法	fhfa	1
 方案	fhvj	2
 放在	fhzl	4
 符号在	fhzl	1
@@ -7778,7 +7782,7 @@
 还是	hlsi	6
 还在	hlzl	2
 活动	hods	1
-或者	hoze	7
+或者	hoze	8
 活着	hoze	1
 混熟	hpsu	2
 混输	hpsu	9
@@ -7803,7 +7807,7 @@
 黑色	hzse	1
 爱	i	1
 就	j	23
-脚本	jcbf	6
+脚本	jcbf	7
 焦点	jcdm	1
 叫我	jcwo	1
 教我	jcwo	2
@@ -7870,16 +7874,16 @@
 宽	kr	1
 控制	kszi	2
 库	kuoe	1
-快速	kysu	1
-了	l	50
+快速	kysu	2
+了	l	51
 粱	ld	1
 两个	ldge	6
 俐	li	2
-里	li	9
+里	li	10
 力竭	lijx	1
 理解	lijx	1
 里面	limm	24
-例如	liru	3
+例如	liru	4
 历史	lisi	1
 栏	ljei	3
 来	ll	5
@@ -7917,7 +7921,7 @@ lazynvim	lnm	1
 名字	myzi	2
 每次	mzci	4
 每个	mzge	3
-没有	mzyb	11
+没有	mzyb	12
 你	n	48
 那	na	12
 钠	na	1
@@ -7934,7 +7938,7 @@ lazynvim	lnm	1
 呢	ne	8
 嫩	nf	1
 耐	ng	1
-能	ng	10
+能	ng	11
 能够	nggb	1
 那个合并	nggb	1
 能力	ngli	1
@@ -8004,6 +8008,7 @@ python	py	1
 识别率	sbso	1
 声笔自然	sbzr	2
 生成物	scwu	2
+设备	sebz	1
 色	seua	1
 设置	sezi	4
 深黑	sfhz	1
@@ -8035,7 +8040,7 @@ python	py	1
 三个	sjge	2
 少	sk	1
 稍等	skdg	1
-什么	sm	14
+什么	sm	15
 什么问题	smwt	1
 说	so	4
 说明	somy	1
@@ -8057,9 +8062,9 @@ python	py	1
 太	tl	3
 太大	tlda	2
 填充	tmcs	1
-添加	tmjw	2
+添加	tmjw	3
 同	ts	1
-同步	tsbu	1
+同步	tsbu	3
 通过	tsgo	3
 天试用	tsys	1
 通用	tsys	5
@@ -8070,10 +8075,11 @@ python	py	1
 安装	vjzd	1
 暗桩	vjzd	2
 按照	vjzk	2
-我	w	78
+我	w	82
 文档	wfdh	3
 文件	wfjm	16
 问题	wfti	14
+网上	whsh	1
 网站	whzj	1
 味	wi	1
 完成	wjcg	1
@@ -8095,7 +8101,7 @@ python	py	1
 下	x	24
 效果	xcgo	2
 小写	xcxx	1
-想	xd	14
+想	xd	15
 镶	xd	1
 想法	xdfa	1
 项目	xdmu	10
@@ -8107,7 +8113,7 @@ python	py	1
 仙逝	xmsi	1
 显示	xmsi	5
 先	xmue	10
-现在	xmzl	22
+现在	xmzl	23
 新建	xnjm	2
 新	xnoe	1
 信息	xnxi	2
@@ -8123,7 +8129,7 @@ python	py	1
 婿	xu	1
 许多	xudo	1
 虚拟	xuni	1
-需要	xuyk	6
+需要	xuyk	7
 暇	xw	1
 下次	xwci	3
 下方	xwfh	1
@@ -8153,7 +8159,7 @@ python	py	1
 有效	ybxc	2
 远程桌面	yczm	1
 源代码	ydma	1
-也	ye	8
+也	ye	9
 椰	ye	1
 也要	yeyk	1
 样式	yhsi	2
@@ -8163,7 +8169,7 @@ python	py	1
 移动	yids	2
 一定	yidy	2
 一份	yiff	2
-一个	yige	15
+一个	yige	16
 一集	yiji	3
 以及	yiji	2
 乙腈	yijy	1
@@ -8180,10 +8186,10 @@ python	py	1
 一样	yiyh	2
 验证	yjzg	1
 舀	yk	2
-要	yk	9
-有没有	ymyb	1
+要	yk	10
+有没有	ymyb	2
 隐私	ynsi	1
-因为	ynwz	6
+因为	ynwz	7
 引用	ynys	2
 运行	ypxy	3
 远程	yrcg	1
@@ -8198,8 +8204,8 @@ python	py	1
 荧	yy	1
 硬	yyeu	1
 应该	yygl	1
-英文	yywf	13
-在	z	35
+英文	yywf	14
+在	z	36
 咋	zaia	1
 喳	zaia	1
 找不到	zbdk	2
@@ -8222,7 +8228,7 @@ python	py	1
 真实	zfsi	1
 怎样	zfyh	2
 真正	zfzg	1
-正常	zgch	1
+正常	zgch	2
 最高额度	zged	2
 整个	zgge	1
 正确	zgqt	1
@@ -8234,8 +8240,9 @@ python	py	1
 滞后	zihb	1
 只	ziia	3
 自己	ziji	1
+自建	zijm	1
 直接	zijx	5
-之类	zilz	1
+之类	zilz	2
 脂类	zilz	1
 只能	zing	2
 字	zioo	1
