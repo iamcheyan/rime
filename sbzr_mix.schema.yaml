@@ -92,6 +92,7 @@ jp_mix:
   enable_encoder: true
   encode_commit_history: true
   enable_completion: true
+  initial_quality: 600
   preedit_format:
     __include: jaroomaji.schema.yaml:/translator/preedit_format
 
