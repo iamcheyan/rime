@@ -85,7 +85,16 @@ local function cand_matches(cand, rec, strict_type)
   if not strict_type then
     return true
   end
-  return rec.type == "" or cand.type == rec.type
+  -- 放宽 type 匹配：空 type、完全匹配、或同为 table 类（混输模式下不同 translator 可能产生相同词）
+  if rec.type == "" or cand.type == rec.type then
+    return true
+  end
+  -- 混输模式下，user_table/table/completion 视为同类（都是用户实际打过的词）
+  local table_types = { table = true, user_table = true, completion = true }
+  if table_types[rec.type] and table_types[cand.type] then
+    return true
+  end
+  return false
 end
 
 local function split_tsv(line)
