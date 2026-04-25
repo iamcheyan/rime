@@ -363,6 +363,24 @@ elif [ "$OS_TYPE" = "Linux" ]; then
     echo -e "${YELLOW}Detected Linux, using the Fcitx5 deployment flow${NC}"
     echo ""
     
+    # 检查并安装 Sarasa Mono SC 字体（如果未安装）
+    if ! fc-list | grep -qi "sarasa mono sc"; then
+        local_font_file="$RIME_DIR/sbzr.chrome.extension/fonts/SarasaMonoSC-Regular.ttf"
+        if [ -f "$local_font_file" ]; then
+            echo -e "${YELLOW}Sarasa Mono SC font not detected, installing...${NC}"
+            mkdir -p "$HOME/.local/share/fonts"
+            if cp "$local_font_file" "$HOME/.local/share/fonts/"; then
+                fc-cache -f "$HOME/.local/share/fonts" 2>/dev/null
+                echo -e "${GREEN}✓ Sarasa Mono SC font installed${NC}"
+            else
+                echo -e "${RED}✗ Failed to install font${NC}"
+            fi
+        else
+            echo -e "${YELLOW}⚠ Font file not found: $local_font_file${NC}"
+        fi
+        echo ""
+    fi
+    
     if command -v rime_deployer &> /dev/null; then
         if [ -n "$SHARED_DATA_DIR" ]; then
             echo -e "${YELLOW}Running: rime_deployer --build $RIME_DIR $SHARED_DATA_DIR $BUILD_DIR${NC}"
