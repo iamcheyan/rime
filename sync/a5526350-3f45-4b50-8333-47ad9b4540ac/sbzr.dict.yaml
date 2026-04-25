@@ -1,0 +1,47 @@
+# Rime dictionary
+# encoding: utf-8
+# 
+# rime配置的部署位置：
+# ~/.local/share/fcitx5/rime 或者 ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+# 
+#
+
+---
+name: sbzr
+version: "LTS"
+sort: by_weight  #字典初始排序，可選original或by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+# encoder:
+#   exclude_patterns:
+#     - '^[aeiou].*$'
+#   rules:
+#     # 尽可能保留所有字的声母、韵母、笔画
+#     # 我们设置一个覆盖面极广的公式，让它在 2-32 字范围内都不截断
+#     - length_in_range: [2, 32]
+#       formula: "AaAbAcAdBaBbBcBdCaCbCcCdDaDbDcDdEaEbEcEdFaFbFcFdGaGbGcGdHaHbHcHd"
+import_tables:
+  - sbzr.chrome.extension/dicts/sbzr.single
+  - sbzr.chrome.extension/dicts/base
+  - sbzr.chrome.extension/dicts/sbzr.len1
+  - sbzr.chrome.extension/dicts/sbzr.len1.full
+  - sbzr.chrome.extension/dicts/sbzr.len2
+  - sbzr.chrome.extension/dicts/sbzr.extended.common
+  - sbzr.chrome.extension/dicts/sbzr.extended.diming
+  - sbzr.chrome.extension/dicts/sbzr.extended.duoyin
+  - sbzr.chrome.extension/dicts/sbzr.extended.lianxiang
+  - sbzr.chrome.extension/dicts/sbzr.extended.shici
+  - sbzr.chrome.extension/dicts/sbzr.extended.wuzhong
+  - sbzr.chrome.extension/dicts/sbzr.shortcut
+  - sbzr.chrome.extension/dicts/sbzr.userdb
+  - sbzr.chrome.extension/dicts/sbzr.userdb.full
+  - sbzr.chrome.extension/dicts/chengyu
+  - sbzr.chrome.extension/dicts/zdy
+
+
+...

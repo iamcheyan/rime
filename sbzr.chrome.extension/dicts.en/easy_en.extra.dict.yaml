@@ -6,7 +6,7 @@
 #
 
 ---
-name: easy_en.extra
+name: sbzr.chrome.extension/dicts.en/easy_en.extra
 version: "2026-04-14"
 sort: by_weight
 use_preset_vocabulary: false
@@ -218,4 +218,5 @@ nvim	nvim	2500000
 nano	nano	2500000
 emacs	emacs	2500000
 code	code	2500000
-zellij  zellij 25000000
+zellij	zellij	25000000
+

@@ -1,0 +1,23 @@
+# Rime user dictionary
+#@/db_name	jaroomaji
+#@/db_type	userdb
+#@/rime_version	1.13.1
+#@/tick	19
+#@/user_id	a5526350-3f45-4b50-8333-47ad9b4540ac
+de su ka 	ですか	c=1 d=0.937067 t=19
+do kyu me nn to 	ドキュメント	c=1 d=0.970446 t=19
+ge nn za i 	現在	c=1 d=0.955997 t=19
+hyo u zi 	表示	c=1 d=1 t=19
+i ma 	今	c=1 d=0.960789 t=19
+ke xtu ka 	結果	c=1 d=0.951229 t=19
+ki do u 	起動	c=1 d=0.941765 t=19
+ko no 	この	c=1 d=0.923116 t=19
+ko u si nn 	更新	c=1 d=0.97531 t=19
+ni ho nn go 	日本語	c=2 d=2.00647 t=19
+ni ho nn go wo 	日本語を	c=2 d=1.96531 t=19
+no 	の	c=1 d=0.965605 t=19
+nyu u ryo ku 	入力	c=1 d=0.99005 t=19
+ri ka i 	理解	c=1 d=0.927743 t=19
+ta da si i 	正しい	c=1 d=0.932394 t=19
+wo 	を	c=1 d=1.01604 t=19
+zi xtu syo u 	実証	c=1 d=0.946485 t=19

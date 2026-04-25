@@ -63,6 +63,53 @@
 3.  **方案扩展**：新增词库需在 `sbzr.dict.yaml` 的 `import_tables` 中注册。
 4.  **Lua 使用**：尽量保持 Lua 逻辑简单，仅用于必要的滤镜功能。
 
+## Fedora 部署问题记录
+
+### 问题：中日英混输方案（sbzr_mix）无法工作
+
+**现象**：`sbzr_mix` 方案无法输入，字典未编译。
+
+**问题链**：
+
+| 步骤 | 问题 | 原因 |
+|------|------|------|
+| 1 | `librime-tools` 未安装 | Fedora 默认不安装 |
+| 2 | 安装后 `rime_deployer` 编译崩溃 | `boost::interprocess::interprocess_exception` |
+| 3 | **根因**：崩溃是因为 `build/` 下缺少子目录 | `rime_deployer` 用字典 `name`（含 `/`）作为文件路径，但不会自动创建中间目录 |
+
+**修复内容**：
+
+1. **安装 `librime-tools`**：
+   ```bash
+   sudo dnf install librime-tools
+   ```
+
+2. **创建缺失的子目录**：
+   ```bash
+   mkdir -p build/sbzr.chrome.extension/dicts.en
+   mkdir -p build/sbzr.chrome.extension/dicts.jp
+   ```
+
+3. **修复字典格式错误**：
+   - `easy_en.dict.yaml`：添加 `columns: [text, code, weight]`
+   - `easy_en.extra.dict.yaml`：空格分隔 → Tab 分隔
+   - `zdy.dict.yaml`：删除混合编码的脏数据行
+
+4. **重新编译所有字典**：
+   ```bash
+   rime_deployer --compile sbzr.schema.yaml . /usr/share/rime-data
+   rime_deployer --compile easy_en.schema.yaml . /usr/share/rime-data
+   rime_deployer --compile jaroomaji.schema.yaml . /usr/share/rime-data
+   rime_deployer --compile sbzr_mix.schema.yaml . /usr/share/rime-data
+   ```
+
+5. **重新加载 fcitx5**：
+   ```bash
+   fcitx5-remote -r
+   ```
+
+**诊断方法**：查看 `/tmp/rime.tools.*.log.INFO` 日志，若看到 `mapped_file.cc:59] creating file ...` 后崩溃，即为目录缺失问题。
+
 ## 当前定位
 
 这套配置不追求功能的堆砌，而是强调**输入习惯的工程化沉淀**。通过 Nova Editor 和 Rime 的深度结合，实现了一个跨越系统和浏览器的、高度一致的输入环境。

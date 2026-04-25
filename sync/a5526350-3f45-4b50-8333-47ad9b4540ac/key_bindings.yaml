@@ -1,0 +1,14 @@
+# Rime key bindings
+# encoding: utf-8
+
+# 通用快捷键配置
+common:
+  __append:
+    # 翻页键（仅使用逗号句号）
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    
+    # 候选选择快捷键
+    - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
+    - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+
