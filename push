@@ -53,6 +53,18 @@ echo "Tracked files: $TRACKED_COUNT"
 echo "Tracked files that should be ignored: $IGNORED_COUNT"
 echo ""
 
+# 解析参数
+FORCE_FLAG=""
+ARGS=()
+
+for arg in "$@"; do
+    if [ "$arg" = "-f" ]; then
+        FORCE_FLAG="--force"
+    else
+        ARGS+=("$arg")
+    fi
+done
+
 # 5. 生成提交消息
 DEVICE_NAME=$(hostname)
 OS_NAME=$(uname -s)
@@ -62,9 +74,9 @@ fi
 # 组合标识符，例如: [CFSV9/fedora]
 IDENTIFIER="$DEVICE_NAME/$OS_NAME"
 
-if [ -n "$*" ]; then
-    # 使用所有参数作为消息（自动拼接，不需要引号）
-    COMMIT_MSG="[$IDENTIFIER] $*"
+if [ "${#ARGS[@]}" -gt 0 ]; then
+    # 使用所有非 -f 参数作为消息（自动拼接，不需要引号）
+    COMMIT_MSG="[$IDENTIFIER] ${ARGS[*]}"
 else
     # 使用默认时间戳消息
     COMMIT_MSG="[$IDENTIFIER] Sync config to repo [$(date +"%Y%m%d_%H%M%S")]"
@@ -77,4 +89,14 @@ echo ""
 
 # 提交并推送
 git commit --allow-empty -m "$COMMIT_MSG"
-git push --force origin main
+
+# 获取当前分支名
+CURRENT_BRANCH=$(git branch --show-current)
+
+# 检查当前分支是否有 upstream 关联
+if ! git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+    echo "Setting upstream for new branch: $CURRENT_BRANCH"
+    git push $FORCE_FLAG --set-upstream origin "$CURRENT_BRANCH"
+else
+    git push $FORCE_FLAG
+fi
