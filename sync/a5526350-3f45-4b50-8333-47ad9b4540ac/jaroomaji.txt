@@ -2,10 +2,10 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	398
-ー	-	1
+#@/tick	444
+ー	-	2
 ーいる	- i ru	2
-ーいっっ	- i xtu xtu	3
+ーいっっ	- i xtu xtu	6
 ーんっ	- nn xtu	1
 ホ	HO	0
 カク	KA KU	0
@@ -19,7 +19,7 @@
 ぶす	bu su	1
 ぶっっ	bu xtu xtu	3
 de	de	2
-で	de	4
+で	de	5
 では	de ha	1
 できません	de ki ma se nn	0
 できる	de ki ru	1
@@ -34,6 +34,7 @@ de	de	2
 ふぁ	fwa	0
 ファイル	fwa i ru	3
 ふぁオア	fwa o a	1
+ふぇ	fwe	0
 が	ga	1
 現	ge nn	0
 現在	ge nn za i	2
@@ -78,10 +79,10 @@ de	de	2
 確認	ka ku ni nn	1
 完了	ka nn ryo u	1
 感想	ka nn so u	1
-刑	ke i	13
+刑	ke i	16
 県	ke nn	0
 件数	ke nn su u	1
-県っ	ke nn xtu	1
+県っ	ke nn xtu	2
 機能	ki no u	6
 この	ko no	2
 更新	ko u si nn	8
@@ -89,6 +90,8 @@ de	de	2
 黒島	ku ro si ma	4
 今日	kyo u	0
 今日は	kyo u ha	2
+ま	ma	0
+まあ	ma a	1
 ませんでした	ma se nn de si ta	1
 マスカ	ma su ka	0
 まず	ma zu	1
@@ -98,13 +101,15 @@ de	de	2
 むっっっ	mu xtu xtu xtu	1
 名前	na ma e	1
 何時	na nn zi	1
-に	ni	4
+に	ni	5
 ニ	ni	7
+你	ni	4
 仁保	ni ho	1
 鳰	ni ho	1
 日本語	ni ho nn go	7
 日本号	ni ho nn go u	3
 日本語訳	ni ho nn go ya ku	1
+ん	nn	3
 んっ	nn xtu	1
 の	no	9
 野甫	no ho	1
@@ -125,6 +130,7 @@ de	de	2
 生成	se i se i	1
 し	si	0
 しました	si ma si ta	2
+したので	si ta no de	0
 🤫	si xtu	1
 しっっっ	si xtu xtu xtu	1
 使用	si yo u	1
@@ -132,26 +138,31 @@ de	de	2
 私財	si za i	2
 資材	si za i	1
 それほど	so re ho do	1
-する	su ru	6
+する	su ru	7
 初期	syo ki	1
 て	te	0
 時	to ki	2
 当社	to u sya	1
 続き	tu du ki	1
 ついて	tu i te	1
+作り	tu ku ri	0
+作りましたので	tu ku ri ma si ta no de	1
 ウブンツ	u bu nn tu	1
 浮い	u i	1
 私	wa ta si	1
 を	wo	1
-っ	xtu	130
-っげ	xtu ge	1
+っ	xtu	143
+っげ	xtu ge	2
 っけ	xtu ke	1
-っっ	xtu xtu	17
+っっ	xtu xtu	26
+っっふぇ	xtu xtu fwe	1
 っっ🤫	xtu xtu si xtu	1
-っっっ	xtu xtu xtu	8
+っっっ	xtu xtu xtu	9
 っっっっ	xtu xtu xtu xtu	12
 っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	1
+いぇ	ye	0
+いぇっっ	ye xtu xtu	1
 ざ	za	0
 ゼー	ze -	0
 ゼーい	ze - i	2
