@@ -89,8 +89,8 @@ local function cand_matches(cand, rec, strict_type)
   if rec.type == "" or cand.type == rec.type then
     return true
   end
-  -- 混输模式下，user_table/table/completion/sentence/history 视为同类（都是用户实际打过的词）
-  local table_types = { table = true, user_table = true, completion = true, sentence = true, history = true }
+  -- 混输模式下，user_table/table/completion 视为同类（都是用户实际打过的词）
+  local table_types = { table = true, user_table = true, completion = true }
   if table_types[rec.type] and table_types[cand.type] then
     return true
   end
