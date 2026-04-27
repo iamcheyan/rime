@@ -168,23 +168,6 @@ git clone https://github.com/iamcheyan/rime.git %APPDATA%\Rime
 
 ---
 
-## 已知问题
-
-### Fedora 混输方案部署崩溃
-
-**现象**：`rime_deployer` 编译 `sbzr_mix` 时崩溃，`boost::interprocess::interprocess_exception`
-
-**根因**：`build/` 下缺少子目录，`rime_deployer` 不会自动创建中间目录
-
-**修复**：
-```bash
-mkdir -p build/sbzr.chrome.extension/dicts.en
-mkdir -p build/sbzr.chrome.extension/dicts.jp
-rime_deployer --compile sbzr_mix.schema.yaml . /usr/share/rime-data
-```
-
----
-
 ## 词库维护约定
 
 1. **修改位置**：优先在 `sbzr.chrome.extension/dicts/` 下修改对应文件
