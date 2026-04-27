@@ -20,12 +20,18 @@ if ! git diff --quiet || ! git diff --cached --quiet; then
     fi
 fi
 
+# 获取当前分支名
+CURRENT_BRANCH=$(git branch --show-current)
+
+echo "Current branch: $CURRENT_BRANCH"
+echo ""
+
 # 2. 执行强制同步
 echo "Fetching from remote..."
-git fetch origin main
+git fetch origin "$CURRENT_BRANCH"
 
-echo "Hard-resetting local branch..."
-git reset --hard origin/main
+echo "Hard-resetting local branch to origin/$CURRENT_BRANCH..."
+git reset --hard "origin/$CURRENT_BRANCH"
 
 echo ""
 echo "Importing dynamic_freq sync snapshot..."

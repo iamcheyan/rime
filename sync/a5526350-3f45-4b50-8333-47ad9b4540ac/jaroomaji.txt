@@ -2,30 +2,27 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	492
-ー	-	2
+#@/tick	446
+ー	-	1
 ーいる	- i ru	2
-ーいっっ	- i xtu xtu	8
+ーいっっ	- i xtu xtu	3
 ーんっ	- nn xtu	1
 ホ	HO	0
 カク	KA KU	0
 カクホウ	KA KU HO U	1
 ウ	U	0
 ウッ	U XTU	1
-あ	a	0
 場合	ba a i	1
 バグ	ba gu	1
 ぶ	bu	0
 部分	bu bu nn	1
 ぶす	bu su	1
-ぶっー	bu xtu -	1
-ぶっっ	bu xtu xtu	3
-ダジ	da zi	1
+ぶっっ	bu xtu xtu	4
 de	de	2
-で	de	5
+で	de	4
 では	de ha	1
 できません	de ki ma se nn	0
-できる	de ki ru	1
+できる	de ki ru	2
 でも	de mo	1
 です	de su	5
 ですか	de su ka	0
@@ -33,14 +30,13 @@ de	de	2
 ドキュメント	do kyu me nn to	1
 ドキュメント更新	do kyu me nn to ko u si nn	5
 どし	do si	1
+道江	do u e	1
 え	e	0
 エーラ	e - ra	1
-恵下	e ge	0
-えっんっ	e xtu nn xtu	1
+え羽後	e u go	1
 ふぁ	fwa	0
-ファイル	fwa i ru	3
+ファイル	fwa i ru	4
 ふぁオア	fwa o a	1
-ふぇ	fwe	0
 が	ga	1
 現	ge nn	0
 現在	ge nn za i	2
@@ -77,7 +73,7 @@ de	de	2
 頂きます	i ta da ki ma su	0
 頂きますか	i ta da ki ma su ka	1
 一番	i ti ba nn	2
-いっっ	i xtu xtu	1
+いっっ	i xtu xtu	2
 以上	i zyo u	1
 か	ka	0
 書い	ka i	0
@@ -85,19 +81,21 @@ de	de	2
 確認	ka ku ni nn	1
 完了	ka nn ryo u	1
 感想	ka nn so u	1
-刑	ke i	19
-県	ke nn	0
+恰	ka xtu	1
+刑	ke i	20
 件数	ke nn su u	1
-県っ	ke nn xtu	3
+勤務	ki nn mu	1
 機能	ki no u	6
 この	ko no	2
+こちら	ko ti ra	0
+こちらです	ko ti ra de su	1
 更新	ko u si nn	8
 構造	ko u zo u	1
+クー	ku -	0
+クーえ	ku - e	1
 黒島	ku ro si ma	4
 今日	kyo u	0
 今日は	kyo u ha	2
-ま	ma	0
-まあ	ma a	1
 ませんでした	ma se nn de si ta	1
 マスカ	ma su ka	0
 まず	ma zu	1
@@ -107,15 +105,13 @@ de	de	2
 むっっっ	mu xtu xtu xtu	1
 名前	na ma e	1
 何時	na nn zi	1
-に	ni	5
+に	ni	4
 ニ	ni	7
-你	ni	4
 仁保	ni ho	1
 鳰	ni ho	1
 日本語	ni ho nn go	7
 日本号	ni ho nn go u	3
 日本語訳	ni ho nn go ya ku	1
-ん	nn	3
 んっ	nn xtu	1
 の	no	9
 野甫	no ho	1
@@ -124,10 +120,13 @@ de	de	2
 オア	o a	0
 お願いします	o ne ga i si ma su	1
 王	o u	1
+押っ-	o xtu	0
 プロセス	pu ro se su	1
 リユ	ri yu	4
 理事	ri zi	1
-ルゴ	ru go	10
+る	ru	0
+ルゴ	ru go	6
+るっっ	ru xtu xtu	1
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
@@ -136,56 +135,62 @@ de	de	2
 生成	se i se i	1
 し	si	0
 しました	si ma si ta	2
-したので	si ta no de	0
 🤫	si xtu	1
-🤫ー	si xtu -	1
 しっっっ	si xtu xtu xtu	1
-しっっっ恵下	si xtu xtu xtu e ge	1
 使用	si yo u	1
 使用できません	si yo u de ki ma se nn	1
 私財	si za i	2
 資材	si za i	1
+そ	so	0
 それほど	so re ho do	1
-す	su	0
-する	su ru	7
-すっっ	su xtu xtu	1
+そっっ	so xtu xtu	1
+そっっっ	so xtu xtu xtu	1
+する	su ru	6
 初期	syo ki	1
+障害	syo u ga i	1
+它	ta	3
+対応	ta i o u	1
 て	te	0
 時	to ki	2
 当社	to u sya	1
 つ	tu	0
 続き	tu du ki	1
 ついて	tu i te	1
-作り	tu ku ri	0
-作りましたので	tu ku ri ma si ta no de	1
-つっっ	tu xtu xtu	1
+つっっ	tu xtu xtu	2
+う	u	0
 ウブンツ	u bu nn tu	1
+羽後	u go	0
 浮い	u i	1
 私	wa ta si	1
 を	wo	1
-っ	xtu	158
-っげ	xtu ge	2
+っ	xtu	128
+っあっん	xtu a xtu nn	1
+っげ	xtu ge	1
 っけ	xtu ke	1
-っっ	xtu xtu	38
-っっふぇ	xtu xtu fwe	1
+っし	xtu si	2
+っぃっ	xtu xi xtu	1
+っっ	xtu xtu	21
+っっー	xtu xtu -	1
+っっ押っ-	xtu xtu o xtu	1
 っっ🤫	xtu xtu si xtu	1
-っっっ	xtu xtu xtu	10
-っっっっ	xtu xtu xtu xtu	12
-っっっっあ	xtu xtu xtu xtu a	1
+っっう	xtu xtu u	1
+っっっ	xtu xtu xtu	9
+っっっっ	xtu xtu xtu xtu	14
 っっっっお	xtu xtu xtu xtu o	1
-っっっっっ	xtu xtu xtu xtu xtu	2
-いぇ	ye	0
-いぇっっ	ye xtu xtu	1
+っっっっっ	xtu xtu xtu xtu xtu	5
 ざ	za	0
 ゼー	ze -	0
 ゼーい	ze - i	2
 ぜげ	ze ge	2
-攻め	ze me	2
+攻め	ze me	4
 ぜっ	ze xtu	1
+じ	zi	0
+時間	zi ka nn	1
 じし	zi si	2
-JIS	zi su	1
 辞書	zi syo	1
-十	zi xtu	1
+じっっっ	zi xtu xtu xtu	1
 ぞ	zo	0
-ぞっっ	zo xtu xtu	1
+ぞっっ	zo xtu xtu	2
+ぞっっっ	zo xtu xtu xtu	1
 じゃない	zya na i	0
+ジュチ	zyu ti	1
