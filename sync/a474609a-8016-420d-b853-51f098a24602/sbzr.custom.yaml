@@ -1,0 +1,42 @@
+# 用户自定义补丁：用于覆盖 sbzr.schema.yaml 中的默认配置（如快捷键、开关状态）。
+patch:
+  # 1. 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
+  "switches/@0":
+    name: ascii_mode
+    reset: 0
+
+  # 纯 Rime 降级版：收敛为接近 sbzr 的交互方式
+  "menu/select_keys": " 12345"
+  "menu/page_size": 6
+  "translator/enable_completion": true
+  "translator/enable_sentence": true
+  "translator/max_phrase_length": 32
+
+  # 用简化键位覆盖全局和旧方案里的特殊逻辑
+  "key_binder/bindings":
+    - { when: has_menu, accept: Tab, send: Down }
+    - { when: has_menu, accept: "Shift+Tab", send: Up }
+    - { when: has_menu, accept: ISO_Left_Tab, send: Up }
+    - { when: has_menu, accept: Up, send: Page_Up }
+    - { when: has_menu, accept: Down, send: Page_Down }
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { when: has_menu, accept: bracketleft, send: Page_Up }
+    - { when: has_menu, accept: bracketright, send: Page_Down }
+    - { accept: "Control+comma", select: .next, when: always }
+    - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Shift+BackSpace", send: Escape, when: composing }
+
+  # 保留 Rime 自带基础造词能力，不使用 Lua
+  "translator/enable_encoder": true
+
+  # 降级为纯 Rime 内建处理器，不依赖 librime-lua
+  "engine/processors":
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor

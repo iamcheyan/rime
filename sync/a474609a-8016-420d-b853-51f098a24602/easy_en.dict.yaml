@@ -1,0 +1,19 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Easy English dictionary entry
+# Actual word data is in sbzr.chrome.extension/dicts.en/
+
+---
+name: easy_en
+version: "0.2"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+import_tables:
+  - sbzr.chrome.extension/dicts.en/easy_en.words
+  - sbzr.chrome.extension/dicts.en/easy_en.extra
+...

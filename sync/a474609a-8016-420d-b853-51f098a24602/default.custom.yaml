@@ -1,0 +1,44 @@
+patch:
+  schema_list:
+    - schema: sbzr
+    - schema: sbzr_mix
+    - schema: jaroomaji
+    - schema: easy_en
+  menu/page_size: 6
+  switcher/save_options: []
+  switcher/abbreviate_options: true
+  switcher/caption: "〔方案选单〕"
+  switcher/fold_options: true
+  switcher/option_list_separator: '／'
+  switcher/hotkeys:
+    - Control+grave
+    - Control+Shift+grave
+    - F4
+  var/previously_selected_schema: sbzr
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: inline_ascii
+      Shift_R: inline_ascii
+      Control_L: commit_code
+      Control_R: noop
+      Caps_Lock: clear
+      Eisu_toggle: clear
+      
+  key_binder:
+    bindings:
+      # 在候选菜单中，回车键发送 Shift+Return（反转回车行为）
+      - when: has_menu
+        accept: Return
+        send: Shift+Return
+
+      # 在候选菜单中，Shift+Return 发送普通回车（反转回车行为）
+      - when: has_menu
+        accept: Shift+Return
+        send: Return
+
+      # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
+      - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
+
+
+      

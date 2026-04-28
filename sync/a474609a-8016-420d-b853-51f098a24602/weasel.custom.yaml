@@ -1,0 +1,16 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.17.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Fri Apr 10 16:46:45 2026"
+  rime_version: 1.13.1
+patch:
+  show_notifications: false
+  "style/color_scheme": steam   
+  "style/font_face": "Sarasa Mono SC"
+  "style/font_point": 14
+  "style/label_font_point": 10      # 序号字号
+  "style/horizontal": false         # 候选词竖向排列
+  "style/inline_preedit": true      # 输入拼音时直接显示在光标位置，而不是单独一个浮动框
+  "style/vertical": true            # 启用“竖排候选窗口”能力
+  "us_keyboard_layout": false

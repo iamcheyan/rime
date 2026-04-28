@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	512
+#@/tick	509
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -90,7 +90,7 @@ de	de	2
 完了	ka nn ryo u	1
 感想	ka nn so u	1
 恰	ka xtu	1
-刑	ke i	33
+刑	ke i	31
 件数	ke nn su u	1
 勤務	ki nn mu	1
 機能	ki no u	6
@@ -207,7 +207,7 @@ de	de	2
 っっ🤫	xtu xtu si xtu	1
 っっう	xtu xtu u	1
 っっっ	xtu xtu xtu	14
-っっっっ	xtu xtu xtu xtu	15
+っっっっ	xtu xtu xtu xtu	14
 っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	8
 要件	yo u ke nn	1

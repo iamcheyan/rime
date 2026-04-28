@@ -1,0 +1,125 @@
+# 输入方案定义：中日英混输实验方案
+schema:
+  schema_id: sbzr_mix
+  name: "混输模式"
+  version: "0.1.0"
+  dependencies:
+    - easy_en
+    - jaroomaji
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [中文, 西文]
+  - name: ascii_punct
+    reset: 0
+    states: [。，, ．，]
+  - name: zh_trad
+    reset: 0
+    states: [简体, 繁体]
+
+menu:
+  page_size: 6
+  select_keys: " 12345"
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - punct_translator
+    - script_translator@jp_mix
+    - table_translator@easy_en_mix
+    - table_translator
+    - history_translator
+  filters:
+    - simplifier
+    - lua_filter@dynamic_freq_filter
+    - uniquifier
+
+speller:
+  alphabet: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-
+  delimiter: " '"
+  auto_select: false
+  max_code_length: 0
+  use_space: false
+
+translator:
+  dictionary: sbzr
+  enable_user_dict: true
+  enable_sentence: true
+  enable_completion: false
+  sentence_over_completion: true
+  enable_encoder: true
+  encode_whole_phrase: true
+  max_phrase_length: 32
+  user_dict: sbzr
+  db_class: tabledb
+  initial_quality: 800
+  enable_preedit: false
+
+easy_en_mix:
+  dictionary: easy_en
+  tips: "〔英〕"
+  enable_user_dict: false
+  enable_sentence: false
+  enable_completion: true
+  spelling_hints: 9
+  initial_quality: 0.5
+  comment_format:
+    - xform/^.+$//
+
+jp_mix:
+  dictionary: jaroomaji
+  prism: jaroomaji
+  tips: "〔日〕"
+  user_dict: jaroomaji
+  db_class: tabledb
+  enable_user_dict: true
+  enable_encoder: true
+  encode_commit_history: true
+  enable_completion: true
+  preedit_format:
+    __include: jaroomaji.schema.yaml:/translator/preedit_format
+
+history_translator:
+  size: 1
+  initial_quality: 10000
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: has_menu, accept: Tab, send: Down }
+    - { when: has_menu, accept: "Shift+Tab", send: Up }
+    - { when: has_menu, accept: Up, send: Page_Up }
+    - { when: has_menu, accept: Down, send: Page_Down }
+    - { when: has_menu, accept: comma, send: Page_Up }
+    - { when: has_menu, accept: period, send: Page_Down }
+    - { accept: "Control+comma", select: .next, when: always }
+    - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Shift+BackSpace", send: Escape, when: composing }
+
+punctuator:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    uppercase: ''
+
+simplifier:
+  opencc_config: s2t.json
+  option_name: zh_trad

@@ -1,0 +1,6 @@
+# 混输模式用户自定义补丁
+patch:
+  # 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
+  "switches/@0":
+    name: ascii_mode
+    reset: 0

@@ -1,0 +1,5 @@
+# Rime user dictionary
+#@/db_name	pinyin_mix_recent
+#@/db_type	userdb
+#@/rime_version	1.13.1
+#@/user_id	a474609a-8016-420d-b853-51f098a24602

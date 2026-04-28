@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	12742
+#@/tick	12718
 啊	a	15
 阿	aa	1
 挨	ai	1
@@ -5388,7 +5388,7 @@
 不失	busi	33869
 不提	busi	5246
 不时	busi	16708
-不是	busi	15775
+不是	busi	15774
 不适	busi	2865
 不少	busk	9323
 不说	buso	6616
@@ -7638,7 +7638,7 @@
 长	ch	1
 长词	chci	1
 场景	chjy	1
-仓库	chku	5
+仓库	chku	4
 词典	cidm	1
 吃苦	ciku	1
 词库	ciku	4
@@ -7707,8 +7707,6 @@
 大后勤	dhqn	1
 当然	dhrj	2
 地方	difh	6
-地址	dizi	1
-的字	dizi	1
 但	dj	30
 单词	djci	1
 点几次	djci	1
@@ -8033,7 +8031,7 @@
 快速	kysu	3
 扩展名	kzmy	1
 了	l	115
-拉取	laqu	3
+拉取	laqu	1
 漏掉	lbdc	1
 粱	ld	2
 两个	ldge	18
@@ -8124,11 +8122,11 @@ lazynvim	lnm	38
 能不能	nbng	9
 呢	ne	22
 耐	ng	1
-能	ng	34
+能	ng	33
 能够	nggb	12
 那个合并	nggb	1
 能力	ngli	1
-难道	njdk	2
+难道	njdk	1
 内心戏	nxxi	1
 内部	nzbu	2
 那在不	nzbu	1
@@ -8178,7 +8176,7 @@ python	py	2
 缺失	qtsi	2
 缺少	qtsk	2
 区	qu	2
-区别	qubx	10
+区别	qubx	9
 去掉	qudc	9
 取代	qudl	1
 区分	quff	1
@@ -8210,10 +8208,10 @@ python	py	2
 容易	rsyi	3
 如果	rugo	23
 如果有	rugoyb	1
-如何	ruhe	19
+如何	ruhe	18
 汝河	ruhe	3
 入口	rukb	1
-是	s	178
+是	s	177
 啥	saia	12
 手动	sbds	2
 是不是	sbs	2
@@ -8260,7 +8258,7 @@ python	py	2
 事情	siqy	1
 实现	sixm	3
 试下	sixw	1
-使用	siys	48
+使用	siys	47
 实用	siys	5
 试用	siys	1
 始终	sizs	1
@@ -8270,7 +8268,7 @@ python	py	2
 三个	sjge	4
 删减	sjjm	1
 少	sk	2
-什么	sm	43
+什么	sm	42
 什么问题	smwt	1
 什么意思	smys	3
 是能够	sngb	1
@@ -8327,7 +8325,6 @@ python	py	2
 推倒	tvdk	1
 推断	tvdr	1
 推荐	tvjm	1
-推送	tvss	1
 挺好	tyhk	1
 停留	tylq	4
 是第一次	udyc	1
@@ -8349,7 +8346,7 @@ python	py	2
 哦哦	vovo	1
 而且	vrqx	2
 vscode	vs	1
-我	w	189
+我	w	187
 文本	wfbf	1
 文档	wfdh	13
 文件	wfjm	43
@@ -8425,7 +8422,7 @@ vscode	vs	1
 嗅	xq	1
 享清福	xqfu	2
 修复	xqfu	4
-修改	xqgl	20
+修改	xqgl	19
 修好	xqhk	1
 休整	xqzg	1
 渲染	xrrj	1
@@ -8491,7 +8488,7 @@ vscode	vs	1
 移动	yids	1
 一定	yidy	2
 一份	yiff	3
-一个	yige	37
+一个	yige	34
 一共	yigs	1
 一行	yihh	1
 一集	yiji	1
@@ -8527,7 +8524,7 @@ vscode	vs	1
 因为	ynwz	9
 引用	ynys	2
 运行	ypxy	9
-远程	yrcg	3
+远程	yrcg	1
 原来	yrll	7
 羊肉笼笼	yrll	1
 元音	yryn	1
@@ -8605,7 +8602,7 @@ vscode	vs	1
 只	ziia	6
 子就	zij	1
 自己	ziji	7
-直接	zijx	13
+直接	zijx	11
 资料	zilc	1
 之类	zilz	8
 脂类	zilz	2
