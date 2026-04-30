@@ -42,6 +42,7 @@ engine:
     - echo_translator
     - punct_translator
     - lua_translator@zdy_priority_translator
+    - lua_translator@shift_ascii_translator
     - script_translator@jp_mix
     - table_translator@easy_en_mix
     - table_translator

@@ -53,6 +53,7 @@ engine:
   translators:
     - echo_translator
     - punct_translator
+    - lua_translator@shift_ascii_translator
     - script_translator
     - table_translator@easy_en
   filters:
