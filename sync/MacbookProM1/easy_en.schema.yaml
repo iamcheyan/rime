@@ -44,9 +44,13 @@ speller:
 
 translator:
   dictionary: easy_en
-  enable_user_dict: false
+  user_dict: easy_en
+  db_class: tabledb
+  enable_user_dict: true
   enable_sentence: false
   enable_completion: true
+  enable_encoder: true
+  encode_commit_history: true
   spelling_hints: 9
   comment_format:
     - xform/^.+$//

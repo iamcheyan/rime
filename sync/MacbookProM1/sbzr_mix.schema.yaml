@@ -74,9 +74,13 @@ translator:
 easy_en_mix:
   dictionary: easy_en
   tips: "〔英〕"
-  enable_user_dict: false
+  user_dict: easy_en
+  db_class: tabledb
+  enable_user_dict: true
   enable_sentence: false
   enable_completion: true
+  enable_encoder: true
+  encode_commit_history: true
   spelling_hints: 9
   initial_quality: 0.5
   comment_format:

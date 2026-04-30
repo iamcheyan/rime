@@ -53,6 +53,7 @@ engine:
   translators:
     - echo_translator
     - punct_translator
+    - lua_translator@learned_ascii_translator
     - lua_translator@shift_ascii_translator
     - script_translator
     - lua_translator@lower_ascii_translator
@@ -828,9 +829,13 @@ translator:
 
 easy_en:
   dictionary: easy_en
-  enable_user_dict: false
+  user_dict: easy_en
+  db_class: tabledb
+  enable_user_dict: true
   enable_sentence: false
   enable_completion: true
+  enable_encoder: true
+  encode_commit_history: true
   spelling_hints: 9
   initial_quality: 0.5
   comment_format:

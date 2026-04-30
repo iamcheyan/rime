@@ -3,6 +3,7 @@ local DB_NAME = "dynamic_freq"
 local CACHE_LIMIT = 256
 local MIN_PROMOTION_INPUT_LENGTH = 1
 local MAX_PROMOTION_SCAN = 64
+local ascii_learning = require("ascii_learning")
 local db_pool = db_pool or {}
 local ROOT_DIR = nil
 local LOCAL_SYNC_FILE = nil
@@ -259,6 +260,7 @@ function M.init(env)
       env.db:update(rec.input, pack(rec))
     end
     rec.updated_at = os.time()
+    ascii_learning.record(rec)
     env.synced_records[rec.input] = rec
     append_local_sync_record(rec)
     cache_put(env, rec.input, rec)
