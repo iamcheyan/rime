@@ -55,6 +55,7 @@ engine:
     - punct_translator
     - lua_translator@shift_ascii_translator
     - script_translator
+    - lua_translator@lower_ascii_translator
     - table_translator@easy_en
   filters:
     - uniquifier

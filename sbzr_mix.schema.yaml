@@ -44,6 +44,7 @@ engine:
     - lua_translator@zdy_priority_translator
     - lua_translator@shift_ascii_translator
     - script_translator@jp_mix
+    - lua_translator@lower_ascii_translator
     - table_translator@easy_en_mix
     - table_translator
     - history_translator
