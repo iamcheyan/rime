@@ -1,0 +1,7 @@
+# Rime table
+#@/db_name	easy_en
+#@/db_type	tabledb
+#@/rime_version	1.13.1
+#@/tick	2
+id	id	1
+OD	od	1

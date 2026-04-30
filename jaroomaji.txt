@@ -2,10 +2,11 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	512
+#@/tick	539
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
+ーいっっっ	- i xtu xtu xtu	1
 ーんっ	- nn xtu	1
 ーっっ	- xtu xtu	1
 ホ	HO	0
@@ -13,6 +14,7 @@
 カクホウ	KA KU HO U	1
 ウ	U	0
 ウッ	U XTU	1
+あ	a	0
 場合	ba a i	1
 バグ	ba gu	1
 び	bi	0
@@ -20,6 +22,7 @@
 びっっっ	bi xtu xtu xtu	1
 ぶ	bu	0
 部分	bu bu nn	1
+ぶご	bu go	1
 ぶす	bu su	1
 ぶっっ	bu xtu xtu	4
 だっーっ	da xtu - xtu	1
@@ -52,6 +55,7 @@ de	de	2
 ご	go	1
 ゴー	go -	0
 ゴーっっ	go - xtu xtu	1
+午前	go ze nn	1
 は	ha	4
 はい	ha i	1
 判断能力	ha nn da nn no u ryo ku	1
@@ -90,9 +94,9 @@ de	de	2
 完了	ka nn ryo u	1
 感想	ka nn so u	1
 恰	ka xtu	1
-刑	ke i	33
+刑	ke i	38
 件数	ke nn su u	1
-勤務	ki nn mu	1
+勤務	ki nn mu	2
 機能	ki no u	6
 この	ko no	2
 こちら	ko ti ra	0
@@ -106,9 +110,11 @@ de	de	2
 くっ	ku xtu	1
 今日	kyo u	0
 今日は	kyo u ha	2
+休	kyu u	1
 ませんでした	ma se nn de si ta	1
 マスカ	ma su ka	0
 まず	ma zu	1
+め	me	0
 満た	mi ta	0
 満たしています	mi ta si te i ma su	1
 見つかり	mi tu ka ri	1
@@ -116,6 +122,7 @@ de	de	2
 モフ	mo hu	2
 む	mu	0
 むっっっ	mu xtu xtu xtu	1
+なく	na ku	1
 名前	na ma e	1
 何時	na nn zi	1
 ね	ne	0
@@ -129,7 +136,7 @@ de	de	2
 日本語訳	ni ho nn go ya ku	1
 ん	nn	0
 んっ	nn xtu	1
-の	no	9
+の	no	10
 野甫	no ho	1
 入力	nyu u ryo ku	1
 お	o	0
@@ -138,6 +145,7 @@ de	de	2
 お願いします	o ne ga i si ma su	1
 王	o u	1
 押っ-	o xtu	0
+おっっんっ	o xtu xtu nn xtu	1
 プロセス	pu ro se su	1
 リユ	ri yu	4
 理事	ri zi	1
@@ -152,11 +160,15 @@ de	de	2
 整理	se i ri	1
 生成	se i se i	1
 し	si	0
+シフト	si hu to	1
 しました	si ma si ta	2
+塩尾	si o o	0
+塩尾あ	si o o a	2
 しています	si te i ma su	0
 🤫	si xtu	1
 しっっっ	si xtu xtu xtu	1
 使用	si yo u	1
+私用	si yo u	1
 使用できません	si yo u de ki ma se nn	1
 私財	si za i	2
 資材	si za i	1
@@ -169,9 +181,11 @@ de	de	2
 するっ	su ru xtu	1
 初期	syo ki	1
 障害	syo u ga i	1
-它	ta	9
+它	ta	10
 対応	ta i o u	1
+ため	ta me	1
 它おへっっ	ta o he xtu xtu	1
+它おっっめ	ta o xtu xtu me	1
 て	te	0
 智永	ti e i	1
 時	to ki	2
@@ -197,33 +211,35 @@ de	de	2
 っけ	xtu ke	1
 っもえー	xtu mo e -	1
 っんっっっっぶ	xtu nn xtu xtu xtu xtu bu	1
-っし	xtu si	2
+っし	xtu si	3
 っすえ	xtu su e	1
 っぃっ	xtu xi xtu	1
-っっ	xtu xtu	28
+っっ	xtu xtu	30
 っっー	xtu xtu -	1
 っっん	xtu xtu nn	1
 っっ押っ-	xtu xtu o xtu	1
 っっ🤫	xtu xtu si xtu	1
 っっう	xtu xtu u	1
-っっっ	xtu xtu xtu	14
+っっっ	xtu xtu xtu	15
 っっっっ	xtu xtu xtu xtu	15
 っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	8
 要件	yo u ke nn	1
 ざ	za	0
+ぜ	ze	0
 ゼー	ze -	0
 ゼーい	ze - i	2
 ぜげ	ze ge	2
 攻め	ze me	5
 ぜっ	ze xtu	1
+ぜっっっ	ze xtu xtu xtu	1
 じ	zi	0
 じい	zi i	0
 じいっ	zi i xtu	1
 時間	zi ka nn	1
 じし	zi si	2
 辞書	zi syo	1
-じっっっ	zi xtu xtu xtu	2
+じっっっ	zi xtu xtu xtu	4
 じゃ	zi xya	1
 ぞ	zo	0
 ぞっっ	zo xtu xtu	2
