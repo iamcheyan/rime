@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	543
+#@/tick	549
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -101,7 +101,7 @@ de	de	2
 この	ko no	2
 こちら	ko ti ra	0
 こちらです	ko ti ra de su	1
-更新	ko u si nn	8
+更新	ko u si nn	9
 構造	ko u zo u	1
 クー	ku -	0
 クーーっ	ku - - xtu	1
@@ -146,6 +146,7 @@ de	de	2
 王	o u	1
 押っ-	o xtu	0
 おっっんっ	o xtu xtu nn xtu	1
+パラメータ値	pa ra me - ta ti	1
 プロセス	pu ro se su	1
 リユ	ri yu	4
 理事	ri zi	1
@@ -177,11 +178,11 @@ de	de	2
 そっっ	so xtu xtu	1
 そっっっ	so xtu xtu xtu	1
 すえ	su e	0
-する	su ru	6
+する	su ru	7
 するっ	su ru xtu	1
 初期	syo ki	1
 障害	syo u ga i	1
-它	ta	12
+它	ta	13
 対応	ta i o u	1
 ため	ta me	1
 它おへっっ	ta o he xtu xtu	1
@@ -246,4 +247,4 @@ de	de	2
 ぞっっ	zo xtu xtu	2
 ぞっっっ	zo xtu xtu xtu	1
 じゃない	zya na i	0
-ジュチ	zyu ti	1
+ジュチ	zyu ti	3

@@ -8051,7 +8051,6 @@
 帘	lm	1
 连	lmjx	1
 链接	lmjx	1
-lazynvim	lnm	38
 逻辑	loji	8
 流程	lqcg	1
 馏程	lqcg	1

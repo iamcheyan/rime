@@ -8086,7 +8086,6 @@
 连	lmjx	5
 链接	lmjx	1
 连载	lmzl	1
-lazynvim	lnm	38
 逻辑	loji	8
 老前辈	lqbz	1
 流程	lqcg	1

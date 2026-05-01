@@ -346,7 +346,6 @@
 来气	llqi	60000
 连接	lmjx	60000
 两马相交	lmxj	60000
-lazynvim	lnm	60000
 逻辑	loji	60000
 流程	lqcg	60000
 流感	lqg	60000

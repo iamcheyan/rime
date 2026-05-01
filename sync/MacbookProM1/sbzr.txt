@@ -58786,7 +58786,6 @@ EventBridgeスケジュール設定	eve	3
 了你肯双	lnks	2453
 了哪里	lnli	3985
 林立	lnli	10349
-lazynvim	lnm	19
 了那么	lnma	2111
 了那么	lnme	2122
 了那么	lnmo	2133

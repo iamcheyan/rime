@@ -1,10 +1,16 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+lnm	user_table	lazynvim	1777630681
+dv	user_table	对	1777630594
+me	user_table	么	1777630594
+yufa	user_table	语法	1777630594
+dabc	lower_ascii	dabc	1777630010
+xqfu	user_table	修复	1777630008
+:	punct	：	1777630007
 wjmy	user_table	文件名	1777629626
 jxsi	user_table	解释	1777629624
 x	user_table	下	1777629624
 zege	user_table	这个	1777629624
-me	user_table	么	1777628227
 zgch	user_table	正常	1777628226
 xmzl	user_table	现在	1777628224
 zch	sentence	在长	1777628224
@@ -83,7 +89,6 @@ yulj	user_table	预览	1777625617
 kbdk	table	看不到	1777625616
 ybsi	table	有时	1777625615
 yshb	table	用后	1777625613
-lnm	user_table	lazynvim	1777625490
 keng	user_table	可能	1777625488
 (	punct	（	1777625487
 ybbm	user_table	右边	1777625485
@@ -230,7 +235,6 @@ pjdr	user_table	判断	1777619392
 ye	user_table	也	1777619391
 nalicole	sentence	那里错了	1777619243
 cole	uniquified	cole	1777619128
-:	punct	：	1777618959
 fjv	lower_ascii	fjv	1777618952
 juti	user_table	具体	1777618799
 jui	uniquified	jui	1777618780
@@ -346,7 +350,6 @@ sezi	user_table	设置	1777613790
 csfu	user_table	重复	1777613789
 vrqx	user_table	而且	1777613783
 zrhr	user_table	转换	1777613778
-dv	user_table	对	1777613759
 ta	user_phrase	它	1777613759
 cg	user_table	成	1777613535
 hkxd	user_table	好像	1777613531
@@ -1177,7 +1180,6 @@ bmds	user_table	变动	1777258328
 kklv	user_table	考虑	1777258325
 qykd	table	情况	1777258270
 ykkl	table	要开	1777258257
-xqfu	user_table	修复	1777258135
 qu	table	区	1777258123
 sixw	table	试下	1777257794
 ngli	table	能力	1777257705
@@ -1200,7 +1202,6 @@ youkenn	phrase	要件	1777256978
 deari	phrase	であり	1777256973
 kakuninnzumi	phrase	確認済み	1777256969
 ykqq	user_table	要求	1777256952
-yufa	table	语法	1777256906
 wjle	table	完结了	1777256861
 xwml	table	希望无论	1777256541
 qub	sentence	くっ	1777256259

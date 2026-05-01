@@ -2,7 +2,7 @@
 #@/db_name	easy_en
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	14
+#@/tick	17
 ASCII	ascii	1
 aws	aws	1
 CloudFormation	cloudformation	4
@@ -11,10 +11,11 @@ deploy	deploy	1
 explorer	explorer	1
 GitHub	github	2
 id	id	1
-lambda	lambda	1
+lambda	lambda	2
 lambdas	lambdas	1
 loggers	loggers	1
 mai	mai	1
 OD	od	1
 plugins	plugins	1
-stepfunctions	stepfunctions	1
+re-name	rename	1
+stepfunctions	stepfunctions	2
