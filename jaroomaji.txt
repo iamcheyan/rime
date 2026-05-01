@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	540
+#@/tick	543
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -131,7 +131,7 @@ de	de	2
 ニ	ni	7
 仁保	ni ho	1
 鳰	ni ho	1
-日本語	ni ho nn go	7
+日本語	ni ho nn go	8
 日本号	ni ho nn go u	3
 日本語訳	ni ho nn go ya ku	1
 ん	nn	0
@@ -181,7 +181,7 @@ de	de	2
 するっ	su ru xtu	1
 初期	syo ki	1
 障害	syo u ga i	1
-它	ta	11
+它	ta	12
 対応	ta i o u	1
 ため	ta me	1
 它おへっっ	ta o he xtu xtu	1
@@ -204,6 +204,7 @@ de	de	2
 私	wa ta si	1
 を	wo	2
 っ	xtu	128
+っーオア	xtu - o a	1
 っあっん	xtu a xtu nn	1
 っふぇっ	xtu fwe xtu	1
 っふぇっっ	xtu fwe xtu xtu	1
