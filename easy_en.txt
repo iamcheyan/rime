@@ -2,20 +2,71 @@
 #@/db_name	easy_en
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	17
+#@/tick	84
+agent	agent	3
+android	android	1
+api-	api	1
 ASCII	ascii	1
 aws	aws	1
-CloudFormation	cloudformation	4
-commit	commit	1
-deploy	deploy	1
+bai	bai	1
+BOF	bof	1
+bsi	bsi	1
+BUF	buf	2
+bun	bun	2
+by sea	bysea	1
+claude	claude	2
+CloudFormation	cloudformation	6
+commit	commit	5
+CONFIG	config	1
+cul	cul	1
+DBC	dbc	1
+default	default	1
+deploy	deploy	2
 explorer	explorer	1
+fha	fha	1
+fti	fti	1
 GitHub	github	2
+GLC	glc	1
 id	id	1
-lambda	lambda	2
+I. K.	ik	1
+kei	kei	1
+key	key	6
+K-lyte	klyte	1
+lambda	lambda	3
 lambdas	lambdas	1
+lim	lim	2
+loading	loading	2
 loggers	loggers	1
 mai	mai	1
-OD	od	1
-plugins	plugins	1
+markdown	markdown	3
+Microsoft	microsoft	1
+mod	mod	1
+mox	mox	1
+NAM	nam	5
+N.H.K.	nhk	1
+nvim	nvim	1
+nzrfu	nzrfu	4
+OD	od	6
+open code	opencode	24
+OSI	osi	1
+plugins	plugins	3
+prompt	prompt	2
+python	python	2
+qrb	qrb	2
+Qube	qube	1
 re-name	rename	1
-stepfunctions	stepfunctions	2
+shu	shu	2
+sim	sim	1
+snap-shot	snapshot	1
+stepfunctions	stepfunctions	4
+sub-agent	subagent	4
+SYS	sys	1
+tam	tam	1
+to-do	todo	1
+ubuntu	ubuntu	1
+upstream	upstream	4
+wfd	wfd	1
+windows	windows	3
+xir	xir	1
+zest	zest	2
+zey	zey	1

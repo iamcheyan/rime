@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	549
+#@/tick	762
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -15,6 +15,10 @@
 ウ	U	0
 ウッ	U XTU	1
 あ	a	0
+アクセス	a ku se su	2
+ありま	a ri ma	0
+ありません	a ri ma se nn	1
+あります	a ri ma su	1
 場合	ba a i	1
 バグ	ba gu	1
 び	bi	0
@@ -25,19 +29,26 @@
 ぶご	bu go	1
 ぶす	bu su	1
 ぶっっ	bu xtu xtu	4
+だ	da	1
+だけど	da ke do	0
+だと	da to	0
+だと思います	da to o mo i ma su	2
 だっーっ	da xtu - xtu	1
 de	de	2
-で	de	4
+で	de	5
 であり	de a ri	1
 では	de ha	1
 できません	de ki ma se nn	0
 できる	de ki ru	2
-でも	de mo	1
-です	de su	5
+でも	de mo	2
+です	de su	7
 ですか	de su ka	0
 ド	do	1
+どころ	do ko ro	3
 ドキュメント	do kyu me nn to	1
 ドキュメント更新	do kyu me nn to ko u si nn	5
+遠	do o	0
+遠もいまし	do o mo i ma si	1
 どし	do si	1
 道江	do u e	1
 え	e	0
@@ -46,6 +57,7 @@ de	de	2
 え羽後	e u go	1
 ふぁ	fwa	0
 ファイル	fwa i ru	4
+ファイルに	fwa i ru ni	1
 ふぁオア	fwa o a	1
 が	ga	1
 現	ge nn	0
@@ -56,18 +68,25 @@ de	de	2
 ゴー	go -	0
 ゴーっっ	go - xtu xtu	1
 午前	go ze nn	1
-は	ha	4
-はい	ha i	1
+ぐらい	gu ra i	1
+業務	gyo u mu	0
+業務以外	gyo u mu i ga i	1
+は	ha	5
+はい	ha i	5
 判断能力	ha nn da nn no u ryo ku	1
 減し	he si	1
-比較	hi ka ku	1
+日	hi	1
+比較	hi ka ku	3
 必要	hi tu yo u	0
 必要じゃない	hi tu yo u zya na i	1
-ホク	ho ku	1
+ホク	ho ku	3
 不一	hu i ti	1
 複雑	hu ku za tu	1
+振替	hu ri ka e	2
 二つ	hu ta tu	1
-い	i	0
+不要	hu yo u	1
+い	i	5
+以外	i ga i	0
 いい方法	i i ho u ho u	1
 イイ方法	i i ho u ho u	3
 以下	i ka	1
@@ -83,73 +102,109 @@ de	de	2
 いただけマスカ	i ta da ke ma su ka	1
 頂きます	i ta da ki ma su	0
 頂きますか	i ta da ki ma su ka	1
+位置	i ti	2
 一番	i ti ba nn	2
-いっっ	i xtu xtu	2
+いっっ	i xtu xtu	3
 以上	i zyo u	1
 か	ka	0
+帰り	ka e ri	0
+帰りました	ka e ri ma si ta	1
 書い	ka i	0
 書いて	ka i te	1
 確認	ka ku ni nn	1
 確認済み	ka ku ni nn zu mi	1
-完了	ka nn ryo u	1
-感想	ka nn so u	1
+環境	ka nn kyo u	1
+完了	ka nn ryo u	2
+感想	ka nn so u	2
 恰	ka xtu	1
 刑	ke i	38
+憲法	ke nn po u	1
 件数	ke nn su u	1
+結果	ke xtu ka	2
+記念日	ki ne nn bi	1
 勤務	ki nn mu	2
+禁止	ki nn si	1
 機能	ki no u	6
+こどもの日	ko do mo no hi	1
 この	ko no	2
+これ	ko re	1
+これら	ko re ra	1
 こちら	ko ti ra	0
 こちらです	ko ti ra de su	1
-更新	ko u si nn	9
+更新	ko u si nn	11
 構造	ko u zo u	1
 クー	ku -	0
 クーーっ	ku - - xtu	1
 クーえ	ku - e	1
+クライアント	ku ra i a nn to	1
 黒島	ku ro si ma	4
-くっ	ku xtu	1
+くっ	ku xtu	3
 今日	kyo u	0
 今日は	kyo u ha	2
 休	kyu u	1
+休日	kyu u zi tu	2
+ま	ma	0
 ませんでした	ma se nn de si ta	1
+まし	ma si	0
+ました	ma si ta	0
+ます	ma su	0
 マスカ	ma su ka	0
 まず	ma zu	1
 め	me	0
+見	mi	1
+みどり	mi do ri	1
 満た	mi ta	0
 満たしています	mi ta si te i ma su	1
+道	mi ti	1
 見つかり	mi tu ka ri	1
-も	mo	0
+3つ	mi xtu tu	1
+も	mo	1
 モフ	mo hu	2
+もい	mo i	0
 む	mu	0
 むっっっ	mu xtu xtu xtu	1
+な	na	0
+ない	na i	0
 なく	na ku	1
 名前	na ma e	1
 何時	na nn zi	1
-ね	ne	0
+ね	ne	3
 ねっっ	ne xtu xtu	2
 に	ni	4
 ニ	ni	7
 仁保	ni ho	1
 鳰	ni ho	1
-日本語	ni ho nn go	8
+日本語	ni ho nn go	9
 日本号	ni ho nn go u	3
 日本語訳	ni ho nn go ya ku	1
+日	ni ti	2
 ん	nn	0
 んっ	nn xtu	1
-の	no	10
+の	no	15
+のです	no de su	0
+のですか	no de su ka	1
+のどか	no do ka	1
+のどかな	no do ka na	1
 野甫	no ho	1
 入力	nyu u ryo ku	1
 お	o	0
 オア	o a	0
 おへ	o he	0
+思い	o mo i	0
+思います	o mo i ma su	1
 お願いします	o ne ga i si ma su	1
 王	o u	1
 押っ-	o xtu	0
 おっっんっ	o xtu xtu nn xtu	1
 パラメータ値	pa ra me - ta ti	1
+分	pu nn	1
 プロセス	pu ro se su	1
+利用	ri yo u	0
+利用てきない	ri yo u te ki na i	1
 リユ	ri yu	4
 理事	ri zi	1
+ロエ	ro e	0
+ログインなし	ro gu i nn na si	1
 る	ru	0
 ルゴ	ru go	6
 るっっ	ru xtu xtu	1
@@ -163,8 +218,11 @@ de	de	2
 し	si	0
 シフト	si hu to	1
 しました	si ma si ta	2
+しましたが	si ma si ta ga	1
+親切	si nn se tu	1
 塩尾	si o o	0
 塩尾あ	si o o a	2
+下	si ta	0
 しています	si te i ma su	0
 🤫	si xtu	1
 しっっっ	si xtu xtu xtu	1
@@ -172,24 +230,49 @@ de	de	2
 私用	si yo u	1
 使用できません	si yo u de ki ma se nn	1
 私財	si za i	2
-資材	si za i	1
+資材	si za i	4
 そ	so	0
+ソース	so - su	2
+ソースコード	so - su ko - do	1
 それほど	so re ho do	1
+そうだ	so u da	1
 そっっ	so xtu xtu	1
 そっっっ	so xtu xtu xtu	1
+す	su	0
+素晴らしい	su ba ra si i	1
+既に	su de ni	1
 すえ	su e	0
-する	su ru	7
+住みやすい	su mi ya su i	4
+住む	su mu	0
+住むやすい	su mu ya su i	1
+する	su ru	9
 するっ	su ru xtu	1
+者	sya	1
 初期	syo ki	1
 障害	syo u ga i	1
-它	ta	13
+修正	syu u se i	2
+它	ta	82
+食べ	ta be	0
+食べだけど	ta be da ke do	1
+大変	ta i he nn	1
 対応	ta i o u	1
 ため	ta me	1
 它おへっっ	ta o he xtu xtu	1
 它おっっめ	ta o xtu xtu me	1
 て	te	0
-智永	ti e i	1
+テースト	te - su to	1
+てき	te ki	0
+テスト	te su to	1
+手順書	te zyu nn syo	1
+智永	ti e i	2
+違い	ti ga i	0
+違いがありま	ti ga i ga a ri ma	1
+と	to	1
+ト	to	1
 時	to ki	2
+ところ	to ko ro	1
+ところだ	to ko ro da	1
+と思い	to o mo i	1
 当社	to u sya	1
 つ	tu	0
 続き	tu du ki	1
@@ -197,13 +280,19 @@ de	de	2
 追加されました	tu i ka sa re ma si ta	1
 ついて	tu i te	1
 つっっ	tu xtu xtu	2
+チャット	tya xtu to	1
+直接	tyo ku se tu	1
+帳票	tyo u hyo u	3
 う	u	0
 ウブンツ	u bu nn tu	1
+鵜木	u gi	0
 羽後	u go	0
 浮い	u i	1
 うっっっっ	u xtu xtu xtu xtu	2
-私	wa ta si	1
-を	wo	2
+わかり	wa ka ri	0
+わかりま下	wa ka ri ma si ta	1
+私	wa ta si	2
+を	wo	4
 っ	xtu	128
 っーオア	xtu - o a	1
 っあっん	xtu a xtu nn	1
@@ -213,19 +302,24 @@ de	de	2
 っけ	xtu ke	1
 っもえー	xtu mo e -	1
 っんっっっっぶ	xtu nn xtu xtu xtu xtu bu	1
+っロエ	xtu ro e	2
 っし	xtu si	3
 っすえ	xtu su e	1
+っ鵜木	xtu u gi	1
 っぃっ	xtu xi xtu	1
-っっ	xtu xtu	30
+っっ	xtu xtu	34
 っっー	xtu xtu -	1
 っっん	xtu xtu nn	1
 っっ押っ-	xtu xtu o xtu	1
 っっ🤫	xtu xtu si xtu	1
 っっう	xtu xtu u	1
-っっっ	xtu xtu xtu	15
+っっっ	xtu xtu xtu	21
 っっっっ	xtu xtu xtu xtu	15
 っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	8
+っじゃう	xtu zya u	1
+やすい	ya su i	0
+屋台	ya ta i	1
 要件	yo u ke nn	1
 ざ	za	0
 ぜ	ze	0
@@ -239,12 +333,15 @@ de	de	2
 じい	zi i	0
 じいっ	zi i xtu	1
 時間	zi ka nn	1
+ジオ	zi o	0
+ジオオア	zi o o a	1
 じし	zi si	2
 辞書	zi syo	1
-じっっっ	zi xtu xtu xtu	4
-じゃ	zi xya	1
+じっっっ	zi xtu xtu xtu	6
+じゃ	zi xya	4
 ぞ	zo	0
 ぞっっ	zo xtu xtu	2
 ぞっっっ	zo xtu xtu xtu	1
 じゃない	zya na i	0
+じゃう	zya u	0
 ジュチ	zyu ti	3
