@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	762
+#@/tick	838
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -16,17 +16,20 @@
 ウッ	U XTU	1
 あ	a	0
 アクセス	a ku se su	2
+あり	a ri	2
 ありま	a ri ma	0
 ありません	a ri ma se nn	1
 あります	a ri ma su	1
 場合	ba a i	1
 バグ	ba gu	1
+バケット	ba ke xtu to	1
 び	bi	0
 びっっ	bi xtu xtu	1
 びっっっ	bi xtu xtu xtu	1
 ぶ	bu	0
 部分	bu bu nn	1
-ぶご	bu go	1
+ぶご	bu go	2
+文	bu nn	1
 ぶす	bu su	1
 ぶっっ	bu xtu xtu	4
 だ	da	1
@@ -40,6 +43,7 @@ de	de	2
 では	de ha	1
 できません	de ki ma se nn	0
 できる	de ki ru	2
+できた	de ki ta	1
 でも	de mo	2
 です	de su	7
 ですか	de su ka	0
@@ -54,9 +58,10 @@ de	de	2
 え	e	0
 えー	e -	0
 エーラ	e - ra	1
+英語	e i go	1
 え羽後	e u go	1
 ふぁ	fwa	0
-ファイル	fwa i ru	4
+ファイル	fwa i ru	5
 ファイルに	fwa i ru ni	1
 ふぁオア	fwa o a	1
 が	ga	1
@@ -74,25 +79,32 @@ de	de	2
 は	ha	5
 はい	ha i	5
 判断能力	ha nn da nn no u ryo ku	1
+発音	ha tu o nn	1
+変	he nn	0
+変ね	he nn ne	1
 減し	he si	1
 日	hi	1
-比較	hi ka ku	3
+比較	hi ka ku	5
 必要	hi tu yo u	0
 必要じゃない	hi tu yo u zya na i	1
-ホク	ho ku	3
+帆	ho	1
+ホク	ho ku	4
+フアイル	hu a i ru	1
 不一	hu i ti	1
 複雑	hu ku za tu	1
 振替	hu ri ka e	2
 二つ	hu ta tu	1
-不要	hu yo u	1
+不要	hu yo u	2
+表示	hyo u zi	2
 い	i	5
 以外	i ga i	0
 いい方法	i i ho u ho u	1
 イイ方法	i i ho u ho u	3
 以下	i ka	1
+生見	i ku mi	2
 いま	i ma	3
 今	i ma	1
-意味	i mi	1
+意味	i mi	2
 いの	i no	0
 いる	i ru	0
 いし	i si	1
@@ -111,12 +123,16 @@ de	de	2
 帰りました	ka e ri ma si ta	1
 書い	ka i	0
 書いて	ka i te	1
+郭	ka ku	1
 確認	ka ku ni nn	1
 確認済み	ka ku ni nn zu mi	1
 環境	ka nn kyo u	1
 完了	ka nn ryo u	2
 感想	ka nn so u	2
+簡単	ka nn ta nn	1
+カラム	ka ra mu	1
 恰	ka xtu	1
+佳津	ka zu	1
 刑	ke i	38
 憲法	ke nn po u	1
 件数	ke nn su u	1
@@ -131,11 +147,12 @@ de	de	2
 これら	ko re ra	1
 こちら	ko ti ra	0
 こちらです	ko ti ra de su	1
-更新	ko u si nn	11
+更新	ko u si nn	12
 構造	ko u zo u	1
 クー	ku -	0
 クーーっ	ku - - xtu	1
-クーえ	ku - e	1
+クーえ	ku - e	2
+ください	ku da sa i	1
 クライアント	ku ra i a nn to	1
 黒島	ku ro si ma	4
 くっ	ku xtu	3
@@ -163,11 +180,13 @@ de	de	2
 もい	mo i	0
 む	mu	0
 むっっっ	mu xtu xtu xtu	1
-な	na	0
+な	na	7
 ない	na i	0
+中	na ka	0
 なく	na ku	1
 名前	na ma e	1
 何時	na nn zi	1
+なの	na no	1
 ね	ne	3
 ねっっ	ne xtu xtu	2
 に	ni	4
@@ -186,6 +205,7 @@ de	de	2
 のどか	no do ka	1
 のどかな	no do ka na	1
 野甫	no ho	1
+の中で	no na ka de	1
 入力	nyu u ryo ku	1
 お	o	0
 オア	o a	0
@@ -199,6 +219,11 @@ de	de	2
 パラメータ値	pa ra me - ta ti	1
 分	pu nn	1
 プロセス	pu ro se su	1
+玲奈	re na	1
+玲菜	re na	3
+リージョン	ri - zyo nn	2
+リモート	ri mo - to	1
+リスト	ri su to	1
 利用	ri yo u	0
 利用てきない	ri yo u te ki na i	1
 リユ	ri yu	4
@@ -212,9 +237,12 @@ de	de	2
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
 最適化	sa i te ki ka	1
+作成	sa ku se i	3
+参考	sa nn ko u	1
 されました	sa re ma si ta	0
-整理	se i ri	1
+整理	se i ri	3
 生成	se i se i	1
+説明	se tu me i	1
 し	si	0
 シフト	si hu to	1
 しました	si ma si ta	2
@@ -222,6 +250,7 @@ de	de	2
 親切	si nn se tu	1
 塩尾	si o o	0
 塩尾あ	si o o a	2
+資料	si ryo u	1
 下	si ta	0
 しています	si te i ma su	0
 🤫	si xtu	1
@@ -230,7 +259,7 @@ de	de	2
 私用	si yo u	1
 使用できません	si yo u de ki ma se nn	1
 私財	si za i	2
-資材	si za i	4
+資材	si za i	6
 そ	so	0
 ソース	so - su	2
 ソースコード	so - su ko - do	1
@@ -247,11 +276,12 @@ de	de	2
 住むやすい	su mu ya su i	1
 する	su ru	9
 するっ	su ru xtu	1
+スタック	su ta xtu ku	1
 者	sya	1
 初期	syo ki	1
 障害	syo u ga i	1
 修正	syu u se i	2
-它	ta	82
+它	ta	86
 食べ	ta be	0
 食べだけど	ta be da ke do	1
 大変	ta i he nn	1
@@ -268,7 +298,7 @@ de	de	2
 違い	ti ga i	0
 違いがありま	ti ga i ga a ri ma	1
 と	to	1
-ト	to	1
+ト	to	2
 時	to ki	2
 ところ	to ko ro	1
 ところだ	to ko ro da	1
@@ -279,6 +309,7 @@ de	de	2
 追加	tu i ka	1
 追加されました	tu i ka sa re ma si ta	1
 ついて	tu i te	1
+ツリー	tu ri -	1
 つっっ	tu xtu xtu	2
 チャット	tya xtu to	1
 直接	tyo ku se tu	1
@@ -292,7 +323,7 @@ de	de	2
 わかり	wa ka ri	0
 わかりま下	wa ka ri ma si ta	1
 私	wa ta si	2
-を	wo	4
+を	wo	6
 っ	xtu	128
 っーオア	xtu - o a	1
 っあっん	xtu a xtu nn	1
@@ -307,13 +338,13 @@ de	de	2
 っすえ	xtu su e	1
 っ鵜木	xtu u gi	1
 っぃっ	xtu xi xtu	1
-っっ	xtu xtu	34
+っっ	xtu xtu	42
 っっー	xtu xtu -	1
 っっん	xtu xtu nn	1
 っっ押っ-	xtu xtu o xtu	1
 っっ🤫	xtu xtu si xtu	1
 っっう	xtu xtu u	1
-っっっ	xtu xtu xtu	21
+っっっ	xtu xtu xtu	24
 っっっっ	xtu xtu xtu xtu	15
 っっっっお	xtu xtu xtu xtu o	1
 っっっっっ	xtu xtu xtu xtu xtu	8
@@ -344,4 +375,5 @@ de	de	2
 ぞっっっ	zo xtu xtu xtu	1
 じゃない	zya na i	0
 じゃう	zya u	0
+徐	zyo	1
 ジュチ	zyu ti	3
