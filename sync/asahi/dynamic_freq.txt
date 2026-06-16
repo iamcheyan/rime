@@ -1,0 +1,2 @@
+# dynamic_freq sync snapshot
+# format: input<TAB>type<TAB>text<TAB>updated_at

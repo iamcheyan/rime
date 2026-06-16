@@ -84,6 +84,8 @@ fi
 # 链接 Rime 配置文件到系统目录
 link_rime_config() {
     echo -e "${CYAN}Checking system Rime config symlinks...${NC}"
+    local rime_real
+    rime_real="$(cd "$RIME_DIR" && pwd -P)"
     
     # 目标路径列表
     local targets=(
@@ -97,14 +99,40 @@ link_rime_config() {
     for target in "${targets[@]}"; do
         # 检查目标目录的父目录是否存在（判断是否安装了对应的框架）
         if [ -d "$(dirname "$target")" ]; then
+            # Never replace the source tree itself.  On Fedora/Fcitx5 this script is
+            # often run from ~/.local/share/fcitx5/rime, which is also one of the
+            # system target paths.
+            if [ "$target" = "$RIME_DIR" ]; then
+                echo -e "  ${GREEN}✓ [source] $target${NC}"
+                continue
+            fi
+
+            local target_real=""
+            if [ -e "$target" ]; then
+                target_real="$(cd "$target" 2>/dev/null && pwd -P)"
+            fi
+
             # 1. 检查是否已经是正确的软链接
             if [ -L "$target" ]; then
                 local current_src=$(readlink "$target")
-                # 简单检查链接目标是否匹配
-                if [[ "$current_src" == "$RIME_DIR" ]]; then
+                # Correct symlink: either the text target matches or it resolves
+                # to the same real directory.
+                if [[ "$current_src" == "$RIME_DIR" ]] || [ "$target_real" = "$rime_real" ]; then
                    echo -e "  ${GREEN}✓ [linked] $target${NC}"
                    continue
                 fi
+
+                # A previous broken version could create
+                # ~/.local/share/fcitx5/rime -> ~/.local/share/fcitx5/rime.
+                # Remove that loop automatically when rebuilding from a fresh
+                # clone or another valid source directory.
+                if [[ "$current_src" == "$target" ]]; then
+                    echo -e "  ${YELLOW}⚠ Self-referential symlink found, repairing...${NC}"
+                    rm "$target"
+                fi
+            elif [ "$target_real" = "$rime_real" ]; then
+                echo -e "  ${GREEN}✓ [source] $target${NC}"
+                continue
             fi
             
             # 2. 如果存在（无论是文件、目录还是失效链接），处理备份或清理
@@ -183,7 +211,7 @@ link_themes() {
 check_jaroomaji_files() {
     local jaroomaji_enabled=false
     local missing_files=0
-    local dict_subdir="dicts.jp"
+    local dict_subdir="sbzr.chrome.extension/dicts.jp"
     
     # 检查是否在 default.custom.yaml 或 default.yaml 中启用了 jaroomaji
     if [ -f "$RIME_DIR/default.custom.yaml" ]; then
@@ -208,6 +236,7 @@ check_jaroomaji_files() {
     # 需要检查的文件列表
     local required_files=(
         "jaroomaji.dict.yaml"
+        "jaroomaji.user.dict.yaml"
         "jaroomaji.kana_kigou.dict.yaml"
         "jaroomaji.mozc.dict.yaml"
         "jaroomaji.jmdict.dict.yaml"
@@ -307,10 +336,6 @@ check_jaroomaji_files() {
     fi
 }
 
-# 建立软链接
-link_rime_config
-link_themes
-
 # 词库清理入口已禁用。
 # 这套旧工具链依赖历史目录结构和已移除的词库文件，继续执行会破坏当前仓库。
 dedup_dictionaries() {
@@ -318,7 +343,129 @@ dedup_dictionaries() {
     echo ""
 }
 
-# 日语方案已移除，不再检查 jaroomaji 词库
+ensure_fcitx5_linux_config() {
+    [ "$(uname -s)" = "Linux" ] || return 0
+
+    echo -e "${CYAN}Checking Fcitx5 Linux configuration...${NC}"
+
+    local env_dir="$HOME/.config/environment.d"
+    local env_file="$env_dir/fcitx5.conf"
+    local desired_env
+    desired_env=$'XMODIFIERS=@im=fcitx\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nSDL_IM_MODULE=fcitx\n'
+
+    mkdir -p "$env_dir"
+    if [ ! -f "$env_file" ] || [ "$(cat "$env_file" 2>/dev/null)" != "${desired_env%$'\n'}" ]; then
+        printf "%s" "$desired_env" > "$env_file"
+        echo -e "  ${GREEN}✓ Wrote environment config: $env_file${NC}"
+    else
+        echo -e "  ${GREEN}✓ Environment config is correct${NC}"
+    fi
+
+    export XMODIFIERS="@im=fcitx"
+    export GTK_IM_MODULE="fcitx"
+    export QT_IM_MODULE="fcitx"
+    export SDL_IM_MODULE="fcitx"
+
+    if command -v systemctl >/dev/null 2>&1; then
+        systemctl --user import-environment \
+            XMODIFIERS GTK_IM_MODULE QT_IM_MODULE SDL_IM_MODULE \
+            WAYLAND_DISPLAY DISPLAY DBUS_SESSION_BUS_ADDRESS 2>/dev/null || true
+    fi
+    if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+        dbus-update-activation-environment --systemd \
+            XMODIFIERS GTK_IM_MODULE QT_IM_MODULE SDL_IM_MODULE \
+            WAYLAND_DISPLAY DISPLAY DBUS_SESSION_BUS_ADDRESS 2>/dev/null || true
+    fi
+
+    local profile_dir="$HOME/.config/fcitx5"
+    local profile_file="$profile_dir/profile"
+    mkdir -p "$profile_dir"
+
+    if [ ! -f "$profile_file" ]; then
+        cat > "$profile_file" <<'EOF'
+[Groups/0]
+# Group Name
+Name=默认
+# Layout
+Default Layout=us
+# Default Input Method
+DefaultIM=rime
+
+[Groups/0/Items/0]
+# Name
+Name=rime
+# Layout
+Layout=
+
+[Groups/0/Items/1]
+# Name
+Name=keyboard-us
+# Layout
+Layout=
+
+[GroupOrder]
+0=默认
+EOF
+        echo -e "  ${GREEN}✓ Created Fcitx5 profile with Rime as default${NC}"
+    elif grep -q '^DefaultIM=' "$profile_file"; then
+        if grep -q '^DefaultIM=rime$' "$profile_file"; then
+            echo -e "  ${GREEN}✓ Fcitx5 default input method is Rime${NC}"
+        else
+            sed -i 's/^DefaultIM=.*/DefaultIM=rime/' "$profile_file"
+            echo -e "  ${GREEN}✓ Set Fcitx5 default input method to Rime${NC}"
+        fi
+    else
+        awk '
+            { print }
+            /^\[Groups\/0\]$/ { in_group = 1; next }
+            in_group && /^Default Layout=/ { print "DefaultIM=rime"; in_group = 0 }
+        ' "$profile_file" > "$profile_file.tmp" && mv "$profile_file.tmp" "$profile_file"
+        echo -e "  ${GREEN}✓ Added Rime as Fcitx5 default input method${NC}"
+    fi
+
+    echo ""
+}
+
+ensure_fcitx5_running() {
+    [ "$(uname -s)" = "Linux" ] || return 0
+    command -v fcitx5 >/dev/null 2>&1 || return 0
+    command -v fcitx5-remote >/dev/null 2>&1 || return 0
+
+    echo -e "${CYAN}Checking Fcitx5 runtime...${NC}"
+
+    if fcitx5-remote --check >/dev/null 2>&1; then
+        echo -e "  ${GREEN}✓ Fcitx5 DBus interface is reachable${NC}"
+        echo ""
+        return 0
+    fi
+
+    echo -e "  ${YELLOW}⚠ Fcitx5 is not reachable; starting it...${NC}"
+    fcitx5 -d >/dev/null 2>&1 || fcitx5 -d --replace >/dev/null 2>&1 || true
+    sleep 1
+
+    if fcitx5-remote --check >/dev/null 2>&1; then
+        echo -e "  ${GREEN}✓ Fcitx5 started and DBus is reachable${NC}"
+    else
+        echo -e "  ${YELLOW}⚠ Fcitx5 still is not reachable; log out and back in if apps cannot input Chinese${NC}"
+    fi
+    echo ""
+}
+
+reload_fcitx5_if_available() {
+    [ "$(uname -s)" = "Linux" ] || return 0
+    command -v fcitx5-remote >/dev/null 2>&1 || return 0
+
+    if fcitx5-remote --check >/dev/null 2>&1; then
+        fcitx5-remote -r >/dev/null 2>&1 || true
+        echo -e "${GREEN}✓ Fcitx5 reloaded${NC}"
+    fi
+}
+
+ensure_fcitx5_linux_config
+link_rime_config
+link_themes
+check_jaroomaji_files
+ensure_fcitx5_running
 dedup_dictionaries
 
 echo ""
@@ -408,7 +555,7 @@ elif [ "$OS_TYPE" = "Linux" ]; then
             ERROR_COUNT=${ERROR_COUNT:-0}
             SCHEMA_RESULT=$(grep "finished updating schemas" "$LOG_FILE" 2>/dev/null | tail -1)
             
-            if [ "$ERROR_COUNT" -eq 0 ] && [ -n "$SCHEMA_RESULT" ]; then
+            if [ "$ERROR_COUNT" -eq 0 ]; then
                 echo -e "${GREEN}✓ Build completed${NC}"
                 
                 # 显示方案编译结果
@@ -565,6 +712,10 @@ elif [ "$OS_TYPE" = "Linux" ]; then
             echo -e "${YELLOW}Please make sure the Rime deployment tool (rime_deployer) is installed${NC}"
         fi
     fi
+fi
+
+if [ "$DEPLOY_SUCCESS" = true ]; then
+    reload_fcitx5_if_available
 fi
 
 if [ "$DEPLOY_SUCCESS" = false ]; then
