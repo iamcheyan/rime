@@ -17,6 +17,9 @@ switches:
   - name: zh_trad
     reset: 0
     states: [简体, 繁体]
+  - name: enable_en
+    reset: 1
+    states: [EN关, EN开]
 
 menu:
   page_size: 6
@@ -52,6 +55,7 @@ engine:
   filters:
     - simplifier
     - lua_filter@dynamic_freq_filter
+    - lua_filter@en_switch_filter
     - uniquifier
 
 speller:

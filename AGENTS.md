@@ -1,7 +1,7 @@
 # Rime XSB & Nova Editor: Core Architecture & Guidelines
 
 ## 1. 项目愿景与基本原则
-- **极简主义 (Minimalism)**：移除所有运行时 Lua 依赖（`librime-lua`），仅依靠 Rime 原生 C++ 引擎处理输入逻辑，追求极致的稳定与响应。
+- **实用主义 (Pragmatism)**：以稳定与响应为首要目标。Lua 脚本（`librime-lua`）已在项目中广泛使用，允许编写 Lua 脚本实现原生 C++ 引擎无法完成的功能。
 - **双端同步 (Dual-Sync)**：Rime 输入法方案与 Chrome 扩展（Nova Editor）深度集成，共用 `dicts/` 下的词库源文件。
 - **Nova Editor 定位**：一个专为词库维护设计的高性能、模块化、IDE 级别的 Web 编辑器。
 
