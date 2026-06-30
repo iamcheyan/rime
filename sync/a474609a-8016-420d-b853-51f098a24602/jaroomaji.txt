@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	835
+#@/tick	838
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -95,6 +95,7 @@ de	de	2
 振替	hu ri ka e	2
 二つ	hu ta tu	1
 不要	hu yo u	2
+表示	hyo u zi	2
 い	i	5
 以外	i ga i	0
 いい方法	i i ho u ho u	1
@@ -308,6 +309,7 @@ de	de	2
 追加	tu i ka	1
 追加されました	tu i ka sa re ma si ta	1
 ついて	tu i te	1
+ツリー	tu ri -	1
 つっっ	tu xtu xtu	2
 チャット	tya xtu to	1
 直接	tyo ku se tu	1

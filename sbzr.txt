@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	30019
+#@/tick	30029
 啊	a	36
 阿	aa	1
 挨	ai	1
@@ -1757,7 +1757,7 @@
 搭配	dapz	14
 大写	daxx	1
 打印	dayn	6
-打字	dazi	1
+打字	dazi	3
 都	db	164
 但别动	dbds	1
 抖动	dbds	1
@@ -1768,7 +1768,7 @@
 调查	dcca	6
 掉	dcei	6
 调用	dcys	21
-的	de	4
+的	de	5
 得到	dedk	3
 得罪	dezv	2
 等	dg	41
@@ -2131,6 +2131,7 @@
 汉子	hjzi	1
 汗渍	hjzi	1
 好	hk	50
+好多	hkdo	1
 好好	hkhk	2
 号	hkia	2
 好看	hkkj	7
@@ -2373,7 +2374,7 @@
 快捷方式	kjfs	1
 快捷键	kjjm	12
 看可	kjk	3
-看看	kjkj	63
+看看	kjkj	64
 看来	kjll	3
 看起来	kjqill	1
 看清	kjqy	1
@@ -2437,6 +2438,7 @@
 两套	ldtk	1
 两位	ldwz	1
 两种	ldzs	1
+了	le	1
 里	li	137
 立即	liji	1
 理解	lijx	13
@@ -2593,6 +2595,7 @@
 你帮我	nibhwo	1
 你好	nihk	63
 你看	nikj	1
+你也	niye	1
 难道	njdk	4
 你看	nkj	1
 弄	ns	5
@@ -3086,7 +3089,7 @@ python	py	1
 小	xc	6
 巡查表	xcbc	1
 消除	xccu	1
-效果	xcgo	34
+效果	xcgo	35
 消化	xchw	1
 小时	xcsi	2
 消失	xcsi	15
@@ -3138,7 +3141,7 @@ python	py	1
 限额	xmve	1
 现有	xmyb	1
 限制	xmzi	3
-现在	xmzl	282
+现在	xmzl	284
 新	xn	18
 新版	xnbj	2
 虚拟机	xnji	4
