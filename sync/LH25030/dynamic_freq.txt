@@ -1,5 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+jxsi	user_table	解释	1782802303
 siys	user_table	使用	1782801931
 keyi	uniquified	可以	1782801930
 n	user_table	你	1782801929
@@ -164,7 +165,6 @@ yybc	table	应标	1782795831
 jcwo	user_table	教我	1782795827
 ynb	lower_ascii	ynb	1782795801
 yyyu	user_table	英语	1782795798
-jxsi	user_table	解释	1782795789
 fayn	user_table	发音	1782795788
 rrjm	user_table	软件	1782795641
 seji	user_table	设计	1782795640
