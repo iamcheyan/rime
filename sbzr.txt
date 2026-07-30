@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	70418
+#@/tick	70438
 啊	a	66
 阿	aa	3
 挨	ai	2
@@ -1550,7 +1550,7 @@
 必要	biyk	3
 碧瑶	biyk	1
 闭源	biyr	1
-壁纸	bizi	20
+壁纸	bizi	21
 办	bj	3
 半	bj	6
 版本	bjbf	33
@@ -1655,7 +1655,7 @@
 不断	budr	3
 不动	buds	8
 不懂	buds	1
-不对	budv	97
+不对	budv	98
 补丁	budy	5
 步伐	bufa	1
 部分	buff	54
@@ -1691,7 +1691,7 @@
 不如	buru	1
 不上	bush	2
 补上	bush	1
-不是	busi	113
+不是	busi	114
 不少	busk	1
 步嫂	busk	3
 步数	busu	2
@@ -1974,7 +1974,7 @@ commit&push	cp	49
 程序员	cxyr	1
 从左到右	czdy	2
 成组合	czge	1
-的	d	5243
+的	d	5247
 大	da	28
 搭	da	1
 大煲	dabk	1
@@ -2116,7 +2116,7 @@ commit&push	cp	49
 担心	djxn	7
 单元	djyr	3
 刀	dk	20
-到	dk	216
+到	dk	218
 导出	dkcu	6
 到底	dkdi	20
 到	dkea	1
@@ -2362,7 +2362,7 @@ commit&push	cp	49
 方便	fhbm	14
 放到	fhdk	22
 房贷	fhdl	1
-方法	fhfa	54
+方法	fhfa	55
 放个	fhge	1
 放过去	fhgoqu	1
 放回	fhhv	1
@@ -2412,7 +2412,7 @@ commit&push	cp	49
 副创	fucd	1
 浮窗	fucd	2
 傅盛	fucg	1
-浮动	fuds	19
+浮动	fuds	20
 覆盖	fugl	18
 复古	fugu	1
 符合	fuhe	9
@@ -2633,7 +2633,7 @@ commit&push	cp	49
 关于	gryu	3
 弓	gs	2
 公司财务	gscw	2
-工具	gsju	97
+工具	gsju	98
 龚克	gske	1
 公开	gskl	4
 更岁末	gsme	2
@@ -2790,7 +2790,7 @@ commit&push	cp	49
 好像	hkxd	61
 好些	hkxx	6
 好用	hkys	12
-还	hl	102
+还	hl	103
 还得	hldz	3
 还跟	hlgf	1
 海国	hlgi	1
@@ -2974,6 +2974,7 @@ commit&push	cp	49
 基础	jicu	10
 记得	jide	50
 挤到	jidk	1
+计都	jidu	1
 机	jiei	2
 继妃	jifz	4
 计费	jifz	1
@@ -2984,7 +2985,7 @@ commit&push	cp	49
 计划	jihw	6
 几脚	jijc	1
 计较	jijc	1
-记录	jilu	26
+记录	jilu	27
 鸡肋	jilz	4
 技能	jing	5
 纪念日	jinmri	1
@@ -3375,7 +3376,7 @@ commit&push	cp	49
 乐怡	leyi	1
 冷	lg	4
 浪费	lhfz	6
-里	li	389
+里	li	390
 厉害	lihl	4
 理教	lijc	1
 立即	liji	5
@@ -3452,6 +3453,7 @@ lazyvim	lnm	1
 流式	lqsi	1
 留下	lqxw	2
 留着	lqze	2
+刘在石	lqzlsi	1
 峦	lr	1
 乱掉	lrdc	3
 乱改	lrgl	1
@@ -4073,7 +4075,7 @@ python	py	2
 色	seua	9
 设想	sexd	3
 色值	sezi	7
-设置	sezi	167
+设置	sezi	168
 审察	sfca	5
 审查	sfca	1
 深感	sfgj	1
@@ -4590,7 +4592,7 @@ vscode	vs	2
 瘟	wf	25
 文本	wfbf	64
 文登	wfdg	1
-文档	wfdh	196
+文档	wfdh	197
 文档里	wfdhli	1
 稳定	wfdy	2
 文件	wfjm	194
@@ -4828,7 +4830,7 @@ vscode	vs	2
 限制	xmzi	8
 先占	xmzj	1
 先兆	xmzk	2
-现在	xmzl	916
+现在	xmzl	917
 厦门最美	xmzm	1
 新	xn	59
 新版	xnbj	2
