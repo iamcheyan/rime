@@ -1,11 +1,15 @@
 
 import os
+from pathlib import Path
 
-file_path = '/Users/tetsuya/Dotfiles/rime/resource/常用词库（墨染双拼）/小鹤音形冰凌词库.txt'
-temp_path = file_path + '.tmp'
+BASE_DIR = Path(__file__).resolve().parent.parent / 'resource'
+file_path = (BASE_DIR / '常用词库（墨染双拼）' / '小鹤音形冰凌词库.txt').resolve()
+if not str(file_path).startswith(str(BASE_DIR) + os.sep):
+    raise ValueError(f"Path traversal detected: {file_path}")
+temp_path = Path(str(file_path) + '.tmp')
 
 # Read and process
-with open(file_path, 'r', encoding='utf-8') as f_in, open(temp_path, 'w', encoding='utf-8') as f_out:
+with file_path.open('r', encoding='utf-8') as f_in, temp_path.open('w', encoding='utf-8') as f_out:
     for line in f_in:
         line = line.strip()
         if not line:
