@@ -30,6 +30,9 @@ switches:
   - name: full_shape
     states: [ 半角記号, 全角記号 ]
     reset: 0  # 默认半角記号模式
+  - name: enable_en
+    reset: 1
+    states: [EN関, EN開]
 
 # # # # # # # # # # # # # # # # # # # #
 # 読み込むエンジンの設定
@@ -59,6 +62,7 @@ engine:
     - lua_translator@lower_ascii_translator
     - table_translator@easy_en
   filters:
+    - lua_filter@en_switch_filter
     - uniquifier
 
 # # # # # # # # # # # # # # # # # # # #

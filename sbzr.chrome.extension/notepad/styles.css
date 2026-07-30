@@ -19,6 +19,7 @@
   --line-bg: #242424;
   --line-active: rgba(255, 255, 255, 0.05);
   --editor-font-size: 15px;
+  --editor-font-family: monospace;
   --editor-line-height: 1.6;
   --editor-line-height-px: calc(var(--editor-font-size) * var(--editor-line-height));
   --editor-pad-y: 10px;
@@ -37,14 +38,15 @@ body {
   overflow: hidden;
   background: var(--bg);
   color: var(--text);
-  font-family: "SBZR Sarasa Mono SC", monospace;
+  font-family: monospace;
 }
 
-body.font-builtin-disabled,
-body.font-builtin-disabled .editor,
-body.font-builtin-disabled .line-numbers,
-body.font-builtin-disabled .status-bar {
-  font-family: monospace;
+body.font-builtin-enabled,
+body.font-builtin-enabled .editor,
+body.font-builtin-enabled .line-numbers,
+body.font-builtin-enabled .status-bar {
+  --editor-font-family: "SBZR Sarasa Mono SC", monospace;
+  font-family: var(--editor-font-family);
 }
 
 .app-shell {
@@ -123,7 +125,7 @@ body.font-builtin-disabled .status-bar {
   background: linear-gradient(180deg, #3d3d3d 0%, #323232 100%);
   color: #d0d0d0;
   padding: 0 10px;
-  font: 500 12px "SBZR Sarasa Mono SC", monospace;
+  font: 500 12px var(--editor-font-family);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -259,8 +261,9 @@ body.font-builtin-disabled .status-bar {
 }
 
 .line-numbers {
+  position: relative;
   padding-top: var(--editor-pad-y);
-  font: 400 var(--editor-font-size) / var(--editor-line-height-px) "SBZR Sarasa Mono SC", monospace;
+  font: 400 var(--editor-font-size) / var(--editor-line-height-px) var(--editor-font-family);
   color: #6d7686;
   background: var(--line-bg);
   border-right: 1px solid var(--border);
@@ -268,6 +271,12 @@ body.font-builtin-disabled .status-bar {
   padding-right: 8px;
   user-select: none;
   overflow: hidden;
+}
+
+.line-number-viewport {
+  position: absolute;
+  inset: 0 0 auto;
+  will-change: transform;
 }
 
 .line-numbers div {
@@ -290,7 +299,7 @@ body.font-builtin-disabled .status-bar {
   height: 100%;
   margin: 0;
   border: 0;
-  font: 400 var(--editor-font-size) / var(--editor-line-height-px) "SBZR Sarasa Mono SC", monospace;
+  font: 400 var(--editor-font-size) / var(--editor-line-height-px) var(--editor-font-family);
   letter-spacing: 0px !important;
   font-variant-ligatures: none !important;
   tab-size: 4;
@@ -437,7 +446,7 @@ body.font-builtin-disabled .status-bar {
   color: var(--muted);
   font-size: 11px;
   z-index: 100;
-  font-family: "SBZR Sarasa Mono SC", monospace;
+  font-family: var(--editor-font-family);
 }
 
 .vim-status-tag {
@@ -493,6 +502,37 @@ body.font-builtin-disabled .status-bar {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
+}
+
+.shortcuts-list {
+  display: grid;
+  gap: 1px;
+  padding: 12px;
+  background: #1a1a1a;
+}
+
+.shortcut-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #353535;
+  border-radius: 7px;
+  background: #282828;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.shortcut-row code {
+  padding: 4px 8px;
+  border: 1px solid #494949;
+  border-radius: 5px;
+  background: #1b1b1b;
+  color: #c9defb;
+  font: 600 12px var(--editor-font-family);
+  white-space: nowrap;
 }
 
 .settings-list {
@@ -603,7 +643,7 @@ input:checked+.switch-slider:before {
   color: var(--text);
   border-radius: 8px;
   padding: 10px 14px;
-  font: 400 13px "SBZR Sarasa Mono SC", monospace;
+  font: 400 13px var(--editor-font-family);
   cursor: pointer;
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	838
+#@/tick	880
 ー	-	1
 ーいる	- i ru	2
 ーいっっ	- i xtu xtu	3
@@ -20,6 +20,7 @@
 ありま	a ri ma	0
 ありません	a ri ma se nn	1
 あります	a ri ma su	1
+ば	ba	1
 場合	ba a i	1
 バグ	ba gu	1
 バケット	ba ke xtu to	1
@@ -33,6 +34,8 @@
 ぶす	bu su	1
 ぶっっ	bu xtu xtu	4
 だ	da	1
+大文字	da i mo nn zi	2
+大文字に	da i mo nn zi ni	2
 だけど	da ke do	0
 だと	da to	0
 だと思います	da to o mo i ma su	2
@@ -53,6 +56,8 @@ de	de	2
 ドキュメント更新	do kyu me nn to ko u si nn	5
 遠	do o	0
 遠もいまし	do o mo i ma si	1
+努力	do ryo ku	1
+努力せず	do ryo ku se zu	2
 どし	do si	1
 道江	do u e	1
 え	e	0
@@ -76,15 +81,21 @@ de	de	2
 ぐらい	gu ra i	1
 業務	gyo u mu	0
 業務以外	gyo u mu i ga i	1
-は	ha	5
+は	ha	6
 はい	ha i	5
+杯	ha i	0
 判断能力	ha nn da nn no u ryo ku	1
 発音	ha tu o nn	1
 変	he nn	0
+変換	he nn ka nn	0
+変換します	he nn ka nn si ma su	2
+変更	he nn ko u	1
 変ね	he nn ne	1
 減し	he si	1
 日	hi	1
 比較	hi ka ku	5
+人	hi to	1
+人杯	hi to ha i	1
 必要	hi tu yo u	0
 必要じゃない	hi tu yo u zya na i	1
 帆	ho	1
@@ -105,6 +116,8 @@ de	de	2
 いま	i ma	3
 今	i ma	1
 意味	i mi	2
+いな	i na	0
+いない	i na i	1
 いの	i no	0
 いる	i ru	0
 いし	i si	1
@@ -116,8 +129,10 @@ de	de	2
 頂きますか	i ta da ki ma su ka	1
 位置	i ti	2
 一番	i ti ba nn	2
+一致	i xtu ti	0
+一致させるため	i xtu ti sa se ru ta me	2
 いっっ	i xtu xtu	3
-以上	i zyo u	1
+以上	i zyo u	2
 か	ka	0
 帰り	ka e ri	0
 帰りました	ka e ri ma si ta	1
@@ -134,6 +149,7 @@ de	de	2
 恰	ka xtu	1
 佳津	ka zu	1
 刑	ke i	38
+件	ke nn	1
 憲法	ke nn po u	1
 件数	ke nn su u	1
 結果	ke xtu ka	2
@@ -141,7 +157,10 @@ de	de	2
 勤務	ki nn mu	2
 禁止	ki nn si	1
 機能	ki no u	6
+コード	ko - do	1
 こどもの日	ko do mo no hi	1
+小文字	ko mo nn zi	1
+小文字	ko mo zi	1
 この	ko no	2
 これ	ko re	1
 これら	ko re ra	1
@@ -152,6 +171,8 @@ de	de	2
 クー	ku -	0
 クーーっ	ku - - xtu	1
 クーえ	ku - e	2
+区別	ku be tu	2
+区別せずに	ku be tu se zu ni	2
 ください	ku da sa i	1
 クライアント	ku ra i a nn to	1
 黒島	ku ro si ma	4
@@ -230,9 +251,12 @@ de	de	2
 理事	ri zi	1
 ロエ	ro e	0
 ログインなし	ro gu i nn na si	1
+ロジック	ro zi xtu ku	1
 る	ru	0
 ルゴ	ru go	6
 るっっ	ru xtu xtu	1
+両辺	ryo u he nn	0
+両辺を	ryo u he nn wo	2
 了解	ryo u ka i	1
 了解です	ryo u ka i de su	1
 料金	ryo u ki nn	1
@@ -240,18 +264,25 @@ de	de	2
 作成	sa ku se i	3
 参考	sa nn ko u	1
 されました	sa re ma si ta	0
+させる	sa se ru	0
+成功	se i ko u	2
+成功したい	se i ko u si ta i	1
 整理	se i ri	3
 生成	se i se i	1
 説明	se tu me i	1
+せず	se zu	2
+せずに	se zu ni	2
 し	si	0
 シフト	si hu to	1
 しました	si ma si ta	2
 しましたが	si ma si ta ga	1
+します	si ma su	0
 親切	si nn se tu	1
 塩尾	si o o	0
 塩尾あ	si o o a	2
 資料	si ryo u	1
 下	si ta	0
+したい	si ta i	0
 しています	si te i ma su	0
 🤫	si xtu	1
 しっっっ	si xtu xtu xtu	1
@@ -280,6 +311,7 @@ de	de	2
 者	sya	1
 初期	syo ki	1
 障害	syo u ga i	1
+終了	syu u ryo u	1
 修正	syu u se i	2
 它	ta	86
 食べ	ta be	0
@@ -323,7 +355,7 @@ de	de	2
 わかり	wa ka ri	0
 わかりま下	wa ka ri ma si ta	1
 私	wa ta si	2
-を	wo	6
+を	wo	9
 っ	xtu	128
 っーオア	xtu - o a	1
 っあっん	xtu a xtu nn	1
@@ -358,6 +390,7 @@ de	de	2
 ゼーい	ze - i	2
 ぜげ	ze ge	2
 攻め	ze me	5
+全	ze nn	2
 ぜっ	ze xtu	1
 ぜっっっ	ze xtu xtu xtu	1
 じ	zi	0

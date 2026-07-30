@@ -32,9 +32,13 @@ const SAVE_SUCCESS_FEEDBACK_MS = 1400;
 const SAVE_ERROR_FEEDBACK_MS = 2200;
 const TAB_WIDTH = 4;
 const HISTORY_LIMIT = 100;
+const HISTORY_CHARACTER_BUDGET = 2 * 1024 * 1024;
+const LARGE_DOCUMENT_THRESHOLD = 100 * 1024;
+const LARGE_DOCUMENT_SAVE_DELAY = 900;
+const SOURCE_TAB_PERSIST_LIMIT = 128 * 1024;
 const EDITABLE_DICT_PATHS = [
-  ...(window.SBZR_DICTS?.RIME_PATHS || []),
-  ...(window.SBZR_DICTS?.AFFIX_SOURCES || []).map((item) => item.path)
+  ...(window.SBZR_DICTS?.EDITOR_RIME_PATHS || window.SBZR_DICTS?.RIME_PATHS || []),
+  ...(window.SBZR_DICTS?.EDITOR_AFFIX_SOURCES || window.SBZR_DICTS?.AFFIX_SOURCES || []).map((item) => item.path)
 ];
 const IME_DICT_TABLES = window.SBZR_DICTS?.TABLES || [];
 const DEFAULT_IME_DICT_PATHS = window.SBZR_DICTS?.DEFAULT_PATHS || IME_DICT_TABLES.map((table) => table.path);
@@ -72,12 +76,28 @@ let workspaceSaveTimer = null;
 let saveFeedbackTimer = null;
 let pendingHistorySnapshot = null;
 let sbzrImeController = null;
+let imeInstallPromise = null;
+let imeInstallVersion = 0;
 let vimMode = null;
 let highlighter = null;
+let editorLineCount = 1;
 const sharedScriptPromises = new Map();
 
 function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value));
+}
+
+function countEditorLines(text = editor.value) {
+  // This is updated only when content changes, never while scrolling.
+  return countLineBreaks(text) + 1;
+}
+
+function countLineBreaks(text, end = text.length) {
+  let count = 0;
+  for (let index = text.indexOf('\n'); index !== -1 && index < end; index = text.indexOf('\n', index + 1)) {
+    count += 1;
+  }
+  return count;
 }
 
 function loadSharedScript(path, globalName) {
@@ -141,18 +161,6 @@ function createTab(title = 'Untitled') {
   };
 }
 
-function cloneHistoryEntries(entries) {
-  return Array.isArray(entries)
-    ? entries.map((entry) => ({
-        content: `${entry?.content || ''}`,
-        selectionStart: Math.max(0, Number(entry?.selectionStart) || 0),
-        selectionEnd: Math.max(0, Number(entry?.selectionEnd) || 0),
-        scrollTop: Math.max(0, Number(entry?.scrollTop) || 0),
-        scrollLeft: Math.max(0, Number(entry?.scrollLeft) || 0)
-      }))
-    : [];
-}
-
 function getFallbackTabTitle(tab, index = workspace.tabs.findIndex((item) => item.id === tab?.id)) {
   const safeIndex = index >= 0 ? index : 0;
   return `Note ${safeIndex + 1}`;
@@ -185,8 +193,10 @@ function ensureWorkspaceShape(input) {
         selectionStart: Math.max(0, Number(tab?.selectionStart) || 0),
         selectionEnd: Math.max(0, Number(tab?.selectionEnd) || 0),
         wasFocused: tab?.wasFocused !== false,
-        historyUndo: cloneHistoryEntries(tab?.historyUndo),
-        historyRedo: cloneHistoryEntries(tab?.historyRedo)
+        // Older workspaces may contain many full-document history snapshots.
+        // They are intentionally not restored; history starts fresh per session.
+        historyUndo: [],
+        historyRedo: []
       }))
     : [createTab('Note 1')];
 
@@ -201,12 +211,15 @@ function ensureWorkspaceShape(input) {
     showWhitespaceEnabled: input?.showWhitespaceEnabled === true,
     vimModeEnabled: input?.vimModeEnabled === true,
     highlighterEnabled: input?.highlighterEnabled !== false,
-    featureVim: input?.featureVim !== false,
-    featureHighlighter: input?.featureHighlighter !== false,
-    featureWhitespace: input?.featureWhitespace !== false,
-    featureIme: input?.featureIme !== false,
-    featureAutoCopy: input?.featureAutoCopy !== false,
-    featureFont: input?.featureFont !== false
+    // Optional editor features deliberately start disabled.  The plain textarea
+    // is the baseline editor; a module is only fetched/installed after the user
+    // enables it in Settings.
+    featureVim: input?.featureVim === true,
+    featureHighlighter: input?.featureHighlighter === true,
+    featureWhitespace: input?.featureWhitespace === true,
+    featureIme: input?.featureIme === true,
+    featureAutoCopy: input?.featureAutoCopy === true,
+    featureFont: input?.featureFont === true
   };
 }
 
@@ -247,35 +260,44 @@ function buildImeDictConfig(selectedPaths) {
 }
 
 async function reinstallImeController() {
-  if (workspace.featureIme === false) {
-    if (sbzrImeController?.destroy) {
-      sbzrImeController.destroy();
+  const version = ++imeInstallVersion;
+  const previousInstall = imeInstallPromise || Promise.resolve();
+  const install = previousInstall.catch(() => {}).then(async () => {
+    if (workspace.featureIme === false) {
+      if (sbzrImeController?.destroy) sbzrImeController.destroy();
+      sbzrImeController = null;
+      return;
     }
-    sbzrImeController = null;
-    return;
-  }
 
-  const SBZRContentIME = await ensureContentIME();
-  if (!SBZRContentIME?.installTextareaIME) return;
-  if (sbzrImeController?.destroy) {
-    sbzrImeController.destroy();
-  }
+    const SBZRContentIME = await ensureContentIME();
+    if (version !== imeInstallVersion || workspace.featureIme === false || !SBZRContentIME?.installTextareaIME) return;
 
-  const selectedPaths = await getStoredImeDictPaths();
-  const { packagedPaths, affixSources } = buildImeDictConfig(selectedPaths);
-  sbzrImeController = SBZRContentIME.installTextareaIME({
-    target: editor,
-    packagedPaths,
-    affixSources,
-    isSuppressed: () => !!(
-      (workspace.featureIme === false) ||
-      (vimMode && vimMode.enabled && vimMode.mode === 'normal')
-    )
+    const selectedPaths = await getStoredImeDictPaths();
+    if (version !== imeInstallVersion || workspace.featureIme === false) return;
+
+    if (sbzrImeController?.destroy) sbzrImeController.destroy();
+    const { packagedPaths, affixSources } = buildImeDictConfig(selectedPaths);
+    sbzrImeController = SBZRContentIME.installTextareaIME({
+      target: editor,
+      packagedPaths,
+      affixSources,
+      isSuppressed: () => !!(
+        (workspace.featureIme === false) ||
+        (vimMode && vimMode.enabled && vimMode.mode === 'normal')
+      )
+    });
   });
+
+  imeInstallPromise = install;
+  try {
+    return await install;
+  } finally {
+    if (imeInstallPromise === install) imeInstallPromise = null;
+  }
 }
 
 function ensureImeControllerIfNeeded() {
-  if (workspace.featureIme === false || sbzrImeController) return;
+  if (workspace.featureIme === false || sbzrImeController || imeInstallPromise) return;
   void reinstallImeController();
 }
 
@@ -350,7 +372,7 @@ async function ensureHighlighter() {
   highlighter.enabled = true;
   highlighter.setWhitespace(workspace.showWhitespaceEnabled === true);
   highlighter.setLanguage(detectEditorLanguage());
-  highlighter.render();
+  highlighter.requestRender();
   return highlighter;
 }
 
@@ -365,7 +387,22 @@ function readWorkspace() {
 }
 
 function saveWorkspace() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(workspace));
+  // Undo/redo is session state. Persisting full-document snapshots multiplies a
+  // large dictionary by up to HISTORY_LIMIT and makes every localStorage write
+  // a visible main-thread pause.
+  const persistedWorkspace = {
+    ...workspace,
+    tabs: workspace.tabs.map(({ historyUndo, historyRedo, ...tab }) => (
+      tab.sourcePath && tab.content.length > SOURCE_TAB_PERSIST_LIMIT
+        ? { ...tab, content: '', savedContent: '', needsSourceReload: true }
+        : { ...tab, needsSourceReload: false }
+    ))
+  };
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(persistedWorkspace));
+  } catch (error) {
+    console.warn('SBZR: Workspace persistence skipped.', error);
+  }
 }
 
 function clearAutoCopyTimer() {
@@ -376,10 +413,13 @@ function clearAutoCopyTimer() {
 
 function scheduleWorkspaceSave() {
   if (workspaceSaveTimer) window.clearTimeout(workspaceSaveTimer);
+  const delay = editor.value.length >= LARGE_DOCUMENT_THRESHOLD
+    ? LARGE_DOCUMENT_SAVE_DELAY
+    : WORKSPACE_SAVE_DELAY;
   workspaceSaveTimer = window.setTimeout(() => {
     workspaceSaveTimer = null;
     saveWorkspace();
-  }, WORKSPACE_SAVE_DELAY);
+  }, delay);
 }
 
 function syncAutoCopyButton() {
@@ -411,7 +451,7 @@ function syncHighlighterButton() {
   
   if (highlighter) {
     highlighter.enabled = enabled;
-    if (enabled) highlighter.render();
+    if (enabled) highlighter.requestRender();
   }
 
   // If enabled: editor is transparent, overlay is visible
@@ -436,7 +476,7 @@ function syncFeatureVisibility() {
   toggleVisibility('.feature-module-autocopy', workspace.featureAutoCopy);
 
   // Apply font class on body
-  document.body.classList.toggle('font-builtin-disabled', workspace.featureFont === false);
+  document.body.classList.toggle('font-builtin-enabled', workspace.featureFont === true);
 
   // Reload and Sync buttons in settings are only visible if IME feature is ON
   // Global feature suppression
@@ -542,13 +582,20 @@ function getCurrentFontSize() {
 }
 
 function syncLineNumbers() {
-  const text = editor.value;
-  const lineCount = Math.max(1, text.split('\n').length);
-  let html = '';
-  for (let i = 1; i <= lineCount; i++) {
-    html += `<div>${i}</div>`;
+  // Rendering one DOM node per line makes a large dictionary unusable.  Keep
+  // the gutter virtual too: at most the visible lines plus a small overscan.
+  const style = getComputedStyle(editor);
+  const lineHeight = parseFloat(style.lineHeight) || 24;
+  const paddingTop = parseFloat(style.paddingTop) || 0;
+  const lineCount = editorLineCount;
+  const start = Math.max(0, Math.floor(editor.scrollTop / lineHeight) - 2);
+  const end = Math.min(lineCount, Math.ceil((editor.scrollTop + editor.clientHeight) / lineHeight) + 3);
+  const offset = paddingTop + (start * lineHeight) - editor.scrollTop;
+  let html = `<div class="line-number-viewport" style="transform:translateY(${offset}px)">`;
+  for (let i = start; i < end; i++) {
+    html += `<div>${i + 1}</div>`;
   }
-  lineNumbers.innerHTML = html;
+  lineNumbers.innerHTML = `${html}</div>`;
 }
 
 function syncScroll() {
@@ -564,8 +611,7 @@ function updateEditorTailSpace() {
 
 function updateCurrentLineHighlight() {
   const caret = editor.selectionStart;
-  const textBeforeCaret = editor.value.slice(0, caret);
-  const logicalLineIndex = textBeforeCaret.split('\n').length - 1;
+  const logicalLineIndex = countLineBreaks(editor.value, caret);
 
   // Get the precise computed line height from font size and line height ratio
   const style = getComputedStyle(document.documentElement);
@@ -583,7 +629,7 @@ function applyFontSize(size, persist = true) {
   document.documentElement.style.setProperty('--editor-font-size', `${nextSize}px`);
   updateEditorTailSpace();
   if (persist) persistCurrentTabState();
-  if (highlighter) highlighter.render();
+  if (highlighter) highlighter.requestRender();
 }
 
 function deriveTabTitle(content, fallbackTitle) {
@@ -651,6 +697,10 @@ function pushHistoryEntry(entries, snapshot) {
   if (entries.length > HISTORY_LIMIT) {
     entries.splice(0, entries.length - HISTORY_LIMIT);
   }
+  let characterCount = entries.reduce((total, entry) => total + entry.content.length, 0);
+  while (entries.length > 1 && characterCount > HISTORY_CHARACTER_BUDGET) {
+    characterCount -= entries.shift().content.length;
+  }
 }
 
 function resetTabHistory(tab) {
@@ -709,14 +759,51 @@ function updateStatusCursorPos() {
   if (cursorPosInfo) {
     const text = editor.value;
     const p = editor.selectionStart;
-    const lineIdx = text.slice(0, p).split('\n').length;
+    const lineIdx = countLineBreaks(text, p) + 1;
     const colIdx = p - text.lastIndexOf('\n', p - 1);
     cursorPosInfo.textContent = `${lineIdx}:${colIdx}`;
   }
 }
 
+const sourceTabReloads = new Map();
+
+async function reloadDeferredSourceTab(tab) {
+  if (!tab?.needsSourceReload || !tab.sourcePath || sourceTabReloads.has(tab.id)) return;
+  const reload = (async () => {
+    try {
+      const SBZRShared = await ensureSBZRShared();
+      const content = await SBZRShared.readPackagedDictText(tab.sourcePath);
+      tab.content = content;
+      tab.savedContent = content;
+      tab.needsSourceReload = false;
+      resetTabHistory(tab);
+      saveWorkspace();
+      if (tab.id === workspace.activeTabId) restoreTab(tab);
+    } catch (error) {
+      console.error(`SBZR: Failed to reload ${tab.sourcePath}.`, error);
+      if (tab.id === workspace.activeTabId) {
+        editor.value = 'Unable to load this dictionary.';
+        editorLineCount = 1;
+        syncLineNumbers();
+      }
+    } finally {
+      sourceTabReloads.delete(tab.id);
+    }
+  })();
+  sourceTabReloads.set(tab.id, reload);
+  return reload;
+}
+
 function restoreTab(tab) {
+  if (tab?.needsSourceReload) {
+    editor.value = 'Loading dictionary…';
+    editorLineCount = 1;
+    syncLineNumbers();
+    void reloadDeferredSourceTab(tab);
+    return;
+  }
   editor.value = tab.content;
+  editorLineCount = countEditorLines();
   applyFontSize(tab.fontSize, false);
   syncLineNumbers();
   syncWhitespaceButton(); // This will handle highlighter state
@@ -728,7 +815,7 @@ function restoreTab(tab) {
   }
 
   if (vimMode) vimMode.updateUI();
-  if (highlighter) highlighter.render();
+  if (highlighter) highlighter.requestRender();
 
   const maxPosition = editor.value.length;
   const selectionStart = Math.min(tab.selectionStart, maxPosition);
@@ -742,7 +829,7 @@ function restoreTab(tab) {
     updateCurrentLineHighlight();
     if (tab.wasFocused) editor.focus();
     // Render again after scroll properties are applied by browser
-    if (highlighter) highlighter.render();
+    if (highlighter) highlighter.requestRender();
   });
 }
 
@@ -755,8 +842,8 @@ function applySnapshot(snapshot, options = {}) {
   const normalized = normalizeSnapshot(snapshot);
 
   editor.value = normalized.content;
+  editorLineCount = countEditorLines();
   syncLineNumbers();
-  syncWhitespaceOverlay();
   editor.scrollTop = normalized.scrollTop;
   editor.scrollLeft = normalized.scrollLeft;
   syncScroll();
@@ -765,7 +852,7 @@ function applySnapshot(snapshot, options = {}) {
   }
   editor.setSelectionRange(normalized.selectionStart, normalized.selectionEnd);
   persistCurrentTabState({ save, render });
-  if (highlighter) highlighter.render();
+  if (highlighter) highlighter.requestRender();
 }
 
 function applyEditorValue(nextValue, selectionStart, selectionEnd = selectionStart, options = {}) {
@@ -849,6 +936,7 @@ async function openDictFile(path) {
   tab.sourcePath = path;
   tab.content = content;
   tab.savedContent = content;
+  tab.needsSourceReload = false;
   tab.title = getDictFileLabel(path);
   resetTabHistory(tab);
   workspace.tabs.push(tab);
@@ -1158,13 +1246,14 @@ function scheduleUiUpdate() {
   requestAnimationFrame(() => {
     syncLineNumbers();
     updateCurrentLineHighlight();
-    if (highlighter) highlighter.render();
+    if (highlighter) highlighter.requestRender();
     updateStatusCursorPos();
     uiUpdatePending = false;
   });
 }
 
 editor.addEventListener('input', () => {
+  editorLineCount = countEditorLines();
   if (pendingHistorySnapshot) {
     recordHistoryBeforeChange(pendingHistorySnapshot);
     pendingHistorySnapshot = null;
@@ -1342,8 +1431,20 @@ for (const path of EDITABLE_DICT_PATHS) {
   button.className = 'dict-file-button';
   button.textContent = path;
   button.addEventListener('click', async () => {
-    await openDictFile(path);
-    openDictDialog.close();
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Opening…';
+    try {
+      await openDictFile(path);
+      if (openDictDialog.open) openDictDialog.close();
+    } catch (error) {
+      console.error(`SBZR: Failed to open ${path}.`, error);
+      const SBZRShared = await ensureSBZRShared();
+      SBZRShared.showAppToast(`Unable to open ${getDictFileLabel(path)}.`, { tone: 'error' });
+    } finally {
+      button.disabled = false;
+      button.textContent = originalLabel;
+    }
   });
   dictFileList.appendChild(button);
 }
@@ -1455,12 +1556,6 @@ window.addEventListener('beforeunload', () => {
   // Force immediate write to localStorage
   saveWorkspace();
 });
-
-// Proactive periodic save every 30 seconds
-setInterval(() => {
-  persistCurrentTabState({ save: false, render: false });
-  saveWorkspace();
-}, 30000);
 
 if (chrome.runtime?.onMessage) {
   chrome.runtime.onMessage.addListener((message) => {

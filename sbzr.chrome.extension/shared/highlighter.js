@@ -9,7 +9,9 @@
       
       this._resizeObserver = null;
       this._renderPending = false;
-      this._timeoutIds = [];
+      this._frameId = null;
+      this._lines = [];
+      this._text = null;
       this._scrollHandler = null;
       this._inputHandler = null;
       this._resizeHandler = null;
@@ -17,30 +19,18 @@
     }
 
     init() {
-      const scheduleRender = (delay = 0) => {
-        if (delay > 0) {
-          const timeoutId = setTimeout(() => {
-            this._timeoutIds = this._timeoutIds.filter((id) => id !== timeoutId);
-            this.render();
-          }, delay);
-          this._timeoutIds.push(timeoutId);
-          return;
-        }
+      const scheduleRender = () => {
         if (this._renderPending) return;
         this._renderPending = true;
-        requestAnimationFrame(() => {
+        this._frameId = requestAnimationFrame(() => {
+          this._frameId = null;
           this.render();
           this._renderPending = false;
         });
       };
 
       this._scrollHandler = () => scheduleRender();
-      this._inputHandler = () => {
-        scheduleRender();
-        // Crucial for paste/cut: re-render after browser updates scrollHeight
-        scheduleRender(20);
-        scheduleRender(100);
-      };
+      this._inputHandler = scheduleRender;
       this.editor.addEventListener('scroll', this._scrollHandler);
       this.editor.addEventListener('input', this._inputHandler);
       
@@ -52,8 +42,7 @@
         window.addEventListener('resize', this._resizeHandler);
       }
       
-      // High frequency fallback during development
-      setTimeout(() => scheduleRender(), 50);
+      this.requestRender();
     }
 
     destroy() {
@@ -71,19 +60,29 @@
         window.removeEventListener('resize', this._resizeHandler);
         this._resizeHandler = null;
       }
-      this._timeoutIds.forEach((id) => clearTimeout(id));
-      this._timeoutIds = [];
+      if (this._frameId !== null) cancelAnimationFrame(this._frameId);
+      this._frameId = null;
       this.overlay.innerHTML = '';
+    }
+
+    requestRender() {
+      if (this._renderPending) return;
+      this._renderPending = true;
+      this._frameId = requestAnimationFrame(() => {
+        this._frameId = null;
+        this.render();
+        this._renderPending = false;
+      });
     }
 
     setWhitespace(enabled) {
       this.showWhitespace = enabled;
-      this.render();
+      this.requestRender();
     }
 
     setLanguage(lang) {
       this.language = lang;
-      this.render();
+      this.requestRender();
     }
 
     tokenize(line) {
@@ -155,7 +154,13 @@
       if (!this.enabled || !this.editor || !this.overlay) return;
       
       const text = this.editor.value;
-      const lines = text.split('\n');
+      // Scrolling must not repeatedly split a 100k-line document.  The line
+      // cache changes only when textarea content changes.
+      if (text !== this._text) {
+        this._text = text;
+        this._lines = text.split('\n');
+      }
+      const lines = this._lines;
       const style = getComputedStyle(this.editor);
       
       const lineHeight = parseFloat(style.lineHeight) || 24;

@@ -77,6 +77,8 @@ let suppressionCheck = null;
 let listenersInstalled = false;
 let storageSyncInstalled = false;
 let messageListenerInstalled = false;
+let pagePreparationPromise = null;
+let storageReadyPromise = null;
 
 function attachShadowStyles(shadowRoot) {
     if (!chrome.runtime?.id) return;
@@ -329,7 +331,9 @@ function handleStorageChanged(changes) {
         manualPosition = changes.sbzr_ui_pos.newValue || null;
     }
     if (changes.sbzr_custom_dict || changes.sbzr_user_dict || changes[SBZRShared.PACKAGED_DICT_OVERRIDES_STORAGE_KEY]) {
-        void reloadEffectiveDictFromStorage();
+        // A not-yet-used page has no in-memory index to refresh. Its first
+        // lazy load will read the newest data directly.
+        if (Object.keys(codes).length > 0) void reloadEffectiveDictFromStorage();
     }
 }
 
@@ -337,18 +341,19 @@ function installStorageSync() {
     if (storageSyncInstalled) return;
     try {
         if (!chrome.storage || !chrome.storage.local) return;
-        chrome.storage.local.get(['sbzr_enabled', 'sbzr_font_size', 'sbzr_custom_dict', 'sbzr_user_history', 'sbzr_ui_pos', SITE_RULES_STORAGE_KEY, PUNCTUATION_MODE_STORAGE_KEY, WIDTH_MODE_STORAGE_KEY, SBZRShared.PACKAGED_DICT_OVERRIDES_STORAGE_KEY], (result) => {
+        storageReadyPromise = new Promise((resolve) => chrome.storage.local.get(['sbzr_enabled', 'sbzr_font_size', 'sbzr_ui_pos', SITE_RULES_STORAGE_KEY, PUNCTUATION_MODE_STORAGE_KEY, WIDTH_MODE_STORAGE_KEY], (result) => {
             extensionEnabled = result.sbzr_enabled !== false;
             if (result.sbzr_font_size) fontSize = result.sbzr_font_size;
-            if (result.sbzr_user_history) userHistory = result.sbzr_user_history;
             if (result.sbzr_ui_pos) manualPosition = result.sbzr_ui_pos;
             siteRules = normalizeSiteRules(result[SITE_RULES_STORAGE_KEY]);
             if (result[PUNCTUATION_MODE_STORAGE_KEY] === 'en') punctuationMode = 'en';
             if (result[WIDTH_MODE_STORAGE_KEY] === 'full') widthMode = 'full';
             evaluateCurrentPageEnabled();
-            updateUIMode();
-            void loadEffectiveDict(result.sbzr_custom_dict || '', true);
-        });
+            // The dictionary is intentionally not parsed during content-script
+            // injection. It is loaded by ensurePageImeReady() on first focus.
+            if (uiRoot) updateUIMode();
+            resolve();
+        }));
         chrome.storage.onChanged.addListener(handleStorageChanged);
         storageSyncInstalled = true;
     } catch (e) {
@@ -1184,8 +1189,9 @@ async function getOptionalUserDictText() {
 }
 
 async function loadEffectiveDict(baseDictText = '', force = false) {
-    const storageResult = await chrome.storage.local.get(['sbzr_user_dict']);
+    const storageResult = await chrome.storage.local.get(['sbzr_user_dict', 'sbzr_user_history']);
     const storedUserText = storageResult.sbzr_user_dict || '';
+    userHistory = storageResult.sbzr_user_history || {};
     const baseTexts = isMeaningfulDictText(baseDictText)
         ? [baseDictText]
         : await fetchPackagedRimeDictTexts();
@@ -1250,6 +1256,22 @@ function init() {
     injectUI();
 }
 
+function ensurePageImeReady() {
+    if (runtimeMode !== 'page') return Promise.resolve();
+    if (pagePreparationPromise) return pagePreparationPromise;
+    pagePreparationPromise = (async () => {
+        // Keep ordinary pages cheap until the user actually targets an editor.
+        // UI creation and dictionary parsing are both deferred from injection.
+        await (storageReadyPromise || Promise.resolve());
+        if (!isImeActive()) return;
+        init();
+        await loadDict();
+    })().finally(() => {
+        pagePreparationPromise = null;
+    });
+    return pagePreparationPromise;
+}
+
 function isInput(el) {
     if (!el) return false;
     if (managedTarget) return el === managedTarget;
@@ -1308,6 +1330,7 @@ function handleDocumentKeyDown(e) {
         } else {
             showNotepad();
             enableIme();
+            void ensurePageImeReady();
         }
         return;
     }
@@ -1329,7 +1352,7 @@ function handleDocumentKeyDown(e) {
     if (!isImeActive() || isImeSuppressed()) return;
 
     if (!codes || Object.keys(codes).length === 0) {
-        void loadDict();
+        void ensurePageImeReady();
         return;
     }
 
@@ -1731,7 +1754,13 @@ function installRuntimeListeners() {
     document.addEventListener('keydown', handleShiftTrackingKeyDown, true);
     document.addEventListener('mousemove', onDragMove, true);
     document.addEventListener('mouseup', endDrag, true);
+    document.addEventListener('focusin', handleDocumentFocusIn, true);
     listenersInstalled = true;
+}
+
+function handleDocumentFocusIn(event) {
+    if (runtimeMode !== 'page' || !isInput(event.target) || !isImeActive()) return;
+    void ensurePageImeReady();
 }
 
 function uninstallRuntimeListeners() {
@@ -1741,6 +1770,7 @@ function uninstallRuntimeListeners() {
     document.removeEventListener('keydown', handleShiftTrackingKeyDown, true);
     document.removeEventListener('mousemove', onDragMove, true);
     document.removeEventListener('mouseup', endDrag, true);
+    document.removeEventListener('focusin', handleDocumentFocusIn, true);
     listenersInstalled = false;
 }
 
@@ -1773,7 +1803,6 @@ function installPageIme() {
     installStorageSync();
     installRuntimeMessageListener();
     installRuntimeListeners();
-    init();
 }
 
 function installTextareaIME(options = {}) {
