@@ -59,11 +59,15 @@
 ├── sbzr_mix.custom.yaml          # 混输模式本地补丁
 ├── default.custom.yaml           # 全局方案列表与快捷键
 ├── sbzr.dict.yaml                # 主词典入口（import_tables 聚合）
-├── rime.lua                      # Lua 入口（加载 dynamic_freq）
+├── rime.lua                      # Lua 入口（注册各过滤器与翻译器，依赖 librime-lua）
 │
 ├── lua/
-│   ├── dynamic_freq.lua          # 动态调频核心逻辑
-│   └── single_code_filter.lua    # 单码过滤
+│   ├── dynamic_freq.lua          # 动态调频：用户选词提升（需 librime-lua）
+│   ├── length_priority.lua       # 候选按字数排序，短词优先
+│   ├── en_switch_filter.lua      # 英文候选开关过滤
+│   ├── single_code_filter.lua    # 单码过滤
+│   ├── zdy_translator.lua        # 自定义优先级翻译器
+│   └── *_ascii_translator.lua    # 西文/大小写翻译器
 │
 ├── sbzr.chrome.extension/        # Nova Editor Chrome 扩展
 │   ├── dicts/                    # 词库源文件（与 Rime 共用）

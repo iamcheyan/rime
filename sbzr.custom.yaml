@@ -5,7 +5,7 @@ patch:
     name: ascii_mode
     reset: 0
 
-  # 纯 Rime 降级版：收敛为接近 sbzr 的交互方式
+  # 收敛为接近 sbzr 的交互方式
   "menu/select_keys": " 12345"
   "menu/page_size": 6
   "translator/enable_completion": true
@@ -27,16 +27,5 @@ patch:
     - { accept: "Control+period", select: .next, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
-  # 保留 Rime 自带基础造词能力，不使用 Lua
+  # 保留 Rime 自带基础造词能力
   "translator/enable_encoder": true
-
-  # 降级为纯 Rime 内建处理器，不依赖 librime-lua
-  "engine/processors":
-    - ascii_composer
-    - recognizer
-    - key_binder
-    - speller
-    - punctuator
-    - selector
-    - navigator
-    - express_editor
