@@ -2,7 +2,7 @@
 #@/db_name	sbzr
 #@/db_type	tabledb
 #@/rime_version	1.15.0
-#@/tick	70839
+#@/tick	70862
 啊	a	66
 阿	aa	3
 挨	ai	2
@@ -1749,7 +1749,7 @@
 差距	caju	1
 查看	cakj	50
 查了	cale	1
-插入	caru	9
+插入	caru	10
 查询	caxp	1
 插下	caxw	1
 查下	caxw	3
@@ -1958,7 +1958,7 @@ commit&push	cp	49
 出题	cuti	4
 粗体	cuti	2
 除雾	cuwu	1
-出现	cuxm	56
+出现	cuxm	57
 储蓄	cuxu	1
 初愈	cuyu	1
 处于	cuyu	1
@@ -1975,7 +1975,7 @@ commit&push	cp	49
 程序员	cxyr	1
 从左到右	czdy	2
 成组合	czge	1
-的	d	5272
+的	d	5274
 大	da	28
 搭	da	1
 大煲	dabk	1
@@ -2236,7 +2236,7 @@ commit&push	cp	49
 犊子	duzi	1
 独自	duzi	1
 独占	duzj	1
-对	dv	183
+对	dv	185
 对吧	dvba	1
 对比	dvbi	10
 第二次	dvci	2
@@ -2333,7 +2333,7 @@ commit&push	cp	49
 分类	fflz	3
 分批	ffpi	4
 纷披	ffpi	1
-分批次	ffpici	1
+分批次	ffpici	2
 分屏	ffpy	3
 分配	ffpz	11
 分散	ffsj	1
@@ -2374,7 +2374,7 @@ commit&push	cp	49
 孵化器	fhqi	3
 放入	fhru	4
 放手	fhsb	1
-方式	fhsi	9
+方式	fhsi	10
 方案	fhvj	36
 访问	fhwf	4
 方向	fhxd	5
@@ -2674,6 +2674,7 @@ commit&push	cp	49
 规则	gvze	4
 刮	gw	2
 刮伤	gwsh	1
+个性化服务	gxhw	1
 割下去	gxqu	1
 乖	gy	1
 怪怪	gygy	1
@@ -3067,7 +3068,7 @@ commit&push	cp	49
 进退	jntv	1
 紧贴	jntx	5
 锦绣	jnxq	1
-进行	jnxy	29
+进行	jnxy	30
 禁用	jnys	24
 进帐	jnzh	2
 禁止	jnzi	6
@@ -3246,7 +3247,7 @@ commit&push	cp	49
 扛	kh	1
 客户端	khdr	2
 康康	khkh	1
-看	kj	531
+看	kj	532
 凵部	kjbu	1
 看不到	kjbudk	3
 看出	kjcu	1
@@ -3385,7 +3386,7 @@ commit&push	cp	49
 立即	liji	5
 理解	lijx	31
 立刻	like	2
-里面	limm	537
+里面	limm	538
 例如	liru	76
 历史	lisi	20
 利	liu	1
@@ -3527,7 +3528,7 @@ lazyvim	lnm	1
 秒	mcue	1
 秒钟	mczs	1
 没点数	mdsu	1
-么	me	524
+么	me	525
 们	mf	3
 门	mf	1
 猛烈	mglx	1
@@ -3690,7 +3691,7 @@ lazyvim	lnm	1
 能否	ngfb	1
 能够	nggb	3
 那个合并	nggb	5
-能力	ngli	1
+能力	ngli	2
 能行	ngxy	1
 能用	ngys	3
 能做	ngzo	1
@@ -3982,7 +3983,7 @@ python	py	2
 任意	rfyi	3
 认真	rfzf	25
 认证	rfzg	4
-让	rh	202
+让	rh	203
 让它	rhta	20
 让我	rhwo	2
 日	ri	2
@@ -4495,7 +4496,7 @@ python	py	2
 图	tuia	10
 凸轮	tulp	1
 屠灭	tumx	1
-图片	tupm	30
+图片	tupm	31
 突然	turj	3
 突兀	tuwu	5
 图像	tuxd	2
@@ -4591,7 +4592,7 @@ python	py	2
 而已	vryi	3
 二姊	vrzi	2
 vscode	vs	2
-我	w	1808
+我	w	1809
 哇噻	wasl	1
 文本框	wbkd	4
 我不肯	wbkf	1
@@ -4717,7 +4718,7 @@ vscode	vs	2
 唯一	wzyi	2
 位置	wzzi	72
 为准	wzzp	1
-下	x	934
+下	x	935
 小白点	xbdm	1
 行不行	xbxy	1
 小	xc	38
@@ -4798,7 +4799,7 @@ vscode	vs	2
 戏弄	xins	1
 细条	xitc	2
 系统	xits	47
-希望	xiwh	106
+希望	xiwh	107
 细细	xixi	2
 细致	xizi	3
 性价比	xjbi	1
@@ -5268,6 +5269,8 @@ vscode	vs	2
 用它	ysta	2
 用完	yswj	1
 意识形态	ysxt	1
+一胜一败	ysyb	1
+拥有	ysyb	2
 永远	ysyr	17
 用于	ysyu	9
 用语	ysyu	4
@@ -5352,7 +5355,7 @@ vscode	vs	2
 装坛	zdtj	1
 状态	zdtl	52
 装有	zdyb	1
-自定义	zdyi	17
+自定义	zdyi	18
 蔗	ze	7
 褶边	zebm	1
 这边	zebm	1

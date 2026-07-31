@@ -40,7 +40,6 @@ function M.func(translation, env)
     end
   end
 
-  -- 不足 MAX_BUFFER 时也要排序并输出
   if buffered and #buffered > 0 then
     table.sort(buffered, function(a, b)
       if a.len ~= b.len then return a.len < b.len end
