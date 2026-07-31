@@ -1,0 +1,65 @@
+# Rime table
+#@/db_name	pinyin
+#@/db_type	tabledb
+#@/rime_version	1.15.0
+#@/tick	75
+吧	ba	1
+把	ba	3
+把它	ba ta	1
+变	bian	1
+不全	bu quan	0
+出来	chu lai	1
+传输	chuan shu	0
+传输助手	chuan shu zhu shou	1
+词	ci	1
+词库	ci ku	2
+的	de	3
+的话	de hua	1
+的么	de me	1
+分支	fen zhi	2
+刚	gang	2
+根据	gen ju	1
+还有	hai you	0
+好	hao	1
+回	hui	1
+混输	hun shu	1
+经	jing	1
+看	kan	3
+可以	ke yi	1
+库	ku	1
+了	le	5
+理	li	1
+里面	li mian	1
+路	lu	2
+吗	ma	1
+没	mei	1
+没有	mei you	1
+模式	mo shi	1
+目	mu	1
+能	neng	1
+能删除	neng shan chu	1
+你	ni	5
+切换	qie huan	1
+清理	qing li	3
+删除	shan chu	0
+什么	shen me	1
+是不是	shi bu shi	1
+是不是不全	shi bu shi bu quan	1
+图库	tu ku	1
+推送	tui song	1
+文档	wen dang	1
+文件	wen jian	1
+我	wo	3
+下	xia	1
+现在	xian zai	1
+现在文件	xian zai wen jian	1
+修改	xiu gai	1
+移动	yi dong	1
+已经	yi jing	1
+再看看	zai kan kan	0
+再看看还有	zai kan kan hai you	1
+这一类的	zhe yi lei de	0
+这一类的文件	zhe yi lei de wen jian	1
+整	zheng	1
+中文	zhong wen	1
+助手	zhu shou	0
