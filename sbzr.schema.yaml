@@ -48,6 +48,7 @@ engine:
     - history_translator
   filters:
     - simplifier
+    - lua_filter@length_priority_filter
     - lua_filter@dynamic_freq_filter
     - lua_filter@en_switch_filter
     - uniquifier

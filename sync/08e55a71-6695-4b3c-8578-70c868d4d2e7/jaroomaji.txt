@@ -2,10 +2,10 @@
 #@/db_name	jaroomaji
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	880
+#@/tick	883
 ー	-	1
 ーいる	- i ru	2
-ーいっっ	- i xtu xtu	3
+ーいっっ	- i xtu xtu	4
 ーいっっっ	- i xtu xtu xtu	1
 ーんっ	- nn xtu	1
 ーっっ	- xtu xtu	1
@@ -141,6 +141,7 @@ de	de	2
 郭	ka ku	1
 確認	ka ku ni nn	1
 確認済み	ka ku ni nn zu mi	1
+カナ	ka na	2
 環境	ka nn kyo u	1
 完了	ka nn ryo u	2
 感想	ka nn so u	2

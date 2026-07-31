@@ -1,3 +1,4 @@
+length_priority_filter = require("length_priority")
 dynamic_freq_filter = require("dynamic_freq")
 zdy_priority_translator = require("zdy_translator")
 learned_ascii_translator = require("learned_ascii_translator")

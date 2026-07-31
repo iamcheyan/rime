@@ -2,7 +2,7 @@
 #@/db_name	easy_en
 #@/db_type	tabledb
 #@/rime_version	1.13.1
-#@/tick	506
+#@/tick	508
 B	B	1
 C	C	1
 Macbook	Macbook	1
@@ -140,7 +140,7 @@ lambdas	lambdas	1
 ldc	ldc	1
 LDD	ldd	1
 ldi	ldi	1
-lim	lim	10
+lim	lim	11
 linux	linux	1
 lks	lks	1
 loading	loading	2
@@ -220,6 +220,7 @@ sis	sis	1
 SI system	sisystem	1
 siu	siu	1
 sjm	sjm	1
+Smyth	smyth	1
 SN	sn	2
 snap-shot	snapshot	1
 SOM	som	1
