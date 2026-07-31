@@ -1,81 +1,33 @@
+# ============================================
+# Rime 配置仓库 .gitignore
+# 原则：只提交「源配置」——schema/dict/lua/脚本/文档。
+# 不提交：运行时产物（userdb 导出/编译缓存）、设备本地文件、临时文件。
+# ============================================
+
+# ---- Rime 本地运行时文件（每台设备各自生成，禁止提交）----
+# 设备安装信息、本地用户配置（含密码/API key 等敏感字段）
 installation.yaml
 user.yaml
-*.orig
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-*.env
-*.env*
+# Rime userdb 导出快照（顶层 *.txt = 各方案用户词库，Rime 同步时自动更新）
+# 注意：sync/**/ 下的 .txt 是设备间词频同步载体，由 Rime 原生同步分发，
+#       不通过 git 分发；如确需备份请用 rime_dict_manager -s 导出
+*.userdb/
+dynamic_freq.local.txt
+# 顶层方案 userdb 导出（sbzr/sbzr_mix/jaroomaji/easy_en/pinyin 等）
+/sbzr.txt
+/sbzr_mix.txt
+/jaroomaji.txt
+/easy_en.txt
+/pinyin.txt
+# LevelDB 本地用户数据库
+dynamic_freq.userdb/
+*.userdb.txt
 
-# Editor directories and files
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-.project
-.classpath
-.settings/
+# Rime 编译产物
+/build/
 
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# Dependency directories
-node_modules/
-vendor/
-bower_components/
-
-# Build outputs
-dist/
-build/
-*.o
-*.a
-*.so
-*.dylib
-*.exe
-*.out
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Temporary files
-*.tmp
-*.temp
-*.cache
-.cache/
-
-# Package manager lock files (uncomment if needed)
-# package-lock.json
-# yarn.lock
-# Pipfile.lock
-
-# IDE and editor files
-*.sublime-project
-*.sublime-workspace
-*.code-workspace
-
-# System files
-.directory
-.Trash-*
-
-# jaroomaji dictionaries
+# ---- jaroomaji 日语大词库（外部下载生成，不随仓库分发）----
 jaroomaji.user.dict.yaml
 jaroomaji.kana_kigou.dict.yaml
 jaroomaji.mozc.dict.yaml
@@ -85,9 +37,66 @@ jaroomaji.kanjidic2.dict.yaml
 dict_backups_*/jaroomaji.*.dict.yaml
 sync/**/jaroomaji.*.dict.yaml
 rime-shuangpin-fuzhuma
-rime-shuangpin-fuzhuma
 
-*.userdb/
-dynamic_freq.local.txt
+# ---- 编译缓存 / Python 产物 ----
 __pycache__/
 *.pyc
+*.pyo
+*.egg-info/
+dist/
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# ---- 日志 ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- 临时文件 ----
+*.tmp
+*.temp
+*.cache
+.cache/
+*.orig
+*~
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ---- 编辑器 / IDE ----
+.idea/
+.vscode/
+.project
+.classpath
+.settings/
+
+# ---- 操作系统生成文件 ----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.directory
+.Trash-*
+
+# ---- 环境变量 / 密钥 ----
+.env
+.env.local
+.env.*.local
+*.env
+*.env*
+
+# ---- 运行时数据 ----
+pids
+*.pid
+*.seed
+*.pid.lock
