@@ -18,11 +18,14 @@ patch:
   ascii_composer:
     good_old_caps_lock: true
     switch_key:
+      # 裸按单个修饰键不切换中英文:Ctrl(含换键后 caps 位置的 overload Ctrl)
+      # 与 CapsLock 均 noop。Shift 保留 rime 原生行为(inline_ascii):
+      # 打字中轻按 Shift = 临时英文上屏,不切全局中/英状态。
       Shift_L: inline_ascii
       Shift_R: inline_ascii
-      Control_L: commit_code
+      Control_L: noop
       Control_R: noop
-      Caps_Lock: clear
+      Caps_Lock: noop
       Eisu_toggle: clear
       
   key_binder:

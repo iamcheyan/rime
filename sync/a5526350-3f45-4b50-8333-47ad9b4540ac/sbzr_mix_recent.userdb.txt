@@ -1,6 +1,0 @@
-# Rime user dictionary
-#@/db_name	sbzr_mix_recent
-#@/db_type	userdb
-#@/rime_version	1.14.0
-#@/tick	1
-#@/user_id	a5526350-3f45-4b50-8333-47ad9b4540ac
