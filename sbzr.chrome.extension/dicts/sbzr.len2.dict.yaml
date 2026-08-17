@@ -1,7 +1,7 @@
 # Rime dictionary
 # encoding: utf-8
 ---
-name: sbzr.len2
+name: sbzr.chrome.extension/dicts/sbzr.len2
 version: "1.0"
 sort: by_weight
 ...

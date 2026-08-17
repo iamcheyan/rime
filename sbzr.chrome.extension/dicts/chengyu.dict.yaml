@@ -5,7 +5,7 @@
 # Deduplicated by text+code, keeping the highest weight.
 #
 ---
-name: chengyu
+name: sbzr.chrome.extension/dicts/chengyu
 version: "11.0"
 sort: by_weight
 use_preset_vocabulary: false

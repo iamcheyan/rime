@@ -5,7 +5,7 @@
 # Source logic is implemented by sbzr.lua / sbzr.schema.yaml
 #
 ---
-name: sbzr
+name: sbzr.chrome.extension/dicts/sbzr.userdb
 version: "0.1"
 sort: by_weight
 use_preset_vocabulary: false

@@ -1,11 +1,11 @@
-# Rime dictionary: xxsb
+# Rime dictionary: base
 # encoding: utf-8
 #
 # Converted from sbzr.chrome.extension/chrome-extension/sbzr.yaml
 # Source logic is implemented by xxsb.lua / xxsb.schema.yaml
 #
 ---
-name: xxsb
+name: sbzr.chrome.extension/dicts/base
 version: "0.1"
 sort: by_weight
 use_preset_vocabulary: false
