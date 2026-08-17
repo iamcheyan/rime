@@ -1,0 +1,39 @@
+duoyin 抽查样本: 100 / 总词条 2929
+全音节均为主音的词条: 100
+含非主音音节的词条: 0 (duoyin 设计功能, 仅计数)
+与 base 同词不同码冲突: 26
+音节码无 DB 读音依据(编码嫌疑): 0
+
+== base 冲突明细 ==
+这些数	zexxsu	base=['zxsu']
+这游戏	zeybxi	base=['zyxi']
+这个剧	zegeju	base=['zgju']
+这系列	zejilx	base=['zxlx']
+趁这个	cfzege	base=['czge']
+这让她	zerhta	base=['zrta']
+娴熟地	xmsbde	base=['xsde']
+这根线	zegfxm	base=['zgxm']
+这两次	zeldci	base=['zlci']
+我这人	wozerf	base=['wzrf']
+这两天	zeldtm	base=['zltm']
+走这个	zbzege	base=['zzge']
+这也算	zeyesr	base=['zysr']
+这本身	zebfsf	base=['zbsf']
+也这样	yezeyh	base=['yzyh']
+这又是	zeybsi	base=['zysi']
+这个就	zegejq	base=['zgjq']
+长虫子	chcszi	base=['zczi']
+这把剑	zebajm	base=['zbjm']
+这日子	zerizi	base=['zrzi']
+这正如	zezgru	base=['zzru']
+这幅画	zefuhw	base=['zfhw']
+熟烂	sblj	base=['sulj']
+这老哥	zelkge	base=['zlge']
+闲着	xmzk	base=['xmze']
+这东东	zedsds	base=['zdds']
+
+== 无DB依据明细 ==
+
+结论: 按 task 要求仅列出, 未做任何修改。
+== 全量补充扫描(2929条) ==
+非主音使用=0, 无DB依据=0: duoyin 实为全编码词组补充表, 与主音规则零冲突
