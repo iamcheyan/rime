@@ -15,3 +15,556 @@ import_tables:
   - sbzr.chrome.extension/dicts.jp/jaroomaji.kanjidic2
 # - sbzr.chrome.extension/dicts.jp/jaroomaji.neologd  # TODO neologdから変換した辞書を作成する
 ...
+
+# ---- 核心常用词（dict-optimize 生成，Nihon-shiki 码，与 mozc 表交叉验证）----
+おはよう	o ha yo u	66000
+おはようございます	o ha yo u go za i ma su	66000
+こんにちは	ko nn ni ti ha	66000
+こんばんは	ko nn ba nn ha	66000
+さようなら	sa yo u na ra	66000
+ありがとう	a ri ga to u	66000
+ありがとうございます	a ri ga to u go za i ma su	66000
+すみません	su mi ma se nn	66000
+ごめんなさい	go me nn na sa i	66000
+お願いします	o ne ga i si ma su	66000
+はじめまして	ha zi me ma si te	66000
+よろしくお願いします	yo ro si ku o ne ga i si ma su	66000
+おやすみなさい	o ya su mi na sa i	66000
+いってきます	i xtu te ki ma su	66000
+いってらっしゃい	i xtu te ra xtu sya i	66000
+ただいま	ta da i ma	66000
+おかえりなさい	o ka e ri na sa i	66000
+いただきます	i ta da ki ma su	66000
+ごちそうさまでした	go ti so u sa ma de si ta	66000
+失礼します	si tu re i si ma su	66000
+お疲れ様です	o tu ka re sa ma de su	66000
+お元気ですか	o ge nn ki de su ka	66000
+お大事に	o da i zi ni	66000
+おめでとうございます	o me de to u go za i ma su	66000
+また明日	ma ta a si ta	66000
+お先に失礼します	o sa ki ni si tu re i si ma su	66000
+かわいそう	ka wa i so u	66000
+おまたせしました	o ma ta se si ma si ta	66000
+はい	ha i	65000
+いいえ	i i e	65000
+だめ	da me	65000
+大丈夫	da i zyo u bu	65000
+結構です	ke xtu ko u de su	65000
+そうです	so u de su	65000
+そうですね	so u de su ne	65000
+そうですか	so u de su ka	65000
+そうですよ	so u de su yo	65000
+違います	ti ga i ma su	65000
+わかりました	wa ka ri ma si ta	65000
+わかりません	wa ka ri ma se nn	65000
+知りません	si ri ma se nn	65000
+ありません	a ri ma se nn	65000
+ください	ku da sa i	65000
+どうぞ	do u zo	65000
+どうも	do u mo	65000
+なるほど	na ru ho do	65000
+やっぱり	ya xtu pa ri	65000
+たぶん	ta bu nn	65000
+きっと	ki xtu to	65000
+何	na ni	63000
+誰	da re	63000
+どこ	do ko	63000
+いつ	i tu	63000
+どう	do u	63000
+なぜ	na ze	63000
+どうして	do u si te	63000
+どちら	do ti ra	63000
+いくら	i ku ra	63000
+いくつ	i ku tu	63000
+私	wa ta si	63000
+僕	bo ku	63000
+俺	o re	63000
+あなた	a na ta	63000
+彼	ka re	63000
+彼女	ka no zyo	63000
+我々	wa re wa re	63000
+皆さん	mi na sa nn	63000
+人	hi to	63000
+子供	ko do mo	63000
+男	o to ko	63000
+女	o nn na	63000
+先生	se nn se i	63000
+学生	ga ku se i	63000
+友達	to mo da ti	63000
+家族	ka zo ku	63000
+父	ti ti	63000
+母	ha ha	63000
+お父さん	o to u sa nn	63000
+お母さん	o ka a sa nn	63000
+兄	a ni	63000
+姉	a ne	63000
+お兄さん	o ni i sa nn	63000
+お姉さん	o ne e sa nn	63000
+弟	o to u to	63000
+妹	i mo u to	63000
+赤ちゃん	a ka tya nn	63000
+名前	na ma e	63000
+医者	i sya	63000
+看護師	ka nn go si	63000
+店員	te nn i nn	63000
+社長	sya tyo u	63000
+会社員	ka i sya i nn	63000
+公務員	ko u mu i nn	63000
+今日	kyo u	63000
+明日	a si ta	63000
+昨日	ki no u	63000
+今	i ma	63000
+今朝	ke sa	63000
+今晩	ko nn ba nn	63000
+時間	zi ka nn	63000
+分	hu nn	63000
+時間帯	zi ka nn ta i	63000
+朝	a sa	63000
+昼	hi ru	63000
+夜	yo ru	63000
+午前	go ze nn	63000
+午後	go go	63000
+週末	syu u ma tu	63000
+来週	ra i syu u	63000
+先週	se nn syu u	63000
+今週	ko nn syu u	63000
+来月	ra i ge tu	63000
+先月	se nn ge tu	63000
+今年	ko to si	63000
+去年	kyo ne nn	63000
+春	ha ru	63000
+夏	na tu	63000
+秋	a ki	63000
+冬	hu yu	63000
+曜日	yo u bi	63000
+日曜日	ni ti yo u bi	63000
+月曜日	ge tu yo u bi	63000
+火曜日	ka yo u bi	63000
+水曜日	su i yo u bi	63000
+木曜日	mo ku yo u bi	63000
+金曜日	ki nn yo u bi	63000
+土曜日	do yo u bi	63000
+誕生日	ta nn zyo u bi	63000
+家	i e	63000
+部屋	he ya	63000
+学校	ga xtu ko u	63000
+会社	ka i sya	63000
+駅	e ki	63000
+空港	ku u ko u	63000
+病院	byo u i nn	63000
+銀行	gi nn ko u	63000
+郵便局	yu u bi nn kyo ku	63000
+店	mi se	63000
+コンビニ	ko nn bi ni	62000
+スーパー	su - pa -	62000
+レストラン	re su to ra nn	62000
+ホテル	ho te ru	62000
+トイレ	to i re	62000
+お風呂	o hu ro	63000
+台所	da i do ko ro	63000
+教室	kyo u si tu	63000
+図書館	to syo ka nn	63000
+公園	ko u e nn	63000
+道	mi ti	63000
+国	ku ni	63000
+日本	ni ho nn	63000
+中国	tyu u go ku	63000
+アメリカ	a me ri ka	62000
+東京	to u kyo u	63000
+大阪	o o sa ka	63000
+京都	kyo u to	63000
+北海道	ho xtu ka i do u	63000
+電車	de nn sya	63000
+バス	ba su	62000
+車	ku ru ma	63000
+自転車	zi te nn sya	63000
+飛行機	hi ko u ki	63000
+切符	ki xtu pu	63000
+地図	ti zu	63000
+水	mi zu	63000
+お茶	o tya	63000
+コーヒー	ko - hi -	62000
+ご飯	go ha nn	63000
+パン	pa nn	62000
+卵	ta ma go	63000
+肉	ni ku	63000
+魚	sa ka na	63000
+野菜	ya sa i	63000
+果物	ku da mo no	63000
+牛乳	gyu u nyu u	63000
+塩	si o	63000
+砂糖	sa to u	63000
+お酒	o sa ke	63000
+ビール	bi - ru	62000
+料理	ryo u ri	63000
+朝ご飯	a sa go ha nn	63000
+昼ご飯	hi ru go ha nn	63000
+晩ご飯	ba nn go ha nn	63000
+お菓子	o ka si	63000
+薬	ku su ri	63000
+お金	o ka ne	63000
+財布	sa i hu	63000
+鍵	ka gi	63000
+傘	ka sa	63000
+服	hu ku	63000
+靴	ku tu	63000
+鞄	ka ba nn	63000
+時計	to ke i	63000
+眼鏡	me ga ne	63000
+本	ho nn	63000
+新聞	si nn bu nn	63000
+雑誌	za xtu si	63000
+手紙	te ga mi	63000
+写真	sya si nn	63000
+電話	de nn wa	63000
+スマホ	su ma ho	62000
+パソコン	pa so ko nn	62000
+テレビ	te re bi	62000
+ラジオ	ra zi o	62000
+音楽	o nn ga ku	63000
+映画	e i ga	63000
+机	tu ku e	63000
+椅子	i su	63000
+窓	ma do	63000
+ドア	do a	62000
+ベッド	be xtu do	62000
+紙	ka mi	63000
+鉛筆	e nn pi tu	63000
+ペン	pe nn	62000
+荷物	ni mo tu	63000
+プレゼント	pu re ze nn to	62000
+切手	ki xtu te	63000
+はさみ	ha sa mi	63000
+天気	te nn ki	63000
+雨	a me	63000
+雪	yu ki	63000
+風	ka ze	63000
+空	so ra	63000
+海	u mi	63000
+山	ya ma	63000
+川	ka wa	63000
+花	ha na	63000
+木	ki	63000
+犬	i nu	63000
+猫	ne ko	63000
+鳥	to ri	63000
+仕事	si go to	63000
+休み	ya su mi	63000
+旅行	ryo ko u	63000
+買い物	ka i mo no	63000
+勉強	be nn kyo u	63000
+宿題	syu ku da i	63000
+試験	si ke nn	63000
+会議	ka i gi	63000
+予定	yo te i	63000
+質問	si tu mo nn	63000
+答え	ko ta e	63000
+言葉	ko to ba	63000
+意味	i mi	63000
+資料	si ryo u	63000
+写真集	sya si nn syu u	63000
+生活	se i ka tu	63000
+世界	se ka i	63000
+趣味	syu mi	63000
+夢	yu me	63000
+用事	yo u zi	63000
+約束	ya ku so ku	63000
+経験	ke i ke nn	63000
+気持ち	ki mo ti	63000
+気分	ki bu nn	63000
+元気	ge nn ki	63000
+する	su ru	64000
+いる	i ru	64000
+ある	a ru	64000
+行く	i ku	64000
+来る	ku ru	64000
+見る	mi ru	64000
+聞く	ki ku	64000
+話す	ha na su	64000
+読む	yo mu	64000
+書く	ka ku	64000
+食べる	ta be ru	64000
+飲む	no mu	64000
+買う	ka u	64000
+売る	u ru	64000
+作る	tu ku ru	64000
+使う	tu ka u	64000
+待つ	ma tu	64000
+持つ	mo tu	64000
+着る	ki ru	64000
+乗る	no ru	64000
+降りる	o ri ru	64000
+寝る	ne ru	64000
+起きる	o ki ru	64000
+働く	ha ta ra ku	64000
+休む	ya su mu	64000
+遊ぶ	a so bu	64000
+会う	a u	64000
+分かる	wa ka ru	64000
+出る	de ru	64000
+入る	ha i ru	64000
+開ける	a ke ru	64000
+閉める	si me ru	64000
+教える	o si e ru	64000
+習う	na ra u	64000
+思う	o mo u	64000
+考える	ka nn ga e ru	64000
+探す	sa ga su	64000
+見つける	mi tu ke ru	64000
+忘れる	wa su re ru	64000
+覚える	o bo e ru	64000
+送る	o ku ru	64000
+もらう	mo ra u	64000
+あげる	a ge ru	64000
+くれる	ku re ru	64000
+できる	de ki ru	64000
+歩く	a ru ku	64000
+走る	ha si ru	64000
+泳ぐ	o yo gu	64000
+止まる	to ma ru	64000
+止める	to me ru	64000
+始まる	ha zi ma ru	64000
+始める	ha zi me ru	64000
+終わる	o wa ru	64000
+終える	o e ru	64000
+変わる	ka wa ru	64000
+決める	ki me ru	64000
+決まる	ki ma ru	64000
+着く	tu ku	64000
+運ぶ	ha ko bu	64000
+手伝う	te tu da u	64000
+困る	ko ma ru	64000
+慌てる	a wa te ru	64000
+笑う	wa ra u	64000
+泣く	na ku	64000
+歌う	u ta u	64000
+踊る	o do ru	64000
+描く	ka ku	64000
+撮る	to ru	64000
+取る	to ru	64000
+置く	o ku	64000
+並べる	na ra be ru	64000
+片付ける	ka ta du ke ru	64000
+洗う	a ra u	64000
+乾く	ka wa ku	64000
+冷える	hi e ru	64000
+温まる	a ta ta ma ru	64000
+育てる	so da te ru	64000
+増える	hu e ru	64000
+減る	he ru	64000
+足りる	ta ri ru	64000
+続ける	tu du ke ru	64000
+止む	ya mu	64000
+降る	hu ru	64000
+曇る	ku mo ru	64000
+続く	tu du ku	64000
+残る	no ko ru	64000
+残す	no ko su	64000
+選ぶ	e ra bu	64000
+比べる	ku ra be ru	64000
+勝つ	ka tu	64000
+負ける	ma ke ru	64000
+遊戯する	yu u gi su ru	64000
+説明する	se tu me i su ru	64000
+予約する	yo ya ku su ru	64000
+注文する	tyu u mo nn su ru	64000
+確認する	ka ku ni nn su ru	64000
+勉強する	be nn kyo u su ru	64000
+掃除する	so u zi su ru	64000
+散歩する	sa nn po su ru	64000
+出席する	syu xtu se ki su ru	64000
+遅刻する	ti ko ku su ru	64000
+大きい	o o ki i	63000
+小さい	ti i sa i	63000
+新しい	a ta ra si i	63000
+古い	hu ru i	63000
+高い	ta ka i	63000
+安い	ya su i	63000
+楽しい	ta no si i	63000
+面白い	o mo si ro i	63000
+難しい	mu zu ka si i	63000
+易しい	ya sa si i	63000
+早い	ha ya i	63000
+速い	ha ya i	63000
+遅い	o so i	63000
+多い	o o i	63000
+少ない	su ku na i	63000
+良い	yo i	63000
+悪い	wa ru i	63000
+美味しい	o i si i	63000
+寂しい	sa bi si i	63000
+懐かしい	na tu ka si i	63000
+忙しい	i so ga si i	63000
+可愛い	ka wa i i	63000
+綺麗	ki re i	63000
+静か	si zu ka	63000
+賑やか	ni gi ya ka	63000
+大切	ta i se tu	63000
+大変	ta i he nn	63000
+素晴らしい	su ba ra si i	63000
+眠い	ne mu i	63000
+暑い	a tu i	63000
+寒い	sa mu i	63000
+熱い	a tu i	63000
+冷たい	tu me ta i	63000
+強い	tu yo i	63000
+弱い	yo wa i	63000
+重い	o mo i	63000
+軽い	ka ru i	63000
+とても	to te mo	62500
+ちょっと	tyo xtu to	62500
+いつも	i tu mo	62500
+よく	yo ku	62500
+たくさん	ta ku sa nn	62500
+少し	su ko si	62500
+もう	mo u	62500
+まだ	ma da	62500
+また	ma ta	62500
+すぐ	su gu	62500
+ゆっくり	yu xtu ku ri	62500
+一緒に	i xtu syo ni	62500
+本当に	ho nn to u ni	62500
+時々	to ki do ki	62500
+全部	ze nn bu	62500
+初めて	ha zi me te	62500
+やっと	ya xtu to	62500
+とうとう	to u to u	62500
+ついに	tu i ni	62500
+すっかり	su xtu ka ri	62500
+ほとんど	ho to nn do	62500
+たまに	ta ma ni	62500
+きれいに	ki re i ni	62500
+急に	kyu u ni	62500
+特に	to ku ni	62500
+一	i ti	63000
+二	ni	63000
+三	sa nn	63000
+四	yo nn	63000
+五	go	63000
+六	ro ku	63000
+七	na na	63000
+八	ha ti	63000
+九	kyu u	63000
+十	zyu u	63000
+百	hya ku	63000
+千	se nn	63000
+万	ma nn	63000
+一つ	hi to tu	63000
+二つ	hu ta tu	63000
+三つ	mi xtu tu	63000
+四つ	yo xtu tu	63000
+五つ	i tu tu	63000
+何個	na nn ko	63000
+半分	ha nn bu nn	63000
+色	i ro	63000
+赤	a ka	63000
+青	a o	63000
+白	si ro	63000
+黒	ku ro	63000
+黄色	ki i ro	63000
+茶色	tya i ro	63000
+体	ka ra da	63000
+頭	a ta ma	63000
+顔	ka o	63000
+目	me	63000
+耳	mi mi	63000
+鼻	ha na	63000
+口	ku ti	63000
+歯	ha	63000
+髪	ka mi	63000
+手	te	63000
+足	a si	63000
+お腹	o na ka	63000
+背中	se na ka	63000
+心	ko ko ro	63000
+上	u e	63000
+下	si ta	63000
+中	na ka	63000
+外	so to	63000
+前	ma e	63000
+後ろ	u si ro	63000
+右	mi gi	63000
+左	hi da ri	63000
+隣	to na ri	63000
+間	a i da	63000
+近く	ti ka ku	63000
+遠く	to o ku	63000
+横	yo ko	63000
+場所	ba syo	63000
+建物	ta te mo no	63000
+庭	ni wa	63000
+形	ka ta ti	63000
+値段	ne da nn	63000
+理由	ri yu u	63000
+例	re i	63000
+問題	mo nn da i	63000
+方法	ho u ho u	63000
+仕方	si ka ta	63000
+安全	a nn ze nn	63000
+空気	ku u ki	63000
+温度	o nn do	63000
+食べ物	ta be mo no	63000
+飲み物	no mi mo no	63000
+星	ho si	63000
+月	tu ki	63000
+太陽	ta i yo u	63000
+雲	ku mo	63000
+台風	ta i hu u	63000
+地震	zi si nn	63000
+毎日	ma i ni ti	63000
+毎週	ma i syu u	63000
+毎年	ma i to si	63000
+今月	ko nn ge tu	63000
+途中	to tyu u	63000
+携帯	ke i ta i	63000
+ケーキ	ke - ki	62000
+ジュース	zyu - su	62000
+ワイン	wa i nn	62000
+アイス	a i su	62000
+タバコ	ta ba ko	62000
+タクシー	ta ku si -	62000
+バイク	ba i ku	62000
+カメラ	ka me ra	62000
+メール	me - ru	62000
+ネット	ne xtu to	62000
+ページ	pe - zi	62000
+サイズ	sa i zu	62000
+ケース	ke - su	62000
+ガラス	ga ra su	62000
+エアコン	e a ko nn	62000
+テスト	te su to	62000
+パーティー	pa - te xi -	62000
+ニュース	nyu - su	62000
+ゲーム	ge - mu	62000
+モノレール	mo no re - ru	62000
+生きる	i ki ru	64000
+死ぬ	si nu	64000
+結ぶ	mu su bu	64000
+届く	to do ku	64000
+集める	a tu me ru	64000
+集まる	a tu ma ru	64000
+消す	ke su	64000
+消える	ki e ru	64000
+燃える	mo e ru	64000
+治す	na o su	64000
+治る	na o ru	64000
+貸す	ka su	64000
+借りる	ka ri ru	64000
+数える	ka zo e ru	64000
+飛ぶ	to bu	64000
+浮かぶ	u ka bu	64000
+沈む	si zu mu	64000
+押す	o su	64000
+引く	hi ku	64000
+押さえる	o sa e ru	64000
+触る	sa wa ru	64000
+迷う	ma yo u	64000
+鳴らす	na ra su	64000
+呼ぶ	yo bu	64000
+伝える	tu ta e ru	64000
+鳴る	na ru	64000
+計算する	ke i sa nn su ru	64000
+怪我する	ke ga su ru	64000
+連絡する	re nn ra ku su ru	64000
+案内する	a nn na i su ru	64000
+利用する	ri yo u su ru	64000
