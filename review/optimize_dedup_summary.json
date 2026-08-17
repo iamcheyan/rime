@@ -1,0 +1,59 @@
+{
+  "total_entries": 4221351,
+  "distinct_keys": 4221350,
+  "duplicate_extra_rows": 1,
+  "duplicate_groups": 1,
+  "deletable_rows": 0,
+  "protected_dup_rows": 1,
+  "loser_weight_lower_or_equal": 0,
+  "losers_by_file": {},
+  "pair_distribution": [
+    {
+      "winner": "sbzr.single.dict.yaml",
+      "loser": "zdy.dict.yaml",
+      "count": 1
+    }
+  ],
+  "top_samples": [
+    {
+      "word": "可以",
+      "code": "keyi",
+      "rows": [
+        {
+          "file": "sbzr.single.dict.yaml",
+          "weight": 50014,
+          "line": 43,
+          "keep": true
+        },
+        {
+          "file": "zdy.dict.yaml",
+          "weight": 0,
+          "line": 24,
+          "keep": false
+        }
+      ]
+    }
+  ],
+  "per_file_entries": {
+    "sbzr.rimeice.4字.dict.yaml": 1186995,
+    "sbzr.rimeice.3字.dict.yaml": 1134481,
+    "sbzr.rimeice.5字+.dict.yaml": 912467,
+    "base.dict.yaml": 540269,
+    "sbzr.extended.common.dict.yaml": 219525,
+    "sbzr.rimeice.12字.dict.yaml": 66247,
+    "chengyu.dict.yaml": 65955,
+    "sbzr.len2.dict.yaml": 63924,
+    "sbzr.extended.diming.dict.yaml": 21075,
+    "sbzr.extended.wuzhong.dict.yaml": 5489,
+    "sbzr.extended.duoyin.dict.yaml": 2929,
+    "sbzr.len1.dict.yaml": 816,
+    "sbzr.len1.full.dict.yaml": 816,
+    "sbzr.extended.shici.dict.yaml": 312,
+    "sbzr.single.dict.yaml": 27,
+    "zdy.dict.yaml": 17,
+    "sbzr.shortcut.dict.yaml": 7,
+    "sbzr.extended.lianxiang.dict.yaml": 0,
+    "sbzr.userdb.dict.yaml": 0,
+    "sbzr.userdb.full.dict.yaml": 0
+  }
+}
