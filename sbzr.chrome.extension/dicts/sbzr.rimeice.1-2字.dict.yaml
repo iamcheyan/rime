@@ -2,7 +2,7 @@
 # encoding: utf-8
 #
 ---
-name: sbzr.chrome.extension/dicts/sbzr.rimeice.12字
+name: sbzr.chrome.extension/dicts/sbzr.rimeice.1-2字
 version: "2.0"
 sort: by_weight
 use_preset_vocabulary: false
