@@ -1,0 +1,178 @@
+{
+  "sbzr.rimeice.12字.dict.yaml": {
+    "total": 66247,
+    "default_weight": 2100,
+    "weight_top10": [
+      {
+        "weight": 2100,
+        "count": 37593
+      },
+      {
+        "weight": 2001,
+        "count": 2870
+      },
+      {
+        "weight": 2002,
+        "count": 1806
+      },
+      {
+        "weight": 2111,
+        "count": 1479
+      },
+      {
+        "weight": 2003,
+        "count": 861
+      },
+      {
+        "weight": 2999,
+        "count": 722
+      },
+      {
+        "weight": 2005,
+        "count": 687
+      },
+      {
+        "weight": 2004,
+        "count": 517
+      },
+      {
+        "weight": 2333,
+        "count": 436
+      },
+      {
+        "weight": 2007,
+        "count": 390
+      }
+    ],
+    "len_hist": {
+      "1": 42119,
+      "2": 24128
+    },
+    "ge8_default_weight": 0,
+    "ge12_default_weight": 0,
+    "ge12_samples": []
+  },
+  "sbzr.rimeice.5字+.dict.yaml": {
+    "total": 912467,
+    "default_weight": 2100,
+    "weight_top10": [
+      {
+        "weight": 2100,
+        "count": 757054
+      },
+      {
+        "weight": 2001,
+        "count": 52270
+      },
+      {
+        "weight": 2002,
+        "count": 10136
+      },
+      {
+        "weight": 2003,
+        "count": 6260
+      },
+      {
+        "weight": 2004,
+        "count": 3993
+      },
+      {
+        "weight": 2005,
+        "count": 3818
+      },
+      {
+        "weight": 2006,
+        "count": 2643
+      },
+      {
+        "weight": 2007,
+        "count": 2037
+      },
+      {
+        "weight": 2010,
+        "count": 1883
+      },
+      {
+        "weight": 2180,
+        "count": 1826
+      }
+    ],
+    "len_hist": {
+      "5": 499104,
+      "6": 256590,
+      "7": 103398,
+      "8": 40770,
+      "9": 3983,
+      "10": 2861,
+      "11": 1348,
+      "12": 1212,
+      "13": 878,
+      "14": 774,
+      "15": 516,
+      "16": 405,
+      "17": 250,
+      "18": 162,
+      "19": 118,
+      "20": 90,
+      "21": 2,
+      "22": 2,
+      "24": 2,
+      "29": 2
+    },
+    "ge8_default_weight": 35205,
+    "ge12_default_weight": 256,
+    "ge12_samples": [
+      {
+        "word": "啊呜呜呜呜呜呜呜呜呜呜呜",
+        "code": "vwww",
+        "len": 12
+      },
+      {
+        "word": "奥弗涅-罗讷-阿尔卑斯大区",
+        "code": "vfnq",
+        "len": 13
+      },
+      {
+        "word": "八了百了标了兵了奔了北了坡",
+        "code": "blbp",
+        "len": 13
+      },
+      {
+        "word": "北京智者天下科技有限公司",
+        "code": "bjzs",
+        "len": 12
+      },
+      {
+        "word": "勃艮第-弗朗什-孔泰大区",
+        "code": "bgdq",
+        "len": 12
+      },
+      {
+        "word": "波棱盖卡马路牙子上秃噜皮了",
+        "code": "blgl",
+        "len": 13
+      },
+      {
+        "word": "曾经在满天的星光下做梦的少年",
+        "code": "cjzn",
+        "len": 14
+      },
+      {
+        "word": "城市房屋拆迁管理实施办法",
+        "code": "csff",
+        "len": 12
+      },
+      {
+        "word": "达拉崩吧斑得贝迪卜多比鲁翁",
+        "code": "dlbw",
+        "len": 13
+      },
+      {
+        "word": "大兴奋三日月岛的动物骚动",
+        "code": "dxfd",
+        "len": 12
+      }
+    ]
+  },
+  "applied_removals_12字": 0
+}
