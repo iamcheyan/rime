@@ -1,7 +1,0 @@
-# Minimal grammar config for librime sentence lookup on Windows.
-# Keep this file present so deployment does not warn about a missing grammar.yaml.
-
-grammar:
-  language: zh-hans
-  collocation_max_length: 8
-  collocation_min_length: 2
