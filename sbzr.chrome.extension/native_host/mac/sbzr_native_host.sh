@@ -1,2 +1,3 @@
 #!/bin/bash
-exec "/usr/bin/python3" "/Users/tetsuya/Dotfiles/rime/sbzr.chrome.extension/native_host/sbzr_native_host.py" "$@"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+exec "/usr/bin/python3" "$SCRIPT_DIR/sbzr_native_host.py" "$@"

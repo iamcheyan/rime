@@ -1,7 +1,12 @@
 
 import os
 
-file_path = '/Users/tetsuya/Dotfiles/rime/resource/常用词库（墨染双拼）/小鹤音形冰凌词库.txt'
+file_path = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'resource',
+    '常用词库（墨染双拼）',
+    '小鹤音形冰凌词库.txt',
+)
 temp_path = file_path + '.tmp'
 
 # Read and process
