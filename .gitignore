@@ -100,3 +100,7 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+# Rime 自身产生的运行目录（词库同步载体与回收站）
+sync/
+trash/
