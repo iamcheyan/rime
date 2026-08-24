@@ -75,3 +75,16 @@
 - **严格长度匹配**：`sbzr.schema.yaml` 中 `max_code_length` 设置为 `0`。
   - **行为**：取消强制 4 码上屏。输入 $N$ 个编码仅匹配编码长度正好为 $N$ 的词条。
 - **取消自动补全**：默认不开启 `completion` 预测，以保证输入首选项的精准度。
+
+## 9. 禁止恢复 default.yaml（librime 会自动删除它）
+
+- **现象**：用户目录中的 `default.yaml` 每次部署（fcitx5 启动 / rime_deployer）都会被
+  librime 自动移入 `trash/`。
+- **原因**：librime 的 `ConfigFileUpdate("default.yaml", "config_version")` 任务把用户副本与
+  发行版共享数据（Arch `/usr/share/rime-data/default.yaml`，`config_version: '0.50'`）比较版本；
+  本仓库副本是 `'0.40'`，被判为"旧版残留"移入 trash。这是 librime 的设计行为，不是误删。
+- **实证**（2026-08-24）：有/无该文件的 A/B 对照构建，`build/` 产物逐字节一致——
+  个性化配置全部由 `default.custom.yaml` 补丁承载，schema 的 `import_preset: default`
+  由共享数据 + 补丁合并结果满足。
+- **规范**：改全局配置一律写 `default.custom.yaml` 的 `patch:`；不要把整份 `default.yaml`
+  提交回仓库。
