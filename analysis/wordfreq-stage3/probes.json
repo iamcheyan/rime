@@ -1,0 +1,4266 @@
+{
+  "我们": {
+    "codes": [
+      "womf"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "womf": {
+        "A": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我们",
+              "score": 2006.0,
+              "weight": 2006,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1021
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我们",
+              "score": 6.374,
+              "weight": 1633,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 508795
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我们",
+              "score": 780.509,
+              "weight": 2006,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1021
+            }
+          ]
+        }
+      }
+    }
+  },
+  "这个": {
+    "codes": [
+      "zege",
+      "zzg",
+      "zzge"
+    ],
+    "code_coverage": 3,
+    "strategies": {
+      "zege": {
+        "A": {
+          "raw_rows_available": 7,
+          "rows_ranked_offline": 7,
+          "truncated": false,
+          "top": [
+            {
+              "text": "则个",
+              "score": 2510.0,
+              "weight": 2510,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 4993
+            },
+            {
+              "text": "这个",
+              "score": 2005.0,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1023
+            },
+            {
+              "text": "这歌",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300709
+            },
+            {
+              "text": "昨儿个",
+              "score": 1102.0,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300708
+            },
+            {
+              "text": "折耳根儿",
+              "score": 1101.0,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300710
+            },
+            {
+              "text": "这各",
+              "score": 1053.0,
+              "weight": 1053,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300707
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 7,
+          "rows_ranked_offline": 7,
+          "truncated": false,
+          "top": [
+            {
+              "text": "则个",
+              "score": 510.511,
+              "weight": 2510,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 4993
+            },
+            {
+              "text": "这个",
+              "score": 5.566,
+              "weight": 1553,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300706
+            },
+            {
+              "text": "这歌",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300709
+            },
+            {
+              "text": "这各",
+              "score": 0.515,
+              "weight": 1053,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300707
+            },
+            {
+              "text": "昨儿个",
+              "score": -8.99,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300708
+            },
+            {
+              "text": "折耳根儿",
+              "score": -19.0,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300710
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 7,
+          "rows_ranked_offline": 7,
+          "truncated": false,
+          "top": [
+            {
+              "text": "这个",
+              "score": 780.466,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1023
+            },
+            {
+              "text": "这歌",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300709
+            },
+            {
+              "text": "昨儿个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300708
+            },
+            {
+              "text": "折耳根儿",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300710
+            },
+            {
+              "text": "这各",
+              "score": 684.568,
+              "weight": 1053,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 300707
+            },
+            {
+              "text": "则个",
+              "score": 679.969,
+              "weight": 2510,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 4993
+            }
+          ]
+        }
+      },
+      "zzg": {
+        "A": {
+          "raw_rows_available": 3,
+          "rows_ranked_offline": 3,
+          "truncated": false,
+          "top": [
+            {
+              "text": "这个",
+              "score": 2005.0,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1024
+            },
+            {
+              "text": "在正",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 482742
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 3,
+          "rows_ranked_offline": 3,
+          "truncated": false,
+          "top": [
+            {
+              "text": "这个",
+              "score": 5.566,
+              "weight": 1553,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 482741
+            },
+            {
+              "text": "在正",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 482742
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 3,
+          "rows_ranked_offline": 3,
+          "truncated": false,
+          "top": [
+            {
+              "text": "这个",
+              "score": 780.466,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1024
+            },
+            {
+              "text": "在正",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 482742
+            }
+          ]
+        }
+      },
+      "zzge": {
+        "A": {
+          "raw_rows_available": 30,
+          "rows_ranked_offline": 30,
+          "truncated": false,
+          "top": [
+            {
+              "text": "争这个",
+              "score": 2302.0,
+              "weight": 2302,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 56136
+            },
+            {
+              "text": "再做个",
+              "score": 2202.0,
+              "weight": 2202,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 111516
+            },
+            {
+              "text": "在长葛",
+              "score": 2192.0,
+              "weight": 2192,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 121104
+            },
+            {
+              "text": "着找个",
+              "score": 2122.0,
+              "weight": 2122,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 321220
+            },
+            {
+              "text": "整左个",
+              "score": 2108.0,
+              "weight": 2108,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 374445
+            },
+            {
+              "text": "枣子哥",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 544513
+            },
+            {
+              "text": "柱子哥",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 545032
+            },
+            {
+              "text": "澡子哥",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 558419
+            },
+            {
+              "text": "中纵隔",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 634258
+            },
+            {
+              "text": "真资格",
+              "score": 2079.0,
+              "weight": 2079,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 972448
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 30,
+          "rows_ranked_offline": 30,
+          "truncated": false,
+          "top": [
+            {
+              "text": "争这个",
+              "score": 292.302,
+              "weight": 2302,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 56136
+            },
+            {
+              "text": "再做个",
+              "score": 192.202,
+              "weight": 2202,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 111516
+            },
+            {
+              "text": "在长葛",
+              "score": 182.192,
+              "weight": 2192,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 121104
+            },
+            {
+              "text": "着找个",
+              "score": 112.122,
+              "weight": 2122,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 321220
+            },
+            {
+              "text": "整左个",
+              "score": 98.108,
+              "weight": 2108,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 374445
+            },
+            {
+              "text": "枣子哥",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 544513
+            },
+            {
+              "text": "柱子哥",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 545032
+            },
+            {
+              "text": "澡子哥",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 558419
+            },
+            {
+              "text": "中纵隔",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 634258
+            },
+            {
+              "text": "真资格",
+              "score": 69.079,
+              "weight": 2079,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 972448
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 30,
+          "rows_ranked_offline": 30,
+          "truncated": false,
+          "top": [
+            {
+              "text": "这个",
+              "score": 780.466,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1025
+            },
+            {
+              "text": "在中个",
+              "score": 714.228,
+              "weight": 1482,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44647
+            },
+            {
+              "text": "装这个",
+              "score": 706.899,
+              "weight": 1362,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44648
+            },
+            {
+              "text": "做着个",
+              "score": 706.899,
+              "weight": 1362,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44649
+            },
+            {
+              "text": "做这个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44650
+            },
+            {
+              "text": "咱这个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44651
+            },
+            {
+              "text": "在整个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44652
+            },
+            {
+              "text": "在这个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44653
+            },
+            {
+              "text": "帐中歌",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44654
+            },
+            {
+              "text": "找这个",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 44655
+            }
+          ]
+        }
+      }
+    }
+  },
+  "可以": {
+    "codes": [
+      "keyi",
+      "ky"
+    ],
+    "code_coverage": 2,
+    "strategies": {
+      "keyi": {
+        "A": {
+          "raw_rows_available": 8,
+          "rows_ranked_offline": 8,
+          "truncated": false,
+          "top": [
+            {
+              "text": "可依",
+              "score": 2314.0,
+              "weight": 2314,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8538
+            },
+            {
+              "text": "可以",
+              "score": 2001.0,
+              "weight": 2001,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1036
+            },
+            {
+              "text": "课椅",
+              "score": 1433.0,
+              "weight": 1433,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217322
+            },
+            {
+              "text": "刻意",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217323
+            },
+            {
+              "text": "可意",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217324
+            },
+            {
+              "text": "可疑",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217325
+            },
+            {
+              "text": "科仪",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217326
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 8,
+          "rows_ranked_offline": 8,
+          "truncated": false,
+          "top": [
+            {
+              "text": "可依",
+              "score": 314.314,
+              "weight": 2314,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8538
+            },
+            {
+              "text": "课椅",
+              "score": 4.354,
+              "weight": 1433,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217322
+            },
+            {
+              "text": "可以",
+              "score": 1.828,
+              "weight": 1183,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217321
+            },
+            {
+              "text": "刻意",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217323
+            },
+            {
+              "text": "可意",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217324
+            },
+            {
+              "text": "可疑",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217325
+            },
+            {
+              "text": "科仪",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217326
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 8,
+          "rows_ranked_offline": 8,
+          "truncated": false,
+          "top": [
+            {
+              "text": "可以",
+              "score": 780.293,
+              "weight": 2001,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1036
+            },
+            {
+              "text": "课椅",
+              "score": 711.31,
+              "weight": 1433,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217322
+            },
+            {
+              "text": "刻意",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217323
+            },
+            {
+              "text": "可意",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217324
+            },
+            {
+              "text": "可疑",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217325
+            },
+            {
+              "text": "科仪",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 217326
+            },
+            {
+              "text": "可依",
+              "score": 672.91,
+              "weight": 2314,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8538
+            }
+          ]
+        }
+      },
+      "ky": {
+        "A": {
+          "raw_rows_available": 60,
+          "rows_ranked_offline": 60,
+          "truncated": false,
+          "top": [
+            {
+              "text": "块",
+              "score": 50014.0,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363318
+            },
+            {
+              "text": "快",
+              "score": 50014.0,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363319
+            },
+            {
+              "text": "跨",
+              "score": 50014.0,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363320
+            },
+            {
+              "text": "蒯",
+              "score": 2827.0,
+              "weight": 2827,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 1839
+            },
+            {
+              "text": "㧟",
+              "score": 2798.0,
+              "weight": 2798,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 2067
+            },
+            {
+              "text": "侩",
+              "score": 2375.0,
+              "weight": 2375,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 6926
+            },
+            {
+              "text": "脍",
+              "score": 2296.0,
+              "weight": 2296,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8811
+            },
+            {
+              "text": "狯",
+              "score": 2156.0,
+              "weight": 2156,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12006
+            },
+            {
+              "text": "哙",
+              "score": 2126.0,
+              "weight": 2126,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12804
+            },
+            {
+              "text": "㔞",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 29564
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 60,
+          "rows_ranked_offline": 60,
+          "truncated": false,
+          "top": [
+            {
+              "text": "蒯",
+              "score": 827.828,
+              "weight": 2827,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 1839
+            },
+            {
+              "text": "㧟",
+              "score": 798.799,
+              "weight": 2798,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 2067
+            },
+            {
+              "text": "块",
+              "score": 495.086,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363318
+            },
+            {
+              "text": "快",
+              "score": 495.086,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363319
+            },
+            {
+              "text": "跨",
+              "score": 495.086,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363320
+            },
+            {
+              "text": "侩",
+              "score": 375.375,
+              "weight": 2375,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 6926
+            },
+            {
+              "text": "脍",
+              "score": 296.296,
+              "weight": 2296,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8811
+            },
+            {
+              "text": "狯",
+              "score": 156.156,
+              "weight": 2156,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12006
+            },
+            {
+              "text": "哙",
+              "score": 126.126,
+              "weight": 2126,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12804
+            },
+            {
+              "text": "㔞",
+              "score": 100.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 29564
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 60,
+          "rows_ranked_offline": 60,
+          "truncated": false,
+          "top": [
+            {
+              "text": "块",
+              "score": 1019.82,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363318
+            },
+            {
+              "text": "快",
+              "score": 1019.82,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363319
+            },
+            {
+              "text": "跨",
+              "score": 1019.82,
+              "weight": 50014,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 363320
+            },
+            {
+              "text": "可以",
+              "score": 780.293,
+              "weight": 2001,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1037
+            },
+            {
+              "text": "蒯",
+              "score": 690.296,
+              "weight": 2827,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 1839
+            },
+            {
+              "text": "㧟",
+              "score": 689.401,
+              "weight": 2798,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 2067
+            },
+            {
+              "text": "侩",
+              "score": 675.169,
+              "weight": 2375,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 6926
+            },
+            {
+              "text": "脍",
+              "score": 672.232,
+              "weight": 2296,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 8811
+            },
+            {
+              "text": "狯",
+              "score": 666.77,
+              "weight": 2156,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12006
+            },
+            {
+              "text": "哙",
+              "score": 665.553,
+              "weight": 2126,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 12804
+            }
+          ]
+        }
+      }
+    }
+  },
+  "现在": {
+    "codes": [
+      "xmzl"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "xmzl": {
+        "A": {
+          "raw_rows_available": 38,
+          "rows_ranked_offline": 38,
+          "truncated": false,
+          "top": [
+            {
+              "text": "醒目仔",
+              "score": 2130.0,
+              "weight": 2130,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 291520
+            },
+            {
+              "text": "小马仔",
+              "score": 2118.0,
+              "weight": 2118,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 336101
+            },
+            {
+              "text": "西门在",
+              "score": 2102.0,
+              "weight": 2102,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 397219
+            },
+            {
+              "text": "贤哉",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 15419
+            },
+            {
+              "text": "心没在",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 412946
+            },
+            {
+              "text": "小猫崽",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 496665
+            },
+            {
+              "text": "熊猫债",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 560644
+            },
+            {
+              "text": "厦门之旅",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 84686
+            },
+            {
+              "text": "寻梦之旅",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 282237
+            },
+            {
+              "text": "消灭蟑螂",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 407749
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 38,
+          "rows_ranked_offline": 38,
+          "truncated": false,
+          "top": [
+            {
+              "text": "醒目仔",
+              "score": 120.13,
+              "weight": 2130,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 291520
+            },
+            {
+              "text": "小马仔",
+              "score": 108.118,
+              "weight": 2118,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 336101
+            },
+            {
+              "text": "贤哉",
+              "score": 100.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 15419
+            },
+            {
+              "text": "西门在",
+              "score": 92.102,
+              "weight": 2102,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 397219
+            },
+            {
+              "text": "心没在",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 412946
+            },
+            {
+              "text": "小猫崽",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 496665
+            },
+            {
+              "text": "熊猫债",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 560644
+            },
+            {
+              "text": "厦门之旅",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 84686
+            },
+            {
+              "text": "寻梦之旅",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 282237
+            },
+            {
+              "text": "消灭蟑螂",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 407749
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 38,
+          "rows_ranked_offline": 38,
+          "truncated": false,
+          "top": [
+            {
+              "text": "现在",
+              "score": 780.423,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1027
+            },
+            {
+              "text": "先在",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 154173
+            },
+            {
+              "text": "陷在",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 154175
+            },
+            {
+              "text": "西马寨",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 154174
+            },
+            {
+              "text": "夏木真理",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 154176
+            },
+            {
+              "text": "项目在",
+              "score": 685.307,
+              "weight": 1062,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 154172
+            },
+            {
+              "text": "醒目仔",
+              "score": 665.717,
+              "weight": 2130,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 291520
+            },
+            {
+              "text": "小马仔",
+              "score": 665.226,
+              "weight": 2118,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 336101
+            },
+            {
+              "text": "西门在",
+              "score": 664.568,
+              "weight": 2102,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 397219
+            },
+            {
+              "text": "贤哉",
+              "score": 664.485,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 15419
+            }
+          ]
+        }
+      }
+    }
+  },
+  "因为": {
+    "codes": [
+      "ynwz"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "ynwz": {
+        "A": {
+          "raw_rows_available": 25,
+          "rows_ranked_offline": 25,
+          "truncated": false,
+          "top": [
+            {
+              "text": "淫猥",
+              "score": 2460.0,
+              "weight": 2460,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5645
+            },
+            {
+              "text": "以你为",
+              "score": 2188.0,
+              "weight": 2188,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 125256
+            },
+            {
+              "text": "已年未",
+              "score": 2134.0,
+              "weight": 2134,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 275613
+            },
+            {
+              "text": "椰奶味",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 546955
+            },
+            {
+              "text": "油腻味",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 552810
+            },
+            {
+              "text": "以你为重",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 90520
+            },
+            {
+              "text": "以你为主",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 149485
+            },
+            {
+              "text": "以奶为主",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 149778
+            },
+            {
+              "text": "疑难危重症",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 131348
+            },
+            {
+              "text": "云南文山州",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 175688
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 25,
+          "rows_ranked_offline": 25,
+          "truncated": false,
+          "top": [
+            {
+              "text": "淫猥",
+              "score": 460.46,
+              "weight": 2460,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5645
+            },
+            {
+              "text": "以你为",
+              "score": 178.188,
+              "weight": 2188,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 125256
+            },
+            {
+              "text": "已年未",
+              "score": 124.134,
+              "weight": 2134,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 275613
+            },
+            {
+              "text": "椰奶味",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 546955
+            },
+            {
+              "text": "油腻味",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 552810
+            },
+            {
+              "text": "以你为重",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 90520
+            },
+            {
+              "text": "以你为主",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 149485
+            },
+            {
+              "text": "以奶为主",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 149778
+            },
+            {
+              "text": "疑难危重症",
+              "score": 70.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 131348
+            },
+            {
+              "text": "云南文山州",
+              "score": 70.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 175688
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 25,
+          "rows_ranked_offline": 25,
+          "truncated": false,
+          "top": [
+            {
+              "text": "因为",
+              "score": 780.553,
+              "weight": 2007,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1019
+            },
+            {
+              "text": "引为",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159659
+            },
+            {
+              "text": "音位",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159664
+            },
+            {
+              "text": "有内味",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159660
+            },
+            {
+              "text": "有年味",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159661
+            },
+            {
+              "text": "有浓味",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159662
+            },
+            {
+              "text": "有那味",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159663
+            },
+            {
+              "text": "疑难危重",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159665
+            },
+            {
+              "text": "眼内无珠",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 159666
+            },
+            {
+              "text": "淫猥",
+              "score": 678.222,
+              "weight": 2460,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5645
+            }
+          ]
+        }
+      }
+    }
+  },
+  "所以": {
+    "codes": [
+      "soyi"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "soyi": {
+        "A": {
+          "raw_rows_available": 6,
+          "rows_ranked_offline": 6,
+          "truncated": false,
+          "top": [
+            {
+              "text": "蓑衣",
+              "score": 2475.0,
+              "weight": 2475,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5413
+            },
+            {
+              "text": "所以",
+              "score": 2007.0,
+              "weight": 2007,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1020
+            },
+            {
+              "text": "琐议",
+              "score": 2001.0,
+              "weight": 2001,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 65428
+            },
+            {
+              "text": "所依",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397446
+            },
+            {
+              "text": "说以",
+              "score": 1023.0,
+              "weight": 1023,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397445
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 6,
+          "rows_ranked_offline": 6,
+          "truncated": false,
+          "top": [
+            {
+              "text": "蓑衣",
+              "score": 475.475,
+              "weight": 2475,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5413
+            },
+            {
+              "text": "所以",
+              "score": 7.586,
+              "weight": 1753,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397444
+            },
+            {
+              "text": "所依",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397446
+            },
+            {
+              "text": "琐议",
+              "score": 1.001,
+              "weight": 2001,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 65428
+            },
+            {
+              "text": "说以",
+              "score": 0.212,
+              "weight": 1023,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397445
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 6,
+          "rows_ranked_offline": 6,
+          "truncated": false,
+          "top": [
+            {
+              "text": "所以",
+              "score": 780.553,
+              "weight": 2007,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1020
+            },
+            {
+              "text": "所依",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397446
+            },
+            {
+              "text": "说以",
+              "score": 682.06,
+              "weight": 1023,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 397445
+            },
+            {
+              "text": "蓑衣",
+              "score": 678.75,
+              "weight": 2475,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 5413
+            },
+            {
+              "text": "琐议",
+              "score": 660.293,
+              "weight": 2001,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 65428
+            }
+          ]
+        }
+      }
+    }
+  },
+  "如果": {
+    "codes": [
+      "rugo"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "rugo": {
+        "A": {
+          "raw_rows_available": 5,
+          "rows_ranked_offline": 5,
+          "truncated": false,
+          "top": [
+            {
+              "text": "如果",
+              "score": 2005.0,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1026
+            },
+            {
+              "text": "乳果",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338313
+            },
+            {
+              "text": "入锅",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338314
+            },
+            {
+              "text": "辱国",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338315
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 5,
+          "rows_ranked_offline": 5,
+          "truncated": false,
+          "top": [
+            {
+              "text": "如果",
+              "score": 5.162,
+              "weight": 1513,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338312
+            },
+            {
+              "text": "乳果",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338313
+            },
+            {
+              "text": "入锅",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338314
+            },
+            {
+              "text": "辱国",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338315
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 5,
+          "rows_ranked_offline": 5,
+          "truncated": false,
+          "top": [
+            {
+              "text": "如果",
+              "score": 780.466,
+              "weight": 2005,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1026
+            },
+            {
+              "text": "乳果",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338313
+            },
+            {
+              "text": "入锅",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338314
+            },
+            {
+              "text": "辱国",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 338315
+            }
+          ]
+        }
+      }
+    }
+  },
+  "已经": {
+    "codes": [
+      "yijy"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "yijy": {
+        "A": {
+          "raw_rows_available": 13,
+          "rows_ranked_offline": 13,
+          "truncated": false,
+          "top": [
+            {
+              "text": "一径",
+              "score": 2999.0,
+              "weight": 2999,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 660
+            },
+            {
+              "text": "已经",
+              "score": 2002.0,
+              "weight": 2002,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1033
+            },
+            {
+              "text": "义井",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122053
+            },
+            {
+              "text": "义净",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122054
+            },
+            {
+              "text": "义警",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122055
+            },
+            {
+              "text": "医经",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122056
+            },
+            {
+              "text": "异景",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122057
+            },
+            {
+              "text": "意境",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122058
+            },
+            {
+              "text": "易经",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122059
+            },
+            {
+              "text": "艺精",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122060
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 13,
+          "rows_ranked_offline": 13,
+          "truncated": false,
+          "top": [
+            {
+              "text": "一径",
+              "score": 1000.0,
+              "weight": 2999,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 660
+            },
+            {
+              "text": "已经",
+              "score": 2.333,
+              "weight": 1233,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122052
+            },
+            {
+              "text": "义井",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122053
+            },
+            {
+              "text": "义净",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122054
+            },
+            {
+              "text": "义警",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122055
+            },
+            {
+              "text": "医经",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122056
+            },
+            {
+              "text": "异景",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122057
+            },
+            {
+              "text": "意境",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122058
+            },
+            {
+              "text": "易经",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122059
+            },
+            {
+              "text": "艺精",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122060
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 13,
+          "rows_ranked_offline": 13,
+          "truncated": false,
+          "top": [
+            {
+              "text": "已经",
+              "score": 780.336,
+              "weight": 2002,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1033
+            },
+            {
+              "text": "一径",
+              "score": 695.424,
+              "weight": 2999,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 660
+            },
+            {
+              "text": "义井",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122053
+            },
+            {
+              "text": "义净",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122054
+            },
+            {
+              "text": "义警",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122055
+            },
+            {
+              "text": "医经",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122056
+            },
+            {
+              "text": "异景",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122057
+            },
+            {
+              "text": "意境",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122058
+            },
+            {
+              "text": "易经",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122059
+            },
+            {
+              "text": "艺精",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 122060
+            }
+          ]
+        }
+      }
+    }
+  },
+  "自己": {
+    "codes": [
+      "ziji"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "ziji": {
+        "A": {
+          "raw_rows_available": 34,
+          "rows_ranked_offline": 34,
+          "truncated": false,
+          "top": [
+            {
+              "text": "自己",
+              "score": 2007.0,
+              "weight": 2007,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1018
+            },
+            {
+              "text": "之基",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21082
+            },
+            {
+              "text": "之机",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21083
+            },
+            {
+              "text": "之极",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21084
+            },
+            {
+              "text": "之计",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21085
+            },
+            {
+              "text": "之际",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21086
+            },
+            {
+              "text": "仔鸡",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21087
+            },
+            {
+              "text": "值机",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21088
+            },
+            {
+              "text": "只记",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21089
+            },
+            {
+              "text": "子集",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21090
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 34,
+          "rows_ranked_offline": 34,
+          "truncated": false,
+          "top": [
+            {
+              "text": "直系",
+              "score": 493.493,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7116
+            },
+            {
+              "text": "支系",
+              "score": 480.48,
+              "weight": 480,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 8418
+            },
+            {
+              "text": "之期",
+              "score": 425.425,
+              "weight": 425,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 15531
+            },
+            {
+              "text": "之奇",
+              "score": 413.413,
+              "weight": 413,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 17487
+            },
+            {
+              "text": "职系",
+              "score": 378.378,
+              "weight": 378,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 24500
+            },
+            {
+              "text": "子期",
+              "score": 361.361,
+              "weight": 361,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 28830
+            },
+            {
+              "text": "芝奇",
+              "score": 306.306,
+              "weight": 306,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 48340
+            },
+            {
+              "text": "自期",
+              "score": 261.261,
+              "weight": 261,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 76102
+            },
+            {
+              "text": "自己",
+              "score": 7.99,
+              "weight": 1793,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21081
+            },
+            {
+              "text": "之基",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21082
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 34,
+          "rows_ranked_offline": 34,
+          "truncated": false,
+          "top": [
+            {
+              "text": "自己",
+              "score": 780.553,
+              "weight": 2007,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1018
+            },
+            {
+              "text": "之基",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21082
+            },
+            {
+              "text": "之机",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21083
+            },
+            {
+              "text": "之极",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21084
+            },
+            {
+              "text": "之计",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21085
+            },
+            {
+              "text": "之际",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21086
+            },
+            {
+              "text": "仔鸡",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21087
+            },
+            {
+              "text": "值机",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21088
+            },
+            {
+              "text": "只记",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21089
+            },
+            {
+              "text": "子集",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 21090
+            }
+          ]
+        }
+      }
+    }
+  },
+  "没有": {
+    "codes": [
+      "moyb",
+      "myb",
+      "mzyb"
+    ],
+    "code_coverage": 3,
+    "strategies": {
+      "moyb": {
+        "A": {
+          "raw_rows_available": 9,
+          "rows_ranked_offline": 9,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 2004.0,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1029
+            },
+            {
+              "text": "抹油",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 447530
+            },
+            {
+              "text": "无忧",
+              "score": 612.0,
+              "weight": 612,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2195
+            },
+            {
+              "text": "无有",
+              "score": 497.0,
+              "weight": 497,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 6698
+            },
+            {
+              "text": "万有",
+              "score": 493.0,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7094
+            },
+            {
+              "text": "无油",
+              "score": 493.0,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7113
+            },
+            {
+              "text": "无由",
+              "score": 387.0,
+              "weight": 387,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 22622
+            },
+            {
+              "text": "万友",
+              "score": 317.0,
+              "weight": 317,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 43664
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 9,
+          "rows_ranked_offline": 9,
+          "truncated": false,
+          "top": [
+            {
+              "text": "无忧",
+              "score": 612.613,
+              "weight": 612,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2195
+            },
+            {
+              "text": "无有",
+              "score": 497.497,
+              "weight": 497,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 6698
+            },
+            {
+              "text": "万有",
+              "score": 493.493,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7094
+            },
+            {
+              "text": "无油",
+              "score": 493.493,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7113
+            },
+            {
+              "text": "无由",
+              "score": 387.387,
+              "weight": 387,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 22622
+            },
+            {
+              "text": "万友",
+              "score": 317.317,
+              "weight": 317,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 43664
+            },
+            {
+              "text": "没有",
+              "score": 3.009,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1029
+            },
+            {
+              "text": "抹油",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 447530
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 9,
+          "rows_ranked_offline": 9,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 780.423,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1029
+            },
+            {
+              "text": "抹油",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 447530
+            },
+            {
+              "text": "无忧",
+              "score": 597.492,
+              "weight": 612,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2195
+            },
+            {
+              "text": "无有",
+              "score": 579.446,
+              "weight": 497,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 6698
+            },
+            {
+              "text": "万有",
+              "score": 578.745,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7094
+            },
+            {
+              "text": "无油",
+              "score": 578.745,
+              "weight": 493,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 7113
+            },
+            {
+              "text": "无由",
+              "score": 557.766,
+              "weight": 387,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 22622
+            },
+            {
+              "text": "万友",
+              "score": 540.485,
+              "weight": 317,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 43664
+            }
+          ]
+        }
+      },
+      "myb": {
+        "A": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 2004.0,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1030
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 4.152,
+              "weight": 1413,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 525080
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 780.423,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1030
+            }
+          ]
+        }
+      },
+      "mzyb": {
+        "A": {
+          "raw_rows_available": 24,
+          "rows_ranked_offline": 24,
+          "truncated": false,
+          "top": [
+            {
+              "text": "满嘴油",
+              "score": 2369.0,
+              "weight": 2369,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 35909
+            },
+            {
+              "text": "秒左右",
+              "score": 2264.0,
+              "weight": 2264,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 72652
+            },
+            {
+              "text": "没再有",
+              "score": 2259.0,
+              "weight": 2259,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 75171
+            },
+            {
+              "text": "没准有",
+              "score": 2118.0,
+              "weight": 2118,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 336870
+            },
+            {
+              "text": "梦中游",
+              "score": 2102.0,
+              "weight": 2102,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 396654
+            },
+            {
+              "text": "梅州柚",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 546337
+            },
+            {
+              "text": "每周一班",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 392160
+            },
+            {
+              "text": "木制圆模板",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 92310
+            },
+            {
+              "text": "木质圆模板",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 92311
+            },
+            {
+              "text": "民族预科班",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 321114
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 24,
+          "rows_ranked_offline": 24,
+          "truncated": false,
+          "top": [
+            {
+              "text": "满嘴油",
+              "score": 359.369,
+              "weight": 2369,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 35909
+            },
+            {
+              "text": "秒左右",
+              "score": 254.264,
+              "weight": 2264,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 72652
+            },
+            {
+              "text": "没再有",
+              "score": 249.259,
+              "weight": 2259,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 75171
+            },
+            {
+              "text": "没准有",
+              "score": 108.118,
+              "weight": 2118,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 336870
+            },
+            {
+              "text": "梦中游",
+              "score": 92.102,
+              "weight": 2102,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 396654
+            },
+            {
+              "text": "梅州柚",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 546337
+            },
+            {
+              "text": "每周一班",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 392160
+            },
+            {
+              "text": "木制圆模板",
+              "score": 70.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 92310
+            },
+            {
+              "text": "木质圆模板",
+              "score": 70.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 92311
+            },
+            {
+              "text": "民族预科班",
+              "score": 70.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 321114
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 24,
+          "rows_ranked_offline": 24,
+          "truncated": false,
+          "top": [
+            {
+              "text": "没有",
+              "score": 780.423,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1031
+            },
+            {
+              "text": "每有",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132466
+            },
+            {
+              "text": "没油",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132467
+            },
+            {
+              "text": "煤油",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132470
+            },
+            {
+              "text": "棉子油",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132464
+            },
+            {
+              "text": "棉籽油",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132465
+            },
+            {
+              "text": "没自由",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132468
+            },
+            {
+              "text": "煤制油",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132469
+            },
+            {
+              "text": "米左右",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132471
+            },
+            {
+              "text": "莫重于兵",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 132472
+            }
+          ]
+        }
+      }
+    }
+  },
+  "需要": {
+    "codes": [
+      "xuyk"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "xuyk": {
+        "A": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "需要",
+              "score": 2003.0,
+              "weight": 2003,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1032
+            },
+            {
+              "text": "须要",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 451135
+            },
+            {
+              "text": "续约",
+              "score": 621.0,
+              "weight": 621,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2019
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "续约",
+              "score": 621.622,
+              "weight": 621,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2019
+            },
+            {
+              "text": "需要",
+              "score": 3.546,
+              "weight": 1353,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 451134
+            },
+            {
+              "text": "须要",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 451135
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "需要",
+              "score": 780.38,
+              "weight": 2003,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1032
+            },
+            {
+              "text": "须要",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 451135
+            },
+            {
+              "text": "续约",
+              "score": 598.758,
+              "weight": 621,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 2019
+            }
+          ]
+        }
+      }
+    }
+  },
+  "问题": {
+    "codes": [
+      "wfti"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "wfti": {
+        "A": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我反替",
+              "score": 2002.0,
+              "weight": 2002,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 1119118
+            },
+            {
+              "text": "问题",
+              "score": 2001.0,
+              "weight": 2001,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1038
+            },
+            {
+              "text": "文体",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 450465
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "问题",
+              "score": 1.525,
+              "weight": 1153,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 450464
+            },
+            {
+              "text": "文体",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 450465
+            },
+            {
+              "text": "我反替",
+              "score": -7.998,
+              "weight": 2002,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 1119118
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 4,
+          "rows_ranked_offline": 4,
+          "truncated": false,
+          "top": [
+            {
+              "text": "问题",
+              "score": 780.293,
+              "weight": 2001,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1038
+            },
+            {
+              "text": "文体",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 450465
+            },
+            {
+              "text": "我反替",
+              "score": 660.336,
+              "weight": 2002,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 1119118
+            }
+          ]
+        }
+      }
+    }
+  },
+  "应该": {
+    "codes": [
+      "yygl"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "yygl": {
+        "A": {
+          "raw_rows_available": 53,
+          "rows_ranked_offline": 53,
+          "truncated": false,
+          "top": [
+            {
+              "text": "医用高分子材料",
+              "score": 2535.0,
+              "weight": 2535,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 11873
+            },
+            {
+              "text": "应用概率",
+              "score": 2420.0,
+              "weight": 2420,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 14730
+            },
+            {
+              "text": "又一个月了",
+              "score": 2180.0,
+              "weight": 2180,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 29127
+            },
+            {
+              "text": "已于该",
+              "score": 2131.0,
+              "weight": 2131,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 287128
+            },
+            {
+              "text": "已与该",
+              "score": 2108.0,
+              "weight": 2108,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 374068
+            },
+            {
+              "text": "应由该",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 504035
+            },
+            {
+              "text": "愿意改",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 514891
+            },
+            {
+              "text": "音乐管理",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 92349
+            },
+            {
+              "text": "羽衣甘蓝",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 93846
+            },
+            {
+              "text": "优雅干练",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 153557
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 53,
+          "rows_ranked_offline": 53,
+          "truncated": false,
+          "top": [
+            {
+              "text": "医用高分子材料",
+              "score": 485.536,
+              "weight": 2535,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 11873
+            },
+            {
+              "text": "应用概率",
+              "score": 400.42,
+              "weight": 2420,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 14730
+            },
+            {
+              "text": "又一个月了",
+              "score": 150.18,
+              "weight": 2180,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 29127
+            },
+            {
+              "text": "已于该",
+              "score": 121.131,
+              "weight": 2131,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 287128
+            },
+            {
+              "text": "已与该",
+              "score": 98.108,
+              "weight": 2108,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 374068
+            },
+            {
+              "text": "应由该",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 504035
+            },
+            {
+              "text": "愿意改",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 514891
+            },
+            {
+              "text": "音乐管理",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 92349
+            },
+            {
+              "text": "羽衣甘蓝",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 93846
+            },
+            {
+              "text": "优雅干练",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 153557
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 53,
+          "rows_ranked_offline": 53,
+          "truncated": false,
+          "top": [
+            {
+              "text": "应该",
+              "score": 780.639,
+              "weight": 2009,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1017
+            },
+            {
+              "text": "也要改",
+              "score": 700.281,
+              "weight": 1262,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98278
+            },
+            {
+              "text": "也应该",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98279
+            },
+            {
+              "text": "又应该",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98280
+            },
+            {
+              "text": "又要改",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98281
+            },
+            {
+              "text": "姚永概",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98282
+            },
+            {
+              "text": "越应该",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98283
+            },
+            {
+              "text": "医院管理",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98284
+            },
+            {
+              "text": "应用管理",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98285
+            },
+            {
+              "text": "有一个类",
+              "score": 688.436,
+              "weight": 1101,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 98286
+            }
+          ]
+        }
+      }
+    }
+  },
+  "设置": {
+    "codes": [
+      "sezi"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "sezi": {
+        "A": {
+          "raw_rows_available": 15,
+          "rows_ranked_offline": 15,
+          "truncated": false,
+          "top": [
+            {
+              "text": "设置",
+              "score": 2004.0,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1028
+            },
+            {
+              "text": "麝雉",
+              "score": 2003.0,
+              "weight": 2003,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 61220
+            },
+            {
+              "text": "摄制",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163954
+            },
+            {
+              "text": "社址",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163956
+            },
+            {
+              "text": "色值",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163957
+            },
+            {
+              "text": "色纸",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163958
+            },
+            {
+              "text": "色织",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163959
+            },
+            {
+              "text": "善恶值",
+              "score": 1102.0,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163952
+            },
+            {
+              "text": "宋恩子",
+              "score": 1102.0,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163953
+            },
+            {
+              "text": "生儿子",
+              "score": 1102.0,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163955
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 15,
+          "rows_ranked_offline": 15,
+          "truncated": false,
+          "top": [
+            {
+              "text": "折纸",
+              "score": 541.542,
+              "weight": 541,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 4391
+            },
+            {
+              "text": "色子",
+              "score": 413.413,
+              "weight": 413,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 17516
+            },
+            {
+              "text": "折枝",
+              "score": 409.409,
+              "weight": 409,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 18200
+            },
+            {
+              "text": "折子",
+              "score": 378.378,
+              "weight": 378,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 24479
+            },
+            {
+              "text": "设置",
+              "score": 4.657,
+              "weight": 1463,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163951
+            },
+            {
+              "text": "麝雉",
+              "score": 3.003,
+              "weight": 2003,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 61220
+            },
+            {
+              "text": "摄制",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163954
+            },
+            {
+              "text": "社址",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163956
+            },
+            {
+              "text": "色值",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163957
+            },
+            {
+              "text": "色纸",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163958
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 15,
+          "rows_ranked_offline": 15,
+          "truncated": false,
+          "top": [
+            {
+              "text": "设置",
+              "score": 780.423,
+              "weight": 2004,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1028
+            },
+            {
+              "text": "摄制",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163954
+            },
+            {
+              "text": "社址",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163956
+            },
+            {
+              "text": "色值",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163957
+            },
+            {
+              "text": "色纸",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163958
+            },
+            {
+              "text": "色织",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163959
+            },
+            {
+              "text": "善恶值",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163952
+            },
+            {
+              "text": "宋恩子",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163953
+            },
+            {
+              "text": "生儿子",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 163955
+            },
+            {
+              "text": "麝雉",
+              "score": 660.38,
+              "weight": 2003,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 61220
+            }
+          ]
+        }
+      }
+    }
+  },
+  "文件": {
+    "codes": [
+      "wfjm"
+    ],
+    "code_coverage": 1,
+    "strategies": {
+      "wfjm": {
+        "A": {
+          "raw_rows_available": 14,
+          "rows_ranked_offline": 14,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我房间",
+              "score": 2183.0,
+              "weight": 2183,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 132640
+            },
+            {
+              "text": "我犯贱",
+              "score": 2182.0,
+              "weight": 2182,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 134137
+            },
+            {
+              "text": "我福建",
+              "score": 2164.0,
+              "weight": 2164,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 176808
+            },
+            {
+              "text": "王负剑",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 565505
+            },
+            {
+              "text": "挖坟掘墓",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 338677
+            },
+            {
+              "text": "无法见面",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 361217
+            },
+            {
+              "text": "无法解析域名",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 120832
+            },
+            {
+              "text": "我放箭",
+              "score": 2083.0,
+              "weight": 2083,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 954181
+            },
+            {
+              "text": "文件",
+              "score": 2006.0,
+              "weight": 2006,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1022
+            },
+            {
+              "text": "文建",
+              "score": 1103.0,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278068
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 14,
+          "rows_ranked_offline": 14,
+          "truncated": false,
+          "top": [
+            {
+              "text": "我房间",
+              "score": 173.183,
+              "weight": 2183,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 132640
+            },
+            {
+              "text": "我犯贱",
+              "score": 172.182,
+              "weight": 2182,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 134137
+            },
+            {
+              "text": "我福建",
+              "score": 154.164,
+              "weight": 2164,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 176808
+            },
+            {
+              "text": "王负剑",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 565505
+            },
+            {
+              "text": "挖坟掘墓",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 338677
+            },
+            {
+              "text": "无法见面",
+              "score": 80.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 361217
+            },
+            {
+              "text": "我放箭",
+              "score": 73.083,
+              "weight": 2083,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 954181
+            },
+            {
+              "text": "无法解析域名",
+              "score": 60.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.5字+.dict.yaml",
+              "source_file": "sbzr.rimeice.5字+.dict.yaml",
+              "line": 120832
+            },
+            {
+              "text": "文件",
+              "score": 6.071,
+              "weight": 1603,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278066
+            },
+            {
+              "text": "文建",
+              "score": 1.02,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278068
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 14,
+          "rows_ranked_offline": 14,
+          "truncated": false,
+          "top": [
+            {
+              "text": "文件",
+              "score": 780.509,
+              "weight": 2006,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1022
+            },
+            {
+              "text": "文建",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278068
+            },
+            {
+              "text": "稳健",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278069
+            },
+            {
+              "text": "闻见",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278070
+            },
+            {
+              "text": "危废间",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 278067
+            },
+            {
+              "text": "我房间",
+              "score": 667.851,
+              "weight": 2183,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 132640
+            },
+            {
+              "text": "我犯贱",
+              "score": 667.811,
+              "weight": 2182,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 134137
+            },
+            {
+              "text": "我福建",
+              "score": 667.092,
+              "weight": 2164,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 176808
+            },
+            {
+              "text": "王负剑",
+              "score": 664.485,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 565505
+            },
+            {
+              "text": "挖坟掘墓",
+              "score": 664.485,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.4字.dict.yaml",
+              "source_file": "sbzr.rimeice.4字.dict.yaml",
+              "line": 338677
+            }
+          ]
+        }
+      }
+    }
+  },
+  "中国": {
+    "codes": [
+      "zsgi",
+      "zsgo"
+    ],
+    "code_coverage": 2,
+    "strategies": {
+      "zsgi": {
+        "A": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中国",
+              "score": 2002.0,
+              "weight": 2002,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1034
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中国",
+              "score": 931.932,
+              "weight": 931,
+              "source": "extended.common",
+              "source_file": "sbzr.extended.common.dict.yaml",
+              "line": 48
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 2,
+          "rows_ranked_offline": 2,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中国",
+              "score": 780.336,
+              "weight": 2002,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1034
+            }
+          ]
+        }
+      },
+      "zsgo": {
+        "A": {
+          "raw_rows_available": 28,
+          "rows_ranked_offline": 28,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中过",
+              "score": 2369.0,
+              "weight": 2369,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 7093
+            },
+            {
+              "text": "仲衰过",
+              "score": 2134.0,
+              "weight": 2134,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 274781
+            },
+            {
+              "text": "炸水果",
+              "score": 2120.0,
+              "weight": 2120,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 329099
+            },
+            {
+              "text": "中四国",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 427319
+            },
+            {
+              "text": "做水果",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 441740
+            },
+            {
+              "text": "展示过",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 499102
+            },
+            {
+              "text": "战三国",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 516274
+            },
+            {
+              "text": "摘水果",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 525080
+            },
+            {
+              "text": "最三国",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 535857
+            },
+            {
+              "text": "真三国",
+              "score": 2100.0,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 572804
+            }
+          ]
+        },
+        "B": {
+          "raw_rows_available": 28,
+          "rows_ranked_offline": 28,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中过",
+              "score": 369.369,
+              "weight": 2369,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 7093
+            },
+            {
+              "text": "仲衰过",
+              "score": 124.134,
+              "weight": 2134,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 274781
+            },
+            {
+              "text": "炸水果",
+              "score": 110.12,
+              "weight": 2120,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 329099
+            },
+            {
+              "text": "中四国",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 427319
+            },
+            {
+              "text": "做水果",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 441740
+            },
+            {
+              "text": "展示过",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 499102
+            },
+            {
+              "text": "战三国",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 516274
+            },
+            {
+              "text": "摘水果",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 525080
+            },
+            {
+              "text": "最三国",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 535857
+            },
+            {
+              "text": "真三国",
+              "score": 90.1,
+              "weight": 2100,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 572804
+            }
+          ]
+        },
+        "C": {
+          "raw_rows_available": 28,
+          "rows_ranked_offline": 28,
+          "truncated": false,
+          "top": [
+            {
+              "text": "中国",
+              "score": 780.336,
+              "weight": 2002,
+              "source": "overlay",
+              "source_file": "sbzr.common-frequency.dict.yaml",
+              "line": 1035
+            },
+            {
+              "text": "种果",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192820
+            },
+            {
+              "text": "种过",
+              "score": 688.594,
+              "weight": 1103,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192821
+            },
+            {
+              "text": "中山国",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192817
+            },
+            {
+              "text": "战胜国",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192818
+            },
+            {
+              "text": "沾手过",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192819
+            },
+            {
+              "text": "紫颂果",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192822
+            },
+            {
+              "text": "重视过",
+              "score": 688.515,
+              "weight": 1102,
+              "source": "base",
+              "source_file": "base.dict.yaml",
+              "line": 192823
+            },
+            {
+              "text": "中过",
+              "score": 674.95,
+              "weight": 2369,
+              "source": "rimeice:sbzr.rimeice.12字.dict.yaml",
+              "source_file": "sbzr.rimeice.12字.dict.yaml",
+              "line": 7093
+            },
+            {
+              "text": "仲衰过",
+              "score": 665.88,
+              "weight": 2134,
+              "source": "rimeice:sbzr.rimeice.3字.dict.yaml",
+              "source_file": "sbzr.rimeice.3字.dict.yaml",
+              "line": 274781
+            }
+          ]
+        }
+      }
+    }
+  }
+}

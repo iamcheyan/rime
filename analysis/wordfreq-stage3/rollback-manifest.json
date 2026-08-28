@@ -1,0 +1,10 @@
+{
+  "stage": "stage3-rimeice-dry-run",
+  "production_entrypoints_modified": false,
+  "input_hashes": {
+    "sbzr.dict.yaml": "7f2e01706d5db430ecb2781e906032008ea28cfaf488fe23edfebf5c9dc07868",
+    "sbzr.chrome.extension/shared/dicts.js": "417ab57c1c177bf1750d4a41a3ef7e6de7ce2632d45de362c8c4368ddca7a0d5"
+  },
+  "restore_command": "git revert <stage3-report-commit>",
+  "note": "No production rimeice file or entrypoint is changed by this dry-run."
+}
