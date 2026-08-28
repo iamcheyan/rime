@@ -1,0 +1,38 @@
+{
+  "SUBTLEX-CH": {
+    "external_entries": 99121,
+    "sbzr_unique_text": 2338626,
+    "sbzr_rows_scanned": 4664710,
+    "overlap": 64643,
+    "coverage_of_external": 0.652162508449269,
+    "coverage_of_sbzr": 0.027641444164222925,
+    "spearman_rank": 0.01135230860435288,
+    "external_high_sbzr_low": 24134,
+    "external_low_sbzr_high": 1190,
+    "multi_code_overlap": 23639
+  },
+  "Rime essay": {
+    "external_entries": 442693,
+    "sbzr_unique_text": 2338626,
+    "sbzr_rows_scanned": 4664710,
+    "overlap": 132602,
+    "coverage_of_external": 0.2995348921261461,
+    "coverage_of_sbzr": 0.05670081492295048,
+    "spearman_rank": -0.005566452212994616,
+    "external_high_sbzr_low": 41170,
+    "external_low_sbzr_high": 5035,
+    "multi_code_overlap": 48212
+  },
+  "CppJieba": {
+    "external_entries": 348982,
+    "sbzr_unique_text": 2338626,
+    "sbzr_rows_scanned": 4664710,
+    "overlap": 266496,
+    "coverage_of_external": 0.7636382392215071,
+    "coverage_of_sbzr": 0.1139540909918901,
+    "spearman_rank": 0.031912202040675276,
+    "external_high_sbzr_low": 78305,
+    "external_low_sbzr_high": 2470,
+    "multi_code_overlap": 120514
+  }
+}

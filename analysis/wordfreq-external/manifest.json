@@ -1,0 +1,37 @@
+{
+  "generated_utc": "2026-08-28T06:23:45.278197+00:00",
+  "root": "/home/tetsuya/rime",
+  "sbzr_rows_scanned": 4664710,
+  "sbzr_unique_text": 2338626,
+  "sources": [
+    {
+      "name": "SUBTLEX-CH",
+      "path": "/tmp/sbzr-wordfreq-external-cache/subtlex-ch-s1.zip",
+      "sha256": "cced9cb382914b93956a24fd06c10de709d351ff4501ac94c9ab136004421f07",
+      "bytes": 1760600
+    },
+    {
+      "name": "Rime essay",
+      "path": "/tmp/sbzr-wordfreq-external-cache/rime-essay.txt",
+      "sha256": "a6f8409c261e5d21bd78e6cbcde8f8e1ef7f68c07ff1c2692c07dd4ff4151cea",
+      "bytes": 5887417
+    },
+    {
+      "name": "CppJieba",
+      "path": "/tmp/sbzr-wordfreq-external-cache/cppjieba-jieba.dict.utf8",
+      "sha256": "6f7d4350e8861ef4139b2e3a6fad05430c19ae71f4b8378190edecac8aae2e6a",
+      "bytes": 5071207
+    }
+  ],
+  "source_urls": {
+    "SUBTLEX-CH": "https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0010729.s002",
+    "Rime essay": "https://raw.githubusercontent.com/rime/rime-essay/master/essay.txt",
+    "CppJieba": "https://raw.githubusercontent.com/yanyiwu/cppjieba/master/dict/jieba.dict.utf8"
+  },
+  "excluded": [
+    "Sogou/SCEL: no numerical use because redistribution terms are unclear",
+    "sbzr.userdb*.dict.yaml",
+    "LevelDb",
+    "private dynamic frequency"
+  ]
+}
