@@ -1,0 +1,405 @@
+{
+  "我们": {
+    "found_rows": 1,
+    "codes": [
+      "womf"
+    ],
+    "weights": [
+      1633
+    ],
+    "rows": [
+      {
+        "text": "我们",
+        "code": "womf",
+        "weight": 1633,
+        "line": 508795,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 508777,
+        "rank_in_code_before_filters": 1
+      }
+    ]
+  },
+  "这个": {
+    "found_rows": 3,
+    "codes": [
+      "zege",
+      "zzg",
+      "zzge"
+    ],
+    "weights": [
+      1553,
+      1013
+    ],
+    "rows": [
+      {
+        "text": "这个",
+        "code": "zege",
+        "weight": 1553,
+        "line": 300706,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 300688,
+        "rank_in_code_before_filters": 2
+      },
+      {
+        "text": "这个",
+        "code": "zzg",
+        "weight": 1553,
+        "line": 482741,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 482723,
+        "rank_in_code_before_filters": 1
+      },
+      {
+        "text": "这个",
+        "code": "zzge",
+        "weight": 1013,
+        "line": 44665,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 44647,
+        "rank_in_code_before_filters": 27
+      }
+    ]
+  },
+  "可以": {
+    "found_rows": 4,
+    "codes": [
+      "keyi",
+      "ky"
+    ],
+    "weights": [
+      50014,
+      1183,
+      0
+    ],
+    "rows": [
+      {
+        "text": "可以",
+        "code": "keyi",
+        "weight": 50014,
+        "line": 43,
+        "source": "sbzr.chrome.extension/dicts/sbzr.single.dict.yaml",
+        "record_index": 26,
+        "rank_in_code_before_filters": 1
+      },
+      {
+        "text": "可以",
+        "code": "keyi",
+        "weight": 1183,
+        "line": 217321,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 217303,
+        "rank_in_code_before_filters": 4
+      },
+      {
+        "text": "可以",
+        "code": "ky",
+        "weight": 0,
+        "line": 23,
+        "source": "sbzr.chrome.extension/dicts/zdy.dict.yaml",
+        "record_index": 5,
+        "rank_in_code_before_filters": null
+      },
+      {
+        "text": "可以",
+        "code": "keyi",
+        "weight": 0,
+        "line": 24,
+        "source": "sbzr.chrome.extension/dicts/zdy.dict.yaml",
+        "record_index": 6,
+        "rank_in_code_before_filters": null
+      }
+    ]
+  },
+  "现在": {
+    "found_rows": 1,
+    "codes": [
+      "xmzl"
+    ],
+    "weights": [
+      1463
+    ],
+    "rows": [
+      {
+        "text": "现在",
+        "code": "xmzl",
+        "weight": 1463,
+        "line": 154171,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 154153,
+        "rank_in_code_before_filters": 32
+      }
+    ]
+  },
+  "因为": {
+    "found_rows": 1,
+    "codes": [
+      "ynwz"
+    ],
+    "weights": [
+      1753
+    ],
+    "rows": [
+      {
+        "text": "因为",
+        "code": "ynwz",
+        "weight": 1753,
+        "line": 159658,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 159640,
+        "rank_in_code_before_filters": 16
+      }
+    ]
+  },
+  "所以": {
+    "found_rows": 1,
+    "codes": [
+      "soyi"
+    ],
+    "weights": [
+      1753
+    ],
+    "rows": [
+      {
+        "text": "所以",
+        "code": "soyi",
+        "weight": 1753,
+        "line": 397444,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 397426,
+        "rank_in_code_before_filters": 3
+      }
+    ]
+  },
+  "如果": {
+    "found_rows": 1,
+    "codes": [
+      "rugo"
+    ],
+    "weights": [
+      1513
+    ],
+    "rows": [
+      {
+        "text": "如果",
+        "code": "rugo",
+        "weight": 1513,
+        "line": 338312,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 338294,
+        "rank_in_code_before_filters": 1
+      }
+    ]
+  },
+  "已经": {
+    "found_rows": 1,
+    "codes": [
+      "yijy"
+    ],
+    "weights": [
+      1233
+    ],
+    "rows": [
+      {
+        "text": "已经",
+        "code": "yijy",
+        "weight": 1233,
+        "line": 122052,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 122034,
+        "rank_in_code_before_filters": 5
+      }
+    ]
+  },
+  "自己": {
+    "found_rows": 1,
+    "codes": [
+      "ziji"
+    ],
+    "weights": [
+      1793
+    ],
+    "rows": [
+      {
+        "text": "自己",
+        "code": "ziji",
+        "weight": 1793,
+        "line": 21081,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 21063,
+        "rank_in_code_before_filters": 1
+      }
+    ]
+  },
+  "没有": {
+    "found_rows": 3,
+    "codes": [
+      "moyb",
+      "myb",
+      "mzyb"
+    ],
+    "weights": [
+      1413,
+      1013
+    ],
+    "rows": [
+      {
+        "text": "没有",
+        "code": "mzyb",
+        "weight": 1413,
+        "line": 132463,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 132445,
+        "rank_in_code_before_filters": 14
+      },
+      {
+        "text": "没有",
+        "code": "myb",
+        "weight": 1413,
+        "line": 525080,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 525062,
+        "rank_in_code_before_filters": 1
+      },
+      {
+        "text": "没有",
+        "code": "moyb",
+        "weight": 1013,
+        "line": 447531,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 447513,
+        "rank_in_code_before_filters": 2
+      }
+    ]
+  },
+  "需要": {
+    "found_rows": 1,
+    "codes": [
+      "xuyk"
+    ],
+    "weights": [
+      1353
+    ],
+    "rows": [
+      {
+        "text": "需要",
+        "code": "xuyk",
+        "weight": 1353,
+        "line": 451134,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 451116,
+        "rank_in_code_before_filters": 1
+      }
+    ]
+  },
+  "问题": {
+    "found_rows": 1,
+    "codes": [
+      "wfti"
+    ],
+    "weights": [
+      1153
+    ],
+    "rows": [
+      {
+        "text": "问题",
+        "code": "wfti",
+        "weight": 1153,
+        "line": 450464,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 450446,
+        "rank_in_code_before_filters": 2
+      }
+    ]
+  },
+  "应该": {
+    "found_rows": 1,
+    "codes": [
+      "yygl"
+    ],
+    "weights": [
+      1953
+    ],
+    "rows": [
+      {
+        "text": "应该",
+        "code": "yygl",
+        "weight": 1953,
+        "line": 98277,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 98259,
+        "rank_in_code_before_filters": 41
+      }
+    ]
+  },
+  "设置": {
+    "found_rows": 1,
+    "codes": [
+      "sezi"
+    ],
+    "weights": [
+      1463
+    ],
+    "rows": [
+      {
+        "text": "设置",
+        "code": "sezi",
+        "weight": 1463,
+        "line": 163951,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 163933,
+        "rank_in_code_before_filters": 2
+      }
+    ]
+  },
+  "文件": {
+    "found_rows": 1,
+    "codes": [
+      "wfjm"
+    ],
+    "weights": [
+      1603
+    ],
+    "rows": [
+      {
+        "text": "文件",
+        "code": "wfjm",
+        "weight": 1603,
+        "line": 278066,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 278048,
+        "rank_in_code_before_filters": 9
+      }
+    ]
+  },
+  "中国": {
+    "found_rows": 2,
+    "codes": [
+      "zsgi",
+      "zsgo"
+    ],
+    "weights": [
+      1223,
+      931
+    ],
+    "rows": [
+      {
+        "text": "中国",
+        "code": "zsgo",
+        "weight": 1223,
+        "line": 192816,
+        "source": "sbzr.chrome.extension/dicts/base.dict.yaml",
+        "record_index": 192798,
+        "rank_in_code_before_filters": 20
+      },
+      {
+        "text": "中国",
+        "code": "zsgi",
+        "weight": 931,
+        "line": 48,
+        "source": "sbzr.chrome.extension/dicts/sbzr.extended.common.dict.yaml",
+        "record_index": 30,
+        "rank_in_code_before_filters": 1
+      }
+    ]
+  }
+}

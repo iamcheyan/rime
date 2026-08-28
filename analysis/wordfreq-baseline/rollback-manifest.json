@@ -1,0 +1,18 @@
+{
+  "baseline_git_commit": "c663617000271bedcf1fb4f9dd940eec9153bde1",
+  "restore_scope": [
+    "sbzr.dict.yaml",
+    "sbzr.schema.yaml",
+    "lua/length_priority.lua",
+    "lua/dynamic_freq.lua",
+    "sbzr.chrome.extension/shared/dicts.js",
+    "sbzr.chrome.extension/dicts/sbzr.common-frequency.dict.yaml"
+  ],
+  "rollback_note": "Prefer git revert of the stage commit; restore only tracked production paths. Do not restore or submit private userdb/dynamic data.",
+  "sha256_at_baseline": {
+    "sbzr.dict.yaml": "6bb3e9d7cdafe7f3694c5ffedce6959d47776b27d767a02ed8e96c67e71abc56",
+    "sbzr.schema.yaml": "76c836e57ef6d49738111583df56c7d2437f59841c33a8faf8dd39723bf4d695",
+    "lua/length_priority.lua": "b2cfae30366120108fb17eaa80cb2f9a53b8ac5f589de3ddd61a07db9ee0d364",
+    "lua/dynamic_freq.lua": "8e063c6948dd1118989fecaa223c781d1e4435a926ca281e1ea0856e1e355110"
+  }
+}
