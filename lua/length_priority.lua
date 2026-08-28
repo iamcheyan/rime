@@ -1,14 +1,61 @@
 -- length_priority.lua
--- 候选词按字数排序：字少的优先，同字数保持原权重顺序。
--- 放在 dynamic_freq_filter 之前：用户手动选过的词由 dynamic_freq 提到最前，
--- 覆盖字数排序；其余候选一律"字少在前，字多在后"。
+-- Candidate ordering: quality first, with a bounded length tie-break.
+-- The dynamic-frequency filter remains after this filter in sbzr.schema.yaml;
+-- quality-first keeps a recently selected high-quality candidate in its scan
+-- window without deleting any candidate.
 
 local M = {}
 local MAX_BUFFER = 512
+local QUALITY_TIE_WINDOW = 100
 
 --- UTF-8 字符计数（不是字节数）
 local function utf8len(s)
   return #(s:gsub("[\1-\127\194-\244][\128-\191]*", "x"))
+end
+
+local function candidate_quality(cand)
+  local quality = tonumber(cand.quality)
+  if quality == nil then
+    return 0
+  end
+  return quality
+end
+
+local function sort_buffer(buffered)
+  -- First impose a strict quality order.  Pairwise "within N" comparisons
+  -- are not transitive, so table.sort must not receive that comparator.
+  table.sort(buffered, function(a, b)
+    if a.quality ~= b.quality then
+      return a.quality > b.quality
+    end
+    return a.idx < b.idx
+  end)
+
+  -- Partition at the highest quality in each group.  Length is only used
+  -- inside a group whose quality is within the explicit small window.
+  local group = 0
+  local anchor_quality = nil
+  for i = 1, #buffered do
+    local item = buffered[i]
+    if anchor_quality == nil or anchor_quality - item.quality > QUALITY_TIE_WINDOW then
+      group = group + 1
+      anchor_quality = item.quality
+    end
+    item.group = group
+  end
+
+  table.sort(buffered, function(a, b)
+    if a.group ~= b.group then
+      return a.group < b.group
+    end
+    if a.len ~= b.len then
+      return a.len < b.len
+    end
+    if a.quality ~= b.quality then
+      return a.quality > b.quality
+    end
+    return a.idx < b.idx
+  end)
 end
 
 function M.func(translation, env)
@@ -23,13 +70,11 @@ function M.func(translation, env)
         cand = cand,
         idx = count,
         len = utf8len(cand.text),
+        quality = candidate_quality(cand),
       }
       if count >= MAX_BUFFER then
         sorting = false
-        table.sort(buffered, function(a, b)
-          if a.len ~= b.len then return a.len < b.len end
-          return a.idx < b.idx
-        end)
+        sort_buffer(buffered)
         for i = 1, #buffered do
           yield(buffered[i].cand)
         end
@@ -41,10 +86,7 @@ function M.func(translation, env)
   end
 
   if buffered and #buffered > 0 then
-    table.sort(buffered, function(a, b)
-      if a.len ~= b.len then return a.len < b.len end
-      return a.idx < b.idx
-    end)
+    sort_buffer(buffered)
     for i = 1, #buffered do
       yield(buffered[i].cand)
     end

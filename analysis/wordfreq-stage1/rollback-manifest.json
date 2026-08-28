@@ -1,0 +1,17 @@
+{
+  "baseline_git_commit": "c663617000271bedcf1fb4f9dd940eec9153bde1",
+  "targets": [
+    {
+      "path": "lua/length_priority.lua",
+      "sha256_before_change": "b2cfae30366120108fb17eaa80cb2f9a53b8ac5f589de3ddd61a07db9ee0d364",
+      "backup": "analysis/wordfreq-stage1/length_priority.lua.before"
+    },
+    {
+      "path": "lua/dynamic_freq.lua",
+      "sha256_before_change": "8e063c6948dd1118989fecaa223c781d1e4435a926ca281e1ea0856e1e355110",
+      "backup": "analysis/wordfreq-stage1/dynamic_freq.lua.before"
+    }
+  ],
+  "restore_command": "git revert <stage1-commit>",
+  "note": "Use git revert of the stage commit first; the .before files are content backups for review. Never restore or submit private runtime files."
+}
