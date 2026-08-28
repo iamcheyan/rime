@@ -1,0 +1,661 @@
+{
+  "generated_at_utc": "2026-08-28T03:08:21.786436+00:00",
+  "git_commit": "ffb567f3f0a0d69b78f091218482d6c2ed52e004",
+  "rule_version": "common-frequency-v1",
+  "output": "sbzr.chrome.extension/dicts/sbzr.common-frequency.dict.yaml",
+  "row_count": 1022,
+  "output_sha256": "eae45711bb8315b2f147064b5ee4f83aa0ede7dfaeca7f28ce734ceafef3cb2e",
+  "selected_text_count": 734,
+  "entrypoint_hashes_before_change": {
+    "sbzr.dict.yaml": "6bb3e9d7cdafe7f3694c5ffedce6959d47776b27d767a02ed8e96c67e71abc56",
+    "sbzr.chrome.extension/shared/dicts.js": "89c66012f098498f04f6ae6c9835ff6289530595a0741bc4207928f452219d2c"
+  },
+  "required_probe_texts_added": [
+    "我们",
+    "这个",
+    "可以",
+    "现在",
+    "因为",
+    "所以",
+    "如果",
+    "已经",
+    "自己",
+    "没有",
+    "需要",
+    "问题",
+    "应该",
+    "设置",
+    "文件",
+    "中国"
+  ],
+  "weight_policy": {
+    "source_rank": "base.dict.yaml existing weight, max per selected text",
+    "output_min": 2001,
+    "output_max": 2998,
+    "formula": "linear monotonic mapping of selected source-weight min/max into [2001, 2998]; equal source weights map to 2499",
+    "dynamic_priority": "runtime dynamic_freq remains above static layers; no private data is read or committed"
+  },
+  "selection_rules": {
+    "primary_source": "base.dict.yaml",
+    "additional_sources": [
+      "sbzr.extended.common.dict.yaml",
+      "zdy.dict.yaml"
+    ],
+    "text_length": [
+      2,
+      4
+    ],
+    "canonical_db": "resource/常用字双拼拼音.db",
+    "excluded_banned_text_count": 0,
+    "unknown_canonical_texts_excluded": 381,
+    "same_text_multi_code_policy": "retain every unique text+code pair from base, extended.common, and zdy for each selected text; canonical is annotation only"
+  },
+  "source_stats": {
+    "base_rows_read": 540270,
+    "extended_common_rows_read": 661860,
+    "zdy_rows_read": 17,
+    "source_pair_duplicates_in_selected": 1,
+    "selected_rows_by_source": {
+      "base": 869,
+      "extended.common": 152,
+      "zdy": 2
+    },
+    "canonical_status_counts": {
+      "alternate_or_unverified": 416,
+      "canonical": 606
+    },
+    "selected_texts_with_multiple_codes": 193,
+    "selected_texts_with_multiple_sources": 153
+  },
+  "source_hashes": {
+    "sbzr.chrome.extension/dicts/base.dict.yaml": "b8ce657e6c267fc741542b4ab8ad1db296cddf858ea7bcdc4efd3bf31cececdc",
+    "sbzr.chrome.extension/dicts/sbzr.extended.common.dict.yaml": "bcbc0f442bb3a9f027e5e934338ed14978f0f5c991c5732be3991cd04f3cfd38",
+    "sbzr.chrome.extension/dicts/zdy.dict.yaml": "baa96eb174c5dc6672aa84da709f9ba31c31b36a27eb7e753832ddd99c37a168",
+    "resource/常用字双拼拼音.db": "2bb0386660d55bbeb9ea463d239f45ccc94c81f68dff81cb0c20a9e87e754b17",
+    "resource/banned_words.txt": "c76a123ca1cdc69316eee439d5720c4f91260c375204c8b4ab7f1ce853b833af"
+  },
+  "probes": {
+    "我们": {
+      "found_rows": 1,
+      "codes": [
+        "womf"
+      ],
+      "canonical_code": "womf",
+      "weights": [
+        2006
+      ],
+      "rows": [
+        {
+          "text": "我们",
+          "code": "womf",
+          "weight": 2006,
+          "source_weight": 1633,
+          "pair_source_weight": 1633,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1633
+            ]
+          },
+          "canonical_code": "womf",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "这个": {
+      "found_rows": 3,
+      "codes": [
+        "zege",
+        "zzg",
+        "zzge"
+      ],
+      "canonical_code": "zege",
+      "weights": [
+        2005
+      ],
+      "rows": [
+        {
+          "text": "这个",
+          "code": "zege",
+          "weight": 2005,
+          "source_weight": 1553,
+          "pair_source_weight": 1553,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1553
+            ]
+          },
+          "canonical_code": "zege",
+          "canonical_status": "canonical"
+        },
+        {
+          "text": "这个",
+          "code": "zzg",
+          "weight": 2005,
+          "source_weight": 1553,
+          "pair_source_weight": 1553,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1553
+            ]
+          },
+          "canonical_code": "zege",
+          "canonical_status": "alternate_or_unverified"
+        },
+        {
+          "text": "这个",
+          "code": "zzge",
+          "weight": 2005,
+          "source_weight": 1553,
+          "pair_source_weight": 1013,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1013
+            ]
+          },
+          "canonical_code": "zege",
+          "canonical_status": "alternate_or_unverified"
+        }
+      ]
+    },
+    "可以": {
+      "found_rows": 2,
+      "codes": [
+        "keyi",
+        "ky"
+      ],
+      "canonical_code": "keyi",
+      "weights": [
+        2001
+      ],
+      "rows": [
+        {
+          "text": "可以",
+          "code": "keyi",
+          "weight": 2001,
+          "source_weight": 1183,
+          "pair_source_weight": 1183,
+          "sources": [
+            "base",
+            "zdy"
+          ],
+          "source_weights": {
+            "base": [
+              1183
+            ],
+            "zdy": [
+              0
+            ]
+          },
+          "canonical_code": "keyi",
+          "canonical_status": "canonical"
+        },
+        {
+          "text": "可以",
+          "code": "ky",
+          "weight": 2001,
+          "source_weight": 1183,
+          "pair_source_weight": 0,
+          "sources": [
+            "zdy"
+          ],
+          "source_weights": {
+            "zdy": [
+              0
+            ]
+          },
+          "canonical_code": "keyi",
+          "canonical_status": "alternate_or_unverified"
+        }
+      ]
+    },
+    "现在": {
+      "found_rows": 1,
+      "codes": [
+        "xmzl"
+      ],
+      "canonical_code": "xmzl",
+      "weights": [
+        2004
+      ],
+      "rows": [
+        {
+          "text": "现在",
+          "code": "xmzl",
+          "weight": 2004,
+          "source_weight": 1463,
+          "pair_source_weight": 1463,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1463
+            ]
+          },
+          "canonical_code": "xmzl",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "因为": {
+      "found_rows": 1,
+      "codes": [
+        "ynwz"
+      ],
+      "canonical_code": "ynwz",
+      "weights": [
+        2007
+      ],
+      "rows": [
+        {
+          "text": "因为",
+          "code": "ynwz",
+          "weight": 2007,
+          "source_weight": 1753,
+          "pair_source_weight": 1753,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1753
+            ]
+          },
+          "canonical_code": "ynwz",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "所以": {
+      "found_rows": 1,
+      "codes": [
+        "soyi"
+      ],
+      "canonical_code": "soyi",
+      "weights": [
+        2007
+      ],
+      "rows": [
+        {
+          "text": "所以",
+          "code": "soyi",
+          "weight": 2007,
+          "source_weight": 1753,
+          "pair_source_weight": 1753,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1753
+            ]
+          },
+          "canonical_code": "soyi",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "如果": {
+      "found_rows": 1,
+      "codes": [
+        "rugo"
+      ],
+      "canonical_code": "rugo",
+      "weights": [
+        2005
+      ],
+      "rows": [
+        {
+          "text": "如果",
+          "code": "rugo",
+          "weight": 2005,
+          "source_weight": 1513,
+          "pair_source_weight": 1513,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1513
+            ]
+          },
+          "canonical_code": "rugo",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "已经": {
+      "found_rows": 1,
+      "codes": [
+        "yijy"
+      ],
+      "canonical_code": "yijy",
+      "weights": [
+        2002
+      ],
+      "rows": [
+        {
+          "text": "已经",
+          "code": "yijy",
+          "weight": 2002,
+          "source_weight": 1233,
+          "pair_source_weight": 1233,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1233
+            ]
+          },
+          "canonical_code": "yijy",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "自己": {
+      "found_rows": 1,
+      "codes": [
+        "ziji"
+      ],
+      "canonical_code": "ziji",
+      "weights": [
+        2007
+      ],
+      "rows": [
+        {
+          "text": "自己",
+          "code": "ziji",
+          "weight": 2007,
+          "source_weight": 1793,
+          "pair_source_weight": 1793,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1793
+            ]
+          },
+          "canonical_code": "ziji",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "没有": {
+      "found_rows": 3,
+      "codes": [
+        "moyb",
+        "myb",
+        "mzyb"
+      ],
+      "canonical_code": "mzyb",
+      "weights": [
+        2004
+      ],
+      "rows": [
+        {
+          "text": "没有",
+          "code": "moyb",
+          "weight": 2004,
+          "source_weight": 1413,
+          "pair_source_weight": 1013,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1013
+            ]
+          },
+          "canonical_code": "mzyb",
+          "canonical_status": "alternate_or_unverified"
+        },
+        {
+          "text": "没有",
+          "code": "myb",
+          "weight": 2004,
+          "source_weight": 1413,
+          "pair_source_weight": 1413,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1413
+            ]
+          },
+          "canonical_code": "mzyb",
+          "canonical_status": "alternate_or_unverified"
+        },
+        {
+          "text": "没有",
+          "code": "mzyb",
+          "weight": 2004,
+          "source_weight": 1413,
+          "pair_source_weight": 1413,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1413
+            ]
+          },
+          "canonical_code": "mzyb",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "需要": {
+      "found_rows": 1,
+      "codes": [
+        "xuyk"
+      ],
+      "canonical_code": "xuyk",
+      "weights": [
+        2003
+      ],
+      "rows": [
+        {
+          "text": "需要",
+          "code": "xuyk",
+          "weight": 2003,
+          "source_weight": 1353,
+          "pair_source_weight": 1353,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1353
+            ]
+          },
+          "canonical_code": "xuyk",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "问题": {
+      "found_rows": 1,
+      "codes": [
+        "wfti"
+      ],
+      "canonical_code": "wfti",
+      "weights": [
+        2001
+      ],
+      "rows": [
+        {
+          "text": "问题",
+          "code": "wfti",
+          "weight": 2001,
+          "source_weight": 1153,
+          "pair_source_weight": 1153,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1153
+            ]
+          },
+          "canonical_code": "wfti",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "应该": {
+      "found_rows": 1,
+      "codes": [
+        "yygl"
+      ],
+      "canonical_code": "yygl",
+      "weights": [
+        2009
+      ],
+      "rows": [
+        {
+          "text": "应该",
+          "code": "yygl",
+          "weight": 2009,
+          "source_weight": 1953,
+          "pair_source_weight": 1953,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1953
+            ]
+          },
+          "canonical_code": "yygl",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "设置": {
+      "found_rows": 1,
+      "codes": [
+        "sezi"
+      ],
+      "canonical_code": "sezi",
+      "weights": [
+        2004
+      ],
+      "rows": [
+        {
+          "text": "设置",
+          "code": "sezi",
+          "weight": 2004,
+          "source_weight": 1463,
+          "pair_source_weight": 1463,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1463
+            ]
+          },
+          "canonical_code": "sezi",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "文件": {
+      "found_rows": 1,
+      "codes": [
+        "wfjm"
+      ],
+      "canonical_code": "wfjm",
+      "weights": [
+        2006
+      ],
+      "rows": [
+        {
+          "text": "文件",
+          "code": "wfjm",
+          "weight": 2006,
+          "source_weight": 1603,
+          "pair_source_weight": 1603,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1603
+            ]
+          },
+          "canonical_code": "wfjm",
+          "canonical_status": "canonical"
+        }
+      ]
+    },
+    "中国": {
+      "found_rows": 2,
+      "codes": [
+        "zsgi",
+        "zsgo"
+      ],
+      "canonical_code": "zsgi",
+      "weights": [
+        2002
+      ],
+      "rows": [
+        {
+          "text": "中国",
+          "code": "zsgi",
+          "weight": 2002,
+          "source_weight": 1223,
+          "pair_source_weight": 931,
+          "sources": [
+            "extended.common"
+          ],
+          "source_weights": {
+            "extended.common": [
+              931
+            ]
+          },
+          "canonical_code": "zsgi",
+          "canonical_status": "canonical"
+        },
+        {
+          "text": "中国",
+          "code": "zsgo",
+          "weight": 2002,
+          "source_weight": 1223,
+          "pair_source_weight": 1223,
+          "sources": [
+            "base"
+          ],
+          "source_weights": {
+            "base": [
+              1223
+            ]
+          },
+          "canonical_code": "zsgi",
+          "canonical_status": "alternate_or_unverified"
+        }
+      ]
+    }
+  },
+  "safety": {
+    "original_sources_modified": false,
+    "private_userdb_read": false,
+    "dynamic_frequency_read": false,
+    "candidate_deletion": false
+  }
+}

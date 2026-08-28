@@ -11,6 +11,7 @@
     // This table is intentionally excluded from Nova Editor: at ~11 MB it is
     // an input-method runtime asset, not a practical textarea editing target.
     { path: 'dicts/base.dict.yaml', defaultEnabled: true, editorEnabled: false },
+    { path: 'dicts/sbzr.common-frequency.dict.yaml', defaultEnabled: true },
     { path: 'dicts/sbzr.len1.full.dict.yaml', defaultEnabled: false },
     { path: 'dicts/zdy.dict.yaml', reloadable: true, defaultEnabled: false }
   ];

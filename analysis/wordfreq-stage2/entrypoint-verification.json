@@ -1,0 +1,48 @@
+{
+  "stage": "stage2-entrypoint-verification",
+  "overlay": {
+    "path": "sbzr.chrome.extension/dicts/sbzr.common-frequency.dict.yaml",
+    "sha256": "eae45711bb8315b2f147064b5ee4f83aa0ede7dfaeca7f28ce734ceafef3cb2e",
+    "rows": 1022,
+    "unique_text_code": 1022,
+    "weight_min": 2001,
+    "weight_max": 2998,
+    "all_16_probe_texts_found": true,
+    "multi_code_probe_counts": {
+      "这个": 3,
+      "可以": 2,
+      "没有": 3,
+      "中国": 2
+    }
+  },
+  "entrypoints": {
+    "sbzr.dict.yaml": {
+      "before_sha256": "6bb3e9d7cdafe7f3694c5ffedce6959d47776b27d767a02ed8e96c67e71abc56",
+      "after_sha256": "7f2e01706d5db430ecb2781e906032008ea28cfaf488fe23edfebf5c9dc07868",
+      "import_path": "sbzr.chrome.extension/dicts/sbzr.common-frequency"
+    },
+    "sbzr.chrome.extension/shared/dicts.js": {
+      "before_sha256": "89c66012f098498f04f6ae6c9835ff6289530595a0741bc4207928f452219d2c",
+      "after_sha256": "417ab57c1c177bf1750d4a41a3ef7e6de7ce2632d45de362c8c4368ddca7a0d5",
+      "default_path": "dicts/sbzr.common-frequency.dict.yaml"
+    }
+  },
+  "checks": {
+    "python_generator_syntax": "passed",
+    "node_dicts_js_syntax": "passed",
+    "node_default_paths_exist": "passed",
+    "isolated_rime_deployer_compile": "passed; sbzr.table.bin and sbzr.schema.yaml non-empty",
+    "private_userdb_or_dynamic_data_read": false,
+    "original_base_common_canonical_files_modified": false
+  },
+  "rollback": {
+    "command": "git revert <stage2-commit>",
+    "scope": [
+      "sbzr.dict.yaml",
+      "sbzr.chrome.extension/shared/dicts.js",
+      "sbzr.chrome.extension/dicts/sbzr.common-frequency.dict.yaml",
+      "sbzr.chrome.extension/dicts/sbzr.common-frequency.manifest.json",
+      "sbzr.chrome.extension/dicts/sbzr.common-frequency.report.md"
+    ]
+  }
+}
