@@ -1,5 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+ksge	user_table	空格	1788187827
 d	user_table	的	1788187119
 bz	user_table	被	1788187118
 grli	user_table	管理	1788187118
@@ -14,7 +15,6 @@ xd	user_table	想	1788187110
 ugo	table	ugo	1788187108
 w	user_table	我	1788187107
 fjxr	user_table	反选	1788187090
-ksge	user_table	空格	1788187089
 yige	user_table	一个	1788187084
 zgjw	user_table	增加	1788187083
 zgjs	table	这个精神	1788187080
