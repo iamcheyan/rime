@@ -47,5 +47,11 @@ patch:
       # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
       - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
 
+      # 在方案选单中，Option+Space 向下移动（正选），Shift+Option+Space 向上移动（反选）
+      - { when: has_menu, accept: "Alt+space", send: Down }
+      - { when: has_menu, accept: "Control+space", send: Down }
+      - { when: has_menu, accept: "Shift+Alt+space", send: Up }
+      - { when: has_menu, accept: "Shift+Control+space", send: Up }
+
 
       
