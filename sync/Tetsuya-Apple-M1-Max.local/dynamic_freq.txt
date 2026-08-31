@@ -1,8 +1,18 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+d	user_table	的	1788187119
+bz	user_table	被	1788187118
+grli	user_table	管理	1788187118
+s	user_table	是	1788187117
+zfme	user_table	怎么	1788187117
+llqi	table	浏览器	1788187116
+pzzi	user_table	配置	1788187116
+xmzl	user_table	现在	1788187113
+tsbu	user_table	同步	1788187111
+rugo	user_table	如果	1788187110
+xd	user_table	想	1788187110
 ugo	table	ugo	1788187108
 w	user_table	我	1788187107
-d	user_table	的	1788187090
 fjxr	user_table	反选	1788187090
 ksge	user_table	空格	1788187089
 yige	user_table	一个	1788187084
@@ -13,7 +23,6 @@ me	user_table	么	1788187079
 fhvj	user_table	方案	1788187078
 suru	user_table	输入	1788187078
 qxhr	user_table	切换	1788187077
-xd	user_table	想	1788186999
 wrgs	table	微软公司	1788186765
 wzrrgssi	table	公司	1788186762
 pgdn	table	苹果电脑	1788186756
@@ -69,7 +78,6 @@ zbjxlp	table	周杰伦	1788185469
 dole	user_table	多了	1788185468
 sufu	user_table	舒服	1788185466
 dazi	user_table	打字	1788185465
-xmzl	user_table	现在	1788185465
 hkdo	user_table	好多	1788185462
 jtde	user_table	觉得	1788185456
 hkdole	table	好多了	1788185454
@@ -93,9 +101,7 @@ wfdh	user_table	文档	1788185060
 xxru	user_table	写入	1788185059
 loji	user_table	逻辑	1788185058
 zgtk	table	整套	1788185057
-tsbu	user_table	同步	1788185048
 yizi	user_table	一直	1788185047
-bz	user_table	被	1788185046
 hv	user_table	会	1788185046
 v	user_table	而	1788185045
 wfjm	user_table	文件	1788185045
@@ -103,8 +109,6 @@ so	user_table	说	1788185038
 jqsi	user_table	就是	1788185037
 ye	user_table	也	1788185036
 ne	user_table	呢	1788185003
-zfme	user_table	怎么	1788185002
-s	user_table	是	1788185001
 dkru	user_table	导入	1788184855
 dkcu	user_table	导出	1788184853
 sihb	user_table	时候	1788184835
@@ -189,7 +193,6 @@ soyi	user_table	所以	1788094528
 siys	user_table	使用	1788094527
 pytl	user_table	平台	1788094526
 gskl	user_table	公开	1788094518
-pzzi	user_table	配置	1788094518
 zuyi	user_table	注意	1788094514
 qtrf	user_table	确认	1788094268
 bh	user_table	帮	1788094267
@@ -303,7 +306,6 @@ wjsj	user_table	完善	1787973750
 fgfu	user_table	丰富	1787973747
 zkzk	user_table	找找	1787973744
 myly	user_table	命令	1787973741
-grli	user_table	管理	1787973681
 fhru	table	放入	1787973673
 xits	user_table	系统	1787973662
 va	user_table	啊	1787973353
@@ -763,7 +765,6 @@ ldbu	table	俩不	1781448376
 lqcg	user_table	流程	1781448257
 jxsi	user_table	解释	1781448254
 bfll	user_table	本来	1781448174
-rugo	user_table	如果	1781448171
 pyei	table	萍	1781447963
 fuoo	table	浮	1781447959
 jwsh	user_table	加上	1781447699
@@ -2485,7 +2486,6 @@ ihr	uniquified	ihr	1777595372
 zeg	uniquified	zeg	1777594610
 zkzezege	lower_ascii	zkzezege	1777594606
 hhwz	user_table	行尾	1777594456
-llqi	user_table	浏览器	1777539942
 yudk	table	遇到	1777539926
 caei	user_table	查	1777539887
 rrlj	table	软烂	1777539536

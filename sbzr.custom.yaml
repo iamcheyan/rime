@@ -27,9 +27,10 @@ patch:
     - { when: has_menu, accept: bracketleft, send: Page_Up }
     - { when: has_menu, accept: bracketright, send: Page_Down }
     - { accept: "Control+comma", select: .next, when: always }
-    - { accept: "Control+period", select: .next, when: always }
     - { accept: "Alt+space", select: .next, when: always }
+    - { accept: "Shift+Alt+space", select: .previous, when: always }
     - { accept: "Control+space", select: .next, when: always }
+    - { accept: "Shift+Control+space", select: .previous, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
   # 保留 Rime 自带基础造词能力

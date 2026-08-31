@@ -45,9 +45,12 @@ patch:
       - {accept: "Shift+BackSpace", send: Escape, when: composing}  # 清空/取消输入
 
       # Option+Space / Control+Space: 在 4 种方案之间轮流循环切换
-      # (1. 声笔自然 -> 2. 声笔混输 -> 3. 日语罗马字 -> 4. Easy English)
+      # 正选: 1. 声笔自然 -> 2. 声笔混输 -> 3. 日语罗马字 -> 4. Easy English
+      # 反选: 1. 声笔自然 -> 4. Easy English -> 3. 日语罗马字 -> 2. 声笔混输
       - { when: always, accept: Alt+space, select: .next }
+      - { when: always, accept: "Shift+Alt+space", select: .previous }
       - { when: always, accept: Control+space, select: .next }
+      - { when: always, accept: "Shift+Control+space", select: .previous }
 
 
       

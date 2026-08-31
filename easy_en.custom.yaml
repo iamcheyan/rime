@@ -4,6 +4,8 @@ patch:
 
   "key_binder/bindings/+":
     - { accept: "Alt+space", select: .next, when: always }
+    - { accept: "Shift+Alt+space", select: .previous, when: always }
     - { accept: "Control+space", select: .next, when: always }
+    - { accept: "Shift+Control+space", select: .previous, when: always }
     - { accept: "Control+comma", select: .next, when: always }
     - { accept: "Control+period", select: .next, when: always }
