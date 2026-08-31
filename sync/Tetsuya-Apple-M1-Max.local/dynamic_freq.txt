@@ -1,5 +1,22 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+baia	user_table	吧	1788188133
+ckzo	user_table	操作	1788188132
+yrsg	user_table	原生	1788188132
+aerospace	table	aerospace	1788188130
+d	user_table	的	1788188130
+siys	user_table	使用	1788188126
+hlsi	user_table	还是	1788188125
+na	user_table	那	1788188125
+qxhr	user_table	切换	1788188122
+hrcg	user_table	换成	1788188121
+burj	user_table	不然	1788188120
+l	user_table	了	1788188115
+tlka	user_table	太卡	1788188115
+buxy	user_table	不行	1788188114
+wsme	user_table	为什么	1788188049
+hfgk	table	很高	1788188048
+yjci	table	延迟	1788188047
 j	user_table	就	1788187977
 xy	user_table	行	1788187977
 ye	user_table	也	1788187976
@@ -11,7 +28,6 @@ ng	user_table	能	1788187970
 glcg	user_table	改成	1788187968
 ksge	user_table	空格	1788187966
 ba	user_table	把	1788187957
-d	user_table	的	1788187119
 bz	user_table	被	1788187118
 grli	user_table	管理	1788187118
 s	user_table	是	1788187117
@@ -31,7 +47,6 @@ zl	user_table	再	1788187080
 me	user_table	么	1788187079
 fhvj	user_table	方案	1788187078
 suru	user_table	输入	1788187078
-qxhr	user_table	切换	1788187077
 wrgs	table	微软公司	1788186765
 wzrrgssi	table	公司	1788186762
 pgdn	table	苹果电脑	1788186756
@@ -53,10 +68,8 @@ ciku	user_table	词库	1788186701
 bhw	table	帮我	1788186699
 kjkj	user_table	看看	1788186699
 n	user_table	你	1788186696
-l	user_table	了	1788186692
 mybl	user_table	明白	1788186692
 ynqy	table	引擎	1788186684
-wsme	user_table	为什么	1788186550
 cio	completion	词	1788186549
 zege	user_table	这个	1788186547
 li	user_table	里	1788186537
@@ -146,9 +159,7 @@ grbi	user_table	关闭	1788102399
 nali	user_table	那里	1788102398
 zkdk	user_table	找到	1788102131
 vaia	user_table	啊	1788102129
-ckzo	user_table	操作	1788102022
 kjjm	user_table	快捷键	1788101961
-hrcg	user_table	换成	1788101890
 gzqu	table	港闸区	1788101794
 xuni	user_table	虚拟	1788101794
 fhfa	user_table	方法	1788101786
@@ -158,7 +169,6 @@ xqgl	user_table	修改	1788101685
 soyb	user_table	所有	1788101684
 soybd	completion	说有的	1788101681
 bhdy	user_table	绑定	1788101444
-na	user_table	那	1788101250
 bhdyd	completion	绑定到	1788101234
 nage	user_table	哪个	1788101231
 jmue	user_table	键	1788101219
@@ -193,10 +203,8 @@ wuee	table	无	1788094602
 doge	user_table	多个	1788094594
 kjdk	user_table	看到	1788094591
 qucs	table	去重	1788094585
-hlsi	user_table	还是	1788094578
 bxrf	user_table	别人	1788094530
 soyi	user_table	所以	1788094528
-siys	user_table	使用	1788094527
 pytl	user_table	平台	1788094526
 gskl	user_table	公开	1788094518
 zuyi	user_table	注意	1788094514
@@ -234,7 +242,6 @@ zidl	user_table	自带	1788081842
 ggxn	user_table	更新	1788081679
 ruhe	user_table	如何	1788081678
 cajm	user_table	插件	1788081667
-baia	user_table	吧	1788081480
 yrll	user_table	原来	1788081476
 -	punct	-	1788081297
 lywl	user_table	另外	1788081285
@@ -449,7 +456,6 @@ sjcu	user_table	删除	1787263224
 zzlw	table	这俩	1787263167
 tupm	user_table	图片	1787263137
 wm	table	wm	1787263131
-burj	user_table	不然	1787263126
 ma	user_table	吗	1787263058
 yeyb	table	也有	1787263056
 zelimm	user_table	这里面	1787263055
@@ -579,7 +585,6 @@ hvhw	user_table	会话	1787063029
 zhtx	table	张贴	1787062967
 zing	user_table	只能	1787062872
 zin	table	zin	1787062871
-buxy	user_table	不行	1787062870
 bxuy	sentence	不婿一	1787062868
 cgxu	user_table	程序	1787062740
 mzynb	sentence	魅音不	1787062691
@@ -1206,7 +1211,6 @@ mngj	user_table	敏感	1780297402
 jilv	table	几缕	1780297396
 jchu	user_table	交互	1780297015
 vjzo	table	安卓	1780297013
-yrsg	user_table	原生	1780297011
 fuhe	table	复合	1780297010
 fuhr	uniquified	fuhr	1780297006
 yrs	uniquified	yrs	1780297004
