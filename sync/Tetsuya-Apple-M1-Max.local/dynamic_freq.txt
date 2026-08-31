@@ -1,5 +1,20 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+wsme	user_table	为什么	1788186550
+cio	completion	词	1788186549
+zege	user_table	这个	1788186547
+li	user_table	里	1788186537
+mzyb	user_table	没有	1788186537
+ciku	user_table	词库	1788186536
+d	user_table	的	1788186535
+w	user_table	我	1788186535
+faxm	user_table	发现	1788186534
+bai	table	吧	1788186532
+dv	user_table	对	1788186531
+b	user_table	不	1788186530
+pysi	user_table	平时	1788186530
+yyxd	user_table	影响	1788186530
+tyhk	user_table	挺好	1788186511
 search	table	search	1788186261
 chezmoi	table	chezmoi	1788186255
 taberareru	phrase	食べられる	1788186152
@@ -9,14 +24,11 @@ jixu	user_table	继续	1788185948
 mosi	user_table	模式	1788185628
 suru	user_table	输入	1788185628
 zdtl	user_table	状态	1788185624
-d	user_table	的	1788185623
 srfa	user_table	输入法	1788185623
 qxhr	user_table	切换	1788185620
 ksge	user_table	空格	1788185619
 zgjw	user_table	增加	1788185612
 nbng	user_table	能不能	1788185611
-yyxd	user_table	影响	1788185489
-b	user_table	不	1788185488
 bmhw	user_table	变化	1788185487
 gsng	user_table	功能	1788185486
 m	user_table	没	1788185486
@@ -30,7 +42,6 @@ xmzl	user_table	现在	1788185465
 l	user_table	了	1788185463
 hkdo	user_table	好多	1788185462
 jtde	user_table	觉得	1788185456
-w	user_table	我	1788185455
 hkdole	table	好多了	1788185454
 dgts	user_table	等同	1788185293
 sbsi	user_table	是不是	1788185292
@@ -56,7 +67,6 @@ wfdh	user_table	文档	1788185060
 xxru	user_table	写入	1788185059
 loji	user_table	逻辑	1788185058
 zgtk	table	整套	1788185057
-zege	user_table	这个	1788185055
 tsbu	user_table	同步	1788185048
 yizi	user_table	一直	1788185047
 bz	user_table	被	1788185046
@@ -101,9 +111,7 @@ zkdk	user_table	找到	1788102131
 vaia	user_table	啊	1788102129
 ckzo	user_table	操作	1788102022
 kjjm	user_table	快捷键	1788101961
-bai	completion	吧	1788101903
 hrcg	user_table	换成	1788101890
-li	user_table	里	1788101795
 gzqu	table	港闸区	1788101794
 xuni	user_table	虚拟	1788101794
 fhfa	user_table	方法	1788101786
@@ -185,7 +193,6 @@ yk	user_table	要	1788094138
 zo	user_table	做	1788094137
 tjcu	user_table	弹出	1788094133
 mzci	user_table	每次	1788094124
-wsme	user_table	为什么	1788094123
 zswf	user_table	中文	1788093912
 j	user_table	就	1788082046
 zijx	user_table	直接	1788082045
@@ -195,7 +202,6 @@ cs	user_table	从	1788082027
 cedi	user_table	彻底	1788082025
 zeyh	user_table	这样	1788082024
 zidl	user_table	自带	1788081842
-mzyb	user_table	没有	1788081837
 ggxn	user_table	更新	1788081679
 ruhe	user_table	如何	1788081678
 cajm	user_table	插件	1788081667
@@ -264,7 +270,6 @@ zz	user_table	这	1788010288
 r	user_table	人	1788010108
 dkli	table	道理	1788009977
 smys	user_table	什么意思	1788009893
-dv	user_table	对	1787976083
 jiho	user_table	激活	1787975826
 hkxd	user_table	好像	1787975818
 yiyh	user_table	一样	1787975368
@@ -493,7 +498,6 @@ gksu	user_table	告诉	1787147811
 hf	user_table	很	1787147720
 zd	user_table	装	1787147467
 xwmi	user_table	夏弥	1787147375
-faxm	user_table	发现	1787146879
 hkxczi	table	好小子	1787146778
 wokk	user_table	我靠	1787146765
 :	punct	：	1787146752
@@ -1592,7 +1596,6 @@ gshw	user_table	格式化	1779801301
 jcsk	table	焦嫂	1779799700
 nazs	table	那种	1779797695
 wjeed	lower_ascii	wjeed	1779797525
-tyhk	user_table	挺好	1779797521
 wkj	table	我看	1779797521
 zooe	table	座	1779797214
 qddk	table	抢到	1779797209
@@ -2215,7 +2218,6 @@ dajk	lower_ascii	dajk	1777889755
 yrxy	table	原型	1777888059
 rjb	sentence	冉不	1777886903
 dsee	user_table	动	1777883098
-ciku	user_table	词库	1777882835
 jwty	table	家庭	1777876677
 openj;	punct	；	1777873105
 jfbc	table	见附表	1777871668
@@ -2283,7 +2285,6 @@ leo	lower_ascii	leo	1777713115
 zktx	table	招贴	1777713106
 kprk	table	困扰	1777713068
 zbmo	table	周末	1777709605
-pysi	table	平时	1777709603
 jwdk	user_table	加到	1777707115
 background	uniquified	background	1777705325
 ja	lower_ascii	ja	1777705320
