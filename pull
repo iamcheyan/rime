@@ -38,8 +38,11 @@ echo "Importing dynamic_freq sync snapshot..."
 python3 scripts/import-dynamic-freq.py || exit 1
 echo "✓ dynamic_freq imported"
 
-# 3. 清理可能多出的未跟踪文件（可选，保持纯净）
+# 3. 激活 Git Hooks 自动化
+git config core.hooksPath .githooks 2>/dev/null || true
+
+# 4. 清理可能多出的未跟踪文件（可选，保持纯净）
 # git clean -fd  # 如果你想彻底保持和远程一模一样，可以取消注释这一行
 
 echo ""
-echo "✓ All config files are now up to date."
+echo "✓ All config files and git hooks are now up to date."
