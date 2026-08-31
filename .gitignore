@@ -63,6 +63,8 @@ yarn-error.log*
 *.cache
 .cache/
 *.orig
+*.bak
+*.bak*
 *~
 *.swp
 *.swo
@@ -102,5 +104,9 @@ pids
 *.pid.lock
 
 # Rime 自身产生的运行目录（词库同步载体与回收站）
-sync/
+# 忽略 sync/ 下的所有运行时文件，但放行各设备的动态词频同步快照 dynamic_freq.txt
+sync/*
+!sync/*/
+sync/*/*
+!sync/*/dynamic_freq.txt
 trash/
