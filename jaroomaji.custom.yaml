@@ -1,5 +1,4 @@
 patch:
-  "engine/processors/@before 0": "lua_processor@key_blocker"
   "key_binder/bindings/+":
     # # 在 jaroomaji 候选菜单中，Enter 与空格保持一致，直接上屏当前候选
     # - { when: has_menu, accept: Return, send: space }

@@ -1,5 +1,4 @@
 patch:
-  "engine/processors/@before 0": "lua_processor@key_blocker"
   "key_binder/bindings/+":
     - { accept: "Control+comma", select: .next, when: always }
     - { accept: "Control+period", select: .next, when: always }

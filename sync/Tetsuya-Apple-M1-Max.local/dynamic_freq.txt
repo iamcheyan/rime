@@ -1,12 +1,17 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+bhdy	user_table	绑定	1788188829
+zege	user_table	这个	1788188828
+d	user_table	的	1788188827
+womf	user_table	我们	1788188827
+qudc	user_table	去掉	1788188825
+zijx	user_table	直接	1788188824
 vjxw	user_table	按下	1788188368
 xmzl	user_table	现在	1788188367
 baia	user_table	吧	1788188133
 ckzo	user_table	操作	1788188132
 yrsg	user_table	原生	1788188132
 aerospace	table	aerospace	1788188130
-d	user_table	的	1788188130
 siys	user_table	使用	1788188126
 hlsi	user_table	还是	1788188125
 na	user_table	那	1788188125
@@ -72,7 +77,6 @@ n	user_table	你	1788186696
 mybl	user_table	明白	1788186692
 ynqy	table	引擎	1788186684
 cio	completion	词	1788186549
-zege	user_table	这个	1788186547
 li	user_table	里	1788186537
 mzyb	user_table	没有	1788186537
 faxm	user_table	发现	1788186534
@@ -169,7 +173,6 @@ dg	user_table	等	1788101727
 xqgl	user_table	修改	1788101685
 soyb	user_table	所有	1788101684
 soybd	completion	说有的	1788101681
-bhdy	user_table	绑定	1788101444
 bhdyd	completion	绑定到	1788101234
 nage	user_table	哪个	1788101231
 jmue	user_table	键	1788101219
@@ -189,7 +192,6 @@ xn	user_table	新	1788100292
 rrjm	user_table	软件	1788099590
 jnys	user_table	禁用	1788099027
 karabi	completion	karabiner	1788096538
-womf	user_table	我们	1788096529
 dhqm	user_table	当前	1788096527
 x	user_table	下	1788096527
 ,	punct	，	1788096153
@@ -234,7 +236,6 @@ zo	user_table	做	1788094137
 tjcu	user_table	弹出	1788094133
 mzci	user_table	每次	1788094124
 zswf	user_table	中文	1788093912
-zijx	user_table	直接	1788082045
 limm	user_table	里面	1788082035
 yids	user_table	移动	1788082031
 cs	user_table	从	1788082027
@@ -462,7 +463,6 @@ zelimm	user_table	这里面	1787263055
 yshv	table	用回	1787237060
 yiqi	user_table	一起	1787236635
 jntx	user_table	紧贴	1787236634
-qudc	user_table	去掉	1787236593
 bmju	user_table	边距	1787236592
 a	user_table	啊	1787236532
 juxy	table	矩形	1787236481
