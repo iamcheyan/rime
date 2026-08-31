@@ -59,3 +59,5 @@ common:
     # 候选选择快捷键
     - {accept: "Control+comma", select: .next, when: always}     # Ctrl+, 切换到下一个候选
     - {accept: "Control+period", select: .next, when: always}    # Ctrl+. 切换到下一个候选
+    - {accept: "Alt+space", select: .next, when: always}         # Option+Space 循环切换 4 种方案
+    - {accept: "Control+space", select: .next, when: always}     # Control+Space 循环切换 4 种方案

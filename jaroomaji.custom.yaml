@@ -16,6 +16,8 @@ patch:
     - { when: has_menu, accept: bracketright, send: Page_Down }
     - { accept: "Control+comma", select: .next, when: always }
     - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Alt+space", select: .next, when: always }
+    - { accept: "Control+space", select: .next, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
     # 日语长音修正

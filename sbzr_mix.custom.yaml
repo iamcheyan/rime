@@ -4,3 +4,7 @@ patch:
   "switches/@0":
     name: ascii_mode
     reset: 0
+
+  "key_binder/bindings/+":
+    - { accept: "Alt+space", select: .next, when: always }
+    - { accept: "Control+space", select: .next, when: always }

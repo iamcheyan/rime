@@ -1,5 +1,8 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+taberareru	phrase	食べられる	1788186152
+nihonngo	user_phrase	日本語	1788186146
+watashi	uniquified	私	1788186138
 jixu	user_table	继续	1788185948
 mosi	user_table	模式	1788185628
 suru	user_table	输入	1788185628
@@ -1510,7 +1513,6 @@ nik	uniquified	nik	1779892680
 mofa	table	魔法	1779891921
 nazb	table	拿走	1779891682
 no	user_phrase	の	1779891680
-watashi	user_phrase	私	1779891679
 svba	table	谁把	1779891677
 hahaha	table	哈哈哈	1779891601
 kore	user_phrase	これ	1779891594
