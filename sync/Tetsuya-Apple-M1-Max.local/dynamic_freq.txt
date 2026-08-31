@@ -1,5 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+jixu	user_table	继续	1788185948
 mosi	user_table	模式	1788185628
 suru	user_table	输入	1788185628
 zdtl	user_table	状态	1788185624
@@ -445,7 +446,6 @@ siia	user_table	时	1787230792
 dcys	user_table	调用	1787230786
 gvyi	table	诡异	1787230772
 fgge	table	疯咯	1787228259
-jixu	user_table	继续	1787225518
 kkjm	user_table	靠肩	1787223596
 lamo	table	拉磨	1787222859
 yisi	user_table	意思	1787152410
