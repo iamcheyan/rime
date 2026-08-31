@@ -1,6 +1,4 @@
 patch:
-  # 方案循环切换处理器
-  "engine/processors/@before 0": "lua_processor@schema_cycler"
   "key_binder/bindings/+":
     # # 在 jaroomaji 候选菜单中，Enter 与空格保持一致，直接上屏当前候选
     # - { when: has_menu, accept: Return, send: space }
@@ -17,11 +15,6 @@ patch:
     - { when: has_menu, accept: bracketleft, send: Page_Up }
     - { when: has_menu, accept: bracketright, send: Page_Down }
     - { accept: "Control+comma", select: .next, when: always }
-    - { accept: "Control+period", select: .next, when: always }
-    - { accept: "Alt+space", select: .next, when: always }
-    - { accept: "Shift+Alt+space", select: .previous, when: always }
-    - { accept: "Control+space", select: .next, when: always }
-    - { accept: "Shift+Control+space", select: .previous, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
     # 日语长音修正

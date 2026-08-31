@@ -1,8 +1,5 @@
 # 用户自定义补丁：用于覆盖 sbzr.schema.yaml 中的默认配置（如快捷键、开关状态）。
 patch:
-  # 方案循环切换处理器
-  "engine/processors/@before 0": "lua_processor@schema_cycler"
-
   # 1. 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
   "switches/@0":
     name: ascii_mode
@@ -27,10 +24,6 @@ patch:
     - { when: has_menu, accept: bracketleft, send: Page_Up }
     - { when: has_menu, accept: bracketright, send: Page_Down }
     - { accept: "Control+comma", select: .next, when: always }
-    - { accept: "Alt+space", select: .next, when: always }
-    - { accept: "Shift+Alt+space", select: .previous, when: always }
-    - { accept: "Control+space", select: .next, when: always }
-    - { accept: "Shift+Control+space", select: .previous, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
   # 保留 Rime 自带基础造词能力

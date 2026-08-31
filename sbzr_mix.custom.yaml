@@ -1,15 +1,6 @@
 # 混输模式用户自定义补丁
 patch:
-  # 方案循环切换处理器
-  "engine/processors/@before 0": "lua_processor@schema_cycler"
-
   # 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
   "switches/@0":
     name: ascii_mode
     reset: 0
-
-  "key_binder/bindings/+":
-    - { accept: "Alt+space", select: .next, when: always }
-    - { accept: "Shift+Alt+space", select: .previous, when: always }
-    - { accept: "Control+space", select: .next, when: always }
-    - { accept: "Shift+Control+space", select: .previous, when: always }
