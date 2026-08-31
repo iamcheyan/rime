@@ -1,0 +1,11 @@
+#!/bin/sh
+# Auto-export dynamic frequency snapshot before commit
+
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+cd "$ROOT_DIR" || exit 1
+
+if [ -f "scripts/export-dynamic-freq.py" ]; then
+    echo "[Hook: pre-commit] Exporting dynamic_freq sync snapshot..."
+    python3 scripts/export-dynamic-freq.py || exit 1
+    git add sync/*/dynamic_freq.txt 2>/dev/null || true
+fi

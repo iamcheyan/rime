@@ -1,0 +1,10 @@
+#!/bin/sh
+# Auto-import dynamic frequency snapshot after git rebase
+
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+cd "$ROOT_DIR" || exit 1
+
+if [ -f "scripts/import-dynamic-freq.py" ]; then
+    echo "[Hook: post-rewrite] Importing dynamic_freq sync snapshots..."
+    python3 scripts/import-dynamic-freq.py
+fi

@@ -1,5 +1,13 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+dkru	user_table	导入	1788184855
+dkcu	user_table	导出	1788184853
+d	user_table	的	1788184835
+sihb	user_table	时候	1788184835
+hoze	user_table	或者	1788184833
+z	user_table	在	1788184823
+ys	user_table	用	1788184820
+nbng	user_table	能不能	1788184819
 seji	user_table	设计	1788184533
 cipn	user_table	词频	1788184524
 sm	user_table	什么	1788184135
@@ -12,7 +20,6 @@ kj	user_table	看	1788184066
 zl	user_table	再	1788184066
 xdqu	table	想去	1788184065
 tbwz	table	投喂	1788183546
-d	user_table	的	1788183542
 tssi	user_table	同事	1788183542
 dk	user_table	到	1788183541
 jxsb	table	接收	1788183540
@@ -29,7 +36,6 @@ zgjw	user_table	增加	1788183062
 dakl	user_table	打开	1788102399
 grbi	user_table	关闭	1788102399
 nali	user_table	那里	1788102398
-z	user_table	在	1788102397
 m	user_table	没	1788102131
 zkdk	user_table	找到	1788102131
 zfme	user_table	怎么	1788102130
@@ -78,7 +84,6 @@ rrjm	user_table	软件	1788099590
 qxhr	user_table	切换	1788099589
 jnys	user_table	禁用	1788099027
 karabi	completion	karabiner	1788096538
-ys	user_table	用	1788096530
 womf	user_table	我们	1788096529
 dhqm	user_table	当前	1788096527
 x	user_table	下	1788096527
@@ -132,7 +137,6 @@ yk	user_table	要	1788094138
 zo	user_table	做	1788094137
 zege	user_table	这个	1788094134
 tjcu	user_table	弹出	1788094133
-sihb	user_table	时候	1788094128
 mzci	user_table	每次	1788094124
 wsme	user_table	为什么	1788094123
 zswf	user_table	中文	1788093912
@@ -268,7 +272,6 @@ wfbi	table	文笔	1787925846
 zv	user_table	最	1787925789
 xpsu	table	迅速	1787925787
 bhzu	user_table	帮助	1787925784
-nbng	user_table	能不能	1787925783
 pnwz	table	品位	1787925782
 xxoaxcso	table	小说	1787925741
 xcso	table	销铄	1787925733
@@ -342,7 +345,6 @@ yijm	user_table	一键	1787318640
 mldm	user_table	卖点	1787318638
 c	user_table	出	1787318637
 cixu	table	持续	1787318303
-dkru	user_table	导入	1787318303
 hbtl	user_table	后台	1787318302
 jcbf	user_table	脚本	1787318299
 xxge	user_table	写个	1787318299
@@ -622,9 +624,7 @@ quxw	table	取下	1786973689
 zsdr	user_table	终端	1785732714
 pzhe	table	配合	1785732592
 baa	table	baa	1785732586
-hoze	user_table	或者	1785732504
 sr	user_table	拴	1785732381
-dkcu	user_table	导出	1785732264
 jxso	table	解锁	1785732159
 khdr	table	客户端	1785732096
 zomm	user_table	桌面	1785732095
