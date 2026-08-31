@@ -1,5 +1,10 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+yidm	user_table	一点	1788185094
+bkxm	user_table	保险	1788185091
+gg	user_table	更	1788185089
+jtde	user_table	觉得	1788185088
+nayh	user_table	那样	1788185088
 fjxx	table	反写	1788185081
 cipn	user_table	词频	1788185079
 zl	user_table	再	1788185079
@@ -7,7 +12,6 @@ d	user_table	的	1788185078
 ba	user_table	把	1788185074
 ybbiyk	table	有必要	1788185073
 ybyk	table	又要	1788185069
-jtde	user_table	觉得	1788185067
 n	user_table	你	1788185066
 name	user_table	那么	1788185064
 mulu	user_table	目录	1788185061
@@ -815,7 +819,6 @@ pnei	user_table	拼	1780836159
 buys	user_table	不用	1780836156
 dsoob	sentence	懂不	1780836093
 dsooa	sentence	的说	1780836090
-nayh	user_table	那样	1780836085
 fhzi	user_table	房子	1780834717
 xc	user_table	小	1780834716
 zgw	sentence	狰我	1780834600
@@ -908,7 +911,6 @@ caru	user_table	插入	1780664683
 tuia	user_table	图	1780664682
 jiys	table	即用	1780663179
 buff	user_table	部分	1780663170
-yidm	user_table	一点	1780663115
 tvjm	user_table	推荐	1780663114
 wof	lower_ascii	wof	1780660801
 ciba	table	吃吧	1780659334
@@ -1059,7 +1061,6 @@ sd	table	双	1780444789
 wohfxmmuni	sentence	我很羡慕你	1780443495
 cggs	user_table	成功	1780413561
 zkgk	table	糟糕	1780412265
-gg	user_table	更	1780412264
 ldce	table	两侧	1780411301
 zale	user_table	咋了	1780409351
 rfsi	table	认识	1780409349
@@ -3125,7 +3126,6 @@ xnzl	user_table	心斋	1776749154
 scg	table	scg	1776748982
 dcqu	user_table	调取	1776748910
 qijm	table	起见	1776747456
-bkxm	user_table	保险	1776747453
 kazl	table	卡在	1776746895
 gsme	user_table	干什么	1776746845
 promp	completion	prompt	1776746567
