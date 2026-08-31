@@ -1,5 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+search	table	search	1788186261
+chezmoi	table	chezmoi	1788186255
 taberareru	phrase	食べられる	1788186152
 nihonngo	user_phrase	日本語	1788186146
 watashi	uniquified	私	1788186138
@@ -2406,7 +2408,6 @@ zjkl	user_table	展开	1777613262
 yfbd	table	原封不动	1777613257
 qmzv	table	前缀	1777613252
 mqmm	table	米奇妙妙	1777613246
-chezmoi	lower_ascii	chezmoi	1777613240
 daxx	user_table	大写	1777611992
 dbsi	user_table	都是	1777611991
 github	user_table	GitHub	1777611978
