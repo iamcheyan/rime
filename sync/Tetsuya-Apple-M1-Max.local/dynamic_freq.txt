@@ -1,5 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+vjxw	user_table	按下	1788188368
+xmzl	user_table	现在	1788188367
 baia	user_table	吧	1788188133
 ckzo	user_table	操作	1788188132
 yrsg	user_table	原生	1788188132
@@ -34,7 +36,6 @@ s	user_table	是	1788187117
 zfme	user_table	怎么	1788187117
 llqi	table	浏览器	1788187116
 pzzi	user_table	配置	1788187116
-xmzl	user_table	现在	1788187113
 tsbu	user_table	同步	1788187111
 rugo	user_table	如果	1788187110
 xd	user_table	想	1788187110
@@ -249,7 +250,6 @@ lyw	completion	另外	1788081283
 rjhb	user_table	然后	1788081280
 wz	user_table	为	1788081275
 ggmy	table	更名	1788081274
-vjxw	user_table	按下	1788080906
 djdu	user_table	单独	1788080905
 chvj	table	长按	1788080901
 xrze	user_table	选择	1788080900
