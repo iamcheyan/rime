@@ -1,5 +1,22 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+cull	user_table	出来	1788272171
+da	table	打	1788272171
+ffbx	user_table	分别	1788272170
+keyi	uniquified	可以	1788272169
+buco	user_table	不错	1788272167
+kjqill	user_table	看起来	1788272166
+.	punct	。	1788272053
+hlgv	table	还贵	1788272053
+dcys	user_table	调用	1788272048
+zijx	user_table	直接	1788272047
+bi	user_table	比	1788272046
+db	user_table	都	1788272045
+moxy	user_table	模型	1788272044
+d	user_table	的	1788272043
+,	punct	，	1788272041
+gvia	table	贵	1788272041
+saia	user_table	啥	1788272039
 txwd	table	天下无敌	1788271959
 wudi	user_table	无敌	1788271958
 tmxw	user_table	天下	1788271957
@@ -9,7 +26,6 @@ l	user_table	了	1788271786
 qyli	user_table	清理	1788271786
 ye	user_table	也	1788271785
 cizu	table	词组	1788271784
-d	user_table	的	1788271782
 jqsi	user_table	就是	1788271782
 xdgr	user_table	相关	1788271782
 na	user_table	那	1788271781
@@ -48,11 +64,9 @@ bcgj	table	标杆	1788271650
 ml	user_table	买	1788271516
 yamax	completion	亚马逊	1788271516
 z	user_table	在	1788271514
-zijx	user_table	直接	1788271514
 wsme	user_table	为什么	1788271513
 djzi	table	单字	1788271495
 s	user_table	是	1788271494
-db	user_table	都	1788271493
 v	user_table	而	1788271493
 ]	punct	」	1788271492
 [	punct	「	1788271490
@@ -71,8 +85,6 @@ ri	user_table	日	1788270968
 zblq	user_table	周六	1788270966
 zbkq	table	再别康桥	1788270964
 zuyi	user_table	注意	1788270358
-.	punct	。	1788270067
-,	punct	，	1788270046
 pkoo	table	泡	1788269834
 buzidk	table	不知道	1788269122
 khbukhdezu	table	扛得住	1788269115
@@ -128,7 +140,6 @@ name	user_table	那么	1788267998
 busu	user_table	部署	1788267994
 csxn	user_table	重新	1788267993
 jmyi	user_table	建议	1788267958
-keyi	uniquified	可以	1788267763
 naxx	user_table	哪些	1788267679
 hlyb	user_table	还有	1788267678
 jtde	user_table	觉得	1788267676
@@ -277,7 +288,6 @@ xm	user_table	先	1788101101
 pypucdkb	user_table	窗口	1788101050
 fuds	user_table	浮动	1788101046
 gkji	table	高级	1788101037
-saia	user_table	啥	1788101035
 jxsk	user_table	介绍	1788100359
 mjmj	user_table	满满	1788100295
 xn	user_table	新	1788100292
@@ -418,7 +428,6 @@ bx	user_table	别	1787927942
 djsi	user_table	但是	1787927941
 anli	table	安利	1787927160
 davj	user_table	答案	1787925971
-cull	user_table	出来	1787925951
 wjzgdu	table	完整度	1787925947
 wjzg	user_table	完整	1787925944
 tiyj	user_table	体验	1787925940
@@ -456,7 +465,6 @@ bubf	table	不笨	1787751675
 bfue	table	笨	1787751671
 mzfa	table	没法	1787751355
 jibf	user_table	基本	1787751353
-moxy	user_table	模型	1787751329
 jige	user_table	几个	1787751328
 cesi	user_table	测试	1787751326
 Macbook	table	Macbook	1787751288
@@ -555,7 +563,6 @@ dvzk	table	对照	1787233563
 xqzg	table	修整	1787233561
 nmcu	user_table	年初	1787233100
 siia	user_table	时	1787230792
-dcys	user_table	调用	1787230786
 gvyi	table	诡异	1787230772
 fgge	table	疯咯	1787228259
 kkjm	user_table	靠肩	1787223596
@@ -856,7 +863,6 @@ bk	user_table	雹	1781012847
 qtsi	user_table	确实	1781012840
 nnhk	table	您好	1781012838
 chju	user_table	长句	1781012681
-da	completion	打	1781012680
 zkze	user_table	照着	1781012679
 '	punct	‘	1781012453
 nihk	user_table	你好	1781011060
@@ -1579,7 +1585,6 @@ zmyh	table	怎么样	1779971574
 zkxw	table	找下	1779971235
 pi	lower_ascii	pi	1779969190
 zdhk	table	装好	1779966635
-ffbx	user_table	分别	1779966584
 linux	uniquified	linux	1779966458
 nik	uniquified	nik	1779892680
 mofa	table	魔法	1779891921
@@ -2196,7 +2201,6 @@ pddo	table	拼多多	1778254555
 ybxi	table	游戏	1778254276
 lmwh	user_table	联网	1778254274
 jmpj	table	键盘	1778251867
-bi	table	比	1778191192
 jxsiyixw	lower_ascii	jxsiyixw	1778167366
 cbdo	user_table	差不多	1778164176
 pzve	table	配额	1778162366
@@ -2373,7 +2377,6 @@ zejwho	table	这家伙	1777687268
 lydk	table	领导	1777687011
 zexm	table	折现	1777686267
 fazj	table	发展	1777683821
-buco	lower_ascii	buco	1777683817
 czxt	table	操作系统	1777683816
 gocj	table	国产	1777683815
 ngysjqxy	table	就行	1777683809
