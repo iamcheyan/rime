@@ -1,7 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
 zuyi	user_table	注意	1788270358
-jysf	table	绝域殊方	1788270319
 .	punct	。	1788270067
 ,	punct	，	1788270046
 ri	table	日	1788270045
