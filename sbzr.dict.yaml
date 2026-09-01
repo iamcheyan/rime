@@ -29,6 +29,7 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.shortcut
   - sbzr.chrome.extension/dicts/sbzr.userdb
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
+  - sbzr.chrome.extension/dicts/sbzr.full
   - sbzr.chrome.extension/dicts/sbzr.common-frequency
   - sbzr.chrome.extension/dicts/sbzr.single
   - sbzr.chrome.extension/dicts/base

@@ -1,5 +1,14 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+yb	user_table	有	1788271038
+buhv	user_table	不会	1788271037
+xudo	user_table	许多	1788271037
+gjjy	user_table	干净	1788271035
+l	user_table	了	1788271035
+ye	user_table	也	1788271034
+sufu	user_table	舒服	1788271031
+dazi	user_table	打字	1788271030
+xmzl	user_table	现在	1788271029
 ri	user_table	日	1788270968
 zblq	user_table	周六	1788270966
 zbkq	table	再别康桥	1788270964
@@ -13,7 +22,6 @@ khbukhdezu	table	扛得住	1788269115
 hl	user_table	还	1788269109
 nmji	table	年纪	1788269109
 zeba	table	这把	1788269108
-xmzl	user_table	现在	1788269094
 mzyb	user_table	没有	1788269065
 yiqx	user_table	一切	1788269061
 xwwu	user_table	下午	1788269053
@@ -34,7 +42,6 @@ zf	user_table	真	1788268825
 so	user_table	说	1788268823
 dj	user_table	但	1788268819
 njdu	table	难度	1788268817
-yb	user_table	有	1788268816
 db	user_table	都	1788268815
 llso	table	来说	1788268815
 m	user_table	没	1788268815
@@ -49,7 +56,6 @@ yiwl	user_table	以外	1788268803
 riyu	user_table	日语	1788268802
 cule	user_table	除了	1788268800
 lkle	table	老了	1788268798
-l	user_table	了	1788268795
 lk	user_table	lk	1788268795
 tl	user_table	太	1788268795
 &	punct	&	1788268790
@@ -113,7 +119,6 @@ wsme	user_table	为什么	1788188049
 hfgk	table	很高	1788188048
 yjci	table	延迟	1788188047
 xy	user_table	行	1788187977
-ye	user_table	也	1788187976
 zeyh	user_table	这样	1788187976
 xmsi	user_table	显示	1788187974
 bung	user_table	不能	1788187972
@@ -174,8 +179,6 @@ hexn	table	核心	1788185485
 zjlp	user_table	周杰伦	1788185470
 zbjxlp	table	周杰伦	1788185469
 dole	user_table	多了	1788185468
-sufu	user_table	舒服	1788185466
-dazi	user_table	打字	1788185465
 hkdo	user_table	好多	1788185462
 hkdole	table	好多了	1788185454
 dgts	user_table	等同	1788185293
@@ -584,7 +587,6 @@ xdqill	table	想起来	1787136003
 hvjw	table	回家	1787136002
 lush	table	路上	1787136002
 cole	table	错了	1787091785
-buhv	user_table	不会	1787091769
 gysh	user_table	供应商	1787091767
 i	user_table	爱	1787091763
 dlmnk	sentence	不灵敏可	1787091743
@@ -744,7 +746,6 @@ wfwo	user_table	问我	1783746611
 wf	table	瘟	1783746609
 khei	table	扛	1783603392
 xnxi	user_table	信息	1783603299
-xudo	user_table	许多	1783603297
 zuti	user_table	主题	1783602340
 jnzi	user_table	禁止	1783461998
 ysyr	user_table	永远	1783461940
@@ -2102,7 +2103,6 @@ yhjw	table	养家	1778421078
 zoze	table	作者	1778419552
 lxeu	table	裂	1778419363
 dyyu	table	丁宇	1778419095
-gjjy	table	干净	1778418791
 tmei	table	填	1778418046
 zltm	table	再添	1778418045
 bmbf	table	变笨	1778414061
