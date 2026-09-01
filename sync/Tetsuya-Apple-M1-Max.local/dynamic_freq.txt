@@ -1,5 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+zuyi	user_table	注意	1788270358
+jysf	table	绝域殊方	1788270319
 .	punct	。	1788270067
 ,	punct	，	1788270046
 ri	table	日	1788270045
@@ -268,7 +270,6 @@ bxrf	user_table	别人	1788094530
 soyi	user_table	所以	1788094528
 pytl	user_table	平台	1788094526
 gskl	user_table	公开	1788094518
-zuyi	user_table	注意	1788094514
 qtrf	user_table	确认	1788094268
 bh	user_table	帮	1788094267
 bmma	user_table	编码	1788094265
