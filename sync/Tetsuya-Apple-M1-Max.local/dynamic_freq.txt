@@ -1,5 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+qudc	user_table	去掉	1788267493
 ksge	user_table	空格	1788267055
 qigy	table	奇怪	1788266819
 ybdm	user_table	有点	1788266818
@@ -15,7 +16,6 @@ z	user_table	在	1788266660
 bhdy	user_table	绑定	1788188829
 zege	user_table	这个	1788188828
 womf	user_table	我们	1788188827
-qudc	user_table	去掉	1788188825
 zijx	user_table	直接	1788188824
 vjxw	user_table	按下	1788188368
 baia	user_table	吧	1788188133

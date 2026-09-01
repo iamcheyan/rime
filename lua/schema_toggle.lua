@@ -4,18 +4,10 @@
 local PRIMARY_SCHEMA = "sbzr"
 local DEFAULT_SECONDARY = "sbzr_mix"
 local last_secondary = DEFAULT_SECONDARY
-local last_switch_time = 0
-local DEBOUNCE_INTERVAL = 0.25 -- 250ms 防抖，确保引擎平稳加载
 
 local function schema_toggle(key, env)
     -- 捕获 Alt+Space (Option+Space) 或 Control+Space
     if (key.keycode == 32 or key.keycode == 0x20) and (key:alt() or key:ctrl()) and not key:shift() and not key:release() then
-        local now = os.clock()
-        if (now - last_switch_time) < DEBOUNCE_INTERVAL then
-            return 1 -- 消费事件，防止连击重入
-        end
-        last_switch_time = now
-
         local current = env.engine.schema.schema_id
         local target
 
