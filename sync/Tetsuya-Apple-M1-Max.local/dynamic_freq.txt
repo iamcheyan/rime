@@ -1,7 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+kjqillhfbuco	sentence	看起来很不错	1788273025
 jqxdyigezgchdesurufa	sentence	正常德输入法	1788272950
-kjqillhfbuco	user_table	很不错	1788272905
 kjqillbuco	sentence	看起来不错	1788272874
 buco	user_table	不错	1788272870
 kjqill	user_table	看起来	1788272870

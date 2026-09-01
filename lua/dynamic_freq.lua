@@ -311,6 +311,12 @@ function M.func(translation, env)
             end
           end
         else
+          -- 用户打过的历史长句/自造词直接置顶输出
+          if rec.text and rec.text ~= "" then
+            local user_cand = Candidate(rec.type ~= "" and rec.type or "user_sentence", 0, string.len(input), rec.text, "")
+            user_cand.quality = 10000
+            yield(user_cand)
+          end
           for i = 1, #buffered do
             yield(buffered[i])
           end

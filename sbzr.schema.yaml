@@ -43,7 +43,6 @@ engine:
   translators:
     - punct_translator
     - lua_translator@zdy_priority_translator
-    - lua_translator@sentence_translator
     - table_translator
     - table_translator@easy_en
     - history_translator
@@ -71,6 +70,7 @@ translator:
   enable_completion: true      # 开启追加补全提示
   sentence_over_completion: true # 优先匹配整句而非补全
   enable_encoder: true
+  encode_commit_history: true
   encode_whole_phrase: true
   max_phrase_length: 32        # 支持超长长句
   user_dict: sbzr
