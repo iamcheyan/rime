@@ -239,27 +239,32 @@ function M.init(env)
     env.pending = snapshot(ctx)
   end)
 
-  env.commit_conn = env.engine.context.commit_notifier:connect(function(ctx)
-    local rec = snapshot(ctx)
-    local rec_from_pending = false
-    if not rec then
-      rec = env.pending
-      rec_from_pending = rec ~= nil
+  env.update_conn = env.engine.context.update_notifier:connect(function(ctx)
+    if ctx and ctx.input and ctx.input ~= "" then
+      env.last_composing_input = ctx.input
     end
+  end)
+
+  env.commit_conn = env.engine.context.commit_notifier:connect(function(ctx)
+    local committed = ctx:get_commit_text()
+    local input = env.last_composing_input or (ctx.input ~= "" and ctx.input) or (env.pending and env.pending.input)
+    env.last_composing_input = nil
     env.pending = nil
-    if not rec or not rec.input or rec.input == "" then
+
+    if not committed or committed == "" or not input or input == "" then
       return
     end
 
-    local committed = ctx:get_commit_text()
-    if committed and committed ~= "" and not texts_compatible(committed, rec.text) and not rec_from_pending then
-      return
-    end
+    local rec = {
+      input = input,
+      type = "user_sentence",
+      text = committed,
+      updated_at = os.time(),
+    }
 
     if env.db then
       env.db:update(rec.input, pack(rec))
     end
-    rec.updated_at = os.time()
     ascii_learning.record(rec)
     env.synced_records[rec.input] = rec
     append_local_sync_record(rec)
@@ -271,6 +276,9 @@ end
 
 function M.func(translation, env)
   local input = env.engine.context.input
+  if input and input ~= "" then
+    env.last_composing_input = input
+  end
   if not input or input == "" or not env.db then
     return passthrough(translation)
   end
@@ -338,6 +346,9 @@ end
 function M.fini(env)
   if env.select_conn then
     env.select_conn:disconnect()
+  end
+  if env.update_conn then
+    env.update_conn:disconnect()
   end
   if env.commit_conn then
     env.commit_conn:disconnect()
