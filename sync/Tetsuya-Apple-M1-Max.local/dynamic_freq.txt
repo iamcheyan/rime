@@ -1,5 +1,12 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+hf	user_table	很	1788273224
+hk	user_table	好	1788273224
+db	user_table	都	1788273223
+mztm	table	每天	1788273222
+zege	user_table	这个	1788273199
+siys	user_table	使用	1788273198
+xmzl	user_table	现在	1788273198
 kjqillhfbuco	sentence	看起来很不错	1788273025
 jqxdyigezgchdesurufa	sentence	正常德输入法	1788272950
 kjqillbuco	sentence	看起来不错	1788272874
@@ -14,7 +21,6 @@ hlgv	table	还贵	1788272053
 dcys	user_table	调用	1788272048
 zijx	user_table	直接	1788272047
 bi	user_table	比	1788272046
-db	user_table	都	1788272045
 moxy	user_table	模型	1788272044
 d	user_table	的	1788272043
 ,	punct	，	1788272041
@@ -37,16 +43,13 @@ xigr	table	习惯	1788271721
 b	user_table	不	1788271720
 sm	user_table	什么	1788271720
 m	user_table	没	1788271719
-hk	user_table	好	1788271718
 jhk	table	几毫克	1788271717
 fzch	user_table	非常	1788271716
 sbsi	user_table	是不是	1788271715
 xcgo	user_table	效果	1788271713
 srfa	user_table	输入法	1788271712
-zege	user_table	这个	1788271711
 zge	table	增	1788271710
 kjkj	user_table	看看	1788271708
-xmzl	user_table	现在	1788271708
 n	user_table	你	1788271707
 dafzji	table	打飞机	1788271701
 kjdmyy	table	看电影	1788271699
@@ -163,7 +166,6 @@ womf	user_table	我们	1788188827
 vjxw	user_table	按下	1788188368
 ckzo	user_table	操作	1788188132
 yrsg	user_table	原生	1788188132
-siys	user_table	使用	1788188126
 hlsi	user_table	还是	1788188125
 qxhr	user_table	切换	1788188122
 hrcg	user_table	换成	1788188121
@@ -602,7 +604,6 @@ bxmy	user_table	别名	1787148004
 maia	user_table	吗	1787147928
 cpcu	table	存储	1787147846
 gksu	user_table	告诉	1787147811
-hf	user_table	很	1787147720
 zd	user_table	装	1787147467
 xwmi	user_table	夏弥	1787147375
 hkxczi	table	好小子	1787146778

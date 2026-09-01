@@ -43,6 +43,7 @@ engine:
   translators:
     - punct_translator
     - lua_translator@zdy_priority_translator
+    - lua_translator@sentence_translator
     - table_translator
     - table_translator@easy_en
     - history_translator
