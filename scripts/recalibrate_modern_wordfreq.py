@@ -28,8 +28,8 @@ CHAR_DB = ROOT / "resource" / "常用字双拼拼音.db"
 EXTERNAL_TSV = ROOT / "analysis" / "wordfreq-external" / "external_comparison.tsv"
 
 TARGET_WORD_COUNT = 25000
-WEIGHT_MIN = 2200
-WEIGHT_MAX = 2998
+WEIGHT_MIN = 5000
+WEIGHT_MAX = 9998
 
 
 def load_char_map() -> dict[str, str]:
