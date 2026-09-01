@@ -119,8 +119,16 @@ sequenceDiagram
 
 | 脚本 / 命令 | 说明 |
 | :--- | :--- |
-| **`./add-word "词条"`** | 一键自动派生编码并添加快捷词 |
+| **`./add-word "中文词条"`** | 一键自动派生编码并添加到中文快捷词库 |
+| **`./add-word "日语词条" 罗马音 --jp`** | 一键添加到日语用户词库 (`jaroomaji.user.dict.yaml`) |
 | **`./pull`** | 强制从远程拉取最新配置，合并多设备词频并补齐日语词库 |
 | **`./push`** | 导出本地词频快照、自动清理缓存并强制提交推送到云端 |
 | **`./rebuild`** | 清理编译缓存并重新编译部署 Rime 输入法 |
 | **`python3 scripts/purify_dynamic_freq.py`** | 将动态高频词提纯固化进静态词库 (`sbzr.userdb.dict.yaml`) |
+
+---
+
+## 6. 相关专项文档
+
+* 🇯🇵 **日语罗马字输入专项指南**：[`documents/jaroomaji_usage_guide.md`](file:///Users/tetsuya/chezmoi/dot_local/share/rime/documents/jaroomaji_usage_guide.md)
+* 🔄 **多设备动态调频同步机制**：[`documents/sbzr_dynamic_wordfreq_sync.md`](file:///Users/tetsuya/chezmoi/dot_local/share/rime/documents/sbzr_dynamic_wordfreq_sync.md)

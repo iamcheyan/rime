@@ -1,9 +1,20 @@
 patch:
   "engine/processors/@before 0": "lua_processor@schema_toggle"
+  "engine/filters":
+    - lua_filter@dynamic_freq_filter
+    - lua_filter@en_switch_filter
+    - uniquifier
   "key_binder/bindings/+":
-    # # 在 jaroomaji 候选菜单中，Enter 与空格保持一致，直接上屏当前候选
-    # - { when: has_menu, accept: Return, send: space }
-    # - { when: has_menu, accept: Shift+Return, send: space }
+    # 平假名 / 片假名 / 半角极速转换快捷键
+    - { when: composing, accept: F6, send: F6 }
+    - { when: composing, accept: "Control+u", send: F6 }
+    - { when: composing, accept: F7, send: F7 }
+    - { when: composing, accept: "Control+i", send: F7 }
+    - { when: composing, accept: F8, send: F8 }
+    - { when: composing, accept: "Control+o", send: F8 }
+    - { when: composing, accept: F10, send: F10 }
+    - { when: composing, accept: "Control+p", send: F10 }
+
     - { when: has_menu, accept: Tab, send: Down }
     - { when: has_menu, accept: "Shift+Tab", send: Up }
     - { when: has_menu, accept: ISO_Left_Tab, send: Up }
