@@ -13,8 +13,6 @@ patch:
     - Control+grave
     - Control+Shift+grave
     - F4
-    - Alt+space
-    - Control+space
   var/previously_selected_schema: sbzr
   ascii_composer:
     good_old_caps_lock: true
