@@ -1,5 +1,8 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+txwd	table	天下无敌	1788271959
+wudi	user_table	无敌	1788271958
+tmxw	user_table	天下	1788271957
 baia	user_table	吧	1788271789
 baai	user_table	巴	1788271787
 l	user_table	了	1788271786
@@ -3259,7 +3262,6 @@ sbpy	table	首屏	1776731590
 dago	user_table	打过	1776731581
 chys	user_table	常用	1776731557
 wzyi	table	唯一	1776731146
-wudi	table	无敌	1776731141
 ceyj	user_table	澈言	1776731137
 kela	table	可落	1776665686
 lqbz	table	礼器碑	1776665669
