@@ -1,5 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+:	punct	：	1788271118
+mlzege	user_table	买这个	1788271118
 yb	user_table	有	1788271038
 buhv	user_table	不会	1788271037
 xudo	user_table	许多	1788271037
@@ -573,7 +575,6 @@ zd	user_table	装	1787147467
 xwmi	user_table	夏弥	1787147375
 hkxczi	table	好小子	1787146778
 wokk	user_table	我靠	1787146765
-:	punct	：	1787146752
 dszo	user_table	动作	1787145147
 dvgb	table	对钩	1787141607
 sibx	user_table	识别	1787140828
