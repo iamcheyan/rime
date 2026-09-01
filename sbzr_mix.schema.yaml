@@ -45,15 +45,16 @@ engine:
     - echo_translator
     - punct_translator
     - lua_translator@zdy_priority_translator
+    - table_translator
     - lua_translator@learned_ascii_translator
     - lua_translator@shift_ascii_translator
     - script_translator@jp_mix
     - lua_translator@lower_ascii_translator
     - table_translator@easy_en_mix
-    - table_translator
     - history_translator
   filters:
     - simplifier
+    - lua_filter@length_priority_filter
     - lua_filter@dynamic_freq_filter
     - lua_filter@en_switch_filter
     - uniquifier
@@ -63,20 +64,22 @@ speller:
   delimiter: " '"
   auto_select: false
   max_code_length: 0
+  algebra:
+    - derive/^([a-z]{3})[a-z]$/$1/  # 派生 3 码前缀（如 ggei -> gge）
   use_space: false
 
 translator:
   dictionary: sbzr
   enable_user_dict: true
   enable_sentence: true
-  enable_completion: false
+  enable_completion: true
   sentence_over_completion: true
   enable_encoder: true
   encode_whole_phrase: true
   max_phrase_length: 32
   user_dict: sbzr
   db_class: tabledb
-  initial_quality: 800
+  initial_quality: 1000
   enable_preedit: false
 
 easy_en_mix:
@@ -90,7 +93,7 @@ easy_en_mix:
   enable_encoder: true
   encode_commit_history: true
   spelling_hints: 9
-  initial_quality: 0.5
+  initial_quality: 900
   comment_format:
     - xform/^.+$//
 
@@ -98,6 +101,7 @@ jp_mix:
   dictionary: jaroomaji
   prism: jaroomaji
   tips: "〔日〕"
+  initial_quality: 850
   user_dict: jaroomaji
   db_class: tabledb
   enable_user_dict: true

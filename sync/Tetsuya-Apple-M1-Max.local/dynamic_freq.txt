@@ -1,6 +1,15 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
-d	user_table	的	1788266662
+qigy	table	奇怪	1788266819
+ybdm	user_table	有点	1788266818
+gjjt	user_table	感觉	1788266817
+d	user_table	的	1788266815
+zfyh	user_table	怎样	1788266815
+s	user_table	是	1788266814
+xmzl	user_table	现在	1788266814
+cipn	user_table	词频	1788266813
+sihb	user_table	时候	1788266811
+hpsu	user_table	混输	1788266810
 z	user_table	在	1788266660
 bhdy	user_table	绑定	1788188829
 zege	user_table	这个	1788188828
@@ -8,7 +17,6 @@ womf	user_table	我们	1788188827
 qudc	user_table	去掉	1788188825
 zijx	user_table	直接	1788188824
 vjxw	user_table	按下	1788188368
-xmzl	user_table	现在	1788188367
 baia	user_table	吧	1788188133
 ckzo	user_table	操作	1788188132
 yrsg	user_table	原生	1788188132
@@ -38,7 +46,6 @@ ksge	user_table	空格	1788187966
 ba	user_table	把	1788187957
 bz	user_table	被	1788187118
 grli	user_table	管理	1788187118
-s	user_table	是	1788187117
 zfme	user_table	怎么	1788187117
 llqi	table	浏览器	1788187116
 pzzi	user_table	配置	1788187116
@@ -120,7 +127,6 @@ yidm	user_table	一点	1788185094
 bkxm	user_table	保险	1788185091
 nayh	user_table	那样	1788185088
 fjxx	table	反写	1788185081
-cipn	user_table	词频	1788185079
 ybbiyk	table	有必要	1788185073
 ybyk	table	又要	1788185069
 mulu	user_table	目录	1788185061
@@ -137,7 +143,6 @@ jqsi	user_table	就是	1788185037
 ne	user_table	呢	1788185003
 dkru	user_table	导入	1788184855
 dkcu	user_table	导出	1788184853
-sihb	user_table	时候	1788184835
 hoze	user_table	或者	1788184833
 ys	user_table	用	1788184820
 seji	user_table	设计	1788184533
@@ -443,7 +448,6 @@ budv	user_table	不对	1787315630
 taoo	user_table	它	1787315489
 yygl	user_table	应该	1787315482
 dkle	table	到了	1787314279
-gjjt	user_table	感觉	1787314277
 e	completion	噩	1787314276
 hl	user_table	还	1787313230
 mzge	user_table	每个	1787312659
@@ -477,7 +481,6 @@ jysb	user_table	经手	1787234945
 qids	user_table	启动	1787234310
 dvzk	table	对照	1787233563
 xqzg	table	修整	1787233561
-zfyh	user_table	怎样	1787233455
 ml	user_table	买	1787233101
 nmcu	user_table	年初	1787233100
 siia	user_table	时	1787230792
@@ -1061,7 +1064,6 @@ shqu	user_table	上去	1780458937
 goll	table	过来	1780458842
 mul	uniquified	mul	1780458619
 ts	user_table	同	1780458617
-ybdm	user_table	有点	1780458537
 ybdmm	lower_ascii	ybdmm	1780458535
 ybd	uniquified	ybd	1780458533
 grki	table	关口	1780458281
@@ -2580,7 +2582,6 @@ zlzl	table	再在	1777523496
 sfme	table	什么	1777523448
 zimu	table	字母	1777523146
 qcji	table	敲击	1777523142
-hpsu	user_table	混输	1777523127
 shift	table	shift	1777523118
 vjzu	user_table	按住	1777523113
 xnogsng	sentence	おっっんっ	1777522693
@@ -3153,7 +3154,6 @@ kazl	table	卡在	1776746895
 gsme	user_table	干什么	1776746845
 promp	completion	prompt	1776746567
 zjwz	user_table	占位	1776746473
-qigy	user_table	奇怪	1776746466
 kjze	user_table	看着	1776746465
 ngfb	table	能否	1776746456
 dyci	user_table	第一次	1776746426
