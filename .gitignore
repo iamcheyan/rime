@@ -35,8 +35,9 @@ jaroomaji.jmdict.dict.yaml
 jaroomaji.mozcemoji.dict.yaml
 jaroomaji.kanjidic2.dict.yaml
 dict_backups_*/jaroomaji.*.dict.yaml
-sync/**/jaroomaji.*.dict.yaml
-rime-shuangpin-fuzhuma
+# External wordfreq resource caches
+resource/jieba.dict.utf8
+resource/rime_ice_dicts/
 
 # ---- 编译缓存 / Python 产物 ----
 __pycache__/
