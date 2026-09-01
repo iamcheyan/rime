@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-purify_lexicon_plan_a.py — 词库方案A高纯提纯流水线 (融合 18 万现代 3/4 字真实成词，剔除切片残片)
+purify_lexicon_plan_a.py — 词库方案A高纯提纯流水线 (融合 3/4/5+ 字现代真实成词与长短语)
 
 设计原则:
 1. 绝对零误伤:
    - 单字 (1字) 与 双字词 (2字): 100% 完整保留。
    - 个人词库 (sbzr.shortcut, sbzr.userdb, dynamic_freq): 100% 完整保留。
    - 地名与常用成语: 100% 完整保留。
-2. 3字、4字及 5+字 现代成词全面吸收:
-   - 从 Rime-Ice 核心、CppJieba、SUBTLEX 及 rimeice.3字/4字 词库中提取经过权威现代语料校验的真实成词 (如「一大把」、「一大批」、「一瞬间」、「老百姓」、「差不多」等)。
-   - 坚决剔除现代语料中词频极低/为零的文言古籍死词 (如「绝域殊方」) 与语料滑动残句碎片 (如「将有什」、「单独写到」、「最典型的」、「终端下的」)。
+2. 3字、4字及 5+字 (如看起来不错、不得不说、不知不觉) 现代成词与长短语全面吸收:
+   - 从 Rime-Ice 核心、CppJieba、SUBTLEX 及 rimeice.3字/4字/5字+ 词库中提取经过权威现代语料校验的真实成词与长短语。
+   - 坚决剔除现代语料中词频极低/为零的文言古籍死词 (如「绝域殊方」) 与语料滑动残句碎片 (如「将有什」、「单独写到」、「最典型的」)。
 """
 
 from __future__ import annotations
@@ -57,6 +57,10 @@ def derive_4code(text: str, char_map: dict[str, str]) -> str | None:
         return codes[0][0] + codes[1][0] + codes[2][0] + codes[-1][0]
 
 
+def is_standard_chinese(text: str) -> bool:
+    return all("\u4e00" <= c <= "\u9fa5" for c in text)
+
+
 def load_modern_authentic_words() -> set[str]:
     """汇总现代汉语权威真实成词白名单集合。"""
     authentic = set()
@@ -100,12 +104,13 @@ def load_modern_authentic_words() -> set[str]:
 
 
 def harvest_rimeice_authentic_phrases(authentic_set: set[str], char_map: dict[str, str]) -> dict[tuple[str, str], int]:
-    """从 rimeice.3字 与 rimeice.4字 中萃取所有通过白名单校验的 3/4 字真词。"""
-    print("[1/3] 从 rimeice 原始库中萃取现代真实 3/4 字成词 (如一大把、一大批、一瞬间)...")
+    """从 rimeice.3字, 4字, 5字+ 中萃取所有高质量成词与常用短语。"""
+    print("[1/3] 从 rimeice 原始库中萃取现代真实 3/4/5+ 字成词与短语 (如一大把、看起来不错、不得不说)...")
     harvested = {}
     targets = [
         DICTS_DIR / "sbzr.rimeice.3字.dict.yaml",
         DICTS_DIR / "sbzr.rimeice.4字.dict.yaml",
+        DICTS_DIR / "sbzr.rimeice.5字+.dict.yaml",
     ]
 
     for p in targets:
@@ -116,10 +121,15 @@ def harvest_rimeice_authentic_phrases(authentic_set: set[str], char_map: dict[st
                 parts = line.split("\t")
                 if len(parts) >= 3:
                     text, code, w_str = parts[0].strip(), parts[1].strip(), parts[2].strip()
-                    if text in authentic_set:
+                    n = len(text)
+                    if not is_standard_chinese(text):
+                        continue
+
+                    # 3/4 字必须在白名单，5+ 字词只要由标准规范汉字组成且长度 <= 10
+                    is_valid = (text in authentic_set) or (n >= 5 and n <= 10 and int(w_str) >= 2000)
+                    if is_valid:
                         try:
                             w = int(w_str)
-                            # 为 3/4 字成词生成标准 4 码公式与记录
                             c4 = derive_4code(text, char_map)
                             if c4:
                                 key4 = (text, c4)
@@ -130,12 +140,12 @@ def harvest_rimeice_authentic_phrases(authentic_set: set[str], char_map: dict[st
                         except ValueError:
                             pass
 
-    print(f"    ✓ 成功萃取 {len(harvested)} 个高质量 3/4 字标准成词编码！")
+    print(f"    ✓ 成功萃取 {len(harvested)} 个高质量成词与短语编码！")
     return harvested
 
 
 def purify_base_dict(authentic_set: set[str], harvested_entries: dict[tuple[str, str], int]) -> tuple[int, int, int]:
-    print("[2/3] 深度净化 base.dict.yaml 并融合 3/4 字高纯成词...")
+    print("[2/3] 深度净化 base.dict.yaml 并融合 3/4/5+ 字高纯成词...")
     lines = BASE_DICT.read_text(encoding="utf-8").splitlines()
     header: list[str] = []
     existing_entries: dict[tuple[str, str], int] = {}
@@ -162,9 +172,9 @@ def purify_base_dict(authentic_set: set[str], harvested_entries: dict[tuple[str,
             n = len(text)
 
             # 核心过滤规则:
-            # 1. 1~2 字词: 100% 完整保留 (绝不误伤)
-            # 2. 3 字及以上: 必须在现代权威真词白名单中
-            if n <= 2 or text in authentic_set:
+            # 1. 1~2 字词: 100% 完整保留
+            # 2. 3 字及以上: 必须在现代权威真词白名单中或合法长短语
+            if n <= 2 or text in authentic_set or (n >= 5 and is_standard_chinese(text)):
                 key = (text, code)
                 existing_entries[key] = max(existing_entries.get(key, 0), w)
             else:
@@ -175,7 +185,6 @@ def purify_base_dict(authentic_set: set[str], harvested_entries: dict[tuple[str,
         key = (text, code)
         existing_entries[key] = max(existing_entries.get(key, 0), w)
 
-    # 排序输出 (权重降序、编码、文本)
     sorted_rows = sorted(existing_entries.items(), key=lambda item: (-item[1], item[0][1], item[0][0]))
 
     out_lines = list(header)
@@ -192,11 +201,11 @@ def purify_base_dict(authentic_set: set[str], harvested_entries: dict[tuple[str,
 
 
 def verify_purification() -> None:
-    print("[3/3] 验证现代真词与死词清理...")
+    print("[3/3] 验证现代真词与长短语保留...")
     content = BASE_DICT.read_text(encoding="utf-8")
 
     test_real = [
-        "一大把", "一大批", "一大早", "一瞬间", "一方面", "老百姓",
+        "看起来不错", "一大把", "一大批", "一大早", "一瞬间", "一方面", "老百姓",
         "精神", "人工智能", "机器学习", "云计算", "大数据", "区块链",
         "微服务", "莫名其妙", "全力以赴", "甲乙双方"
     ]
@@ -205,7 +214,7 @@ def verify_purification() -> None:
         "是到新的", "终端下的", "井婶", "景婶", "将有什"
     ]
 
-    print("    --- 现代真词保留验证 (应全部为 ✓ 正常保留) ---")
+    print("    --- 现代真词与长短语验证 (应全部为 ✓ 正常保留) ---")
     for w in test_real:
         found = f"{w}\t" in content
         status = "✓ 正常保留" if found else "✗ 丢失"
@@ -220,7 +229,7 @@ def verify_purification() -> None:
 
 def main() -> int:
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print("  词库方案A高纯提纯流水线 (融合现代 3/4 字成词)")
+    print("  词库方案A高纯提纯流水线 (融合 3/4/5+ 现代成词与长短语)")
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     char_map = load_char_map()
     authentic_set = load_modern_authentic_words()
