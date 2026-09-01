@@ -11,6 +11,8 @@ columns:
   - code
   - weight
 ...
+Neovim	nvim	2000
+人工智能	rgzn	2000
 差分逻辑	cflj	1999
 苦行僧	kxs	1999
 苦行僧	kxsg	1999

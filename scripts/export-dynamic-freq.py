@@ -51,13 +51,25 @@ def merge_records(
     return merged
 
 
+MAX_RECORDS_DEFAULT = 10000
+
+
+def get_max_records() -> int:
+    val = os.environ.get("MAX_DYNAMIC_FREQ_RECORDS")
+    if val and val.isdigit():
+        return int(val)
+    return MAX_RECORDS_DEFAULT
+
+
 def write_records(path: Path, records: dict[str, tuple[str, str, int]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [
         "# dynamic_freq sync snapshot",
         "# format: input<TAB>type<TAB>text<TAB>updated_at",
     ]
-    for input_code, (cand_type, text, ts) in sorted(records.items(), key=lambda item: (-item[1][2], item[0])):
+    max_limit = get_max_records()
+    sorted_items = sorted(records.items(), key=lambda item: (-item[1][2], item[0]))[:max_limit]
+    for input_code, (cand_type, text, ts) in sorted_items:
         lines.append(f"{input_code}\t{cand_type}\t{text}\t{ts}")
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
