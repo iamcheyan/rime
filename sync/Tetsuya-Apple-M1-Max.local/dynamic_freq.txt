@@ -1,8 +1,9 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+d	user_table	的	1788266662
+z	user_table	在	1788266660
 bhdy	user_table	绑定	1788188829
 zege	user_table	这个	1788188828
-d	user_table	的	1788188827
 womf	user_table	我们	1788188827
 qudc	user_table	去掉	1788188825
 zijx	user_table	直接	1788188824
@@ -138,7 +139,6 @@ dkru	user_table	导入	1788184855
 dkcu	user_table	导出	1788184853
 sihb	user_table	时候	1788184835
 hoze	user_table	或者	1788184833
-z	user_table	在	1788184823
 ys	user_table	用	1788184820
 seji	user_table	设计	1788184533
 sm	user_table	什么	1788184135

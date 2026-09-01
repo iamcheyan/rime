@@ -8,3 +8,8 @@ if [ -f "scripts/import-dynamic-freq.py" ]; then
     echo "[Hook: post-merge] Importing dynamic_freq sync snapshots..."
     python3 scripts/import-dynamic-freq.py
 fi
+
+if [ -x "scripts/install-jaroomaji-dicts.sh" ]; then
+    echo "[Hook: post-merge] Checking external Japanese dictionaries..."
+    ./scripts/install-jaroomaji-dicts.sh
+fi

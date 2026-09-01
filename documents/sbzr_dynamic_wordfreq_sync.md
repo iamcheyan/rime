@@ -87,9 +87,8 @@ xqfu	user_table	修复	1777630008
 ### 4.2 拉取后自动合并 (`.githooks/post-merge` & `.githooks/post-rewrite`)
 - **触发**：执行 `git pull`、`git merge` 或 `git rebase`。
 - **动作**：
-  1. 调用 `scripts/import-dynamic-freq.py`。
-  2. 遍历扫描所有设备的快照文件（`sync/*/dynamic_freq.txt`）。
-  3. 按照合并算法将所有远程设备的最新词频与本地缓存无损融合，并刷新写回 `dynamic_freq.local.txt`。
+  1. 调用 `scripts/import-dynamic-freq.py`：遍历扫描所有设备快照（`sync/*/dynamic_freq.txt`），无损融合词频到 `dynamic_freq.local.txt`。
+  2. 调用 `scripts/install-jaroomaji-dicts.sh`：自动检测并补齐外部日语词库源文件（`dicts.jp/jaroomaji.*.dict.yaml`）。
 
 ---
 

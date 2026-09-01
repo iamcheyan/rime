@@ -38,6 +38,13 @@ echo "Importing dynamic_freq sync snapshot..."
 python3 scripts/import-dynamic-freq.py || exit 1
 echo "✓ dynamic_freq imported"
 
+echo ""
+echo "Checking external Japanese dictionaries..."
+if [ -x "scripts/install-jaroomaji-dicts.sh" ]; then
+    ./scripts/install-jaroomaji-dicts.sh || exit 1
+fi
+echo "✓ Japanese dictionaries verified"
+
 # 3. 激活 Git Hooks 自动化
 git config core.hooksPath .githooks 2>/dev/null || true
 
