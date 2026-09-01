@@ -1,10 +1,11 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+ri	user_table	日	1788270968
+zblq	user_table	周六	1788270966
+zbkq	table	再别康桥	1788270964
 zuyi	user_table	注意	1788270358
 .	punct	。	1788270067
 ,	punct	，	1788270046
-ri	table	日	1788270045
-zblq	table	周六	1788270044
 !	punct	！	1788269834
 pkoo	table	泡	1788269834
 buzidk	table	不知道	1788269122
@@ -79,7 +80,6 @@ difh	user_table	地方	1788267680
 naxx	user_table	哪些	1788267679
 hlyb	user_table	还有	1788267678
 jtde	user_table	觉得	1788267676
-nihonngo	user_phrase	日本語	1788267603
 dglu	user_table	登陆	1788267582
 mima	user_table	密码	1788267581
 wuee	user_table	无	1788267580
@@ -101,7 +101,6 @@ vjxw	user_table	按下	1788188368
 baia	user_table	吧	1788188133
 ckzo	user_table	操作	1788188132
 yrsg	user_table	原生	1788188132
-aerospace	table	aerospace	1788188130
 siys	user_table	使用	1788188126
 hlsi	user_table	还是	1788188125
 na	user_table	那	1788188125
@@ -129,7 +128,6 @@ pzzi	user_table	配置	1788187116
 tsbu	user_table	同步	1788187111
 rugo	user_table	如果	1788187110
 xd	user_table	想	1788187110
-ugo	table	ugo	1788187108
 yige	user_table	一个	1788187084
 zgjw	user_table	增加	1788187083
 zgjs	table	这个精神	1788187080
@@ -163,7 +161,6 @@ b	user_table	不	1788186530
 pysi	user_table	平时	1788186530
 yyxd	user_table	影响	1788186530
 tyhk	user_table	挺好	1788186511
-search	table	search	1788186261
 chezmoi	table	chezmoi	1788186255
 taberareru	phrase	食べられる	1788186152
 watashi	uniquified	私	1788186138
@@ -789,7 +786,6 @@ cisu	table	辞书	1782136307
 cijihv	table	次机会	1782136293
 wfj	sentence	我贩	1781597897
 yuyj	user_table	语言	1781534911
-rugp	completion	rug pad	1781533632
 liys	table	利用	1781533587
 zfm	completion	怎么	1781533586
 lqze	table	留着	1781531854
@@ -2489,7 +2485,6 @@ wjoe	table	弯	1777599975
 cpcuzl	table	存储在	1777599688
 xmyb	user_table	现有	1777599669
 xnodlma	lower_ascii	odlma	1777599660
-ili-internal-dev-cross-account	lower_ascii	ili-internal-dev-cross-account	1777599612
 clou	completion	CloudFormation	1777599589
 cloud	uniquified	cloud	1777599586
 cjwu	user_table	产物	1777599571
@@ -2558,7 +2553,6 @@ ybys	table	有用	1777531367
 rel	learned_ascii	ReleaseToken	1777531366
 ReleaseToken	shift_ascii	ReleaseToken	1777531358
 hvqu	user_table	回去	1777529761
-update-to-s	lower_ascii	update-to-s	1777529678
 aws-console	lower_ascii	aws-console	1777529478
 cloudf	completion	CloudFormation	1777529464
 Amazon	learned_ascii	AmazonLambda	1777528737
@@ -3262,7 +3256,6 @@ fzxd	user_table	房子现在都	1776665089
 xbxy	table	细胞性	1776664210
 nikj	table	尼堪	1776664207
 soybciku	sentence	所有词库	1776664171
-sisys	completion	SI system	1776664118
 lqch	user_table	流畅	1776664101
 djzi	user_table	单字	1776663799
 bg	table	崩	1776663138
