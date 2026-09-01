@@ -1,5 +1,13 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+shbj	table	上班	1788268529
+shb	table	上膘	1788268528
+jixu	user_table	继续	1788268526
+dm	user_table	点	1788268525
+,	punct	，	1788268522
+yihv	user_table	一会	1788268522
+)	punct	）	1788268490
+(	punct	（	1788268482
 ybhw	user_table	优化	1788268004
 zfme	user_table	怎么	1788268003
 riyu	user_table	日语	1788268002
@@ -110,7 +118,6 @@ search	table	search	1788186261
 chezmoi	table	chezmoi	1788186255
 taberareru	phrase	食べられる	1788186152
 watashi	uniquified	私	1788186138
-jixu	user_table	继续	1788185948
 mosi	user_table	模式	1788185628
 zdtl	user_table	状态	1788185624
 srfa	user_table	输入法	1788185623
@@ -207,7 +214,6 @@ jnys	user_table	禁用	1788099027
 karabi	completion	karabiner	1788096538
 dhqm	user_table	当前	1788096527
 x	user_table	下	1788096527
-,	punct	，	1788096153
 ?	punct	？	1788095432
 liyb	table	理由	1788095430
 ruch	table	入场	1788095426
@@ -508,9 +514,7 @@ burhys	table	不让用	1787150088
 buxd	user_table	不像	1787149778
 shmm	user_table	上面	1787149757
 yczm	table	远程桌面	1787149755
-)	punct	）	1787149738
 kge	completion	坑	1787149737
-(	punct	（	1787149735
 ypwz	table	运维	1787149729
 tvwf	table	推文	1787149661
 xxcg	table	写成	1787149660
@@ -806,7 +810,6 @@ zkze	user_table	照着	1781012679
 '	punct	‘	1781012453
 nihk	user_table	你好	1781011060
 zem	table	zem	1781004166
-dm	user_table	点	1780922078
 zeci	table	这次	1780921037
 deskt	completion	desktop	1780917774
 fzzi	table	废纸	1780917638
@@ -2198,7 +2201,6 @@ dgwo	user_table	等我	1777957253
 yidy	user_table	一定	1777957249
 kydi	table	快递	1777957234
 jxge	table	接个	1777957231
-yihv	table	一会	1777957227
 yih	lower_ascii	yih	1777957225
 wogf	table	我跟	1777957222
 gd	lower_ascii	gd	1777957219

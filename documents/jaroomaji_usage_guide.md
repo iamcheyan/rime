@@ -27,57 +27,78 @@
 
 ---
 
-## 3. 一键添加日语自定义词库 (`./add-word --jp`)
+## 3. 日语智能前缀预测与自动补完 (Predictive Completion)
 
-你可以使用 `./add-word` 工具将个人常用的日语敬语、专有名词、人名或特殊缩写一键写入日语用户词库：
+输入法内置了针对日语的 **Lua 智能预测补全器**：
 
-### 3.1 语法
+* **核心手感**：
+  * 第 1 候选：保留精确当前平假名（不打扰正常拼写）；
+  * **第 2、3 候选**：自动提取以当前输入为前缀的超长高频短语/敬语，并附带 **`〔予測〕`** 标识。
+* **极速输入示例**：
+  * 输入 **`ariga`** ➔ 候选 2 自动预测 **`ありがとう`**，候选 3 自动预测 **`ありがとうございます`**；按数字 `2` 或 `3` 即可秒出！
+  * 输入 **`otsu`** ➔ 候选 2 自动预测 **`お疲れ様です`**，候选 3 **`お疲れ様でした`**。
+  * 输入 **`yoro`** ➔ 候选 2 自动预测 **`よろしくお願いします`**。
+  * 输入 **`sumi`** ➔ 候选 2 自动预测 **`すみません`**。
+
+---
+
+## 4. 日语独立缩写与敬语词库 (`jaroomaji.abbrev.dict.yaml`)
+
+为了便于维护与自定义，系统将所有高频短语/敬语缩写独立存放于：
+📁 `sbzr.chrome.extension/dicts.jp/jaroomaji.abbrev.dict.yaml`
+
+### 4.1 内置高频缩写速查表
+
+| 输入缩写 | 输出短语 |
+| :--- | :--- |
+| **`ots`** / **`otsd`** | `お疲れ様です` / `お疲れ様でした` |
+| **`yoro`** | `よろしくお願いいたします` / `よろしくお願いします` |
+| **`arig`** / **`arigo`** | `ありがとう` / `ありがとうございます` |
+| **`ohayo`** / **`kon`** | `おはようございます` / `こんにちは` |
+| **`sumi`** / **`mousi`** | `すみません` / `申し訳ございません` |
+| **`ose`** / **`ituose`** | `お世話になっております` / `いつもお世話になっております` |
+| **`syou`** / **`kasi`** | `承知いたしました` / `かしこまりました` |
+| **`situ`** / **`situd`** | `失礼いたします` / `失礼いたしました` |
+| **`kaku`** / **`kakuyoro`** | `ご確認ください` / `ご確認よろしくお願いいたします` |
+| **`dai`** / **`mond`** | `大丈夫です` / `問題ありません` |
+
+---
+
+## 5. 一键添加日语自定义词库 (`./add-word --jp`)
+
+你可以使用 `./add-word` 工具将个人专属的日语敬语、专有名词或人名一键写入日语用户词库：
+
+### 5.1 语法
 ```bash
 ./add-word <日语词条> <罗马音编码> [权重] --jp
 ```
 
-### 3.2 示例
+### 5.2 示例
 ```bash
-# 常用敬语
+# 常用短语
 ./add-word "お疲れ様です" otsukaresamadesu --jp
-./add-word "よろしくお願いします" yoroshiku --jp
-
-# 机构 / 大学 / 地名
 ./add-word "東京大学" toukyoudaigaku --jp
 
 # 带有特殊长音或空格的词条
 ./add-word "ラーメン" "ra - me nn" --jp
 ```
 
-### 3.3 存储位置与生效
-* **存储词典**：`sbzr.chrome.extension/dicts.jp/jaroomaji.user.dict.yaml`（基准高权重 `88888`）。
-* **编译生效**：运行 `./rebuild` 即可立即生效。
+* **存储位置**：`sbzr.chrome.extension/dicts.jp/jaroomaji.user.dict.yaml`。
+* **编译生效**：运行 `./rebuild` 即可生效。
 
 ---
 
-## 4. 日语词库架构与同步体系
+## 6. 日语词库分层架构体系
 
 ```mermaid
 graph TD
-    A[jaroomaji.dict.yaml] --> B[jaroomaji.user: 用户高频词]
-    A --> C[jaroomaji.mozc: 谷歌 Mozc 核心日汉字/假名 70MB]
-    A --> D[jaroomaji.kana_kigou: 基础假名与常用符号]
-    A --> E[jaroomaji.mozcemoji: 日语表情符号]
-    A --> F[jaroomaji.kanjidic2: 单字汉字索引]
-    A --> G[jaroomaji.jmdict: 日汉扩展补充词库]
+    Root[jaroomaji.dict.yaml] --> U[1. jaroomaji.user: 用户个人专属词库]
+    Root --> A[2. jaroomaji.abbrev: 常用敬语/短语缩写直出]
+    Root --> M[3. jaroomaji.mozc: 谷歌 Mozc 核心日汉字/假名 70MB]
+    Root --> K[4. jaroomaji.kana_kigou: 基础假名与符号]
+    Root --> E[5. jaroomaji.mozcemoji: 日语表情符号]
+    Root --> H[6. jaroomaji.kanjidic2: 单字汉字索引]
+    Root --> J[7. jaroomaji.jmdict: 日汉扩展补充词库]
 ```
 
-* **自动拉取与补全**：当在新设备拉取配置时，Git Hook（`.githooks/post-merge`）和 `./pull` 会自动检测并从官方源下载 `dicts.jp/` 下缺失的全部词库，无需手动配置。
-* **本地与多端词频**：你在日语模式下的选词历史会自动记录到 `dynamic_freq.local.txt` 并通过 Git 同步到你的所有设备。
-
----
-
-## 5. 常见日语输入对照表 (特殊音节)
-
-| 假名 | 推荐输入键 | 备用输入键 |
-| :--- | :--- | :--- |
-| **促音 (っ)** | 双写声母（如 `kitte` -> `きって`） | `ltu` / `xtu` |
-| **拨音 (ん)** | `nn` / 单词末尾单按 `n` | `xn` |
-| **拗音 (しゃ/ちゃ/じゃ)** | `sya` / `tya` / `zya` | `sha` / `cha` / `ja` |
-| **小写假名 (ぁ/ぃ/ぅ/ぇ/ぉ)** | `xa` / `xi` / `xu` / `xe` / `xo` | `la` / `li` / `lu` / `le` / `lo` |
-| **长音符 (ー)** | `-` (减号) 或 **`l`** (字母 L) | — |
+* **独立维护性**：`jaroomaji.user` 和 `jaroomaji.abbrev` 均为纯净的 YAML 文件，互不干扰，支持 Git 多设备无缝同步。

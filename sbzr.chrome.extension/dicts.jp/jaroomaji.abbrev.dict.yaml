@@ -1,0 +1,44 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# jaroomaji.abbrev.dict.yaml — 日语常用敬语/短语/高频缩写直出词典
+# 可以随时在此文件中添加、修改个人的常用日语快捷短语
+# 格式: 词条<TAB>罗马音缩写<TAB>权重
+#
+
+---
+name: jaroomaji.abbrev
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 常用问候与感谢
+ありがとうございます	arigo	99999
+ありがとうございました	ariga	99999
+ありがとう	arig	99998
+おはようございます	ohayo	99999
+こんにちは	kon	99999
+こんばんは	konb	99999
+
+# 商务与日常敬语
+お疲れ様です	ots	99999
+お疲れ様でした	otsd	99999
+よろしくお願いいたします	yoro	99999
+よろしくお願いします	yoro	99998
+お世話になっております	ose	99999
+いつもお世話になっております	ituose	99999
+ご連絡ありがとうございます	renari	99999
+ご確認よろしくお願いいたします	kakuyoro	99999
+ご確認ください	kaku	99999
+承知いたしました	syou	99999
+かしこまりました	kasi	99999
+失礼いたします	situ	99999
+失礼いたしました	situd	99999
+
+# 道歉与回复
+すみません	sumi	99999
+申し訳ございません	mousi	99999
+ごめんなさい	gomen	99999
+大丈夫です	dai	99999
+問題ありません	mond	99999

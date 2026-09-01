@@ -8,6 +8,7 @@ sort: by_weight
 use_preset_vocabulary: false
 import_tables:
   - sbzr.chrome.extension/dicts.jp/jaroomaji.user
+  - sbzr.chrome.extension/dicts.jp/jaroomaji.abbrev
   - sbzr.chrome.extension/dicts.jp/jaroomaji.kana_kigou
   - sbzr.chrome.extension/dicts.jp/jaroomaji.mozc
   - sbzr.chrome.extension/dicts.jp/jaroomaji.jmdict
