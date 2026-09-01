@@ -255,6 +255,14 @@ function M.init(env)
       return
     end
 
+    -- 严格字数与编码长度校验，防止部分上屏时的累积重复 (如 都很都很棒)
+    -- 双拼模式下: 1 个汉字 = 2 个字母编码。汉字长度不能超过 math.ceil(#input / 2)
+    local char_len = utf8.len(committed) or #committed
+    local max_chars = math.ceil(#input / 2)
+    if char_len > max_chars then
+      return
+    end
+
     local rec = {
       input = input,
       type = "user_sentence",

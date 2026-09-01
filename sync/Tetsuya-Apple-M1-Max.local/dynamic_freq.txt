@@ -1,5 +1,7 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+dbhfbh	user_sentence	都很棒	1788274214
+mztmgjjt	user_sentence	每天感觉	1788274211
 mztmgjjtdbhfbh	user_table	帮	1788273844
 mztmdbhfhkkj	user_table	看	1788273829
 hkkj	user_table	好看	1788273556
