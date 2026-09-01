@@ -26,6 +26,10 @@ columns:
 #     - length_in_range: [2, 32]
 #       formula: "AaAbAcAdBaBbBcBdCaCbCcCdDaDbDcDdEaEbEcEdFaFbFcFdGaGbGcGdHaHbHcHd"
 import_tables:
+  - sbzr.chrome.extension/dicts/sbzr.shortcut
+  - sbzr.chrome.extension/dicts/sbzr.userdb
+  - sbzr.chrome.extension/dicts/sbzr.userdb.full
+  - sbzr.chrome.extension/dicts/sbzr.common-frequency
   - sbzr.chrome.extension/dicts/sbzr.single
   - sbzr.chrome.extension/dicts/base
   - sbzr.chrome.extension/dicts/sbzr.len1
@@ -35,10 +39,6 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.extended.lianxiang
   - sbzr.chrome.extension/dicts/sbzr.extended.shici
   - sbzr.chrome.extension/dicts/sbzr.extended.wuzhong
-  - sbzr.chrome.extension/dicts/sbzr.shortcut
-  - sbzr.chrome.extension/dicts/sbzr.common-frequency
-  - sbzr.chrome.extension/dicts/sbzr.userdb
-  - sbzr.chrome.extension/dicts/sbzr.userdb.full
   - sbzr.chrome.extension/dicts/chengyu
   - sbzr.chrome.extension/dicts/sbzr.rimeice.12字
 

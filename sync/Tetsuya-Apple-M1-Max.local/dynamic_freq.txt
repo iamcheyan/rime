@@ -1,9 +1,12 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+.	punct	。	1788270067
+,	punct	，	1788270046
+ri	table	日	1788270045
+zblq	table	周六	1788270044
 !	punct	！	1788269834
 pkoo	table	泡	1788269834
 buzidk	table	不知道	1788269122
-.	punct	。	1788269115
 khbukhdezu	table	扛得住	1788269115
 hl	user_table	还	1788269109
 nmji	table	年纪	1788269109
@@ -16,7 +19,6 @@ xwwu	user_table	下午	1788269053
 j	user_table	就	1788268846
 yihv	user_table	一会	1788268846
 jwbj	table	加班	1788268845
-,	punct	，	1788268843
 zkdezu	table	遭得住	1788268843
 butl	user_table	不太	1788268841
 s	user_table	是	1788268835
