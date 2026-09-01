@@ -30,8 +30,6 @@ import_tables:
   - sbzr.chrome.extension/dicts/base
   - sbzr.chrome.extension/dicts/sbzr.len1
   - sbzr.chrome.extension/dicts/sbzr.len1.full
-  - sbzr.chrome.extension/dicts/sbzr.len2
-  - sbzr.chrome.extension/dicts/sbzr.extended.common
   - sbzr.chrome.extension/dicts/sbzr.extended.diming
   - sbzr.chrome.extension/dicts/sbzr.extended.duoyin
   - sbzr.chrome.extension/dicts/sbzr.extended.lianxiang
@@ -43,9 +41,5 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
   - sbzr.chrome.extension/dicts/chengyu
   - sbzr.chrome.extension/dicts/sbzr.rimeice.12字
-  - sbzr.chrome.extension/dicts/sbzr.rimeice.3字
-  - sbzr.chrome.extension/dicts/sbzr.rimeice.4字
-  - sbzr.chrome.extension/dicts/sbzr.rimeice.5字+
-
 
 ...
