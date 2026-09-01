@@ -1,11 +1,11 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+buco	user_table	不错	1788272717
+kjqill	user_table	看起来	1788272715
 cull	user_table	出来	1788272171
 da	table	打	1788272171
 ffbx	user_table	分别	1788272170
 keyi	uniquified	可以	1788272169
-buco	user_table	不错	1788272167
-kjqill	user_table	看起来	1788272166
 .	punct	。	1788272053
 hlgv	table	还贵	1788272053
 dcys	user_table	调用	1788272048

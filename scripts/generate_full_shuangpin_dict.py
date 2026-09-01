@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-generate_full_shuangpin_dict.py — 全双拼 (6-8+ 码) 兼容词典全量生成流水线
+generate_full_shuangpin_dict.py — 全双拼 (3~4 字成词) 兼容词典生成流水线
 
 功能:
-1. 扫描当前纯净词库 (base, common-frequency, chengyu, diming, userdb) 中所有的 3 字及以上词条。
-2. 根据声笔自然双拼真理字表 (resource/常用字双拼拼音.db)，为每个词条自动派生精准的全双拼编码 (3字6码、4字8码、5+字10+码)。
-3. 写入 sbzr.chrome.extension/dicts/sbzr.full.dict.yaml。
-4. 保证用户使用标准全双拼输入人名、地名、专有名词、成语时 100% 能够打出！
+1. 扫描当前纯净词库 (base, common-frequency, chengyu, diming, userdb) 中所有的 3 字和 4 字成词。
+2. 根据声笔自然双拼真理字表 (resource/常用字双拼拼音.db)，为每个词条派生全双拼编码 (3字6码、4字8码)。
+3. 严格限定长度为 3~4 字 (5+ 字长句交给 Lua 动态组句引擎)，保持词库轻快纯净！
 """
 
 from __future__ import annotations
@@ -59,16 +58,17 @@ def generate_full_dict() -> int:
                 parts = line.split("\t")
                 if len(parts) >= 3:
                     text = parts[0].strip()
-                    if len(text) >= 3:
+                    # 严格限定 3~4 字成词
+                    if len(text) in (3, 4):
                         try:
                             w = int(parts[2].strip())
                             words[text] = max(words.get(text, 0), w)
                         except ValueError:
                             pass
 
-    print(f"    收集到 >=3 字词条: {len(words)} 条")
+    print(f"    收集到 3~4 字基础成词: {len(words)} 条")
 
-    print("[2/3] 派生全双拼 (6-8+ 码) 编码...")
+    print("[2/3] 派生全双拼 (6~8 码) 编码...")
     entries: list[tuple[str, str, int]] = []
     for text, w in words.items():
         codes = [char_map.get(c) for c in text]
@@ -85,11 +85,11 @@ def generate_full_dict() -> int:
         "# Rime dictionary",
         "# encoding: utf-8",
         "#",
-        "# sbzr.full.dict.yaml — 全双拼 (6-8+ 码) 向下兼容词典",
-        "# 包含所有 3 字、4 字及长词的完整双拼编码 (每字 2 码)",
+        "# sbzr.full.dict.yaml — 全双拼 (3~4 字基础成词) 兼容词典",
+        "# 包含 3 字词 (6码) 与 4 字词 (8码) 的完整双拼编码",
         "---",
         "name: sbzr.chrome.extension/dicts/sbzr.full",
-        'version: "1.0"',
+        'version: "2.0"',
         "sort: by_weight",
         "use_preset_vocabulary: false",
         "columns:",
@@ -104,17 +104,16 @@ def generate_full_dict() -> int:
         out_lines.append(f"{text}\t{code}\t{w}")
 
     OUT_DICT.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
-    print(f"    ✓ 成功生成 {len(entries)} 条全双拼词条！")
+    print(f"    ✓ 成功生成 {len(entries)} 条纯净 3~4 字全双拼词条！")
     return len(entries)
 
 
 def main() -> int:
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print("  生成全双拼 (6-8+ 码) 兼容词典流水线")
+    print("  生成全双拼 (3~4 字成词) 纯净词典流水线")
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     count = generate_full_dict()
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(f"💡 完成: 已生成 {count} 条全双拼编码，请更新 sbzr.dict.yaml 并执行 ./rebuild")
     return 0
 
 
