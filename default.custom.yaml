@@ -3,7 +3,6 @@ patch:
     - schema: sbzr
     - schema: sbzr_mix
     - schema: jaroomaji
-    - schema: easy_en
   menu/page_size: 6
   switcher/save_options: []
   switcher/abbreviate_options: true

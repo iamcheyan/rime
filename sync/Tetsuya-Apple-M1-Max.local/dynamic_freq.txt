@@ -1,5 +1,6 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
+ksge	user_table	空格	1788267055
 qigy	table	奇怪	1788266819
 ybdm	user_table	有点	1788266818
 gjjt	user_table	感觉	1788266817
@@ -42,7 +43,6 @@ bung	user_table	不能	1788187972
 fjxr	user_table	反选	1788187972
 ng	user_table	能	1788187970
 glcg	user_table	改成	1788187968
-ksge	user_table	空格	1788187966
 ba	user_table	把	1788187957
 bz	user_table	被	1788187118
 grli	user_table	管理	1788187118
