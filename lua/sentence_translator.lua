@@ -1,13 +1,14 @@
 -- sentence_translator.lua
--- 最长词优先流式组句引擎 (Maximal Matching Dynamic Sentence Composer)
+-- 最长词优先流式组句与前缀词组优先候选引擎
 --
--- 核心原理:
--- 1. 最长词组优先匹配 (Longest Chunk First):
---    从左向右扫描，优先匹配 8 码 (4字词组) > 6 码 (3字词组) > 4 码 (2字词组/公式词) > 2 码 (单字)。
--- 2. 预编译字典极速哈希 (0 延迟):
---    直接引用 require("sbzr_dict_data")，启动即载入内存，单次长句拼装耗时 < 0.001ms。
--- 3. 用户历史记忆与自造长句置顶:
---    用户提交过的任何长句直接以最高优先级 (10000) 提取置顶！
+-- 核心优化:
+-- 1. 长句优先输出 (Quality 10000):
+--    通过最长词优先算法拼装出完整整句 (如: 每天都很好看 / 看起来很不错)。
+-- 2. 词组优先于单字 (Prefix Word Priority, Quality 9800 ~ 9400):
+--    在长句输入模式下，依次生成 8 码、6 码、4 码前缀词组 (如: 每天 / 每天都 / 看起来)，
+--    让候选栏第一位是整句，第二位是开头的词组，彻底压制单字 (妹/没/美)，方便用户按词组分步选词或一键上屏整句！
+-- 3. 用户历史自造长句最高置顶:
+--    用户上屏过的专属长句从 LevelDB 快速提取置顶。
 
 local dict = require("sbzr_dict_data")
 local DB_NAME = "dynamic_freq"
@@ -68,12 +69,11 @@ end
 
 function M.func(input, seg, env)
   local len = #input
-  -- 仅在输入 >= 6 码长句时介入
   if len < 6 then
     return
   end
 
-  -- 1. 用户历史打过的自造长句优先置顶
+  -- 1. 用户历史打过的自造长句最高优先级
   local user_text = nil
   if env.db then
     local raw = env.db:fetch(input)
@@ -89,16 +89,58 @@ function M.func(input, seg, env)
 
   if user_text and user_text ~= "" then
     local cand = Candidate("user_sentence", seg.start, seg._end, user_text, "")
-    cand.quality = 10000 -- 历史记忆最高优先级置顶
+    cand.quality = 10000
     yield(cand)
   end
 
-  -- 2. 最长词优先智能流式组句
+  -- 2. 动态拼装的完整长句 (第 1 候选)
   local composed = compose_sentence(input)
   if composed and composed ~= user_text then
     local cand = Candidate("sentence", seg.start, seg._end, composed, "")
-    cand.quality = 9500 -- 动态组句置顶
+    cand.quality = 9900
     yield(cand)
+  end
+
+  -- 3. 前缀词组优先输出 (第 2~4 候选，保证词组优先于单字)
+  local emitted_prefixes = {}
+  if composed then
+    emitted_prefixes[composed] = true
+  end
+
+  -- 尝试 4 码前缀词组 (如: 每天 mztm / 精神 jysf / 看起来 kqll)
+  if len >= 4 then
+    local code4 = string.sub(input, 1, 4)
+    local word4 = dict[code4]
+    if word4 and not emitted_prefixes[word4] then
+      emitted_prefixes[word4] = true
+      local cand = Candidate("sentence_prefix", seg.start, seg.start + 4, word4, "")
+      cand.quality = 9600
+      yield(cand)
+    end
+  end
+
+  -- 尝试 6 码前缀词组 (如: 看起来 kjqill / 一大把 yidaba / 周六日 zblqri)
+  if len >= 6 then
+    local code6 = string.sub(input, 1, 6)
+    local word6 = dict[code6]
+    if word6 and not emitted_prefixes[word6] then
+      emitted_prefixes[word6] = true
+      local cand = Candidate("sentence_prefix", seg.start, seg.start + 6, word6, "")
+      cand.quality = 9500
+      yield(cand)
+    end
+  end
+
+  -- 尝试 8 码前缀词组 (如: 天下无敌 tmxwwudi / 人工智能 rfgszing)
+  if len >= 8 then
+    local code8 = string.sub(input, 1, 8)
+    local word8 = dict[code8]
+    if word8 and not emitted_prefixes[word8] then
+      emitted_prefixes[word8] = true
+      local cand = Candidate("sentence_prefix", seg.start, seg.start + 8, word8, "")
+      cand.quality = 9400
+      yield(cand)
+    end
   end
 end
 

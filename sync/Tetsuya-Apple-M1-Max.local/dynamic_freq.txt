@@ -1,9 +1,12 @@
 # dynamic_freq sync snapshot
 # format: input<TAB>type<TAB>text<TAB>updated_at
-hf	user_table	很	1788273224
+hkkj	user_table	好看	1788273556
+db	user_table	都	1788273555
+hf	user_table	很	1788273555
+mztm	user_table	每天	1788273554
+kj	user_table	看	1788273551
+mztmdbhfhk	sentence	每天都很好	1788273549
 hk	user_table	好	1788273224
-db	user_table	都	1788273223
-mztm	table	每天	1788273222
 zege	user_table	这个	1788273199
 siys	user_table	使用	1788273198
 xmzl	user_table	现在	1788273198
@@ -258,7 +261,6 @@ seji	user_table	设计	1788184533
 wjfa	user_table	玩法	1788184135
 hammer	table	hammer	1788184128
 yici	user_table	一次	1788184067
-kj	user_table	看	1788184066
 xdqu	table	想去	1788184065
 tbwz	table	投喂	1788183546
 tssi	user_table	同事	1788183542
@@ -1820,7 +1822,6 @@ gghk	table	更好	1779465562
 zoys	user_table	作用	1779465530
 cuti	table	粗体	1779464109
 cutu	lower_ascii	cutu	1779464106
-hkkj	user_table	好看	1779464083
 goei	user_table	过	1779463957
 buji	user_table	不急	1779463949
 teyb	table	特有	1779463946
