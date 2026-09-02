@@ -1,5 +1,4 @@
 patch:
-  "engine/processors/@before 0": "lua_processor@schema_toggle"
   "engine/filters":
     - lua_filter@jp_predictive_filter
     - uniquifier

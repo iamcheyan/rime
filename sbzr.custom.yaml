@@ -1,8 +1,5 @@
 # 用户自定义补丁：用于覆盖 sbzr.schema.yaml 中的默认配置（如快捷键、开关状态）。
 patch:
-  # Option+Space 在主力中文方案与最近使用的副方案（混输/日语）之间一键直接往返切换
-  "engine/processors/@before 0": "lua_processor@schema_toggle"
-
   # 1. 隐藏菜单中的西文切换选项，但保留 ascii_mode 功能供快捷键使用
   "switches/@0":
     name: ascii_mode

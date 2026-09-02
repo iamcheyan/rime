@@ -70,7 +70,6 @@ lua_filter@dynamic_freq_filter
 
 | 文件 | 职责 | 是否核心 | 主要成本 |
 |---|---|---:|---|
-| `schema_toggle.lua` | Option/Alt+Space 在主方案与副方案间切换 | 基本是 | 低；processor 事件判断 |
 | `zdy_translator.lua` | 17 条左右自定义词/快捷词优先输出 | 可选 | 低；首次加载小词表 |
 | `sentence_translator.lua` | 中文长句动态组句，8/6/4/2 码最长匹配 | 可选 | 高；依赖 14MB `sbzr_dict_data.lua`，6 码后参与每次刷新 |
 | `sbzr_dict_data.lua` | 长句组句用的预编译代码→词哈希 | 配合长句功能 | 高；约 14MB，仅作为未挂载的可选实验资产 |
@@ -132,7 +131,6 @@ require 它们，中文/日语默认启动不会加载这 14MB 哈希表。若�
 
 ### 基本需要 Lua
 
-- `schema_toggle`：当前的跨方案记忆与即时切换逻辑，原生 YAML 很难完整实现。
 - `zdy_translator`：如果继续保留“自定义词优先输出”行为，需要脚本或额外静态词表。
 
 ### 不必须用 Lua
