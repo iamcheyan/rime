@@ -1,8 +1,8 @@
 local SEP = "\31"
 local DB_NAME = "dynamic_freq"
 local CACHE_LIMIT = 256
-local MIN_PROMOTION_INPUT_LENGTH = 1
-local MAX_PROMOTION_SCAN = 512  -- match length_priority's bounded buffer
+local MIN_PROMOTION_INPUT_LENGTH = 4
+local MAX_PROMOTION_SCAN = 128  -- keep promotion work bounded like length_priority
 local ascii_learning = require("ascii_learning")
 local db_pool = db_pool or {}
 local ROOT_DIR = nil
@@ -366,6 +366,7 @@ function M.fini(env)
   env.cache_keys = nil
   env.last_input = nil
   env.last_rec = nil
+  env.last_composing_input = nil
   env.synced_records = nil
 end
 

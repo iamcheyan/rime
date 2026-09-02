@@ -5,7 +5,7 @@
 -- window without deleting any candidate.
 
 local M = {}
-local MAX_BUFFER = 512
+local MAX_BUFFER = 128
 local QUALITY_TIE_WINDOW = 100
 
 --- UTF-8 字符计数（不是字节数）

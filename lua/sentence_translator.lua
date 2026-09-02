@@ -12,6 +12,7 @@
 local dict = require("sbzr_dict_data")
 local DB_NAME = "dynamic_freq"
 local SEP = "\31"
+local STEPS = { 8, 6, 4, 2 }
 local db_pool = db_pool or {}
 
 local function open_db(name)
@@ -34,7 +35,8 @@ local function compose_sentence(input_str)
     local matched_step = 0
 
     -- 最长词优先: 8(4字) > 6(3字) > 4(2字) > 2(单字)
-    for _, step in ipairs({ 8, 6, 4, 2 }) do
+    for i = 1, #STEPS do
+      local step = STEPS[i]
       if pos + step - 1 <= n then
         local code = string.sub(input_str, pos, pos + step - 1)
         local text = dict[code]
@@ -64,17 +66,22 @@ local M = {}
 
 function M.init(env)
   env.db = open_db(DB_NAME)
+  env.last_input = nil
+  env.last_user_text = nil
 end
 
 function M.func(input, seg, env)
   local len = #input
-  if len < 6 then
+  -- 双拼每字 2 码；奇数码不可能组成完整中文词，避免半码时重复组句。
+  if len < 6 or len % 2 ~= 0 then
     return
   end
 
-  -- 1. 用户历史打过的自造长句最高优先级
+  -- Rime 可能在同一输入状态重复调用 translator；复用本次 LevelDB 结果。
   local user_text = nil
-  if env.db then
+  if env.last_input == input then
+    user_text = env.last_user_text
+  elseif env.db then
     local raw = env.db:fetch(input)
     if raw and raw ~= "" then
       local p = string.find(raw, SEP, 1, true)
@@ -85,6 +92,8 @@ function M.func(input, seg, env)
       end
     end
   end
+  env.last_input = input
+  env.last_user_text = user_text
 
   if user_text and user_text ~= "" then
     -- 校验用户记忆字数是否与编码匹配 (防止历史脏数据)
