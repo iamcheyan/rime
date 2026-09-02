@@ -73,7 +73,7 @@ lua_filter@dynamic_freq_filter
 | `schema_toggle.lua` | Option/Alt+Space 在主方案与副方案间切换 | 基本是 | 低；processor 事件判断 |
 | `zdy_translator.lua` | 17 条左右自定义词/快捷词优先输出 | 可选 | 低；首次加载小词表 |
 | `sentence_translator.lua` | 中文长句动态组句，8/6/4/2 码最长匹配 | 可选 | 高；依赖 14MB `sbzr_dict_data.lua`，6 码后参与每次刷新 |
-| `sbzr_dict_data.lua` | 长句组句用的预编译代码→词哈希 | 配合长句功能 | 高；约 14MB，当前由共享 `rime.lua` require |
+| `sbzr_dict_data.lua` | 长句组句用的预编译代码→词哈希 | 配合长句功能 | 高；约 14MB，仅作为未挂载的可选实验资产 |
 | `length_priority.lua` | 候选质量分组后，同组短词优先 | 可选 | 中高；最多缓存 128 候选并排序两次 |
 | `dynamic_freq.lua` | 用户动态词频候选提升与长句学习 | 可选 | 中高；4 码后 LevelDB 查询并扫描候选 |
 | `ascii_learning.lua` | 记录/查询英文学习候选 | 可选 | 已改为前两码索引；仍属额外功能 |
