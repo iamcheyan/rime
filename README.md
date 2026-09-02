@@ -107,7 +107,9 @@
 | `Shift+BackSpace` | 清空当前编码 |
 | `Space + 1~5` | 选词（页大小 6） |
 | `Ctrl+grave` / `F4` | 方案选单 |
-| `Shift_L/R` |  inline_ascii 西文切换 |
+| `Ctrl+Shift+Z` / `Alt+,` | 直接切换到中文 `sbzr` |
+| `Ctrl+Shift+J` / `Alt+.` | 直接切换到日语 `jaroomaji` |
+| `Shift_L/R` | inline_ascii 西文切换 |
 
 ---
 
