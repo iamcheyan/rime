@@ -59,8 +59,6 @@ enable_completion: false
 `default.custom.yaml` 新增全局 `when: always` 绑定：
 
 ```text
-Ctrl+Shift+Z → sbzr（中文）
-Ctrl+Shift+J → jaroomaji（日语）
 Ctrl+,       → select: .next（循环切换下一个方案）
 Ctrl+.       → select: .next（循环切换下一个方案）
 ```

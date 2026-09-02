@@ -42,9 +42,7 @@ patch:
       # Shift+BackSpace：在输入状态下，发送 Escape，通常用于取消或清空输入
       - {accept: "Shift+BackSpace", send: Escape, when: composing}
 
-      # Directly switch between standalone Chinese and Japanese schemas.
-      - { when: always, accept: "Control+Shift+z", select: sbzr }
-      - { when: always, accept: "Control+Shift+j", select: jaroomaji }
+      # Cycle next schema globally
       - { when: always, accept: "Control+comma", select: .next }
       - { when: always, accept: "Control+period", select: .next }
 
