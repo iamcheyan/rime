@@ -16,15 +16,14 @@ function M.func(translation, env)
     return
   end
 
-  -- 英文开关关闭，过滤掉 easy_en 的候选
-  -- easy_en 的候选 namespace 对应 table_translator@easy_en 或 table_translator@easy_en_mix
+  -- Japanese/Chinese candidates begin with a UTF-8 byte >= 0x80. Only
+  -- ASCII candidates can be easy_en words, so avoid regex work for CJK text.
   for cand in translation:iter() do
-    -- 通过 type 和 preedit 判断：easy_en 产生的候选 preedit 与 text 均为英文
-    -- 更可靠的判断：easy_en 的候选来自 abc segment，text 全为 ASCII 字母
     local text = cand.text or ""
-    local is_ascii_word = string.match(text, "^[%a%-%'%.]+$") ~= nil
-
-    if not is_ascii_word then
+    local first_byte = string.byte(text)
+    if first_byte and first_byte >= 128 then
+      yield(cand)
+    elseif string.match(text, "^[%a%-%'%.]+$") == nil then
       yield(cand)
     end
   end

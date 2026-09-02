@@ -56,7 +56,6 @@ engine:
   translators:
     - echo_translator
     - punct_translator
-    - lua_translator@learned_ascii_translator
     - lua_translator@shift_ascii_translator
     - script_translator
     - lua_translator@lower_ascii_translator
