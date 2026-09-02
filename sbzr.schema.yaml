@@ -65,7 +65,7 @@ translator:
   dictionary: sbzr
   enable_user_dict: true
   enable_sentence: true        # 开启码表整句
-  enable_completion: true      # 开启追加补全提示
+  enable_completion: false      # Disable expensive prefix completion; use exact candidates/userdb
   sentence_over_completion: true # 优先匹配整句而非补全
   enable_encoder: true
   encode_commit_history: true

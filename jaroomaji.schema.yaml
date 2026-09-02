@@ -59,9 +59,7 @@ engine:
     - lua_translator@shift_ascii_translator
     - script_translator
     - lua_translator@lower_ascii_translator
-    - table_translator@easy_en
   filters:
-    - lua_filter@en_switch_filter
     - uniquifier
 
 # # # # # # # # # # # # # # # # # # # #
@@ -251,7 +249,7 @@ translator:
   enable_user_dict: true  # 学習機能ON
   enable_encoder: true
   encode_commit_history: true
-  enable_completion: true
+  enable_completion: false
   preedit_format:
     # 区切り文字の空白は消す
     - "xform/ //"
