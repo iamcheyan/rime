@@ -6,27 +6,26 @@
 
 ### 中文 `sbzr` (`sbzr.schema.yaml`)
 
+当前默认保持轻量链：
+
 ```yaml
 translators:
   - lua_translator@zdy_priority_translator
-  - lua_translator@sentence_translator
 filters:
-  - lua_filter@length_priority_filter
-  - lua_filter@dynamic_freq_filter
   - lua_filter@en_switch_filter
 ```
 
-原生配置同时打开了：
+中文默认已移除：
 
 ```yaml
-translator/enable_user_dict: true
-translator/enable_sentence: true
-translator/enable_completion: true
-history_translator
+lua_translator@sentence_translator
+lua_filter@length_priority_filter
+lua_filter@dynamic_freq_filter
 ```
 
-因此 `sentence_translator`、`dynamic_freq_filter`、`length_priority_filter` 与 Rime
-原生的整句、用户词典、历史候选和权重排序存在部分重叠，是中文卡顿排查的重点。
+中文依靠 Rime 原生的 `enable_user_dict`、`enable_sentence`、`history_translator` 和
+`sort: by_weight` 完成基础用户学习、整句和候选排序。这样避免在普通中文输入时重复
+执行 Lua 候选增强链。
 
 ### 混输 `sbzr_mix` (`sbzr_mix.schema.yaml`)
 
@@ -86,12 +85,10 @@ lua_filter@dynamic_freq_filter
 | `single_code_filter.lua` | 单码单字过滤 | 未挂当前主链 | 低 |
 | `en_switch_filter.lua` | 英文开关过滤 | 可选 | 见上 |
 
-`rime.lua` 会集中注册这些模块。特别注意：`rime.lua` 当前直接
-`require("sentence_translator")`，而 `sentence_translator.lua` 顶层又直接
-`require("sbzr_dict_data")`。如果 librime 在日语/混输方案中也加载共享 `rime.lua`，
-即使方案未使用长句 translator，也可能在初始化时加载 14MB 中文哈希。后续若仍有
-日语启动/切换卡顿，应把长句字典改为 `sentence_translator.M.init` 或首次调用时懒加载，
-而不是在共享注册阶段加载。
+`rime.lua` 会集中注册仍被方案引用的模块。`sentence_translator.lua` 与
+`sbzr_dict_data.lua` 目前保留在仓库中作为可选长句实验资产，但 `rime.lua` 不再顶层
+require 它们，中文/日语默认启动不会加载这 14MB 哈希表。若未来重新启用长句，必须
+采用首次进入中文长句路径时懒加载，不能恢复全局启动加载。
 
 ## 3. 已完成的性能修改
 
@@ -152,11 +149,11 @@ lua_filter@dynamic_freq_filter
 
 ### 中文普通输入
 
-1. `length_priority_filter`：每次候选刷新最多 128 候选、两次排序；
-2. `dynamic_freq_filter`：4 码后 LevelDB 查询和候选扫描；
-3. `en_switch_filter`：必须消费候选流；
-4. `sentence_translator`：6 码后增加长句候选，且共享注册阶段可能提前加载 14MB 哈希；
-5. `zdy_translator`：通常不是瓶颈。
+1. `en_switch_filter`：仍需消费候选流，但只在 `enable_en` 关闭时执行实际过滤；
+2. `zdy_translator`：小词表，通常不是瓶颈；
+3. 原生 `table_translator` / completion：如果仍卡，应单独检查词库规模和 completion 设置。
+
+`sentence_translator`、`length_priority_filter`、`dynamic_freq_filter` 已不在中文默认链中。
 
 ### 日语普通输入
 
@@ -174,52 +171,25 @@ lua_filter@dynamic_freq_filter
 4. `en_switch_filter`；
 5. `script_translator@jp_mix` 的补全候选数量。
 
-## 6. 推荐的极速 A/B 方案
+## 6. 当前默认策略与后续 A/B
 
-不要一次删除所有功能，按以下顺序做本地 A/B：
+中文和日语已经采用极速默认链：
 
-### A：基础方案
-
-只保留：
-
-```yaml
-lua_translator@zdy_priority_translator
-lua_filter@en_switch_filter
+```text
+中文：zdy + en_switch + 原生 table/userdb/sentence/history
+日语：jp_predictive + en_switch + 原生 script/table
+混输：暂时保留 learned_ascii、length_priority、dynamic_freq，作为独立后续优化对象
 ```
 
-暂时移除：
+中文默认已移除 `sentence_translator`、`length_priority_filter`、`dynamic_freq_filter`；日语
+默认已移除 `learned_ascii_translator` 和 `dynamic_freq_filter`。如果 Mac 上中文/日语仍卡，
+下一步应先做 Rime 原生 `enable_completion` 开关 A/B，而不是恢复这些 Lua 增强。
 
-```yaml
-lua_translator@sentence_translator
-lua_filter@length_priority_filter
-lua_filter@dynamic_freq_filter
-```
+混输的后续 A/B 可以单独移除 `learned_ascii_translator`、`length_priority_filter`、
+`dynamic_freq_filter`，不应因为混输问题回头增加中文/日语默认链的复杂度。
 
-依靠 Rime 原生：
-
-```yaml
-enable_user_dict: true
-enable_sentence: true
-history_translator
-sort: by_weight
-```
-
-如果手感恢复，说明卡顿来自重复增强链，而不是基础词库。
-
-### B：逐项恢复
-
-按顺序一次恢复一项：
-
-1. `dynamic_freq_filter`；
-2. `length_priority_filter`；
-3. `sentence_translator`。
-
-每次恢复后重新部署，并用固定输入码测普通输入、4 码、6 码、长句输入延迟。
-
-### C：长句懒加载
-
-即使最终保留 `sentence_translator`，也应该把 14MB `sbzr_dict_data.lua` 改成首次真正进入
-中文长句路径时才加载，避免日语和混输初始化时承担中文长句资源成本。
+如果未来重新启用中文长句实验，必须采用懒加载并单独挂实验 schema；不要把
+`sentence_translator` 恢复到主方案。
 
 ## 7. 验证与回滚
 
