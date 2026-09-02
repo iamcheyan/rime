@@ -126,11 +126,19 @@
 
 ---
 
-## 维护脚本
+## 维护流程
 
 ```bash
-./push [commit message]     # 导出动态频次、清理忽略文件、提交并推送当前分支
-./pull                      # 强制拉取当前远程分支、导入动态频次
+# 更新并保留本地提交/修改
+git fetch origin
+git rebase origin/main
+
+# 只提交明确相关的文件
+git add <specific-files>
+git diff --cached --check
+git commit -m "描述修改"
+git push origin main
+
 ./sync.sh                   # 触发 Rime 同步
 ```
 

@@ -133,7 +133,8 @@ def merge_records(
 ### 6.2 新设备接入初始化
 在新机器上拉取本仓库后，仅需运行一次：
 ```bash
-./pull
+git config core.hooksPath .githooks
+git pull --rebase
 ```
-该脚本会自动拉取远程快照、设置 `git config core.hooksPath .githooks` 并执行初次词频合并。
+该配置会启用本地 pre-commit、post-merge、post-rewrite hooks，并通过原生 Git 保留本地提交历史。
 

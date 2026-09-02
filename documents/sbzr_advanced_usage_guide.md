@@ -85,11 +85,11 @@ sequenceDiagram
     participant HookPost as .githooks/post-merge
     participant Dicts as 外部日语词库 (dicts.jp)
 
-    Note over Local,HookPre: 执行 git commit 或 ./push 时
+    Note over Local,HookPre: 执行 git commit 时
     HookPre->>Local: 提取最新活跃调频 (LRU 前 10,000 条)
     HookPre->>Git: 打包 sync/<DeviceName>/dynamic_freq.txt 提交
 
-    Note over Git,HookPost: 执行 git pull 或 ./pull 时
+    Note over Git,HookPost: 执行 git pull --rebase 时
     Git->>HookPost: 拉取所有设备快照
     HookPost->>Local: 增量无损融合多设备词频
     HookPost->>Dicts: 自动校验并补齐外部日语词库
