@@ -61,8 +61,8 @@ enable_completion: false
 ```text
 Ctrl+Shift+Z → sbzr（中文）
 Ctrl+Shift+J → jaroomaji（日语）
-Alt+,       → sbzr（中文）
-Alt+.       → jaroomaji（日语）
+Ctrl+,       → select: .next（循环切换下一个方案）
+Ctrl+.       → select: .next（循环切换下一个方案）
 ```
 
 原有 `Shift+BackSpace` 清空/取消输入绑定保留。快捷键是直接选择方案，不经过 `sbzr_mix`，

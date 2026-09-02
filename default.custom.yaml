@@ -45,8 +45,8 @@ patch:
       # Directly switch between standalone Chinese and Japanese schemas.
       - { when: always, accept: "Control+Shift+z", select: sbzr }
       - { when: always, accept: "Control+Shift+j", select: jaroomaji }
-      - { when: always, accept: "Alt+comma", select: sbzr }
-      - { when: always, accept: "Alt+period", select: jaroomaji }
+      - { when: always, accept: "Control+comma", select: .next }
+      - { when: always, accept: "Control+period", select: .next }
 
 
       
