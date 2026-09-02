@@ -3,6 +3,8 @@ local M = {}
 local ROOT_DIR = nil
 local LOCAL_SYNC_FILE = nil
 local latest_by_input = {}
+local prefix_index = {}
+local indexed_inputs = {}
 local loaded = false
 
 local function dirname(path)
@@ -75,6 +77,16 @@ local function case_prefix_score(prefix, text)
   return 0
 end
 
+local function index_input(input)
+  if not input or input == "" or indexed_inputs[input] then
+    return
+  end
+  indexed_inputs[input] = true
+  local key = string.lower(string.sub(input, 1, 2))
+  prefix_index[key] = prefix_index[key] or {}
+  table.insert(prefix_index[key], input)
+end
+
 function M.load()
   if loaded then
     return
@@ -82,6 +94,8 @@ function M.load()
 
   loaded = true
   latest_by_input = {}
+  prefix_index = {}
+  indexed_inputs = {}
 
   local fh = io.open(get_local_sync_file(), "r")
   if not fh then
@@ -108,6 +122,9 @@ function M.load()
     end
   end
 
+  for input in pairs(latest_by_input) do
+    index_input(input)
+  end
   fh:close()
 end
 
@@ -124,6 +141,7 @@ function M.record(rec)
       text = rec.text,
       updated_at = rec.updated_at or os.time(),
     }
+    index_input(rec.input)
   end
 end
 
@@ -138,20 +156,24 @@ function M.query(input, limit)
   local results = {}
   local seen = {}
   local requested = math.max(1, tonumber(limit) or 6)
+  local bucket = prefix_index[string.lower(string.sub(normalized, 1, 2))] or {}
 
-  for _, rec in pairs(latest_by_input) do
-    local text_lower = string.lower(rec.text)
-    if
-      string.len(rec.text) > string.len(input) and
-      string.sub(text_lower, 1, string.len(normalized)) == normalized and
-      not seen[rec.text]
-    then
-      seen[rec.text] = true
-      table.insert(results, {
-        text = rec.text,
-        updated_at = rec.updated_at or 0,
-        case_score = case_prefix_score(input, rec.text),
-      })
+  for _, input_key in ipairs(bucket) do
+    local rec = latest_by_input[input_key]
+    if rec then
+      local text_lower = string.lower(rec.text)
+      if
+        string.len(rec.text) > string.len(input) and
+        string.sub(text_lower, 1, string.len(normalized)) == normalized and
+        not seen[rec.text]
+      then
+        seen[rec.text] = true
+        table.insert(results, {
+          text = rec.text,
+          updated_at = rec.updated_at or 0,
+          case_score = case_prefix_score(input, rec.text),
+        })
+      end
     end
   end
 

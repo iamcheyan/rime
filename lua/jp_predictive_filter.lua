@@ -65,8 +65,24 @@ local PREDICTION_MAP = {
 
 function M.func(input_stream, env)
     local context = env.engine.context
-    local input_str = context.input:lower():gsub("[%s%-]", "")
+    local raw_input = context.input or ""
+    if #raw_input < 3 then
+        for cand in input_stream:iter() do
+            yield(cand)
+        end
+        return
+    end
+
+    local input_str = raw_input:lower():gsub("[%s%-]", "")
     local predictions = PREDICTION_MAP[input_str]
+    if not predictions then
+        -- Most keystrokes are not registered prediction prefixes; avoid scanning
+        -- and rebuilding a seen table for the entire candidate stream.
+        for cand in input_stream:iter() do
+            yield(cand)
+        end
+        return
+    end
 
     local seen = {}
     local yielded_count = 0

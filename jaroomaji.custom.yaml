@@ -1,7 +1,6 @@
 patch:
   "engine/processors/@before 0": "lua_processor@schema_toggle"
   "engine/filters":
-    - lua_filter@dynamic_freq_filter
     - lua_filter@jp_predictive_filter
     - lua_filter@en_switch_filter
     - uniquifier
