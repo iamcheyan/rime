@@ -77,59 +77,49 @@ function M.func(input_stream, env)
     local predictions = PREDICTION_MAP[input_str]
     if not predictions then
         -- Most keystrokes are not registered prediction prefixes; avoid scanning
-        -- and rebuilding a seen table for the entire candidate stream.
+        -- and rebuilding any state for the entire candidate stream.
         for cand in input_stream:iter() do
             yield(cand)
         end
         return
     end
 
-    local seen = {}
-    local yielded_count = 0
-    local inserted_prediction = false
+    -- Only the few injected predictions need duplicate checks. The downstream
+    -- uniquifier already handles duplicates among ordinary candidates; keeping a
+    -- seen table for the whole stream made prediction hits needlessly expensive.
+    local predicted = {}
+    for _, text in ipairs(predictions) do
+        predicted[text] = true
+    end
 
+    local native_emitted = false
     for cand in input_stream:iter() do
-        -- 第 1 候选正常输出（保留精确平假名 / 精确匹配）
-        if yielded_count == 0 then
+        if not native_emitted then
+            native_emitted = true
             yield(cand)
-            seen[cand.text] = true
-            yielded_count = yielded_count + 1
-
-            -- 在第 1 候选之后，立即插入匹配的智能预测词
-            if predictions and not inserted_prediction then
-                inserted_prediction = true
-                for _, text in ipairs(predictions) do
-                    if not seen[text] then
-                        seen[text] = true
-                        local pred_cand = Candidate("jp_predict", cand.start, cand._end, text, "〔予測〕")
-                        pred_cand.quality = (cand.quality or 100) + 1000
-                        yield(pred_cand)
-                        yielded_count = yielded_count + 1
-                    end
+            for _, text in ipairs(predictions) do
+                if text ~= cand.text then
+                    local pred_cand = Candidate("jp_predict", cand.start, cand._end, text, "〔予測〕")
+                    pred_cand.quality = (cand.quality or 100) + 1000
+                    yield(pred_cand)
                 end
             end
-        else
-            -- 后续候选：若不是已预测过的词，则正常输出
-            if not seen[cand.text] then
-                seen[cand.text] = true
-                -- 若当前候选本身是长补全词，打上预测提示
-                if cand.type == "completion" and #cand.text > 2 and cand.comment == "" then
-                    cand.comment = "〔予測〕"
-                end
-                yield(cand)
-                yielded_count = yielded_count + 1
+        elseif not predicted[cand.text] then
+            -- Mark long completion candidates without constructing a global set.
+            if cand.type == "completion" and #cand.text > 2 and cand.comment == "" then
+                cand.comment = "〔予測〕"
             end
+            yield(cand)
         end
     end
 
-    -- 如果候选流为空但有预测词，兜底输出
-    if yielded_count == 0 and predictions then
+    -- If the normal translator produced no candidate, retain the prediction
+    -- fallback with the correct segment range.
+    if not native_emitted then
         for _, text in ipairs(predictions) do
-            if not seen[text] then
-                seen[text] = true
-                local pred_cand = Candidate("jp_predict", 0, #context.input, text, "〔予測〕")
-                yield(pred_cand)
-            end
+            local pred_cand = Candidate("jp_predict", 0, #raw_input, text, "〔予測〕")
+            pred_cand.quality = 1000
+            yield(pred_cand)
         end
     end
 end
