@@ -42,3 +42,67 @@ use_preset_vocabulary: false
 ごめんなさい	gomen	99999
 大丈夫です	dai	99999
 問題ありません	mond	99999
+# 職場でのミス・訂正・お詫び
+ミスしました	miss	99999
+ミスがありました	misua	99999
+間違えました	machig	99999
+誤りがありました	ayama	99999
+確認不足でした	kakubso	99999
+私の確認不足でした	watasikakubso	99999
+私のミスでした	watasimiss	99999
+申し訳ありません	mousiar	99999
+ご迷惑をおかけしました	meiwakud	99999
+ご迷惑をおかけして申し訳ございません	meiwakumousi	99999
+
+# 修正・更新・反映
+修正します	syusei	99999
+修正しました	syuseid	99999
+修正いたします	syuseii	99999
+修正いたしました	syuseidii	99999
+訂正します	teisei	99999
+訂正しました	teiseid	99999
+更新します	kousin	99999
+これから更新します	korekousin	99999
+ただいま更新します	tadaikousin	99999
+更新しました	kousind	99999
+反映します	hanei	99999
+反映しました	haneid	99999
+
+# 確認・調査・対応
+これから確認します	korekaku	99999
+ただいま確認します	tadaikaku	99999
+確認します	kakunin	99999
+確認しました	kakunind	99999
+確認してみます	kakumir	99999
+確認の上ご連絡します	kakuuren	99999
+これから調べます	koresira	99999
+調べてみます	sirami	99999
+これから調査します	koretyosa	99999
+調査します	cyosa	99999
+対応します	taiou	99999
+すぐに対応します	sugutaio	99999
+対応しました	taioud	99999
+
+# 理解・報告・共有・後続アクション
+わかりました	wak	99999
+わかりました、ありがとうございます	wakari	99999
+理解しました	rikai	99999
+理解いたしました	rikaii	99999
+承知しました	syouti	99999
+共有します	kyoyu	99999
+共有しました	kyoyud	99999
+報告します	hokoku	99999
+報告しました	hokokud	99999
+相談します	sodan	99999
+相談しました	sodand	99999
+対応いたします	taioui	99999
+
+# 待機・時間・聯絡
+少々お待ちください	syosyo	99999
+少しお待ちください	sukosi	99999
+今しばらくお待ちください	imasiba	99999
+後ほど確認します	atoskaku	99999
+後ほどご連絡します	atosren	99999
+こちらで確認します	koredekaku	99999
+こちらで対応します	koredataio	99999
+改めてご連絡します	arataren	99999
