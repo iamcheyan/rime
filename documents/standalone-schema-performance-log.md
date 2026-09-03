@@ -66,8 +66,8 @@ enable_completion: false
 `default.custom.yaml` 新增全局 `when: always` 绑定：
 
 ```text
-Ctrl+,       → select: .next（循环切换下一个方案）
-Ctrl+.       → select: .next（循环切换下一个方案）
+Ctrl+,       → sbzr（中文）
+Ctrl+.       → jaroomaji（日语）
 ```
 
 原有 `Shift+BackSpace` 清空/取消输入绑定保留。快捷键是直接选择方案，不经过 `sbzr_mix`，

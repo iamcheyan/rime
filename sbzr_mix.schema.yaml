@@ -124,8 +124,8 @@ key_binder:
     - { when: has_menu, accept: Down, send: Page_Down }
     - { when: has_menu, accept: comma, send: Page_Up }
     - { when: has_menu, accept: period, send: Page_Down }
-    - { accept: "Control+comma", select: .next, when: always }
-    - { accept: "Control+period", select: .next, when: always }
+    - { accept: "Control+comma", select: sbzr, when: always }
+    - { accept: "Control+period", select: jaroomaji, when: always }
     - { accept: "Shift+BackSpace", send: Escape, when: composing }
 
 punctuator:
