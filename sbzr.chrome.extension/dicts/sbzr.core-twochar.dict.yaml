@@ -1,0 +1,20 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# SBZR core two-character recovery layer.
+# These entries are intentionally curated from excluded source dictionaries.
+# Do not bulk-import sbzr.len2: it contains many low-frequency candidates.
+---
+name: sbzr.chrome.extension/dicts/sbzr.core-twochar
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+...
+
+# Source: sbzr.len2.dict.yaml (original weight 1000)
+# Reason: common two-character word omitted from the slim sbzr.dict.yaml entrypoint.
+掰扯	blce	2000

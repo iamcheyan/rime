@@ -31,6 +31,7 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.userdb.full
   - sbzr.chrome.extension/dicts/sbzr.full
   - sbzr.chrome.extension/dicts/sbzr.common-frequency
+  - sbzr.chrome.extension/dicts/sbzr.core-twochar
   - sbzr.chrome.extension/dicts/sbzr.single
   - sbzr.chrome.extension/dicts/base
   - sbzr.chrome.extension/dicts/sbzr.len1
