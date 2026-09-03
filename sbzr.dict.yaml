@@ -37,6 +37,7 @@ import_tables:
   - sbzr.chrome.extension/dicts/sbzr.len1
   - sbzr.chrome.extension/dicts/sbzr.len1.full
   - sbzr.chrome.extension/dicts/sbzr.extended.diming
+  - sbzr.chrome.extension/dicts/sbzr.extended.japan
   - sbzr.chrome.extension/dicts/sbzr.extended.duoyin
   - sbzr.chrome.extension/dicts/sbzr.extended.lianxiang
   - sbzr.chrome.extension/dicts/sbzr.extended.shici
