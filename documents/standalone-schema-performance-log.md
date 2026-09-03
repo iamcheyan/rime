@@ -44,6 +44,13 @@ enable_completion: false
 
 日语词库包含约 70MB Mozc 和约 18MB JMDict；关闭 completion 是降低普通罗马字输入候选检索成本的关键措施。
 
+### 日语 ASCII 候选优先级修正
+
+`lower_ascii_translator.lua` 原先将所有纯小写英文候选固定设置为 `quality = 50`，会抢在
+日语 `script_translator` 候选前面。现改为 `quality = -100`：小写英文仍作为 fallback
+保留，但日语候选优先。`shift_ascii_translator.lua` 对含大写字母的英文仍使用
+`900000000`，用于原样优先上屏专有名词、缩写和产品名。
+
 ### 共享 Lua 资源变更
 
 `rime.lua` 不再顶层 require `sentence_translator`。`sentence_translator.lua` 和

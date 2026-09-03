@@ -1,4 +1,4 @@
-local ASCII_QUALITY = 50
+local ASCII_QUALITY = -100
 
 local function normalize_ascii(input)
   if not input or input == "" then

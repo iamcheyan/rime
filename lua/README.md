@@ -80,7 +80,7 @@ lua_filter@dynamic_freq_filter
 | `jp_predictive_filter.lua` | 日语固定前缀预测（ari/otsu/yor 等） | 可选 | 仅预测命中时插入少量候选 |
 | `en_switch_filter.lua` | `enable_en` 关闭时过滤 ASCII 英文候选 | 可选 | 仍需遍历候选流；CJK 已走首字节快路径 |
 | `shift_ascii_translator.lua` | 大写 ASCII 原样候选 | 可选 | 低 |
-| `lower_ascii_translator.lua` | 小写 ASCII 候选 | 可选 | 低 |
+| `lower_ascii_translator.lua` | 小写 ASCII 候选；当前 quality=-100，作为日语候选后的 fallback | 可选 | 低 |
 | `single_code_filter.lua` | 单码单字过滤 | 未挂当前主链 | 低 |
 | `en_switch_filter.lua` | 英文开关过滤 | 可选 | 见上 |
 
