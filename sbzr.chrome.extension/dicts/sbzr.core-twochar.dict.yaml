@@ -1,12 +1,12 @@
 # Rime dictionary
 # encoding: utf-8
 #
-# SBZR core two-character recovery layer.
-# These entries are intentionally curated from excluded source dictionaries.
-# Do not bulk-import sbzr.len2: it contains many low-frequency candidates.
+# Curated recovery layer for common two-character words omitted from the slim sbzr entrypoint.
+# Source snapshot: Rime essay.txt (local audit cache, 2026-08-28 report); codes from sbzr.len2.dict.yaml.
+# Do not replace this file with the full sbzr.len2 dictionary.
 ---
 name: sbzr.chrome.extension/dicts/sbzr.core-twochar
-version: "1.0"
+version: "2.0"
 sort: by_weight
 use_preset_vocabulary: false
 columns:
@@ -15,6 +15,1179 @@ columns:
   - weight
 ...
 
-# Source: sbzr.len2.dict.yaml (original weight 1000)
-# Reason: common two-character word omitted from the slim sbzr.dict.yaml entrypoint.
-掰扯	blce	2000
+# source_weight=8213; original_len2_weight=1000; reason=rime-essay>=800
+崛起	jtqi	2300
+# source_weight=7839; original_len2_weight=1000; reason=rime-essay>=800
+曝光	bkgd	2300
+# source_weight=7232; original_len2_weight=1000; reason=rime-essay>=800
+奇葩	qipa	2300
+# source_weight=6941; original_len2_weight=1000; reason=rime-essay>=800
+曹丕	ckpi	2300
+# source_weight=6436; original_len2_weight=1000; reason=rime-essay>=800
+博弈	boyi	2300
+# source_weight=5359; original_len2_weight=1000; reason=rime-essay>=800
+瑜伽	yuga	2300
+# source_weight=4093; original_len2_weight=1000; reason=rime-essay>=800
+氪金	kejn	2250
+# source_weight=3920; original_len2_weight=1000; reason=rime-essay>=800
+冥想	myxd	2250
+# source_weight=3668; original_len2_weight=1000; reason=rime-essay>=800
+二字	vrzi	2250
+# source_weight=3647; original_len2_weight=1000; reason=rime-essay>=800
+前三	qmsj	2250
+# source_weight=3590; original_len2_weight=1000; reason=rime-essay>=800
+一加	yijw	2250
+# source_weight=3386; original_len2_weight=1000; reason=rime-essay>=800
+骨骼	guge	2250
+# source_weight=3264; original_len2_weight=1000; reason=rime-essay>=800
+丞相	cgxd	2250
+# source_weight=3231; original_len2_weight=1000; reason=rime-essay>=800
+前十	qmsi	2250
+# source_weight=3141; original_len2_weight=1000; reason=rime-essay>=800
+混沌	hpzr	2250
+# source_weight=3118; original_len2_weight=1000; reason=rime-essay>=800
+甲醛	jwqr	2250
+# source_weight=3082; original_len2_weight=1000; reason=rime-essay>=800
+高二	gkvr	2250
+# source_weight=2965; original_len2_weight=1000; reason=rime-essay>=800
+有一	ybyi	2250
+# source_weight=2937; original_len2_weight=1000; reason=rime-essay>=800
+突厥	tujt	2250
+# source_weight=2934; original_len2_weight=1000; reason=rime-essay>=800
+白嫖	blpc	2250
+# source_weight=2810; original_len2_weight=1000; reason=rime-essay>=800
+祭祀	jisi	2250
+# source_weight=2766; original_len2_weight=1000; reason=rime-essay>=800
+萃取	cvqu	2250
+# source_weight=2597; original_len2_weight=1000; reason=rime-essay>=800
+陛下	bixw	2250
+# source_weight=2584; original_len2_weight=1000; reason=rime-essay>=800
+咖喱	kali	2250
+# source_weight=2569; original_len2_weight=1000; reason=rime-essay>=800
+中二	zsvr	2250
+# source_weight=2563; original_len2_weight=1000; reason=rime-essay>=800
+突兀	tuwu	2250
+# source_weight=2538; original_len2_weight=1000; reason=rime-essay>=800
+郭靖	gojy	2250
+# source_weight=2510; original_len2_weight=1000; reason=rime-essay>=800
+新一	xnyi	2250
+# source_weight=2507; original_len2_weight=1000; reason=rime-essay>=800
+荀彧	xpyu	2250
+# source_weight=2461; original_len2_weight=1000; reason=rime-essay>=800
+四人	sirf	2250
+# source_weight=2448; original_len2_weight=1000; reason=rime-essay>=800
+育碧	yubi	2250
+# source_weight=2425; original_len2_weight=1000; reason=rime-essay>=800
+穿搭	crda	2250
+# source_weight=2414; original_len2_weight=1000; reason=rime-essay>=800
+亨利	hgli	2250
+# source_weight=2372; original_len2_weight=1000; reason=rime-essay>=800
+枸杞	gbqi	2250
+# source_weight=2169; original_len2_weight=1000; reason=rime-essay>=800
+吞噬	tpsi	2250
+# source_weight=2153; original_len2_weight=1000; reason=rime-essay>=800
+四是	sisi	2250
+# source_weight=2140; original_len2_weight=1000; reason=rime-essay>=800
+吐蕃	tubo	2250
+# source_weight=2138; original_len2_weight=1000; reason=rime-essay>=800
+憧憬	csjy	2250
+# source_weight=2113; original_len2_weight=1000; reason=rime-essay>=800
+猝死	cusi	2250
+# source_weight=2084; original_len2_weight=1000; reason=rime-essay>=800
+李靖	lijy	2250
+# source_weight=1957; original_len2_weight=1000; reason=rime-essay>=800
+梵高	fjgk	2200
+# source_weight=1929; original_len2_weight=1000; reason=rime-essay>=800
+前五	qmwu	2200
+# source_weight=1913; original_len2_weight=1000; reason=rime-essay>=800
+一族	yizu	2200
+# source_weight=1907; original_len2_weight=1000; reason=rime-essay>=800
+蟑螂	zhlh	2200
+# source_weight=1906; original_len2_weight=1000; reason=rime-essay>=800
+一盒	yihe	2200
+# source_weight=1891; original_len2_weight=1000; reason=rime-essay>=800
+惟一	wzyi	2200
+# source_weight=1875; original_len2_weight=1000; reason=rime-essay>=800
+三倍	sjbz	2200
+# source_weight=1868; original_len2_weight=1000; reason=rime-essay>=800
+一局	yiju	2200
+# source_weight=1868; original_len2_weight=1000; reason=rime-essay>=800
+三遍	sjbm	2200
+# source_weight=1816; original_len2_weight=1000; reason=rime-essay>=800
+咔咔	kaka	2200
+# source_weight=1811; original_len2_weight=1000; reason=rime-essay>=800
+我一	woyi	2200
+# source_weight=1782; original_len2_weight=1000; reason=rime-essay>=800
+下一	xwyi	2200
+# source_weight=1747; original_len2_weight=1000; reason=rime-essay>=800
+三部	sjbu	2200
+# source_weight=1741; original_len2_weight=1000; reason=rime-essay>=800
+懵逼	mgbi	2200
+# source_weight=1725; original_len2_weight=1000; reason=rime-essay>=800
+一整	yizg	2200
+# source_weight=1706; original_len2_weight=1000; reason=rime-essay>=800
+七天	qitm	2200
+# source_weight=1695; original_len2_weight=1000; reason=rime-essay>=800
+三方	sjfh	2200
+# source_weight=1689; original_len2_weight=1000; reason=rime-essay>=800
+周瑜	zbyu	2200
+# source_weight=1688; original_len2_weight=1000; reason=rime-essay>=800
+私塾	sisu	2200
+# source_weight=1679; original_len2_weight=1000; reason=rime-essay>=800
+麒麟	qiln	2200
+# source_weight=1671; original_len2_weight=1000; reason=rime-essay>=800
+朱棣	zudi	2200
+# source_weight=1656; original_len2_weight=1000; reason=rime-essay>=800
+粽子	zszi	2200
+# source_weight=1639; original_len2_weight=1000; reason=rime-essay>=800
+是一	siyi	2200
+# source_weight=1639; original_len2_weight=1000; reason=rime-essay>=800
+蚩尤	ciyb	2200
+# source_weight=1616; original_len2_weight=1000; reason=rime-essay>=800
+媲美	pimz	2200
+# source_weight=1604; original_len2_weight=1000; reason=rime-essay>=800
+又一	ybyi	2200
+# source_weight=1546; original_len2_weight=1000; reason=rime-essay>=800
+拉胯	lakw	2200
+# source_weight=1530; original_len2_weight=1000; reason=rime-essay>=800
+大阪	dabj	2200
+# source_weight=1527; original_len2_weight=1000; reason=rime-essay>=800
+哪吒	nzza	2200
+# source_weight=1524; original_len2_weight=1000; reason=rime-essay>=800
+百搭	blda	2200
+# source_weight=1523; original_len2_weight=1000; reason=rime-essay>=800
+一票	yipc	2200
+# source_weight=1518; original_len2_weight=1000; reason=rime-essay>=800
+燃脂	rjzi	2200
+# source_weight=1517; original_len2_weight=1000; reason=rime-essay>=800
+花卉	hwhv	2200
+# source_weight=1513; original_len2_weight=1000; reason=rime-essay>=800
+耦合	vbhe	2200
+# source_weight=1505; original_len2_weight=1000; reason=rime-essay>=800
+汶川	wfcr	2200
+# source_weight=1499; original_len2_weight=1000; reason=rime-essay>=800
+小三	xcsj	2200
+# source_weight=1495; original_len2_weight=1000; reason=rime-essay>=800
+洗漱	xisu	2200
+# source_weight=1495; original_len2_weight=1000; reason=rime-essay>=800
+足矣	zuyi	2200
+# source_weight=1489; original_len2_weight=1000; reason=rime-essay>=800
+上一	shyi	2200
+# source_weight=1484; original_len2_weight=1000; reason=rime-essay>=800
+一晚	yiwj	2200
+# source_weight=1484; original_len2_weight=1000; reason=rime-essay>=800
+翡翠	fzcv	2200
+# source_weight=1479; original_len2_weight=1000; reason=rime-essay>=800
+四代	sidl	2200
+# source_weight=1474; original_len2_weight=1000; reason=rime-essay>=800
+陶喆	tkze	2200
+# source_weight=1462; original_len2_weight=1000; reason=rime-essay>=800
+披着	pize	2200
+# source_weight=1462; original_len2_weight=1000; reason=rime-essay>=800
+降噪	jdzk	2200
+# source_weight=1456; original_len2_weight=1000; reason=rime-essay>=800
+妊娠	rfsf	2200
+# source_weight=1446; original_len2_weight=1000; reason=rime-essay>=800
+嫦娥	chve	2200
+# source_weight=1434; original_len2_weight=1000; reason=rime-essay>=800
+汲取	jiqu	2200
+# source_weight=1428; original_len2_weight=1000; reason=rime-essay>=800
+七夕	qixi	2200
+# source_weight=1416; original_len2_weight=1000; reason=rime-essay>=800
+五次	wuci	2200
+# source_weight=1413; original_len2_weight=1000; reason=rime-essay>=800
+人妖	rfyk	2200
+# source_weight=1408; original_len2_weight=1000; reason=rime-essay>=800
+三菱	sjly	2200
+# source_weight=1408; original_len2_weight=1000; reason=rime-essay>=800
+自愈	ziyu	2200
+# source_weight=1407; original_len2_weight=1000; reason=rime-essay>=800
+皆是	jxsi	2200
+# source_weight=1405; original_len2_weight=1000; reason=rime-essay>=800
+深挖	sfwa	2200
+# source_weight=1381; original_len2_weight=1000; reason=rime-essay>=800
+五人	wurf	2200
+# source_weight=1375; original_len2_weight=1000; reason=rime-essay>=800
+百元	blyr	2200
+# source_weight=1374; original_len2_weight=1000; reason=rime-essay>=800
+一想	yixd	2200
+# source_weight=1365; original_len2_weight=1000; reason=rime-essay>=800
+鹿晗	luhj	2200
+# source_weight=1360; original_len2_weight=1000; reason=rime-essay>=800
+煽情	sjqy	2200
+# source_weight=1356; original_len2_weight=1000; reason=rime-essay>=800
+摔跤	syjc	2200
+# source_weight=1355; original_len2_weight=1000; reason=rime-essay>=800
+紫霞	zixw	2200
+# source_weight=1349; original_len2_weight=1000; reason=rime-essay>=800
+意淫	yiyn	2200
+# source_weight=1347; original_len2_weight=1000; reason=rime-essay>=800
+臆想	yixd	2200
+# source_weight=1345; original_len2_weight=1000; reason=rime-essay>=800
+一汽	yiqi	2200
+# source_weight=1343; original_len2_weight=1000; reason=rime-essay>=800
+嘟嘟	dudu	2200
+# source_weight=1342; original_len2_weight=1000; reason=rime-essay>=800
+菲菲	fzfz	2200
+# source_weight=1326; original_len2_weight=1000; reason=rime-essay>=800
+黑棋	hzqi	2200
+# source_weight=1321; original_len2_weight=1000; reason=rime-essay>=800
+李四	lisi	2200
+# source_weight=1315; original_len2_weight=1000; reason=rime-essay>=800
+前一	qmyi	2200
+# source_weight=1313; original_len2_weight=1000; reason=rime-essay>=800
+四天	sitm	2200
+# source_weight=1296; original_len2_weight=1000; reason=rime-essay>=800
+扛着	khze	2200
+# source_weight=1296; original_len2_weight=1000; reason=rime-essay>=800
+捧着	pgze	2200
+# source_weight=1295; original_len2_weight=1000; reason=rime-essay>=800
+一比	yibi	2200
+# source_weight=1293; original_len2_weight=1000; reason=rime-essay>=800
+一米	yimi	2200
+# source_weight=1291; original_len2_weight=1000; reason=rime-essay>=800
+煮熟	zusb	2200
+# source_weight=1290; original_len2_weight=1000; reason=rime-essay>=800
+二奶	vrnl	2200
+# source_weight=1283; original_len2_weight=1000; reason=rime-essay>=800
+湛江	zjjd	2200
+# source_weight=1281; original_len2_weight=1000; reason=rime-essay>=800
+帷幕	wzmu	2200
+# source_weight=1270; original_len2_weight=1000; reason=rime-essay>=800
+外型	wlxy	2200
+# source_weight=1270; original_len2_weight=1000; reason=rime-essay>=800
+百米	blmi	2200
+# source_weight=1263; original_len2_weight=1000; reason=rime-essay>=800
+番禺	pjyu	2200
+# source_weight=1261; original_len2_weight=1000; reason=rime-essay>=800
+婊子	bczi	2200
+# source_weight=1258; original_len2_weight=1000; reason=rime-essay>=800
+睫毛	jxmk	2200
+# source_weight=1257; original_len2_weight=1000; reason=rime-essay>=800
+孃孃	ndnd	2200
+# source_weight=1250; original_len2_weight=1000; reason=rime-essay>=800
+一坨	yito	2200
+# source_weight=1250; original_len2_weight=1000; reason=rime-essay>=800
+挖坑	wakg	2200
+# source_weight=1247; original_len2_weight=1000; reason=rime-essay>=800
+一抹	yima	2200
+# source_weight=1247; original_len2_weight=1000; reason=rime-essay>=800
+淄博	zibo	2200
+# source_weight=1241; original_len2_weight=1000; reason=rime-essay>=800
+邂逅	xxhb	2200
+# source_weight=1234; original_len2_weight=1000; reason=rime-essay>=800
+一字	yizi	2200
+# source_weight=1229; original_len2_weight=1000; reason=rime-essay>=800
+卵用	lrys	2200
+# source_weight=1225; original_len2_weight=1000; reason=rime-essay>=800
+近百	jnbl	2200
+# source_weight=1216; original_len2_weight=1000; reason=rime-essay>=800
+彗星	hvxy	2200
+# source_weight=1205; original_len2_weight=1000; reason=rime-essay>=800
+李湘	lixd	2200
+# source_weight=1198; original_len2_weight=1000; reason=rime-essay>=800
+懵懂	mgds	2200
+# source_weight=1197; original_len2_weight=1000; reason=rime-essay>=800
+七大	qida	2200
+# source_weight=1188; original_len2_weight=1000; reason=rime-essay>=800
+二刷	vrsw	2200
+# source_weight=1188; original_len2_weight=1000; reason=rime-essay>=800
+麾下	hvxw	2200
+# source_weight=1187; original_len2_weight=1000; reason=rime-essay>=800
+一科	yike	2200
+# source_weight=1183; original_len2_weight=1000; reason=rime-essay>=800
+黛玉	dlyu	2200
+# source_weight=1182; original_len2_weight=1000; reason=rime-essay>=800
+哪一	nayi	2200
+# source_weight=1181; original_len2_weight=1000; reason=rime-essay>=800
+懵了	mgle	2200
+# source_weight=1181; original_len2_weight=1000; reason=rime-essay>=800
+百家	bljw	2200
+# source_weight=1180; original_len2_weight=1000; reason=rime-essay>=800
+咀嚼	jujc	2200
+# source_weight=1179; original_len2_weight=1000; reason=rime-essay>=800
+一例	yili	2200
+# source_weight=1179; original_len2_weight=1000; reason=rime-essay>=800
+小妖	xcyk	2200
+# source_weight=1176; original_len2_weight=1000; reason=rime-essay>=800
+拉屎	lasi	2200
+# source_weight=1174; original_len2_weight=1000; reason=rime-essay>=800
+外戚	wlqi	2200
+# source_weight=1174; original_len2_weight=1000; reason=rime-essay>=800
+恍惚	hdhu	2200
+# source_weight=1174; original_len2_weight=1000; reason=rime-essay>=800
+挖出	wacu	2200
+# source_weight=1167; original_len2_weight=1000; reason=rime-essay>=800
+一亮	yild	2200
+# source_weight=1167; original_len2_weight=1000; reason=rime-essay>=800
+泰森	tlsf	2200
+# source_weight=1167; original_len2_weight=1000; reason=rime-essay>=800
+皆有	jxyb	2200
+# source_weight=1163; original_len2_weight=1000; reason=rime-essay>=800
+一改	yigl	2200
+# source_weight=1159; original_len2_weight=1000; reason=rime-essay>=800
+六一	lqyi	2200
+# source_weight=1159; original_len2_weight=1000; reason=rime-essay>=800
+睾丸	gkwj	2200
+# source_weight=1157; original_len2_weight=1000; reason=rime-essay>=800
+一球	yiqq	2200
+# source_weight=1156; original_len2_weight=1000; reason=rime-essay>=800
+深邃	sfsv	2200
+# source_weight=1152; original_len2_weight=1000; reason=rime-essay>=800
+死侍	sisi	2200
+# source_weight=1152; original_len2_weight=1000; reason=rime-essay>=800
+精湛	jyzj	2200
+# source_weight=1151; original_len2_weight=1000; reason=rime-essay>=800
+拎着	lnzk	2200
+# source_weight=1149; original_len2_weight=1000; reason=rime-essay>=800
+襄樊	xdfj	2200
+# source_weight=1148; original_len2_weight=1000; reason=rime-essay>=800
+一哥	yige	2200
+# source_weight=1148; original_len2_weight=1000; reason=rime-essay>=800
+慌了	hdle	2200
+# source_weight=1145; original_len2_weight=1000; reason=rime-essay>=800
+一寸	yicp	2200
+# source_weight=1145; original_len2_weight=1000; reason=rime-essay>=800
+五度	wudu	2200
+# source_weight=1144; original_len2_weight=1000; reason=rime-essay>=800
+巍峨	wzve	2200
+# source_weight=1144; original_len2_weight=1000; reason=rime-essay>=800
+狗屎	gbsi	2200
+# source_weight=1143; original_len2_weight=1000; reason=rime-essay>=800
+璀璨	cvcj	2200
+# source_weight=1142; original_len2_weight=1000; reason=rime-essay>=800
+廊坊	lhfh	2200
+# source_weight=1141; original_len2_weight=1000; reason=rime-essay>=800
+乙烯	yixi	2200
+# source_weight=1141; original_len2_weight=1000; reason=rime-essay>=800
+惟有	wzyb	2200
+# source_weight=1141; original_len2_weight=1000; reason=rime-essay>=800
+鞍山	ansj	2200
+# source_weight=1140; original_len2_weight=1000; reason=rime-essay>=800
+日暮	rimu	2200
+# source_weight=1138; original_len2_weight=1000; reason=rime-essay>=800
+挖了	wale	2200
+# source_weight=1137; original_len2_weight=1000; reason=rime-essay>=800
+清零	qyly	2200
+# source_weight=1136; original_len2_weight=1000; reason=rime-essay>=800
+珊瑚	sjhu	2200
+# source_weight=1135; original_len2_weight=1000; reason=rime-essay>=800
+瞪着	dgze	2200
+# source_weight=1130; original_len2_weight=1000; reason=rime-essay>=800
+科三	kesj	2200
+# source_weight=1126; original_len2_weight=1000; reason=rime-essay>=800
+彪悍	bchj	2200
+# source_weight=1125; original_len2_weight=1000; reason=rime-essay>=800
+彷徨	phhd	2200
+# source_weight=1124; original_len2_weight=1000; reason=rime-essay>=800
+千人	qmrf	2200
+# source_weight=1123; original_len2_weight=1000; reason=rime-essay>=800
+一言	yiyj	2200
+# source_weight=1123; original_len2_weight=1000; reason=rime-essay>=800
+三鹿	sjlu	2200
+# source_weight=1117; original_len2_weight=1000; reason=rime-essay>=800
+矜持	qnci	2200
+# source_weight=1116; original_len2_weight=1000; reason=rime-essay>=800
+生肖	sgxc	2200
+# source_weight=1105; original_len2_weight=1000; reason=rime-essay>=800
+坍塌	tjta	2200
+# source_weight=1105; original_len2_weight=1000; reason=rime-essay>=800
+海棠	hlth	2200
+# source_weight=1102; original_len2_weight=1000; reason=rime-essay>=800
+瞌睡	kesv	2200
+# source_weight=1101; original_len2_weight=1000; reason=rime-essay>=800
+噢噢	vovo	2200
+# source_weight=1100; original_len2_weight=1000; reason=rime-essay>=800
+株洲	zuzb	2200
+# source_weight=1097; original_len2_weight=1000; reason=rime-essay>=800
+肇事	zksi	2200
+# source_weight=1096; original_len2_weight=1000; reason=rime-essay>=800
+舒淇	suqi	2200
+# source_weight=1095; original_len2_weight=1000; reason=rime-essay>=800
+九成	jqcg	2200
+# source_weight=1093; original_len2_weight=1000; reason=rime-essay>=800
+十佳	sijw	2200
+# source_weight=1092; original_len2_weight=1000; reason=rime-essay>=800
+甄嬛	zfqs	2200
+# source_weight=1090; original_len2_weight=1000; reason=rime-essay>=800
+一查	yica	2200
+# source_weight=1089; original_len2_weight=1000; reason=rime-essay>=800
+隋朝	svck	2200
+# source_weight=1088; original_len2_weight=1000; reason=rime-essay>=800
+抽搐	cbcu	2200
+# source_weight=1081; original_len2_weight=1000; reason=rime-essay>=800
+在一	zlyi	2200
+# source_weight=1080; original_len2_weight=1000; reason=rime-essay>=800
+抗旱	khhj	2200
+# source_weight=1080; original_len2_weight=1000; reason=rime-essay>=800
+搭上	dash	2200
+# source_weight=1078; original_len2_weight=1000; reason=rime-essay>=800
+三段	sjdr	2200
+# source_weight=1074; original_len2_weight=1000; reason=rime-essay>=800
+一朝	yick	2200
+# source_weight=1074; original_len2_weight=1000; reason=rime-essay>=800
+有二	ybvr	2200
+# source_weight=1074; original_len2_weight=1000; reason=rime-essay>=800
+梧桐	wuts	2200
+# source_weight=1074; original_len2_weight=1000; reason=rime-essay>=800
+皆可	jxke	2200
+# source_weight=1073; original_len2_weight=1000; reason=rime-essay>=800
+喝醉	hezv	2200
+# source_weight=1072; original_len2_weight=1000; reason=rime-essay>=800
+三餐	sjcj	2200
+# source_weight=1072; original_len2_weight=1000; reason=rime-essay>=800
+黯然	vjrj	2200
+# source_weight=1068; original_len2_weight=1000; reason=rime-essay>=800
+正畸	zgji	2200
+# source_weight=1067; original_len2_weight=1000; reason=rime-essay>=800
+遐想	xwxd	2200
+# source_weight=1066; original_len2_weight=1000; reason=rime-essay>=800
+一拍	yipl	2200
+# source_weight=1064; original_len2_weight=1000; reason=rime-essay>=800
+一版	yibj	2200
+# source_weight=1060; original_len2_weight=1000; reason=rime-essay>=800
+迷惘	miwh	2200
+# source_weight=1059; original_len2_weight=1000; reason=rime-essay>=800
+七彩	qicl	2200
+# source_weight=1058; original_len2_weight=1000; reason=rime-essay>=800
+七七	qiqi	2200
+# source_weight=1056; original_len2_weight=1000; reason=rime-essay>=800
+刀鞘	dkqc	2200
+# source_weight=1056; original_len2_weight=1000; reason=rime-essay>=800
+琵琶	pipa	2200
+# source_weight=1055; original_len2_weight=1000; reason=rime-essay>=800
+喃喃	njnj	2200
+# source_weight=1053; original_len2_weight=1000; reason=rime-essay>=800
+七星	qixy	2200
+# source_weight=1052; original_len2_weight=1000; reason=rime-essay>=800
+一去	yiqu	2200
+# source_weight=1051; original_len2_weight=1000; reason=rime-essay>=800
+一桌	yizo	2200
+# source_weight=1046; original_len2_weight=1000; reason=rime-essay>=800
+千千	qmqm	2200
+# source_weight=1042; original_len2_weight=1000; reason=rime-essay>=800
+百名	blmy	2200
+# source_weight=1038; original_len2_weight=1000; reason=rime-essay>=800
+凋零	dcly	2200
+# source_weight=1037; original_len2_weight=1000; reason=rime-essay>=800
+藏獒	zhvk	2200
+# source_weight=1036; original_len2_weight=1000; reason=rime-essay>=800
+湘潭	xdtj	2200
+# source_weight=1035; original_len2_weight=1000; reason=rime-essay>=800
+醉酒	zvjq	2200
+# source_weight=1031; original_len2_weight=1000; reason=rime-essay>=800
+薰陶	xptk	2200
+# source_weight=1028; original_len2_weight=1000; reason=rime-essay>=800
+一愣	yilg	2200
+# source_weight=1028; original_len2_weight=1000; reason=rime-essay>=800
+一案	yian	2200
+# source_weight=1027; original_len2_weight=1000; reason=rime-essay>=800
+二天	vrtm	2200
+# source_weight=1024; original_len2_weight=1000; reason=rime-essay>=800
+俯瞰	fukj	2200
+# source_weight=1023; original_len2_weight=1000; reason=rime-essay>=800
+三洋	sjyh	2200
+# source_weight=1023; original_len2_weight=1000; reason=rime-essay>=800
+酥脆	sucv	2200
+# source_weight=1022; original_len2_weight=1000; reason=rime-essay>=800
+腺癌	xmai	2200
+# source_weight=1020; original_len2_weight=1000; reason=rime-essay>=800
+一提	yiti	2200
+# source_weight=1020; original_len2_weight=1000; reason=rime-essay>=800
+琥珀	hupo	2200
+# source_weight=1019; original_len2_weight=1000; reason=rime-essay>=800
+九城	jqcg	2200
+# source_weight=1019; original_len2_weight=1000; reason=rime-essay>=800
+翩翩	pmpm	2200
+# source_weight=1017; original_len2_weight=1000; reason=rime-essay>=800
+棋魂	qihp	2200
+# source_weight=1015; original_len2_weight=1000; reason=rime-essay>=800
+七成	qicg	2200
+# source_weight=1015; original_len2_weight=1000; reason=rime-essay>=800
+三毛	sjmk	2200
+# source_weight=1015; original_len2_weight=1000; reason=rime-essay>=800
+心扉	xnfz	2200
+# source_weight=1015; original_len2_weight=1000; reason=rime-essay>=800
+白皙	blxi	2200
+# source_weight=1014; original_len2_weight=1000; reason=rime-essay>=800
+一幢	yizd	2200
+# source_weight=1014; original_len2_weight=1000; reason=rime-essay>=800
+三成	sjcg	2200
+# source_weight=1013; original_len2_weight=1000; reason=rime-essay>=800
+三多	sjdo	2200
+# source_weight=1010; original_len2_weight=1000; reason=rime-essay>=800
+一季	yiji	2200
+# source_weight=1010; original_len2_weight=1000; reason=rime-essay>=800
+奸商	jmsh	2200
+# source_weight=1006; original_len2_weight=1000; reason=rime-essay>=800
+五位	wuwz	2200
+# source_weight=1004; original_len2_weight=1000; reason=rime-essay>=800
+仕途	situ	2200
+# source_weight=1003; original_len2_weight=1000; reason=rime-essay>=800
+北辰	bzcf	2200
+# source_weight=1003; original_len2_weight=1000; reason=rime-essay>=800
+醉人	zvrf	2200
+# source_weight=1002; original_len2_weight=1000; reason=rime-essay>=800
+一搜	yisb	2200
+# source_weight=1001; original_len2_weight=1000; reason=rime-essay>=800
+一堂	yith	2200
+# source_weight=1001; original_len2_weight=1000; reason=rime-essay>=800
+四家	sijw	2200
+# source_weight=999; original_len2_weight=1000; reason=rime-essay>=800
+崇明	csmy	2150
+# source_weight=999; original_len2_weight=1000; reason=rime-essay>=800
+白棋	blqi	2150
+# source_weight=998; original_len2_weight=1000; reason=rime-essay>=800
+莆田	putm	2150
+# source_weight=995; original_len2_weight=1000; reason=rime-essay>=800
+囡囡	njnj	2150
+# source_weight=995; original_len2_weight=1000; reason=rime-essay>=800
+巨蟹	juxx	2150
+# source_weight=995; original_len2_weight=1000; reason=rime-essay>=800
+王妃	whfz	2150
+# source_weight=994; original_len2_weight=1000; reason=rime-essay>=800
+晃晃	hdhd	2150
+# source_weight=991; original_len2_weight=1000; reason=rime-essay>=800
+烽火	fgho	2150
+# source_weight=988; original_len2_weight=1000; reason=rime-essay>=800
+大亨	dahg	2150
+# source_weight=985; original_len2_weight=1000; reason=rime-essay>=800
+一盆	yipf	2150
+# source_weight=984; original_len2_weight=1000; reason=rime-essay>=800
+一扇	yisj	2150
+# source_weight=983; original_len2_weight=1000; reason=rime-essay>=800
+骰子	tbzi	2150
+# source_weight=982; original_len2_weight=1000; reason=rime-essay>=800
+臣妾	cfqx	2150
+# source_weight=982; original_len2_weight=1000; reason=rime-essay>=800
+隋唐	svth	2150
+# source_weight=980; original_len2_weight=1000; reason=rime-essay>=800
+水煮	svzu	2150
+# source_weight=980; original_len2_weight=1000; reason=rime-essay>=800
+蛀牙	zuya	2150
+# source_weight=978; original_len2_weight=1000; reason=rime-essay>=800
+普洱	puvr	2150
+# source_weight=977; original_len2_weight=1000; reason=rime-essay>=800
+不二	buvr	2150
+# source_weight=977; original_len2_weight=1000; reason=rime-essay>=800
+郴州	cfzb	2150
+# source_weight=973; original_len2_weight=1000; reason=rime-essay>=800
+烘托	hsto	2150
+# source_weight=973; original_len2_weight=1000; reason=rime-essay>=800
+篆刻	zrke	2150
+# source_weight=973; original_len2_weight=1000; reason=rime-essay>=800
+近千	jnqm	2150
+# source_weight=971; original_len2_weight=1000; reason=rime-essay>=800
+黯淡	vjdj	2150
+# source_weight=970; original_len2_weight=1000; reason=rime-essay>=800
+亟待	jidl	2150
+# source_weight=970; original_len2_weight=1000; reason=rime-essay>=800
+嫖娼	pcch	2150
+# source_weight=968; original_len2_weight=1000; reason=rime-essay>=800
+哽咽	ggyj	2150
+# source_weight=967; original_len2_weight=1000; reason=rime-essay>=800
+一走	yizb	2150
+# source_weight=967; original_len2_weight=1000; reason=rime-essay>=800
+浩瀚	hkhj	2150
+# source_weight=966; original_len2_weight=1000; reason=rime-essay>=800
+一截	yijx	2150
+# source_weight=966; original_len2_weight=1000; reason=rime-essay>=800
+喵喵	mcmc	2150
+# source_weight=965; original_len2_weight=1000; reason=rime-essay>=800
+侏儒	zuru	2150
+# source_weight=964; original_len2_weight=1000; reason=rime-essay>=800
+你一	niyi	2150
+# source_weight=963; original_len2_weight=1000; reason=rime-essay>=800
+回眸	hvmb	2150
+# source_weight=962; original_len2_weight=1000; reason=rime-essay>=800
+醉了	zvle	2150
+# source_weight=961; original_len2_weight=1000; reason=rime-essay>=800
+三甲	sjjw	2150
+# source_weight=961; original_len2_weight=1000; reason=rime-essay>=800
+冥冥	mymy	2150
+# source_weight=960; original_len2_weight=1000; reason=rime-essay>=800
+彝族	yizu	2150
+# source_weight=959; original_len2_weight=1000; reason=rime-essay>=800
+蜿蜒	wjyj	2150
+# source_weight=958; original_len2_weight=1000; reason=rime-essay>=800
+塘沽	thgu	2150
+# source_weight=957; original_len2_weight=1000; reason=rime-essay>=800
+天一	tmyi	2150
+# source_weight=957; original_len2_weight=1000; reason=rime-essay>=800
+慈禧	cixi	2150
+# source_weight=955; original_len2_weight=1000; reason=rime-essay>=800
+八方	bafh	2150
+# source_weight=954; original_len2_weight=1000; reason=rime-essay>=800
+六成	lqcg	2150
+# source_weight=954; original_len2_weight=1000; reason=rime-essay>=800
+小二	xcvr	2150
+# source_weight=954; original_len2_weight=1000; reason=rime-essay>=800
+甲烷	jwwj	2150
+# source_weight=954; original_len2_weight=1000; reason=rime-essay>=800
+衢州	quzb	2150
+# source_weight=952; original_len2_weight=1000; reason=rime-essay>=800
+九大	jqda	2150
+# source_weight=952; original_len2_weight=1000; reason=rime-essay>=800
+胭脂	yjzi	2150
+# source_weight=949; original_len2_weight=1000; reason=rime-essay>=800
+晨曦	cfxi	2150
+# source_weight=947; original_len2_weight=1000; reason=rime-essay>=800
+病逝	bysi	2150
+# source_weight=946; original_len2_weight=1000; reason=rime-essay>=800
+血脂	xxzi	2150
+# source_weight=944; original_len2_weight=1000; reason=rime-essay>=800
+一女	yinv	2150
+# source_weight=944; original_len2_weight=1000; reason=rime-essay>=800
+前瞻	qmzj	2150
+# source_weight=944; original_len2_weight=1000; reason=rime-essay>=800
+喀什	kasf	2150
+# source_weight=944; original_len2_weight=1000; reason=rime-essay>=800
+小四	xcsi	2150
+# source_weight=944; original_len2_weight=1000; reason=rime-essay>=800
+翱翔	vkxd	2150
+# source_weight=943; original_len2_weight=1000; reason=rime-essay>=800
+一勺	yisk	2150
+# source_weight=940; original_len2_weight=1000; reason=rime-essay>=800
+二叔	vrsu	2150
+# source_weight=940; original_len2_weight=1000; reason=rime-essay>=800
+太宗	tlzs	2150
+# source_weight=939; original_len2_weight=1000; reason=rime-essay>=800
+自曝	zibk	2150
+# source_weight=938; original_len2_weight=1000; reason=rime-essay>=800
+酸酸	srsr	2150
+# source_weight=936; original_len2_weight=1000; reason=rime-essay>=800
+四射	sise	2150
+# source_weight=936; original_len2_weight=1000; reason=rime-essay>=800
+雍正	yszg	2150
+# source_weight=933; original_len2_weight=1000; reason=rime-essay>=800
+一箱	yixd	2150
+# source_weight=933; original_len2_weight=1000; reason=rime-essay>=800
+四核	sihe	2150
+# source_weight=933; original_len2_weight=1000; reason=rime-essay>=800
+猖獗	chjt	2150
+# source_weight=932; original_len2_weight=1000; reason=rime-essay>=800
+老四	lksi	2150
+# source_weight=931; original_len2_weight=1000; reason=rime-essay>=800
+千字	qmzi	2150
+# source_weight=930; original_len2_weight=1000; reason=rime-essay>=800
+俺家	anjw	2150
+# source_weight=930; original_len2_weight=1000; reason=rime-essay>=800
+百盛	blcg	2150
+# source_weight=929; original_len2_weight=1000; reason=rime-essay>=800
+一列	yilx	2150
+# source_weight=929; original_len2_weight=1000; reason=rime-essay>=800
+三相	sjxd	2150
+# source_weight=928; original_len2_weight=1000; reason=rime-essay>=800
+百里	blli	2150
+# source_weight=928; original_len2_weight=1000; reason=rime-essay>=800
+硒鼓	xigu	2150
+# source_weight=927; original_len2_weight=1000; reason=rime-essay>=800
+七喜	qixi	2150
+# source_weight=926; original_len2_weight=1000; reason=rime-essay>=800
+三地	sjde	2150
+# source_weight=925; original_len2_weight=1000; reason=rime-essay>=800
+披上	pish	2150
+# source_weight=924; original_len2_weight=1000; reason=rime-essay>=800
+一格	yige	2150
+# source_weight=922; original_len2_weight=1000; reason=rime-essay>=800
+福祉	fuzi	2150
+# source_weight=922; original_len2_weight=1000; reason=rime-essay>=800
+螳螂	thlh	2150
+# source_weight=921; original_len2_weight=1000; reason=rime-essay>=800
+一桶	yits	2150
+# source_weight=921; original_len2_weight=1000; reason=rime-essay>=800
+任一	rfyi	2150
+# source_weight=920; original_len2_weight=1000; reason=rime-essay>=800
+一室	yisi	2150
+# source_weight=920; original_len2_weight=1000; reason=rime-essay>=800
+二更	vrgg	2150
+# source_weight=919; original_len2_weight=1000; reason=rime-essay>=800
+一打	yida	2150
+# source_weight=919; original_len2_weight=1000; reason=rime-essay>=800
+嗜血	sixx	2150
+# source_weight=918; original_len2_weight=1000; reason=rime-essay>=800
+二姐	vrjx	2150
+# source_weight=918; original_len2_weight=1000; reason=rime-essay>=800
+作孽	zonx	2150
+# source_weight=916; original_len2_weight=1000; reason=rime-essay>=800
+十次	sici	2150
+# source_weight=916; original_len2_weight=1000; reason=rime-essay>=800
+碧水	bisv	2150
+# source_weight=915; original_len2_weight=1000; reason=rime-essay>=800
+心慌	xnhd	2150
+# source_weight=915; original_len2_weight=1000; reason=rime-essay>=800
+肌瘤	jilq	2150
+# source_weight=910; original_len2_weight=1000; reason=rime-essay>=800
+嫖客	pcke	2150
+# source_weight=910; original_len2_weight=1000; reason=rime-essay>=800
+完璧	wjbi	2150
+# source_weight=908; original_len2_weight=1000; reason=rime-essay>=800
+千山	qmsj	2150
+# source_weight=908; original_len2_weight=1000; reason=rime-essay>=800
+四成	sicg	2150
+# source_weight=908; original_len2_weight=1000; reason=rime-essay>=800
+紫薇	ziwz	2150
+# source_weight=907; original_len2_weight=1000; reason=rime-essay>=800
+四部	sibu	2150
+# source_weight=907; original_len2_weight=1000; reason=rime-essay>=800
+阜新	fuxn	2150
+# source_weight=904; original_len2_weight=1000; reason=rime-essay>=800
+三明	sjmy	2150
+# source_weight=903; original_len2_weight=1000; reason=rime-essay>=800
+千兆	qmzk	2150
+# source_weight=903; original_len2_weight=1000; reason=rime-essay>=800
+唯二	wzvr	2150
+# source_weight=902; original_len2_weight=1000; reason=rime-essay>=800
+三江	sjjd	2150
+# source_weight=901; original_len2_weight=1000; reason=rime-essay>=800
+一干	yigj	2150
+# source_weight=901; original_len2_weight=1000; reason=rime-essay>=800
+懈怠	xxdl	2150
+# source_weight=901; original_len2_weight=1000; reason=rime-essay>=800
+王磊	whlz	2150
+# source_weight=901; original_len2_weight=1000; reason=rime-essay>=800
+趴着	paze	2150
+# source_weight=900; original_len2_weight=1000; reason=rime-essay>=800
+嫁了	jwle	2150
+# source_weight=900; original_len2_weight=1000; reason=rime-essay>=800
+蔡司	clsi	2150
+# source_weight=896; original_len2_weight=1000; reason=rime-essay>=800
+旖旎	yini	2150
+# source_weight=896; original_len2_weight=1000; reason=rime-essay>=800
+混搭	hpda	2150
+# source_weight=896; original_len2_weight=1000; reason=rime-essay>=800
+眼眸	yjmb	2150
+# source_weight=895; original_len2_weight=1000; reason=rime-essay>=800
+丫鬟	yahr	2150
+# source_weight=895; original_len2_weight=1000; reason=rime-essay>=800
+山楂	sjza	2150
+# source_weight=893; original_len2_weight=1000; reason=rime-essay>=800
+一色	yise	2150
+# source_weight=893; original_len2_weight=1000; reason=rime-essay>=800
+憨厚	hjhb	2150
+# source_weight=893; original_len2_weight=1000; reason=rime-essay>=800
+酸度	srdu	2150
+# source_weight=892; original_len2_weight=1000; reason=rime-essay>=800
+拖沓	tuda	2150
+# source_weight=891; original_len2_weight=1000; reason=rime-essay>=800
+三件	sjjm	2150
+# source_weight=891; original_len2_weight=1000; reason=rime-essay>=800
+四星	sixy	2150
+# source_weight=890; original_len2_weight=1000; reason=rime-essay>=800
+一念	yinm	2150
+# source_weight=890; original_len2_weight=1000; reason=rime-essay>=800
+孢子	bkzi	2150
+# source_weight=889; original_len2_weight=1000; reason=rime-essay>=800
+二部	vrbu	2150
+# source_weight=889; original_len2_weight=1000; reason=rime-essay>=800
+嘶吼	sihb	2150
+# source_weight=889; original_len2_weight=1000; reason=rime-essay>=800
+慰藉	wzji	2150
+# source_weight=889; original_len2_weight=1000; reason=rime-essay>=800
+祭出	jicu	2150
+# source_weight=888; original_len2_weight=1000; reason=rime-essay>=800
+祛斑	qubj	2150
+# source_weight=888; original_len2_weight=1000; reason=rime-essay>=800
+蜥蜴	xiyi	2150
+# source_weight=886; original_len2_weight=1000; reason=rime-essay>=800
+情愫	qysu	2150
+# source_weight=886; original_len2_weight=1000; reason=rime-essay>=800
+百日	blri	2150
+# source_weight=885; original_len2_weight=1000; reason=rime-essay>=800
+三重	sjzs	2150
+# source_weight=885; original_len2_weight=1000; reason=rime-essay>=800
+嘌呤	pcly	2150
+# source_weight=883; original_len2_weight=1000; reason=rime-essay>=800
+一翻	yifj	2150
+# source_weight=883; original_len2_weight=1000; reason=rime-essay>=800
+嫣然	yjrj	2150
+# source_weight=882; original_len2_weight=1000; reason=rime-essay>=800
+一成	yicg	2150
+# source_weight=882; original_len2_weight=1000; reason=rime-essay>=800
+商榷	shqt	2150
+# source_weight=882; original_len2_weight=1000; reason=rime-essay>=800
+湘江	xdjd	2150
+# source_weight=881; original_len2_weight=1000; reason=rime-essay>=800
+十位	siwz	2150
+# source_weight=881; original_len2_weight=1000; reason=rime-essay>=800
+眸子	mbzi	2150
+# source_weight=880; original_len2_weight=1000; reason=rime-essay>=800
+豆粕	dbpo	2150
+# source_weight=879; original_len2_weight=1000; reason=rime-essay>=800
+恍然	hdrj	2150
+# source_weight=879; original_len2_weight=1000; reason=rime-essay>=800
+打一	dayi	2150
+# source_weight=878; original_len2_weight=1000; reason=rime-essay>=800
+三七	sjqi	2150
+# source_weight=876; original_len2_weight=1000; reason=rime-essay>=800
+三道	sjdk	2150
+# source_weight=874; original_len2_weight=1000; reason=rime-essay>=800
+一平	yipy	2150
+# source_weight=873; original_len2_weight=1000; reason=rime-essay>=800
+梧州	wuzb	2150
+# source_weight=873; original_len2_weight=1000; reason=rime-essay>=800
+蔡琴	clqn	2150
+# source_weight=872; original_len2_weight=1000; reason=rime-essay>=800
+瞪了	dgle	2150
+# source_weight=871; original_len2_weight=1000; reason=rime-essay>=800
+三包	sjbk	2150
+# source_weight=870; original_len2_weight=1000; reason=rime-essay>=800
+四平	sipy	2150
+# source_weight=869; original_len2_weight=1000; reason=rime-essay>=800
+一死	yisi	2150
+# source_weight=869; original_len2_weight=1000; reason=rime-essay>=800
+六位	lqwz	2150
+# source_weight=869; original_len2_weight=1000; reason=rime-essay>=800
+千名	qmmy	2150
+# source_weight=868; original_len2_weight=1000; reason=rime-essay>=800
+十元	siyr	2150
+# source_weight=868; original_len2_weight=1000; reason=rime-essay>=800
+媚笑	mzxc	2150
+# source_weight=868; original_len2_weight=1000; reason=rime-essay>=800
+媛媛	yryr	2150
+# source_weight=868; original_len2_weight=1000; reason=rime-essay>=800
+撩人	lcrf	2150
+# source_weight=866; original_len2_weight=1000; reason=rime-essay>=800
+暨大	jida	2150
+# source_weight=864; original_len2_weight=1000; reason=rime-essay>=800
+三色	sjse	2150
+# source_weight=863; original_len2_weight=1000; reason=rime-essay>=800
+九寨	jqzl	2150
+# source_weight=862; original_len2_weight=1000; reason=rime-essay>=800
+婺源	wuyr	2150
+# source_weight=862; original_len2_weight=1000; reason=rime-essay>=800
+瞪大	dgda	2150
+# source_weight=861; original_len2_weight=1000; reason=rime-essay>=800
+潮汐	ckxi	2150
+# source_weight=861; original_len2_weight=1000; reason=rime-essay>=800
+邋遢	lata	2150
+# source_weight=861; original_len2_weight=1000; reason=rime-essay>=800
+饕餮	tktx	2150
+# source_weight=860; original_len2_weight=1000; reason=rime-essay>=800
+一浪	yilh	2150
+# source_weight=860; original_len2_weight=1000; reason=rime-essay>=800
+一餐	yicj	2150
+# source_weight=860; original_len2_weight=1000; reason=rime-essay>=800
+偌大	roda	2150
+# source_weight=860; original_len2_weight=1000; reason=rime-essay>=800
+四款	sikr	2150
+# source_weight=859; original_len2_weight=1000; reason=rime-essay>=800
+九九	jqjq	2150
+# source_weight=859; original_len2_weight=1000; reason=rime-essay>=800
+晚霞	wjxw	2150
+# source_weight=858; original_len2_weight=1000; reason=rime-essay>=800
+三一	sjyi	2150
+# source_weight=858; original_len2_weight=1000; reason=rime-essay>=800
+三九	sjjq	2150
+# source_weight=858; original_len2_weight=1000; reason=rime-essay>=800
+男二	njvr	2150
+# source_weight=858; original_len2_weight=1000; reason=rime-essay>=800
+酸爽	srsd	2150
+# source_weight=857; original_len2_weight=1000; reason=rime-essay>=800
+五色	wuse	2150
+# source_weight=857; original_len2_weight=1000; reason=rime-essay>=800
+徐晃	xuhd	2150
+# source_weight=857; original_len2_weight=1000; reason=rime-essay>=800
+碧海	bihl	2150
+# source_weight=856; original_len2_weight=1000; reason=rime-essay>=800
+皈依	gvyi	2150
+# source_weight=855; original_len2_weight=1000; reason=rime-essay>=800
+串行	crhh	2150
+# source_weight=853; original_len2_weight=1000; reason=rime-essay>=800
+一遇	yiyu	2150
+# source_weight=853; original_len2_weight=1000; reason=rime-essay>=800
+三房	sjfh	2150
+# source_weight=853; original_len2_weight=1000; reason=rime-essay>=800
+甭管	bggr	2150
+# source_weight=853; original_len2_weight=1000; reason=rime-essay>=800
+百色	blse	2150
+# source_weight=852; original_len2_weight=1000; reason=rime-essay>=800
+加一	jwyi	2150
+# source_weight=851; original_len2_weight=1000; reason=rime-essay>=800
+一指	yizi	2150
+# source_weight=851; original_len2_weight=1000; reason=rime-essay>=800
+二要	vryk	2150
+# source_weight=851; original_len2_weight=1000; reason=rime-essay>=800
+六次	lqci	2150
+# source_weight=851; original_len2_weight=1000; reason=rime-essay>=800
+醋酸	cusr	2150
+# source_weight=851; original_len2_weight=1000; reason=rime-essay>=800
+阿三	aisj	2150
+# source_weight=850; original_len2_weight=1000; reason=rime-essay>=800
+儒雅	ruya	2150
+# source_weight=850; original_len2_weight=1000; reason=rime-essay>=800
+酸辣	srla	2150
+# source_weight=849; original_len2_weight=1000; reason=rime-essay>=800
+三哥	sjge	2150
+# source_weight=849; original_len2_weight=1000; reason=rime-essay>=800
+弦的	xmde	2150
+# source_weight=849; original_len2_weight=1000; reason=rime-essay>=800
+蜜汁	mizi	2150
+# source_weight=848; original_len2_weight=1000; reason=rime-essay>=800
+力竭	lijx	2150
+# source_weight=847; original_len2_weight=1000; reason=rime-essay>=800
+一居	yiju	2150
+# source_weight=847; original_len2_weight=1000; reason=rime-essay>=800
+陶冶	tkye	2150
+# source_weight=846; original_len2_weight=1000; reason=rime-essay>=800
+三水	sjsv	2150
+# source_weight=846; original_len2_weight=1000; reason=rime-essay>=800
+苗圃	mcpu	2150
+# source_weight=845; original_len2_weight=1000; reason=rime-essay>=800
+雯雯	wfwf	2150
+# source_weight=844; original_len2_weight=1000; reason=rime-essay>=800
+一震	yizf	2150
+# source_weight=843; original_len2_weight=1000; reason=rime-essay>=800
+一郎	yilh	2150
+# source_weight=843; original_len2_weight=1000; reason=rime-essay>=800
+六日	lqri	2150
+# source_weight=843; original_len2_weight=1000; reason=rime-essay>=800
+涪陵	fuly	2150
+# source_weight=843; original_len2_weight=1000; reason=rime-essay>=800
+蚊香	wfxd	2150
+# source_weight=842; original_len2_weight=1000; reason=rime-essay>=800
+琪琪	qiqi	2150
+# source_weight=841; original_len2_weight=1000; reason=rime-essay>=800
+六人	lqrf	2150
+# source_weight=841; original_len2_weight=1000; reason=rime-essay>=800
+王楠	whnj	2150
+# source_weight=841; original_len2_weight=1000; reason=rime-essay>=800
+羚羊	lyyh	2150
+# source_weight=841; original_len2_weight=1000; reason=rime-essay>=800
+酸菜	srcl	2150
+# source_weight=840; original_len2_weight=1000; reason=rime-essay>=800
+一拼	yipn	2150
+# source_weight=839; original_len2_weight=1000; reason=rime-essay>=800
+五洲	wuzb	2150
+# source_weight=839; original_len2_weight=1000; reason=rime-essay>=800
+四期	siqi	2150
+# source_weight=838; original_len2_weight=1000; reason=rime-essay>=800
+兮兮	xixi	2150
+# source_weight=838; original_len2_weight=1000; reason=rime-essay>=800
+味蕾	wzlz	2150
+# source_weight=838; original_len2_weight=1000; reason=rime-essay>=800
+安琪	vjqi	2150
+# source_weight=838; original_len2_weight=1000; reason=rime-essay>=800
+搭在	dazl	2150
+# source_weight=837; original_len2_weight=1000; reason=rime-essay>=800
+六天	lqtm	2150
+# source_weight=837; original_len2_weight=1000; reason=rime-essay>=800
+有三	ybsj	2150
+# source_weight=837; original_len2_weight=1000; reason=rime-essay>=800
+棋牌	qipl	2150
+# source_weight=837; original_len2_weight=1000; reason=rime-essay>=800
+西祠	xici	2150
+# source_weight=836; original_len2_weight=1000; reason=rime-essay>=800
+三思	sjsi	2150
+# source_weight=836; original_len2_weight=1000; reason=rime-essay>=800
+三界	sjjx	2150
+# source_weight=836; original_len2_weight=1000; reason=rime-essay>=800
+三章	sjzh	2150
+# source_weight=836; original_len2_weight=1000; reason=rime-essay>=800
+滁州	cuzb	2150
+# source_weight=836; original_len2_weight=1000; reason=rime-essay>=800
+盎司	vhsi	2150
+# source_weight=835; original_len2_weight=1000; reason=rime-essay>=800
+奢求	seqq	2150
+# source_weight=835; original_len2_weight=1000; reason=rime-essay>=800
+科二	kevr	2150
+# source_weight=835; original_len2_weight=1000; reason=rime-essay>=800
+西塘	xith	2150
+# source_weight=835; original_len2_weight=1000; reason=rime-essay>=800
+魔羯	mojx	2150
+# source_weight=834; original_len2_weight=1000; reason=rime-essay>=800
+寂寥	jilc	2150
+# source_weight=834; original_len2_weight=1000; reason=rime-essay>=800
+艾灸	aijq	2150
+# source_weight=833; original_len2_weight=1000; reason=rime-essay>=800
+三套	sjtk	2150
+# source_weight=833; original_len2_weight=1000; reason=rime-essay>=800
+沸水	fzsv	2150
+# source_weight=833; original_len2_weight=1000; reason=rime-essay>=800
+盎然	vhrj	2150
+# source_weight=832; original_len2_weight=1000; reason=rime-essay>=800
+六安	lqan	2150
+# source_weight=832; original_len2_weight=1000; reason=rime-essay>=800
+呢喃	nenj	2150
+# source_weight=832; original_len2_weight=1000; reason=rime-essay>=800
+四章	sizh	2150
+# source_weight=831; original_len2_weight=1000; reason=rime-essay>=800
+咫尺	zici	2150
+# source_weight=831; original_len2_weight=1000; reason=rime-essay>=800
+毛坯	mkpi	2150
+# source_weight=830; original_len2_weight=1000; reason=rime-essay>=800
+一村	yicp	2150
+# source_weight=830; original_len2_weight=1000; reason=rime-essay>=800
+揉揉	rbrb	2150
+# source_weight=830; original_len2_weight=1000; reason=rime-essay>=800
+曲靖	qujy	2150
+# source_weight=830; original_len2_weight=1000; reason=rime-essay>=800
+聚酯	juzi	2150
+# source_weight=829; original_len2_weight=1000; reason=rime-essay>=800
+奴婢	nubi	2150
+# source_weight=829; original_len2_weight=1000; reason=rime-essay>=800
+徽州	hvzb	2150
+# source_weight=829; original_len2_weight=1000; reason=rime-essay>=800
+挖到	wadk	2150
+# source_weight=829; original_len2_weight=1000; reason=rime-essay>=800
+酸甜	srtm	2150
+# source_weight=828; original_len2_weight=1000; reason=rime-essay>=800
+一睹	yidu	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+一空	yiks	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+妖孽	yknx	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+摩羯	mojx	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+此一	ciyi	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+舞弊	wubi	2150
+# source_weight=827; original_len2_weight=1000; reason=rime-essay>=800
+鼻翼	biyi	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+六章	lqzh	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+恪守	kesb	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+月嫂	ytsk	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+氯化	lvhw	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+碧波	bibo	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+酒醉	jqzv	2150
+# source_weight=826; original_len2_weight=1000; reason=rime-essay>=800
+霓裳	nich	2150
+# source_weight=825; original_len2_weight=1000; reason=rime-essay>=800
+百忙	blmh	2150
+# source_weight=825; original_len2_weight=1000; reason=rime-essay>=800
+窈窕	yktc	2150
+# source_weight=824; original_len2_weight=1000; reason=rime-essay>=800
+一掌	yizh	2150
+# source_weight=824; original_len2_weight=1000; reason=rime-essay>=800
+碧玉	biyu	2150
+# source_weight=822; original_len2_weight=1000; reason=rime-essay>=800
+一尊	yizp	2150
+# source_weight=822; original_len2_weight=1000; reason=rime-essay>=800
+妃子	fzzi	2150
+# source_weight=822; original_len2_weight=1000; reason=rime-essay>=800
+磐石	pjsi	2150
+# source_weight=821; original_len2_weight=1000; reason=rime-essay>=800
+一摸	yimo	2150
+# source_weight=821; original_len2_weight=1000; reason=rime-essay>=800
+曲阜	qufu	2150
+# source_weight=820; original_len2_weight=1000; reason=rime-essay>=800
+三更	sjgg	2150
+# source_weight=820; original_len2_weight=1000; reason=rime-essay>=800
+源氏	yrsi	2150
+# source_weight=820; original_len2_weight=1000; reason=rime-essay>=800
+篝火	gbho	2150
+# source_weight=819; original_len2_weight=1000; reason=rime-essay>=800
+十名	simy	2150
+# source_weight=819; original_len2_weight=1000; reason=rime-essay>=800
+枇杷	pipa	2150
+# source_weight=818; original_len2_weight=1000; reason=rime-essay>=800
+七百	qibl	2150
+# source_weight=818; original_len2_weight=1000; reason=rime-essay>=800
+五成	wucg	2150
+# source_weight=818; original_len2_weight=1000; reason=rime-essay>=800
+八章	bazh	2150
+# source_weight=817; original_len2_weight=1000; reason=rime-essay>=800
+小五	xcwu	2150
+# source_weight=816; original_len2_weight=1000; reason=rime-essay>=800
+哈弗	hafu	2150
+# source_weight=816; original_len2_weight=1000; reason=rime-essay>=800
+皮脂	pizi	2150
+# source_weight=815; original_len2_weight=1000; reason=rime-essay>=800
+九段	jqdr	2150
+# source_weight=815; original_len2_weight=1000; reason=rime-essay>=800
+九章	jqzh	2150
+# source_weight=815; original_len2_weight=1000; reason=rime-essay>=800
+凋亡	dcwh	2150
+# source_weight=815; original_len2_weight=1000; reason=rime-essay>=800
+反噬	fjsi	2150
+# source_weight=814; original_len2_weight=1000; reason=rime-essay>=800
+婚嫁	hpjw	2150
+# source_weight=814; original_len2_weight=1000; reason=rime-essay>=800
+幼犬	ybqr	2150
+# source_weight=814; original_len2_weight=1000; reason=rime-essay>=800
+祭司	jisi	2150
+# source_weight=814; original_len2_weight=1000; reason=rime-essay>=800
+雪碧	xtbi	2150
+# source_weight=813; original_len2_weight=1000; reason=rime-essay>=800
+姜戈	jdge	2150
+# source_weight=813; original_len2_weight=1000; reason=rime-essay>=800
+彩霞	clxw	2150
+# source_weight=813; original_len2_weight=1000; reason=rime-essay>=800
+彬彬	bnbn	2150
+# source_weight=813; original_len2_weight=1000; reason=rime-essay>=800
+霓虹	nihs	2150
+# source_weight=812; original_len2_weight=1000; reason=rime-essay>=800
+一任	yirf	2150
+# source_weight=812; original_len2_weight=1000; reason=rime-essay>=800
+二度	vrdu	2150
+# source_weight=812; original_len2_weight=1000; reason=rime-essay>=800
+皇甫	hdfu	2150
+# source_weight=812; original_len2_weight=1000; reason=rime-essay>=800
+硫化	lqhw	2150
+# source_weight=812; original_len2_weight=1000; reason=rime-essay>=800
+老六	lklq	2150
+# source_weight=811; original_len2_weight=1000; reason=rime-essay>=800
+一男	yinj	2150
+# source_weight=810; original_len2_weight=1000; reason=rime-essay>=800
+十指	sizi	2150
+# source_weight=810; original_len2_weight=1000; reason=rime-essay>=800
+十章	sizh	2150
+# source_weight=810; original_len2_weight=1000; reason=rime-essay>=800
+弊病	biby	2150
+# source_weight=810; original_len2_weight=1000; reason=rime-essay>=800
+徜徉	chyh	2150
+# source_weight=809; original_len2_weight=1000; reason=rime-essay>=800
+丁磊	dylz	2150
+# source_weight=809; original_len2_weight=1000; reason=rime-essay>=800
+戴森	dlsf	2150
+# source_weight=808; original_len2_weight=1000; reason=rime-essay>=800
+七次	qici	2150
+# source_weight=808; original_len2_weight=1000; reason=rime-essay>=800
+掐死	qwsi	2150
+# source_weight=807; original_len2_weight=1000; reason=rime-essay>=800
+心悸	xnji	2150
+# source_weight=807; original_len2_weight=1000; reason=rime-essay>=800
+祛除	qucu	2150
+# source_weight=806; original_len2_weight=1000; reason=rime-essay>=800
+一尺	yici	2150
+# source_weight=806; original_len2_weight=1000; reason=rime-essay>=800
+八路	balu	2150
+# source_weight=806; original_len2_weight=1000; reason=rime-essay>=800
+釜山	fusj	2150
+# source_weight=805; original_len2_weight=1000; reason=rime-essay>=800
+四通	sits	2150
+# source_weight=805; original_len2_weight=1000; reason=rime-essay>=800
+零度	lydu	2150
+# source_weight=804; original_len2_weight=1000; reason=rime-essay>=800
+一宿	yisu	2150
+# source_weight=804; original_len2_weight=1000; reason=rime-essay>=800
+三支	sjzi	2150
+# source_weight=803; original_len2_weight=1000; reason=rime-essay>=800
+一怔	yizg	2150
+# source_weight=802; original_len2_weight=1000; reason=rime-essay>=800
+一炮	yipk	2150
+# source_weight=802; original_len2_weight=1000; reason=rime-essay>=800
+手捧	sbpg	2150
+# source_weight=802; original_len2_weight=1000; reason=rime-essay>=800
+柳絮	lqxu	2150
+# source_weight=801; original_len2_weight=1000; reason=rime-essay>=800
+一推	yitv	2150
+# source_weight=801; original_len2_weight=1000; reason=rime-essay>=800
+牟利	mbli	2150
+# source_weight=801; original_len2_weight=1000; reason=rime-essay>=800
+酸楚	srcu	2150
+# source_weight=800; original_len2_weight=1000; reason=rime-essay>=800
+三份	sjff	2150
+# source_weight=800; original_len2_weight=1000; reason=rime-essay>=800
+潺潺	cjcj	2150
+# source_weight=800; original_len2_weight=1000; reason=rime-essay>=800
+韶山	sksj	2150
+# source_weight=564; original_len2_weight=1000; reason=explicit-regression
+掰扯	blce	2100
