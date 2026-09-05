@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Rime 输入法重建脚本
 # 功能：删除 build 目录并重新编译所有配置
 # 注意：会自动备份和恢复扩展词库文件（*.extended.*）
@@ -24,6 +24,8 @@ SHARED_DATA_DIR="$RIME_DIR/shared-data"
 if [ ! -d "$SHARED_DATA_DIR" ]; then
     if [ -d "/usr/share/rime-data" ]; then
         SHARED_DATA_DIR="/usr/share/rime-data"
+    elif [ -d "/run/current-system/sw/share/rime-data" ]; then
+        SHARED_DATA_DIR="/run/current-system/sw/share/rime-data"
     else
         SHARED_DATA_DIR=""
     fi
@@ -528,20 +530,32 @@ elif [ "$OS_TYPE" = "Linux" ]; then
         echo ""
     fi
     
-    if command -v rime_deployer &> /dev/null; then
-        if [ -n "$SHARED_DATA_DIR" ]; then
-            echo -e "${YELLOW}Running: rime_deployer --build $RIME_DIR $SHARED_DATA_DIR $BUILD_DIR${NC}"
+    rime_deployer_bin="rime_deployer"
+    if ! command -v "$rime_deployer_bin" &> /dev/null; then
+        if [ -x "/run/current-system/sw/bin/rime_deployer" ]; then
+            rime_deployer_bin="/run/current-system/sw/bin/rime_deployer"
         else
-            echo -e "${YELLOW}Running: rime_deployer --build $RIME_DIR${NC}"
+            nix_deployer=$(find /nix/store -maxdepth 3 -name rime_deployer 2>/dev/null | grep -E 'x86_64|librime' | head -n 1 || true)
+            if [ -n "$nix_deployer" ] && [ -x "$nix_deployer" ]; then
+                rime_deployer_bin="$nix_deployer"
+            fi
+        fi
+    fi
+
+    if command -v "$rime_deployer_bin" &> /dev/null || [ -x "$rime_deployer_bin" ]; then
+        if [ -n "$SHARED_DATA_DIR" ]; then
+            echo -e "${YELLOW}Running: $rime_deployer_bin --build $RIME_DIR $SHARED_DATA_DIR $BUILD_DIR${NC}"
+        else
+            echo -e "${YELLOW}Running: $rime_deployer_bin --build $RIME_DIR${NC}"
         fi
         echo ""
         
         # 编译并保存日志
         LOG_FILE="/tmp/rime_build_$(date +%Y%m%d_%H%M%S).log"
         if [ -n "$SHARED_DATA_DIR" ]; then
-            rime_deployer --build "$RIME_DIR" "$SHARED_DATA_DIR" "$BUILD_DIR" 2>&1 | tee "$LOG_FILE"
+            "$rime_deployer_bin" --build "$RIME_DIR" "$SHARED_DATA_DIR" "$BUILD_DIR" 2>&1 | tee "$LOG_FILE"
         else
-            rime_deployer --build "$RIME_DIR" 2>&1 | tee "$LOG_FILE"
+            "$rime_deployer_bin" --build "$RIME_DIR" 2>&1 | tee "$LOG_FILE"
         fi
         COMPILE_EXIT_CODE=${PIPESTATUS[0]}
         
@@ -708,6 +722,8 @@ elif [ "$OS_TYPE" = "Linux" ]; then
         elif [ -f /etc/arch-release ]; then
             echo -e "${YELLOW}Detected Arch Linux, please make sure fcitx5-rime and librime are installed${NC}"
             echo -e "${YELLOW}Install command: sudo pacman -S fcitx5-rime librime${NC}"
+        elif [ -e /etc/NIXOS ]; then
+            echo -e "${YELLOW}Detected NixOS, please make sure pkgs.librime is added to environment.systemPackages${NC}"
         else
             echo -e "${YELLOW}Please make sure the Rime deployment tool (rime_deployer) is installed${NC}"
         fi
