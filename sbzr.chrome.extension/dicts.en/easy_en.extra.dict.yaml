@@ -26,6 +26,8 @@ Cursor	cursor	3000000
 cursor	cursor	3000000
 Nova	nova	3000000
 nova	nova	3000000
+dotfiles	dotfiles	3000000
+dotfile	dotfile	3000000
 
 ls	ls	2500000
 ll	ll	2500000
