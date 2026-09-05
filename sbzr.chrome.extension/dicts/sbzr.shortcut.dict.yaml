@@ -3,7 +3,7 @@
 
 ---
 name: sbzr.shortcut
-version: "1.0"
+version: "2.0"
 sort: by_weight
 use_preset_vocabulary: false
 columns:
@@ -11,15 +11,222 @@ columns:
   - code
   - weight
 ...
-天下无敌	txwd	2500
-Neovim	nvim	2000
-人工智能	rgzn	2000
-周六日	zblqri	2000
-周六日	zlri	2000
-差分逻辑	cflj	1999
-苦行僧	kxs	1999
-苦行僧	kxsg	1999
-跑通	pkts	1999
-python	py	1999
-vscode	vs	1999
-源表	yrbc	1999
+
+# --- Existing Custom Shortcuts ---
+天下无敌	txwd	25000
+Neovim	nvim	25000
+人工智能	rgzn	25000
+周六日	zblqri	25000
+周六日	zlri	25000
+差分逻辑	cflj	25000
+苦行僧	kxs	25000
+苦行僧	kxsg	25000
+跑通	pkts	25000
+python	py	25000
+vscode	vs	25000
+源表	yrbc	25000
+
+# --- Essential Dev Commands & Tools (Linux / CLI / System) ---
+ssh	ssh	25000
+SSH	ssh	24000
+sshd	sshd	25000
+scp	scp	25000
+sftp	sftp	25000
+rsync	rsync	25000
+curl	curl	25000
+wget	wget	25000
+grep	grep	25000
+ripgrep	ripgrep	25000
+rg	rg	25000
+sed	sed	25000
+awk	awk	25000
+tar	tar	25000
+sudo	sudo	25000
+systemctl	systemctl	25000
+journalctl	journalctl	25000
+tmux	tmux	25000
+zellij	zellij	25000
+kitty	kitty	25000
+alacritty	alacritty	25000
+ghostty	ghostty	25000
+foot	foot	25000
+zsh	zsh	25000
+bash	bash	25000
+fish	fish	25000
+chezmoi	chezmoi	25000
+nixos	nixos	25000
+NixOS	nixos	24000
+nix	nix	25000
+fcitx5	fcitx5	25000
+rime	rime	25000
+hyprland	hyprland	25000
+wayland	wayland	25000
+xorg	xorg	25000
+linux	linux	25000
+Linux	linux	24000
+macos	macos	25000
+macOS	macos	24000
+windows	windows	25000
+Windows	windows	24000
+
+# --- Git & GitHub / GitLab ---
+git	git	25000
+Git	git	24000
+github	github	25000
+GitHub	github	24000
+gitlab	gitlab	25000
+GitLab	gitlab	24000
+commit	commit	25000
+rebase	rebase	25000
+cherry-pick	cherrypick	25000
+submodule	submodule	25000
+worktree	worktree	25000
+stash	stash	25000
+
+# --- Containers & Cloud Native ---
+docker	docker	25000
+Docker	docker	24000
+dockerfile	dockerfile	25000
+Dockerfile	dockerfile	24000
+docker-compose	dockercompose	25000
+podman	podman	25000
+k8s	k8s	25000
+kubernetes	kubernetes	25000
+Kubernetes	kubernetes	24000
+kubectl	kubectl	25000
+k9s	k9s	25000
+helm	helm	25000
+terraform	terraform	25000
+ansible	ansible	25000
+
+# --- Cloud & AWS / GCP / Azure ---
+aws	aws	25000
+AWS	aws	24000
+ec2	ec2	25000
+EC2	ec2	24000
+s3	s3	25000
+S3	s3	24000
+iam	iam	25000
+IAM	iam	24000
+vpc	vpc	25000
+VPC	vpc	24000
+lambda	lambda	25000
+Lambda	lambda	24000
+eks	eks	25000
+EKS	eks	24000
+ecs	ecs	25000
+ECS	ecs	24000
+gcp	gcp	25000
+GCP	gcp	24000
+azure	azure	25000
+Azure	azure	24000
+cloudflare	cloudflare	25000
+Cloudflare	cloudflare	24000
+
+# --- Networking & Security ---
+http	http	25000
+HTTP	http	24000
+https	https	25000
+HTTPS	https	24000
+tcp	tcp	25000
+TCP	tcp	24000
+udp	udp	25000
+UDP	udp	24000
+dns	dns	25000
+DNS	dns	24000
+ssl	ssl	25000
+SSL	ssl	24000
+tls	tls	25000
+TLS	tls	24000
+grpc	grpc	25000
+gRPC	grpc	24000
+websocket	websocket	25000
+ws	ws	25000
+wss	wss	25000
+jwt	jwt	25000
+JWT	jwt	24000
+uuid	uuid	25000
+UUID	uuid	24000
+oauth	oauth	25000
+OAuth	oauth	24000
+auth	auth	25000
+api	api	25000
+API	api	24000
+sdk	sdk	25000
+SDK	sdk	24000
+cli	cli	25000
+CLI	cli	24000
+rest	rest	25000
+REST	rest	24000
+graphql	graphql	25000
+GraphQL	graphql	24000
+
+# --- Languages, Package Managers & Formats ---
+rust	rust	25000
+Rust	rust	24000
+cargo	cargo	25000
+python	python	25000
+Python	python	24000
+pip	pip	25000
+node	node	25000
+Node	node	24000
+nodejs	nodejs	25000
+Nodejs	nodejs	24000
+npm	npm	25000
+pnpm	pnpm	25000
+yarn	yarn	25000
+bun	bun	25000
+deno	deno	25000
+golang	golang	25000
+go	go	25000
+Go	go	24000
+typescript	typescript	25000
+TypeScript	typescript	24000
+ts	ts	25000
+javascript	javascript	25000
+JavaScript	javascript	24000
+js	js	25000
+json	json	25000
+JSON	json	24000
+yaml	yaml	25000
+YAML	yaml	24000
+toml	toml	25000
+TOML	toml	24000
+sql	sql	25000
+SQL	sql	24000
+html	html	25000
+HTML	html	24000
+css	css	25000
+CSS	css	24000
+wasm	wasm	25000
+WASM	wasm	24000
+
+# --- AI & LLM & Agent ---
+openai	openai	25000
+OpenAI	openai	24000
+claude	claude	25000
+Claude	claude	24000
+gemini	gemini	25000
+Gemini	gemini	24000
+deepseek	deepseek	25000
+DeepSeek	deepseek	24000
+chatgpt	chatgpt	25000
+ChatGPT	chatgpt	24000
+copilot	copilot	25000
+cursor	cursor	25000
+antigravity	antigravity	25000
+agy	agy	25000
+codex	codex	25000
+qwen	qwen	25000
+llama	llama	25000
+Llama	llama	24000
+ollama	ollama	25000
+vllm	vllm	25000
+mcp	mcp	25000
+MCP	mcp	24000
+rag	rag	25000
+RAG	rag	24000
+prompt	prompt	25000
+subagent	subagent	25000
+embedding	embedding	25000
+embeddings	embeddings	25000
