@@ -46,6 +46,7 @@ engine:
     - table_translator
     - table_translator@easy_en
     - history_translator
+    - echo_translator
   filters:
     - simplifier
     - lua_filter@en_switch_filter
