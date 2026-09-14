@@ -49,7 +49,6 @@ engine:
     - echo_translator
   filters:
     - simplifier
-    - lua_filter@qingjian_neural_filter
     - lua_filter@en_switch_filter
     - uniquifier
 
