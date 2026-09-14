@@ -55,6 +55,7 @@ engine:
   filters:
     - simplifier
     - lua_filter@length_priority_filter
+    - lua_filter@qingjian_neural_filter
     - lua_filter@dynamic_freq_filter
     - lua_filter@en_switch_filter
     - uniquifier

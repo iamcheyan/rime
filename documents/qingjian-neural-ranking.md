@@ -1,6 +1,6 @@
 # Qingjian 本地模型辅助排序实验
 
-状态：已纳入模型与可复现冒烟测试；Rime 实时过滤器尚未默认启用。
+状态：已纳入模型、sidecar 和 Rime 实时过滤器；默认只在相近质量候选中重排。
 
 ## 目标
 
@@ -76,9 +76,26 @@ QINGJIAN_ROOT=/path/to/qingjian \
 
 模型只参与中文候选，并限制在质量接近的候选窗口内。英文、日文、标点、快捷码和用户明确选中的高质量候选不应被模型覆盖。
 
-### 阶段 2：实时实验
+### 阶段 2：实时实验（当前）
 
-优先实现常驻 Rust sidecar 或 Rime 原生扩展，并使用缓存和异步结果刷新候选。正式启用前必须测量：
+当前实现是常驻 Rust Unix-socket sidecar。Rime Lua filter 通过
+`scripts/qingjian-rime-rank.sh` 请求评分；sidecar 只在第一次请求时加载模型，后续请求复用进程。
+
+首次使用前构建 sidecar：
+
+```bash
+cd /Users/tetsuya/Development/qingjian
+cargo build --release -p qingjian-rime-ranker --features metal
+```
+
+可选环境变量：
+
+```bash
+export QINGJIAN_ROOT=/Users/tetsuya/Development/qingjian
+export QINGJIAN_MODEL=/Users/tetsuya/chezmoi/dot_local/share/rime/models/qingjian/model.qjm
+```
+
+实时接入使用缓存和保守质量窗口。正式长期使用前仍必须测量：
 
 - 首次加载时间；
 - 单次候选刷新延迟；
