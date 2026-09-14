@@ -65,6 +65,10 @@ function M.init(env)
 end
 
 function M.func(translation, env)
+  if os.getenv("QINGJIAN_RIME_DISABLE") == "1" then
+    for cand in translation:iter() do yield(cand) end
+    return
+  end
   local buffered = {}
   for cand in translation:iter() do
     if #buffered < MAX_CANDIDATES then

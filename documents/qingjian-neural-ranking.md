@@ -95,6 +95,12 @@ export QINGJIAN_ROOT=/Users/tetsuya/Development/qingjian
 export QINGJIAN_MODEL=/Users/tetsuya/chezmoi/dot_local/share/rime/models/qingjian/model.qjm
 ```
 
+如果当前 Rime/Fcitx5 是从带有环境变量的会话启动，临时回到原始 Rime 排序可设置：
+
+```bash
+export QINGJIAN_RIME_DISABLE=1
+```
+
 实时接入使用缓存和保守质量窗口。正式长期使用前仍必须测量：
 
 - 首次加载时间；
