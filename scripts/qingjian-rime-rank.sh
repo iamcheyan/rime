@@ -5,6 +5,7 @@ ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 QINGJIAN_ROOT=${QINGJIAN_ROOT:-/Users/tetsuya/Development/qingjian}
 MODEL=${QINGJIAN_MODEL:-"$ROOT_DIR/models/qingjian/model.qjm"}
 SOCKET=${QINGJIAN_RANKER_SOCKET:-/tmp/qingjian-rime-ranker.sock}
+START_LOCK="$SOCKET.starting"
 BIN=${QINGJIAN_RANKER_BIN:-"$QINGJIAN_ROOT/target/release/qingjian-rime-ranker"}
 LOG=${QINGJIAN_RANKER_LOG:-/tmp/qingjian-rime-ranker.log}
 
@@ -18,15 +19,24 @@ if [ ! -f "$MODEL" ]; then
   exit 1
 fi
 
-if [ -S "$SOCKET" ] && ! nc -z -U "$SOCKET" >/dev/null 2>&1; then
+if [ -S "$SOCKET" ] && ! nc -z -G 1 -w 1 -U "$SOCKET" >/dev/null 2>&1; then
   rm -f "$SOCKET"
 fi
 
 if [ ! -S "$SOCKET" ]; then
-  rm -f "$SOCKET"
-  nohup "$BIN" --model "$MODEL" --socket "$SOCKET" >>"$LOG" 2>&1 &
+  if mkdir "$START_LOCK" 2>/dev/null; then
+    trap 'rmdir "$START_LOCK" 2>/dev/null || true' EXIT HUP INT TERM
+    if [ -S "$SOCKET" ] && nc -z -G 1 -w 1 -U "$SOCKET" >/dev/null 2>&1; then
+      :
+    else
+      rm -f "$SOCKET"
+      nohup "$BIN" --model "$MODEL" --socket "$SOCKET" >>"$LOG" 2>&1 &
+    fi
+    rmdir "$START_LOCK" 2>/dev/null || true
+    trap - EXIT HUP INT TERM
+  fi
   i=0
-  while [ ! -S "$SOCKET" ] && [ "$i" -lt 100 ]; do
+  while [ ! -S "$SOCKET" ] && [ "$i" -lt 200 ]; do
     i=$((i + 1))
     sleep 0.01
   done
