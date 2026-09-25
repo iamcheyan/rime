@@ -353,7 +353,7 @@ ensure_fcitx5_linux_config() {
     local env_dir="$HOME/.config/environment.d"
     local env_file="$env_dir/fcitx5.conf"
     local desired_env
-    desired_env=$'XMODIFIERS=@im=fcitx\nGTK_IM_MODULE=fcitx\nQT_IM_MODULE=fcitx\nSDL_IM_MODULE=fcitx\n'
+    desired_env=$'XMODIFIERS=@im=fcitx\nQT_IM_MODULE=fcitx\nSDL_IM_MODULE=fcitx\n'
 
     mkdir -p "$env_dir"
     if [ ! -f "$env_file" ] || [ "$(cat "$env_file" 2>/dev/null)" != "${desired_env%$'\n'}" ]; then
@@ -364,18 +364,19 @@ ensure_fcitx5_linux_config() {
     fi
 
     export XMODIFIERS="@im=fcitx"
-    export GTK_IM_MODULE="fcitx"
     export QT_IM_MODULE="fcitx"
     export SDL_IM_MODULE="fcitx"
 
     if command -v systemctl >/dev/null 2>&1; then
+        systemctl --user set-environment GTK_IM_MODULE= 2>/dev/null || true
         systemctl --user import-environment \
-            XMODIFIERS GTK_IM_MODULE QT_IM_MODULE SDL_IM_MODULE \
+            XMODIFIERS QT_IM_MODULE SDL_IM_MODULE \
             WAYLAND_DISPLAY DISPLAY DBUS_SESSION_BUS_ADDRESS 2>/dev/null || true
     fi
     if command -v dbus-update-activation-environment >/dev/null 2>&1; then
         dbus-update-activation-environment --systemd \
-            XMODIFIERS GTK_IM_MODULE QT_IM_MODULE SDL_IM_MODULE \
+            GTK_IM_MODULE= \
+            XMODIFIERS QT_IM_MODULE SDL_IM_MODULE \
             WAYLAND_DISPLAY DISPLAY DBUS_SESSION_BUS_ADDRESS 2>/dev/null || true
     fi
 
