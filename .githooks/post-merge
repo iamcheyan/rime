@@ -13,3 +13,8 @@ if [ -x "scripts/install-jaroomaji-dicts.sh" ]; then
     echo "[Hook: post-merge] Checking external Japanese dictionaries..."
     ./scripts/install-jaroomaji-dicts.sh
 fi
+
+if [ -x "./rebuild" ]; then
+    echo "[Hook: post-merge] Rebuilding Rime configuration..."
+    ./rebuild
+fi

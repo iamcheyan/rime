@@ -84,11 +84,12 @@ xqfu	user_table	修复	1777630008
   2. 读取 `dynamic_freq.local.txt`，以当前机器主机名（`hostname`）写入 `sync/<Hostname>/dynamic_freq.txt`。
   3. 执行 `git add sync/*/dynamic_freq.txt` 将快照自动打包进当前 Commit。
 
-### 4.2 拉取后自动合并 (`.githooks/post-merge` & `.githooks/post-rewrite`)
-- **触发**：执行 `git pull`、`git merge` 或 `git rebase`。
+### 4.2 拉取后自动合并与重建 (`.githooks/post-merge` & `.githooks/post-rewrite`)
+- **触发**：执行产生合并的 `git pull`/`git merge`，或 `git pull --rebase`。
 - **动作**：
   1. 调用 `scripts/import-dynamic-freq.py`：遍历扫描所有设备快照（`sync/*/dynamic_freq.txt`），无损融合词频到 `dynamic_freq.local.txt`。
   2. 调用 `scripts/install-jaroomaji-dicts.sh`：自动检测并补齐外部日语词库源文件（`dicts.jp/jaroomaji.*.dict.yaml`）。
+  3. 最后调用 `./rebuild` 清理并重新编译/部署 Rime，使拉取到的词库和方案立即生效。
 
 ---
 
@@ -137,4 +138,3 @@ git config core.hooksPath .githooks
 git pull --rebase
 ```
 该配置会启用本地 pre-commit、post-merge、post-rewrite hooks，并通过原生 Git 保留本地提交历史。
-

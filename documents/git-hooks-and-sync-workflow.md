@@ -13,19 +13,19 @@
   - 自动把 `sync/*/dynamic_freq.txt` 加入暂存区。
 - `.githooks/post-merge`
   - 普通 `git pull` 产生 merge 后运行 `scripts/import-dynamic-freq.py`；
-  - 检查/安装外部日语词典 `scripts/install-jaroomaji-dicts.sh`。
+  - 检查/安装外部日语词典 `scripts/install-jaroomaji-dicts.sh`；
+  - 最后运行 `./rebuild` 编译并部署最新配置。
 - `.githooks/post-rewrite`
-  - rebase 或 amend 后导入动态词频；
-  - 检查/安装外部日语词典。
+  - rebase 后导入动态词频并检查/安装外部日语词典；
+  - `git pull --rebase` 完成后运行 `./rebuild`。普通 amend 不触发重建。
 
-这些 hook 只有在仓库配置了以下选项后才会生效：
+这些 hook 只有在仓库配置了以下选项后才会生效（本机仓库已启用）：
 
 ```bash
 git config core.hooksPath .githooks
 ```
 
-普通新 clone 后直接执行原生 `git pull` 不一定会触发这些 hook，因此新机器初始化后应主动
-执行一次上面的 `git config` 命令。
+新 clone 后执行一次上面的 `git config` 命令，即可启用这些 hook。
 
 ### GitHub Actions
 

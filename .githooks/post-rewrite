@@ -13,3 +13,10 @@ if [ -x "scripts/install-jaroomaji-dicts.sh" ]; then
     echo "[Hook: post-rewrite] Checking external Japanese dictionaries..."
     ./scripts/install-jaroomaji-dicts.sh
 fi
+
+# post-rewrite also runs for `git commit --amend`; only rebuild after a rebase,
+# which is the path used by `git pull --rebase`.
+if [ "${1:-}" = "rebase" ] && [ -x "./rebuild" ]; then
+    echo "[Hook: post-rewrite] Rebuilding Rime configuration after rebase..."
+    ./rebuild
+fi

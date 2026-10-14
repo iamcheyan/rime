@@ -55,7 +55,7 @@
 - **多设备动态调频快照**：`sync/<DeviceName>/dynamic_freq.txt`（由 Git Hooks / `scripts/export-dynamic-freq.py` 自动分发合并，详见 `documents/sbzr_dynamic_wordfreq_sync.md`）
 
 ## 6. 常用维护脚本与 Git Hooks
-- **Git Hooks 自动化**：已配置 `.githooks/`（`pre-commit` 自动导出快照，`post-merge` 自动导入合并快照并校验外部日语词库）。
+- **Git Hooks 自动化**：`.githooks/` 中 `pre-commit` 自动导出快照；`post-merge` 与 rebase 类型的 `post-rewrite` 在导入合并快照、检查外部日语词库后自动运行 `./rebuild`，使拉取的配置立即生效。需设置 `core.hooksPath=.githooks`。
 - `./add-word <词条> [编码] [权重]`：一键根据声笔自然公式自动派生编码并追加到 `sbzr.shortcut.dict.yaml`。
 - `./pull`：拉取最新配置、合并所有设备词频快照、补全外部日语词库并确保激活 Git Hooks。
 - `./push`：导出本地词频快照、根据 `.gitignore` 自动清理并强制提交推送。
